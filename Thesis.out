@@ -27,13 +27,18 @@
 \BOOKMARK [1][-]{section.3.2}{RDF Data input}{chapter.3}% 27
 \BOOKMARK [2][-]{subsection.3.2.1}{Multi dimensional form}{section.3.2}% 28
 \BOOKMARK [2][-]{subsection.3.2.2}{Existing instance dependencies}{section.3.2}% 29
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 30
-\BOOKMARK [1][-]{section.4.1}{Architecture}{chapter.4}% 31
-\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 32
-\BOOKMARK [1][-]{section.5.1}{Experiments}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 34
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 35
-\BOOKMARK [1][-]{section.6.1}{Future work}{chapter.6}% 36
-\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 37
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 38
-\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 39
+\BOOKMARK [2][-]{subsection.3.2.3}{Instance browsing}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.4}{Sub form dependencies}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.5}{Validation}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.6}{Saving data}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.7}{Editing data on the forms}{section.3.2}% 34
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 35
+\BOOKMARK [1][-]{section.4.1}{Architecture}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Experiments}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Future work}{chapter.6}% 41
+\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 42
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 43
+\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 44
