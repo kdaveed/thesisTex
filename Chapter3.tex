@@ -1,0 +1,144 @@
+\chapter{Problem Statement}
+
+\section{Challanges of the RDFBones project}
+
+\subsection{Human skeleton}
+
+The subject of the anthropological investigations is primarily human skeletal remains. To be able to create data about these remains, first of all an ontology is required. As the human skeleton is complex, the ontology is not developed by us, but an existing have been taken. The used ontology is the subset of FMA (Foundation Model of Anatomy) ontology. For us the two most important classes are the following: 
+
+\begin{itemize}
+	\item Subdivision of skeletal system - fma:85544  
+	\item Bone Organ – fma:5018
+\end{itemize}
+
+The class Bone Organ is the superclass of all bones in the human skeleton.  Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both case is expressed by the property fma:systemic\_part\_of. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions.
+
+\img{\III}{1ontologyStructure.png}{Ontology structure for skeleton}
+
+The most important skeletal subdivision for our project is the skull. Skull has the peculiarity that it consists not directly of bones but two of other subdivisions, which consists of the Bone Organ subclasses.
+
+%
+\img{\III}{skullScheme.png}{FMA scheme for skull} 
+
+The following image illustrates then the data structure of skull.
+
+\img{\III}{rdfSkull.png}{RDF Triple representation of a skull} 
+
+To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has to be sent from the client to the server, but a multi dimensional dataset. 
+
+\subsection{Ontology Extensions}
+
+It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
+Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
+
+\img{\III}{skelInv.png}{Skeletal Inventory Data Structure} 
+
+The variable ?skeletalInventory is the instance of the class rdfbones:SkeletalInventory, while the ?boneSegment is from the class rdfbones:SegmentOfSkeletalElement. The core ontology of the project contains a subclass of the rdfbones:SkeletalInventory, the rdf:PrimarySkeletalInventory. This skeletal inventory type is for skeletal remain collections where only the whole bone organs have to be addressed.  The way to define custom bone segments is always through a custom skeletal inventories, which contains restrictions on the property obo:isAbout and on the class of custom bone segments. Of course the custom bone segments has to be assigned to the bone organ class they belong to, via restrictions on property obo:systemic\_part\_of. The following image illustrates the extension definition.
+
+\img{\III}{ontExtScheme.png}{Ontology extension scheme}
+
+As these extensions are expressed by OWL restriction the application can query the definitions. Consequently if the custom entry form is called from the profile of a skeletal inventory instance, then the entry form processor routine can ask, what bone segment are defined to the type of the subject variable coming as input, and can offer them on the interface.
+
+\subsection{Study Design Execution}
+
+In most investigations the researcher take a set of bones belong to one individual and examine different tokens. Tokens refer to specific features of parts or regions of bones. These token have particular expressions.
+
+\img{\III}{glabExpressions.png}{Glabella and its expressions}
+
+The previous images show the token called glabella, and its expressions. The task of the web application is let the researcher select one of the already added Nasal Bones (because on that bone is the glabella token), and set the expression of it. The following data structure models the process.
+
+\img{\III}{studyDesEx.png}{Study Design Execution Data Structure}
+
+Where the variable ?categoricalLabel represents the expression of the token. The values this variable can take are defined in the ontology extension. The variable ?boneSegment is the bone on which the glabella can be found. This instance won’t be as well newly created, but an already added bone has to be selected on the interface. The ?assay and the ?meausurementDatum variables are new instances.  To be able to generate an entry form for the problem, the following ontology extension has to be defined.
+
+\img{\III}{extGlab.png}{Ontology extension for Glabella}
+
+
+\section{RDF Data input}
+
+\subsection{Multi dimensional form}
+
+Imagine a problem of registering a new user to a web portal. The form offers the fields for name, e-mail address, birth, and address. The address consists of three fields, of the country city and the street-nr field. The following image illustrates two types of user registry form. The first (a) is single form, which consists of the six fields. It has been already discussed in the Preliminaries.
+
+\img{\III}{singleVsMultiDimensionalForm.png}{Single vs. multi dimensional form}
+
+It is possible to add multiple arrays.
+
+\img{\III}{multiJSON.png}{JSON object for multi dimensional forms}
+
+This requires a JavaScript routine that initiates the sub forms. 
+
+\img{\III}{multiAddressDataModel.png}{Data model}
+
+
+\subsection{Existing instance dependencies}
+
+
+\img{\III}{countryCityConstraint.png}{Instance selection and dependency}
+
+\begin{itemize}
+	\item	By form loading we need to ask the existing countries
+	\item 	Then by the selection of country of other field has to be updated according to the constraint
+\end{itemize}
+
+
+\subsection{{Instance browsing}
+
+\img{\III}{navigator.png}{Navigator example}
+
+\begin{itemize}
+	\item Server side query – and grouping
+	\item Client side - programming the navigator window
+\end{itemize}
+
+\subsection{{Sub form dependencies}
+	
+\img{\III}{navigator.png}{Navigator example}
+
+
+
+
+\subsection{{Validation}
+	
+\begin{itemize}
+	\item Server side query – and grouping
+	\item Client side - programming the navigator window
+\end{itemize}	
+	
+	
+	
+	
+	
+\subsection{{Saving data}
+
+\begin{itemize}
+	\item Server side query – and grouping
+	\item Client side - programming the navigator window
+\end{itemize}	
+
+
+
+\subsection{Editing data on the forms}
+
+
+\begin{itemize}
+	\item Really important feature of the data edit.
+	\item Requirement is that if some datafield is modified we do not reload the whole page but be able to send it through AJAX.
+	\item As the form is multi dimensional the data is really important regarding JavaScript.
+	\item Dependencies do count. The selector fields have to be set so that they do not just contain value set, but the other options as well, so that the loading is the same
+	\item By such multi dimensional models it is simpler do the data manipulation through AJAX, thus the smaller amount information has to be handled by the server.
+	\item The task of JavaScript in this case is to restore the same layout of the form based on the submission data then it was before the  
+\end{itemize}	
+
+
+
+
+
+
+
+
+
+
+
+
+

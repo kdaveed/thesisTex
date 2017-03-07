@@ -1,0 +1,1642 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 MAR 2017 22:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Thesis.tex
+(./Thesis.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./config/model/layout.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count88
+\c@@ppsavesec=\count89
+\c@@ppsaveapp=\count90
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen103
+\extrarowheight=\dimen104
+\NC@list=\toks14
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen105
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count91
+\U@D=\dimen106
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count92
+\uc@combtoks=\toks15
+\uc@combtoksb=\toks16
+\uc@temptokena=\toks17
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks20
+\footnotemargin=\dimen107
+\c@pp@next@reset=\count93
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip45
+\f@ncyO@elh=\skip46
+\f@ncyO@erh=\skip47
+\f@ncyO@olh=\skip48
+\f@ncyO@orh=\skip49
+\f@ncyO@elf=\skip50
+\f@ncyO@erf=\skip51
+\f@ncyO@olf=\skip52
+\f@ncyO@orf=\skip53
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count94
+))
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 144.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip54
+\subfigcapskip=\skip55
+\subfigcaptopadj=\dimen110
+\subfigbottomskip=\skip56
+\subfigcapmargin=\dimen111
+\subfiglabelskip=\skip57
+\c@subfigure=\count95
+\c@lofdepth=\count96
+\c@subtable=\count97
+\c@lotdepth=\count98
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip58
+\subfig@bottom=\skip59
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count99
+\ST@wd=\dimen112
+\ST@rightskip=\skip60
+\ST@leftskip=\skip61
+\ST@parfillskip=\skip62
+\ST@pageleft=\dimen113
+\ST@headht=\dimen114
+\ST@tailht=\dimen115
+\ST@pagesofar=\dimen116
+\ST@pboxht=\dimen117
+\ST@lineht=\dimen118
+\ST@stretchht=\dimen119
+\ST@prevht=\dimen120
+\ST@toadd=\dimen121
+\ST@dimen=\dimen122
+\ST@pbox=\box26
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks22
+\float@box=\box27
+\@float@everytoks=\toks23
+\@floatcapt=\box28
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fncychap/fncychap.sty
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+\RW=\skip63
+\mylen=\skip64
+\myhi=\skip65
+\px=\skip66
+\py=\skip67
+\pyy=\skip68
+\pxx=\skip69
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip70
+\LTright=\skip71
+\LTpre=\skip72
+\LTpost=\skip73
+\LTchunksize=\count101
+\LTcapwidth=\dimen123
+\LT@head=\box29
+\LT@firsthead=\box30
+\LT@foot=\box31
+\LT@lastfoot=\box32
+\LT@cols=\count102
+\LT@rows=\count103
+\c@LT@tables=\count104
+\c@LT@chunks=\count105
+\LT@p@ftn=\toks24
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip74
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen124
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen125
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box33
+\strutbox@=\box34
+\big@size=\dimen126
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip11
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks26
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks27
+\eqnshift@=\dimen127
+\alignsep@=\dimen128
+\tagshift@=\dimen129
+\tagwidth@=\dimen130
+\totwidth@=\dimen131
+\lineht@=\dimen132
+\@envbody=\toks28
+\multlinegap=\skip75
+\multlinetaggap=\skip76
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen133
+\Hy@linkcounter=\count118
+\Hy@pagecounter=\count119
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count120
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4322.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4322.
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4691.
+\c@Hy@tempcnt=\count121
+LaTeX Info: Redefining \url on input line 5044.
+\XeTeXLinkMargin=\dimen134
+\Fld@menulength=\count122
+\Field@Width=\dimen135
+\Fld@charsize=\dimen136
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring ON on input line 6316.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
+\Hy@abspage=\count123
+\c@Item=\count124
+\c@Hfootnote=\count125
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
+\Fld@listcount=\count126
+\c@bookmark@seq@number=\count127
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip77
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count128
+\calc@Bcount=\count129
+\calc@Adimen=\dimen137
+\calc@Bdimen=\dimen138
+\calc@Askip=\skip78
+\calc@Bskip=\skip79
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count130
+\calc@Cskip=\skip80
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/bera/beramono.sty
+Package: beramono 2004/01/31 (WaS)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count131
+\lst@gtempboxa=\box35
+\lst@token=\toks30
+\lst@length=\count132
+\lst@currlwidth=\dimen139
+\lst@column=\count133
+\lst@pos=\count134
+\lst@lostspace=\dimen140
+\lst@width=\dimen141
+\lst@newlines=\count135
+\lst@lineno=\count136
+\lst@maxwidth=\dimen142
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count137
+\lst@skipnumbers=\count138
+\lst@framebox=\box36
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(./config/model/colors.tex
+Package color Info: Redefining color red on input line 2.
+Package color Info: Redefining color blue on input line 3.
+Package color Info: Redefining color white on input line 6.
+) (./config/model/variables.tex)
+Package hyperref Info: Option `colorlinks' set `true' on input line 108.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write4
+\openout4 = `Thesis.idx'.
+
+
+Writing index file Thesis.idx
+) (./Thesis.aux
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `lst:sparql' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `lst:sparql' multiply defined.
+
+
+LaTeX Warning: Label `lst:sparql' multiply defined.
+
+
+LaTeX Warning: Label `lst:sparql' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+
+LaTeX Warning: Label `fig:key' multiply defined.
+
+)
+\openout1 = `Thesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count139
+\scratchdimen=\dimen143
+\scratchbox=\box37
+\nofMPsegments=\count140
+\nofMParguments=\count141
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count142
+\MPscratchDim=\dimen144
+\MPnumerator=\count143
+\makeMPintoPDFobject=\count144
+\everyMPtoPDFconversion=\toks32
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 2.
+\AtBeginShipoutBox=\box38
+Package hyperref Info: Link coloring ON on input line 2.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count145
+)
+LaTeX Info: Redefining \ref on input line 2.
+LaTeX Info: Redefining \pageref on input line 2.
+LaTeX Info: Redefining \nameref on input line 2.
+
+(./Thesis.out) (./Thesis.out)
+\@outlinefile=\write5
+\openout5 = `Thesis.out'.
+
+\c@lstlisting=\count146
+ (./config/model/hyphenation.tex) (./coverpage.tex (/usr/local/texlive/2016/tex
+mf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+<./pics/unifr-logo.jpg, id=160, 139.9629pt x 165.0165pt>
+File: ./pics/unifr-logo.jpg Graphic file (type jpg)
+
+<use ./pics/unifr-logo.jpg>
+Package pdftex.def Info: ./pics/unifr-logo.jpg used on input line 13.
+(pdftex.def)             Requested size: 139.96255pt x 165.01607pt.
+ [1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./pics/
+unifr-logo.jpg>])
+Underfull \hbox (badness 10000) in paragraph at lines 13--32
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33 \newpage
+              [1] [2
+
+] [3
+
+] (./Thesis.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [4
+
+])
+\tf@toc=\write6
+\openout6 = `Thesis.toc'.
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] (./Thesis.lof [6
+
+])
+\tf@lof=\write7
+\openout7 = `Thesis.lof'.
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7] (./Thesis.lot)
+\tf@lot=\write8
+\openout8 = `Thesis.lot'.
+
+ [8
+
+] [9] [10] (./Chapter1-Intro.tex
+Chapter 1.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+))
+(./Chapter2.tex [1
+
+]
+Chapter 2.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server.png,
+ id=341, 416.757pt x 79.9788pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/1_client_server.png used on input line 10.
+(pdftex.def)             Requested size: 360.0pt x 69.08673pt.
+ [2
+
+ </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server.png
+>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/2_http_request.png, 
+id=350, 416.2752pt x 32.2806pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/2_http_request.
+png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/2_http_request.p
+ng>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/2_http_request.png used on input line 15.
+(pdftex.def)             Requested size: 360.0pt x 27.91788pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/3_servlet_mapping.pn
+g, id=351, 415.7934pt x 49.1436pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/3_servlet_mappi
+ng.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/3_servlet_mappin
+g.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/3_servlet_mapping.png used on input line 19.
+(pdftex.def)             Requested size: 360.0pt x 42.54985pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png, id=
+352, 416.2752pt x 89.6148pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png
+ Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/4_data_flow.png used on input line 24.
+(pdftex.def)             Requested size: 360.0pt x 77.50342pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/5_template_file.png,
+ id=353, 416.757pt x 69.3792pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/5_template_file
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/5_template_file.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/5_template_file.png used on input line 28.
+(pdftex.def)             Requested size: 360.0pt x 59.93065pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/2_http_request.pn
+g> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/3_servlet_mapping
+.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png, id=
+360, 416.757pt x 52.998pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png
+ Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/6_sql_query.png used on input line 40.
+(pdftex.def)             Requested size: 360.0pt x 45.78036pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_html.p
+ng, id=361, 416.757pt x 93.951pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_h
+tml.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_ht
+ml.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/7_form_layout_html.png used on input line 44.
+(pdftex.def)             Requested size: 360.0pt x 81.15611pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png> 
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/5_template_file.png>
+ </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_parameter.
+png, id=370, 415.7934pt x 25.0536pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_param
+eter.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_parame
+ter.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/8_request_parameter.png used on input line 48.
+(pdftex.def)             Requested size: 360.0pt x 21.69208pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.png, 
+id=371, 416.757pt x 38.0622pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.
+png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.p
+ng>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/9_example_java.png used on input line 52.
+(pdftex.def)             Requested size: 360.0pt x 32.8786pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/10_simple_js_example
+.png, id=372, 416.2752pt x 114.6684pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/10_simple_js_ex
+ample.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/10_simple_js_exa
+mple.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/10_simple_js_example.png used on input line 59.
+(pdftex.def)             Requested size: 360.0pt x 99.17104pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_htm
+l.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_par
+ameter.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_exampl
+e_java.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/11_ajax_load.png, id
+=380, 415.7934pt x 132.495pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/11_ajax_load.pn
+g Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/11_ajax_load.png
+>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/11_ajax_load.png used on input line 71.
+(pdftex.def)             Requested size: 360.0pt x 114.71777pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/10_simple_js_exam
+ple.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/11_ajax_loa
+d.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7] (/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-2.def
+File: uni-2.def 2013/05/13 UCS: Unicode data U+0200..U+02FF
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabulary.p
+ng, id=396, 417.2388pt x 151.767pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabul
+ary.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabula
+ry.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/12_rdfs_vocabulary.png used on input line 122.
+(pdftex.def)             Requested size: 360.0pt x 130.95242pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_range
+.png, id=397, 416.2752pt x 83.8332pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_
+range.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_r
+ange.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/13_rdfs_domain_range.png used on input line 127.
+(pdftex.def)             Requested size: 360.0pt x 72.50319pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabular
+y.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex_ontology.
+png, id=403, 415.7934pt x 119.4864pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex_onto
+logy.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex_ontol
+ogy.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/14_rdfs_ex_ontology.png used on input line 134.
+(pdftex.def)             Requested size: 360.0pt x 103.45457pt.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 142.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 142.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.30756pt on input line 142.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_r
+ange.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex
+_ontology.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png, id
+=414, 415.7934pt x 140.6856pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.pn
+g Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png
+>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/15_owl_vocab.png used on input line 171.
+(pdftex.def)             Requested size: 360.0pt x 121.80942pt.
+
+Overfull \hbox (58.24004pt too wide) in paragraph at lines 174--175
+\T1/cmr/m/n/10.95 The rdf:Property has two sub-classes, the owl:ObjectProperty 
+and owl:DataTypeProperty.
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png
+>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_properties
+.png, id=432, 415.7934pt x 96.36pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_prope
+rties.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_proper
+ties.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/16_object_properties.png used on input line 176.
+(pdftex.def)             Requested size: 360.0pt x 83.43109pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualified_card.pn
+g, id=433, 415.7934pt x 100.2144pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualified_ca
+rd.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualified_car
+d.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/17_qualified_card.png used on input line 177.
+(pdftex.def)             Requested size: 360.0pt x 86.76836pt.
+LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 186.
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 9.30756pt on input line 186.
+
+Overfull \hbox (25.33597pt too wide) in paragraph at lines 188--189
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_proper
+ties.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualifi
+ed_card.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/18_document_class_gr
+oup.png, id=467, 416.2752pt x 99.7326pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/18_document_cla
+ss_group.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/18_document_clas
+s_group.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/18_document_class_group.png used on input line 226.
+(pdftex.def)             Requested size: 360.0pt x 86.2538pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/19_vivo_class_group.
+png, id=468, 416.2752pt x 181.1568pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/19_vivo_class_g
+roup.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/19_vivo_class_gr
+oup.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/19_vivo_class_group.png used on input line 230.
+(pdftex.def)             Requested size: 360.0pt x 156.67358pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/20_rdf_config_data.p
+ng, id=469, 416.2752pt x 118.041pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/20_rdf_config_d
+ata.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/20_rdf_config_da
+ta.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/20_rdf_config_data.png used on input line 234.
+(pdftex.def)             Requested size: 360.0pt x 102.08783pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/18_document_clas
+s_group.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/19_vivo
+_class_group.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.png,
+ id=477, 415.7934pt x 168.1482pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/21_profile_page.png used on input line 242.
+(pdftex.def)             Requested size: 360.0pt x 145.58728pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/20_rdf_config_da
+ta.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_p
+age.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/22_profile_page_conf
+ig.png, id=484, 415.7934pt x 125.7498pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/22_profile_page
+_config.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/22_profile_page_
+config.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/22_profile_page_config.png used on input line 246.
+(pdftex.def)             Requested size: 360.0pt x 108.8776pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/23_http_request.png,
+ id=485, 417.2388pt x 64.0794pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/23_http_request
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/23_http_request.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/23_http_request.png used on input line 252.
+(pdftex.def)             Requested size: 360.0pt x 55.29102pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/24_object_prop_entry
+_form.png, id=486, 415.7934pt x 127.677pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/24_object_prop_
+entry_form.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/24_object_prop_e
+ntry_form.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/24_object_prop_entry_form.png used on input line 258.
+(pdftex.def)             Requested size: 360.0pt x 110.54622pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/25_data_prop_entry_f
+orm.png, id=487, 416.757pt x 147.9126pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/25_data_prop_en
+try_form.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/25_data_prop_ent
+ry_form.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/25_data_prop_entry_form.png used on input line 262.
+(pdftex.def)             Requested size: 360.0pt x 127.76884pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/22_profile_page_
+config.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/23_http_
+request.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/26_data_def.png, id=
+494, 416.2752pt x 113.7048pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/26_data_def.png
+ Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/26_data_def.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/26_data_def.png used on input line 270.
+(pdftex.def)             Requested size: 360.0pt x 98.33768pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/24_object_prop_e
+ntry_form.png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/25_da
+ta_prop_entry_form.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/27_cef_class_def.png
+, id=501, 413.8662pt x 54.9252pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/27_cef_class_de
+f.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/27_cef_class_def
+.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
+ies/27_cef_class_def.png used on input line 275.
+(pdftex.def)             Requested size: 360.0pt x 47.77866pt.
+) (./Chapter3.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/26_data_def.png>
+ </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/27_cef_class_def.pn
+g>]
+Chapter 3.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologyStructu
+re.png, id=508, 415.7934pt x 133.9404pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologySt
+ructure.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologyStr
+ucture.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/1ontologyStructure.png used on input line 16.
+(pdftex.def)             Requested size: 360.0pt x 115.96925pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skullScheme.png,
+ id=509, 415.7934pt x 162.8484pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skullScheme
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skullScheme.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/skullScheme.png used on input line 21.
+(pdftex.def)             Requested size: 360.0pt x 140.9986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png, id
+=510, 415.7934pt x 142.6128pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.pn
+g Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png
+>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/rdfSkull.png used on input line 25.
+(pdftex.def)             Requested size: 360.0pt x 123.47803pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19
+
+]
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png, id=
+516, 416.2752pt x 29.8716pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png
+ Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/skelInv.png used on input line 34.
+(pdftex.def)             Requested size: 360.0pt x 25.83446pt.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologyStr
+ucture.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skul
+lScheme.png>]
+Overfull \hbox (55.425pt too wide) in paragraph at lines 36--37
+[]\T1/cmr/m/n/10.95 The vari-able ?skele-tal-In-ven-tory is the in-stance of th
+e class rdf-bones:SkeletalInventory,
+ []
+
+
+Overfull \hbox (6.07204pt too wide) in paragraph at lines 36--37
+\T1/cmr/m/n/10.95 while the ?bone-Seg-ment is from the class rdf-bones:SegmentO
+fSkeletalElement.
+ []
+
+
+Overfull \hbox (37.75926pt too wide) in paragraph at lines 36--37
+\T1/cmr/m/n/10.95 The core on-tol-ogy of the project con-tains a sub-class of t
+he rdf-bones:SkeletalInventory,
+ []
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtScheme.png
+, id=524, 416.2752pt x 149.358pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtSchem
+e.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtScheme
+.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/ontExtScheme.png used on input line 38.
+(pdftex.def)             Requested size: 360.0pt x 129.17236pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png
+> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressions.
+png, id=531, 416.2752pt x 82.8696pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpress
+ions.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressi
+ons.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/glabExpressions.png used on input line 46.
+(pdftex.def)             Requested size: 360.0pt x 71.6698pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/studyDesEx.png, 
+id=532, 416.2752pt x 90.5784pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/studyDesEx.
+png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/studyDesEx.p
+ng>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/studyDesEx.png used on input line 50.
+(pdftex.def)             Requested size: 360.0pt x 78.33679pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtScheme
+.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpres
+sions.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/study
+DesEx.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png, id=
+540, 416.2752pt x 104.5506pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png
+ Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/extGlab.png used on input line 54.
+(pdftex.def)             Requested size: 360.0pt x 90.42065pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/singleVsMultiDim
+ensionalForm.png, id=541, 1289.81876pt x 560.0925pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/singleVsMul
+tiDimensionalForm.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/singleVsMult
+iDimensionalForm.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/singleVsMultiDimensionalForm.png used on input line 63.
+(pdftex.def)             Requested size: 360.0pt x 156.32059pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiJSON.png, i
+d=542, 416.757pt x 145.9854pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiJSON.p
+ng Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiJSON.pn
+g>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/multiJSON.png used on input line 67.
+(pdftex.def)             Requested size: 360.0pt x 126.1041pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiAddressData
+Model.png, id=543, 1218.5525pt x 310.15875pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiAddres
+sDataModel.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiAddress
+DataModel.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/multiAddressDataModel.png used on input line 71.
+(pdftex.def)             Requested size: 360.0pt x 91.62854pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/countryCityConst
+raint.png, id=544, 1275.76625pt x 403.5075pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/countryCity
+Constraint.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/countryCityC
+onstraint.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/countryCityConstraint.png used on input line 77.
+(pdftex.def)             Requested size: 360.0pt x 113.86177pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+Runaway argument?
+{{Instance browsing} \par \img {\III }{navigator.png}{Navigator examp\ETC.
+! File ended while scanning use of \@xdblarg.
+<inserted text> 
+                \par 
+l.61 \input{Chapter3.tex}
+                         
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+(./Chapter4.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png>
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/singleVsMult
+iDimensionalForm.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Stat
+ement/multiJSON.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_State
+ment/multiAddressDataModel.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/countryCityC
+onstraint.png>]
+Chapter 4.
+) (./Chapter5.tex [26
+
+]
+Chapter 5.
+) (./Chapter6.tex [27
+
+]
+Chapter 6.
+) [28
+
+] [29] (./AppendixA-Glossary.tex
+Appendix A.
+
+Overfull \hbox (9.10532pt too wide) in paragraph at lines 7--7
+[]|\T1/cmr/bx/n/20.74 Symbols| 
+ []
+
+
+Overfull \hbox (5.43306pt too wide) in alignment at lines 5--34
+ [] [] 
+ []
+
+
+Overfull \hbox (5.43306pt too wide) in alignment at lines 34--63
+ [] [] 
+ []
+
+
+Overfull \hbox (5.43306pt too wide) in alignment at lines 63--108
+ [] [] 
+ []
+
+[30
+
+]
+Overfull \hbox (5.43306pt too wide) in alignment at lines 108--138
+ [] [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+Overfull \hbox (5.43306pt too wide) in alignment at lines 138--163
+ [] [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33] [34] (./AppendixB.tex
+Appendix B.
+) [35
+
+]
+Overfull \hbox (50.09671pt too wide) in paragraph at lines 81--92
+[] 
+ []
+
+[36] [37] (./Thesis.bbl) 
+AED: lastpage setting LastPage
+[38
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
+ (./Thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 5F128D9742DA69F066C7A294A88D19DE;2385.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
+ ) 
+Here is how much of TeX's memory you used:
+ 11608 strings out of 493014
+ 169589 string characters out of 6133351
+ 270525 words of memory out of 5000000
+ 14665 multiletter control sequences out of 15000+600000
+ 23410 words of font info for 54 fonts, out of 8000000 for 9000
+ 1145 hyphenation exceptions out of 8191
+ 31i,12n,43p,855b,2087s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb>
+Output written on Thesis.pdf (49 pages, 2322953 bytes).
+PDF statistics:
+ 713 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
+ 169 named destinations out of 1000 (max. 500000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
+
