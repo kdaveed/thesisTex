@@ -155,6 +155,14 @@
 		\label{fig:key}
 \end{figure}}
 
+
+\newcommand{\imgK}[4]{
+	\begin{figure}[h]
+		\makebox[\textwidth][c]{\includegraphics[width=\textwidth]{#1#2}}%
+		\caption{#3}
+		\label{#4}
+\end{figure}}
+
 \newcommand{\html}[3]{\textless#1 #2 \textgreater #3 \textless#1\textgreater}
 
 \newcommand{\prefix}[2]{
@@ -180,27 +188,23 @@
 		\textit{#1}
 	\end{center}
 }
-
 \newcommand{\sparql}[2]{
 	\begin{lstlisting}[captionpos=b, caption=#1, label=lst:sparql,
 	basicstyle=\ttfamily,frame=single]
 	#2
 	\end{lstlisting}
 }
-
 \newcommand{\itemI}[1]{
 	\begin{itemize}
 		\item #1
 	\end{itemize}
 }
-
 \newcommand{\itemII}[2]{
 	\begin{itemize}
 		\item #1
 		\item #2
 	\end{itemize}
 }
-
 \newcommand{\itemIII}[3]{
 	\begin{itemize}
 		\item #1

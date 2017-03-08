@@ -1,8 +1,6 @@
 \chapter{Implementation}
 
-
 \section{Web application ontology}
-
 
 \subsection{Introduction}
 
@@ -25,7 +23,7 @@
 </form>
 \end{lstlisting}
 
-\itemI{Let the developer concentrate on the meaningful parts.}
+\itemI{It can be modelled by a configuration dataset}
 
 \begin{lstlisting}[basicstyle=\footnotesize]
 {
@@ -40,8 +38,6 @@
 
 \img{\IVI}{frameworkFunc.png}{Framework functionality}
 
-
-
 \itemI{The goal is store the configuration of the web application persistently in a database. In our case the goal is to store the data in RDF data.}
 
 \subsection{Form definition}
@@ -50,7 +46,8 @@
 
 \itemI{Explanation of the main elements and their functionality}
 
-\itemII{Next that each form element has to represent a variable.  This is denoted with blue the wa:Variable. And the variable name from Image X. is taken by variable instance, which is represented by the form}{Here is important to explain the difference between the wa:SubFormAdder and its two subclasses, wa:ClassSelectorSubformAdder, and wa:InstanceSelectorSubformAdder. }
+\itemII{Next that each form element has to represent a variable.  This is denoted with blue the wa:Variable. And the variable name from Image X. is taken by variable instance, which is represented by the form}{Here is important to explain the difference between the wa:SubFormAdder and its two subclasses, wa:ClassSelectorSubformAdder, \\
+	and wa:InstanceSelectorSubformAdder. }
 
 \img{\IVI}{difference.png}{Difference between sub form adders}
 
@@ -59,24 +56,63 @@
 \img{\IVI}{formDescRDF.png}{Form descriptor RDF Data}
 
 
-
-
-
 \subsection{Data definition}
 
+\begin{itemize}
+	\item The goal of the data definition data scheme is to store what kind of triples has to be created
+	\item The triples are denoted in the RDF vocabulary as statement
+\end{itemize}
 \img{\IVI}{statement.png}{Statement in RDF Vocabulary}
 
+\begin{itemize}
+	\item There are two types of statements - the restriction and the data statement
+	\item And the nodes of the data graph to create is represented by the class \\
+	wa:Variable
+	\item These three classes represent the core of the ontology for data
+\end{itemize}
 \img{\IVI}{coreOntology.png}{Core ontology}
+
+\begin{itemize}
+	\item The class wa:Variable is specified into Resource-, Class- and LiteralVariable
+	\item And the LiteralVariable into further XML type variables	
+	\item Each variable have to have name, and they can hold a constant value or noted as main inputs
+	if their value do not come from the form, but initially by the form loader HTTP request. In case of VIVO the
+	main input variables are always the subjectUri, predicateUri, and rangeUri.
+\end{itemize}
 
 \img{\IVI}{variableTypes.png}{Variable types}
 
+\begin{itemize}
+	\item There are two different types of statements, the class and the instance restriction statements. 
+	\item The class is used between classes, like which bone organ belongs to which skeletal division
+	\item And the instance in turn expresses constraint between existing instances of the dataset to create, like the city-country relationship in the problem statement.
+	\item The wa:TypeStatement is a statement, where the predicate is RDF type. It is interesting because it can act both as retriction and data statement as well. If the subject (so the instance) of the type statement appears on the interface, then
+	the it is considered as restriction, but if the object (the class), then the it is data statement.
+	\item Moreover the multi triple is really important because through them can be the multi dimensionality of the form expressed.
+\end{itemize}
+
 \img{\IVI}{ontologyStatement.png}{Statement types and attributes}
+
+\begin{itemize}
+	\item	The following image show the configuration dataset for the problem in the previous chapter.
+	\item In the middle there is a multi statement which expresses that more addresses of to a user can be assigned.
+\end{itemize}
 
 \img{\IVI}{tripleSet1.png}{Statement configuration dataset I}
 
+
+\begin{itemize}
+	\item	And here comes the type statement which is in this case acts as a restriction, and an instance restriction triple between city and country.
+\end{itemize}
+
 \img{\IVI}{tripleSet2.png}{Statement configuration dataset II.}
 
-\img{\IVI}{formDefinition1.png}{Statement definition I}
+\begin{itemize}
+	\item	The following image show the definition of the multi dimensional form.  
+	\item The literal field are not depicted for the sake of simplicity but they are connected to the \#form1 and \#subFormAdder instances
+\end{itemize}
+
+\img{\IVI}{formDefinition1.png}{Form definition dataset}
 
 \subsection{VIVO adoption}
 
@@ -88,49 +124,68 @@
 
 \section{Server-side implementation}
 
+\begin{itemize}
+	\item This section introduces how application on the server is able to operate based on data queried from the configuration dataset
+	
+\end{itemize}
 
 \subsection{Overview}
 
+\begin{itemize}
+	\item The following image shows the most important steps of the data input process
+\end{itemize}
 
 \img{\IVII}{overview.png}{Overview of the mechanism on the server}
 
-\itemI{In the following chapters the problems and their modeling which were discussed in the previous chapters will be investigated in a bit more detail by explaining the solution for them}
 
 \subsection{Form representation in Java}
 
 \img{\IVII}{uml1.png}{UML Diagram of the classes for the form}
 
-Two routines :
-\itemII{One SPARQL for literals}{And one for the initialization of the elements which returns a list of uris and types.}
+\begin{itemize}
+	\item The literal fields asks for the type of the variable it represents and the type of the descriptor will be based on this literal field.
+\end{itemize}
 
-\img{\IVII}{rdfToJava.png}{From RDF to Java}
-
-\itemI{The literal fields asks for the type of the variable it represents and the type of the descriptor will be based on this literal field.}
 
 \img{\IVII}{formDescriptor.png}{Form descriptor JSON object}
 
 \subsection{Data model in Java}
 
-\itemII{Querying the configuration triples regarding statements}{Processing into the tree structured graph model}
+
+\begin{itemize}
+	\item Querying the configuration triples regarding statements
+	\item Processing into the tree structured graph model
+\end{itemize}
+
 
 \img{\IVII}{graphUML.png}{Graph UML}
 
-Validation
+Validation:
 
-\itemIII{Data dependencies can be over graphs}{But graphs can be connected only through multi statements}{The graph has to be a tree. There are no use cases right now where any loop would be required}
+\begin{itemize}
+	\item Data dependencies can be over graphs
+	\item But graphs can be connected only through multi statements
+	\item The graph has to be a tree. There are no use cases right now where any loop would be required
+\end{itemize}
 
 \img{\IVII}{jsonVSGraph.png}{JSON vs graph model}
 
-\itemII{Data saving mechanism explanation}{Data retrieval mechanism explanation}
+\begin{itemize}
+	\item Data saving mechanism explanation
+	\item Data retrieval mechanism explanation
+\end{itemize}
 
 \subsection{Data Dependencies}
 
 
-•	The data dependencies are important only for the form. 
-•	Everything starts with the form descriptor.
-•	There are cases where from the main form no element appears on the form.
-•	A have to bring examples to some problems that illustrate the problem.
-•	Here comes at first the ontology awareness into question.
+\begin{itemize}
+	\item The data dependencies are important only for the form. 
+	\item Everything starts with the form descriptor.
+	\item There are cases where from the main form no element appears on the form.
+	\item A have to bring examples to some problems that illustrate the problem.
+	\item Here comes at first the ontology awareness into question....
+\end{itemize}
+
 
 \img{\IVII}{exampleProblem.png}{Example problem}
 
@@ -140,13 +195,19 @@ where,
 
 \img{\IVII}{restrictionDirection.png}{Two restriction directions}
 
-•	Post processing for different restriction types
+\begin{itemize}
+	\item Post processing for different restriction types
+\end{itemize}
+
 
 \img{\IVII}{variableDependency.png}{Getting dependent data}
 
 \subsection{Editing and deleting data}
 
-•	This feature was not introduced on the overview image but it is really important.
+\begin{itemize}
+	\item This feature was not introduced on the overview image but it is really important.
+\end{itemize}
+
 
 \img{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
 
@@ -155,91 +216,170 @@ where,
 
 \img{\IVII}{selectorVsFormGraph.png}{Selector VS form graph}
 
-Goal is to display more information about instances to select in order to facilitate their finding
-By such advanced window it possible to offer filter options and loading the subset of the instances by introducing LIMIT on the SPARQL query. It could make the page more efficient
-But such element requires JavaScript code which could become complex
-Even if we need to offer some Navigator featured introduced in Section 3.2.3
+\begin{itemize}
+	\item Goal is to display more information about instances to select in order to facilitate their finding
+	\item By such advanced window it possible to offer filter options and loading the subset of the instances by introducing LIMIT on the SPARQL query. It could make the page more efficient
+	\item But such element requires JavaScript code which could become complex
+	\item Even if we need to offer some Navigator featured introduced in Section 3.2.3
+\end{itemize}
 
 
 \img{\IVII}{navigatorClassDiagram.png}{Navigator class diagram}
 
-•	Example with RDF data configuration and routine for 
+\begin{itemize}
+	\item Example with RDF data configuration and routine for 
+\end{itemize}
 
 
 
 \section{Client-side implementation}
 
+\begin{itemize}
+	\item In this chapter it is discussed how the forms are implemented in JavaScript
+	\item Each subsection contains code examples that gradually introduce the functionalities
+	\item Codes are mostly simplified to facilitate the understanding		
+\end{itemize}
+
 
 \subsection{Object oriented JavaScript}
 
-\img{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
 
-\img{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
+\begin{itemize}
+	\item The task of code in on the interface is to operate based on a configuration data dynamically.
+	\item There two subtasks, the generation of the UI elements (i.e input fields, buttons, etc.) and manage the data input and display on the form
+	\item To solve these problem, an object oriented approach is applied
+	\item This means that there are classes that handles both the UI and the data related tasks
+	\item See an example for the class definition in JS
+\end{itemize}
 
-\subsection{Form loading}
+	
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript class}, captionpos=b]
+class StringField {
+  constructor(...){
+    this.container = $("<div/>")
+    ...
+  }
+  someMethod(){...}			
+}
+\end{lstlisting}
+	
+\begin{itemize}
+	\item Each form elements are represented by such objects, and the form loading based on the descriptor runs by the initialisation of these elements.  
+\end{itemize}
 
-•	As each page in VIVO the form page is defined in an Freemarker Template File
-•	This template file contains only one HTML element – the div for the form
-•	Otherwise each JavaScript library is imported by the generic form
-•	Initially there is only one input variable of the .ftl file, which is the editKey.
-•	This variable editKey holds the values, based on the server finds the already initiated form configuration object
-
-\img{\IVIII}{2_1_formLoading_Workflow.png}{Form loading workflow }
-
-•	The form elements are loaded through the as well JavaScript classes
-•	The classes handles both the interface and data related parts of the form elements
-•	The form descriptor contains of four fields
-o	formDescriptor 
-o	dataDependencies
-o	independentData
-o	formData (in case if we are on edit mode)
-
-\img{\IVIII}{script1.png}{Initial loading }
-\img{\IVIII}{2_3_formLoaderClass.png}{Form loader class}
-
-\subsection{Generating form based on configuration data}
-
-
-•	This section introduces the basic principle of dynamic entry forms
-•	For this purpose I will show example configuration file
-•	The line with the AJAX call is simplified notation for routine which stops until the request from the server do not arrive
-•	The most important part is the form initialization on the x-th (numbering comes later) line where the new form object appears.
-•	The really first task of the Form object is to fill its container object with form elements
-
-
-\img{\IVIII}{3_1_Form_Class.png}{Form class}
-
-•	Where html is a utility functions which returns the DOM object for div
-•	Then this div is filled with container div for the elements
-•	So the class Form is just a collector in the first line of the element
-•	The input form elements will be loaded by the class FormElement which is the superclass of the form elements
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form generation based on configuration data}, captionpos=b]
+var formData = new Object()
+for(var i = 0, i < formElements.length; i++){
+  var descriptor = formElements[i]
+  var element = null
+  switch(descriptor.type){
+    case "stringField":
+      element = new StringField(descriptor, formData)
+      break;
+    case "..." : 
+  }
+  $("#formContainer").append(element.container)
+}	
+\end{lstlisting}
 
 
-\img{\IVIII}{3_2_LiteralField.png}{Form class}
+%\img{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
+%\img{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
 
-\subsection{Selectors and sub form adders}
-
-•	The three object coming from the server
-•	FormDescriptor, DataDepencies, IndependentData
-•	Then after the processing of the form descriptor we can create the 
-
-\img{\IVIII}{selector.png}{Selector option setting}
-
-\img{\IVIII}{subformRoutine.png}{Sub form routine}
-
-•	The main form contains only variables that are independent, because there is now parent from whose values could act as inputs
-•	But in the sub form adder there can be 
-
-\img{\IVIII}{subFormClass.png}{Sub form routine}
+\begin{itemize}
+	\item Explanation of the code ...
+	\item This is the way how it is possible to generate interfaces
+\end{itemize}
 
 
-\subsection{Showing existing data}
+\subsection{Handling data}
 
-•	The code of the classes are gradually extended for better understanding
+\begin{itemize}
+	\item Above the element generation for the different forms it is necessary to handle of course the data based on the descriptor
+	\item Each form element's descriptor contains a field called dataKey. The value of this field will be the key of data in the form data object.
+\end{itemize}
 
-\img{\IVIII}{existingData.png}{Editing routine}
 
-•	formData.formOptions
-•	Subform adds the existing form based on the array in the formData. 
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
+class StringField {
+  constructor(descriptor, formData){
+    this.descriptor = descritor
+    this.formData = formData
+    this.inputField = $("<input/>").change(this.handler)
+  }
+  
+  handler(){
+     this.formData[this.descriptor.dataKey]=this.inputField.val() 
+  }			
+}
+\end{lstlisting}
 
+
+
+\begin{itemize}
+	\item The previous code illustrates how the form element object set the global form data field based on configuration data
+	\item Further details about the code...
+\end{itemize}
+
+\begin{itemize}
+	\item Handling existing data
+	\item It can be the case that form is loaded for editing. Then in this case the formData variable coming as input to the constructor contains the value for the dataKey? 
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
+class StringField {
+  constructor(descriptor, formData){
+    if(formData[descriptor.dataKey] != undefined){
+    	this.editMode = true
+    }
+  }
+
+  handler(){
+    if(this.editMode){
+    	var oldValue = this.formData[this.descriptor.dataKey]
+		var newValue = this.inputField.val() 
+    }
+    AJAX.updateField(oldValue, newValue)
+  }			
+}
+\end{lstlisting}
+
+
+\subsection{Sub form adders}
+
+
+\begin{itemize}
+	\item Descriptor of the sub form adder contains a field called subform
+	\item Then the initialisation of the form happend through the Form class.	
+	\item This is used by the initial form loading as well
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, captionpos=b]
+class SubformAdder {
+  constructor(descriptor, formData){
+    ...
+    this.addButton = $("<div/>").text("Add").click(this.add)    
+    this.subFormDescriptor = this.descriptor.subForm
+    this.formData[this.descriptor.dataKey] = []
+  }
+
+  add(){
+    var subformDataObject = new Object()
+    this.formData[this.descriptor.dataKey].
+  		push(subFormDataObject) 
+    this.subFormContainer.append(
+    	new Form(this.subFormDescriptor, subFormDataObject))
+  }
+}
+\end{lstlisting}
+
+\begin{itemize}
+	\item Important for each subform a new JSON object is generated which is pushed to the array		
+	\item The same way the subform adder checks if the this.formData[this.descriptor.dataKey] contains already existing data and adds them if they are there
+\end{itemize}
+
+
+\subsection{Data dependency}
+
+\subsection{Form validation}
 

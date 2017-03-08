@@ -58,15 +58,15 @@ Where the variable ?categoricalLabel represents the expression of the token. The
 
 \subsection{Multi dimensional form}
 
-Imagine a problem of registering a new user to a web portal. The form offers the fields for name, e-mail address, birth, and address. The address consists of three fields, of the country city and the street-nr field. The following image illustrates two types of user registry form. The first (a) is single form, which consists of the six fields. It has been already discussed in the Preliminaries.
+Imagine a problem of registering a new user to a web portal. The form offers the fields for name, e-mail address, birth, and address. The address consists of three fields, of the country city and the street-nr field. See figure~\ref{sVsM} illustrates two types of user registry form. On the left (a) there is single form, which consists of the six fields. Each field holds a literal value added by the user. However on the right (b), there is a multi dimensional form, that allows the user to add multiple addresses. The implementation of such entry form requires JavaScript routines, that dynamically loads as many subform, as many times the user clicks the add button. Moreover thus the static HTML form is not sufficient for this task, JS is responsible for the reading of the data from the elements into a JSON object.
+On figure~\ref{jSON_mVsM} 
 
-\img{\III}{singleVsMultiDimensionalForm.png}{Single vs. multi dimensional form}
+\imgK{\III}{singleVsMultiDimensionalForm.png}{Single vs. multi dimensional form}{sVsM}
 
-It is possible to add multiple arrays.
 
-\img{\III}{multiJSON.png}{JSON object for multi dimensional forms}
+\imgK{\III}{multiJSON.png}{JSON object for multi dimensional forms}{jSON_mVsM}
 
-This requires a JavaScript routine that initiates the sub forms. 
+
 
 \img{\III}{multiAddressDataModel.png}{Data model}
 
