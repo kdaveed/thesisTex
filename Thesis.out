@@ -38,6 +38,13 @@
 \BOOKMARK [2][-]{subsection.4.1.2}{Form definition}{section.4.1}% 38
 \BOOKMARK [2][-]{subsection.4.1.3}{Data definition}{section.4.1}% 39
 \BOOKMARK [2][-]{subsection.4.1.4}{VIVO adoption}{section.4.1}% 40
-\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 41
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 42
-\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 43
+\BOOKMARK [1][-]{section.4.2}{Server-side implementation}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.2.1}{Overview}{section.4.2}% 42
+\BOOKMARK [2][-]{subsection.4.2.2}{Form representation in Java}{section.4.2}% 43
+\BOOKMARK [2][-]{subsection.4.2.3}{Data model in Java}{section.4.2}% 44
+\BOOKMARK [2][-]{subsection.4.2.4}{Data Dependencies}{section.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.2.5}{Editing and deleting data}{section.4.2}% 46
+\BOOKMARK [2][-]{subsection.4.2.6}{Navigator}{section.4.2}% 47
+\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 48
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 49
+\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 50
