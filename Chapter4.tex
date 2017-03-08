@@ -1,12 +1,92 @@
 \chapter{Implementation}
 
-\section{Architecture}
+
+\section{Web application ontology}
+
+
+\subsection{Introduction}
+
+\begin{itemize}
+	\item Computer programs are able to overtake exercise from humans to accelerate work. In this case work we want speed up is the application development. 
+\end{itemize}
+
+\img{\IVI}{basicFlow.png}{Basic workflow}
+
+\begin{itemize}
+	\item  For example we have the form definition.
+\end{itemize}
+
+
+\begin{lstlisting}[language=html, basicstyle=\footnotesize]
+<form action="http://example.org/newUser">
+   	Username <input type="text" name="userName"></br>
+	Password <input type="text" name="password"></br>
+	<input type="submit">Submit</input>
+</form>
+\end{lstlisting}
+
+\itemI{Let the developer concentrate on the meaningful parts.}
+
+\begin{lstlisting}[basicstyle=\footnotesize]
+{
+  type : "form",
+  action : "http://example.org/newUser",
+  elements : [
+    { type : "text", text : "Username", varName : "userName"},
+    { type : "text", text : "Password", varName : "password"}
+  ]
+}
+\end{lstlisting}
+
+\img{\IVI}{frameworkFunc.png}{Framework functionality}
+
+
+
+\itemI{The goal is store the configuration of the web application persistently in a database. In our case the goal is to store the data in RDF data.}
+
+\subsection{Form definition}
+
+\img{\IVI}{ontologyForm.png}{Web application ontology for the form}
+
+\itemI{Explanation of the main elements and their functionality}
+
+\itemII{Next that each form element has to represent a variable.  This is denoted with blue the wa:Variable. And the variable name from Image X. is taken by variable instance, which is represented by the form}{Here is important to explain the difference between the wa:SubFormAdder and its two subclasses, wa:ClassSelectorSubformAdder, and wa:InstanceSelectorSubformAdder. }
+
+\img{\IVI}{difference.png}{Difference between sub form adders}
+
+\itemI{min, max cardinality will be here addressed}
+
+\img{\IVI}{formDescRDF.png}{Form descriptor RDF Data}
 
 
 
 
 
+\subsection{Data definition}
 
+\img{\IVI}{statement.png}{Statement in RDF Vocabulary}
+
+\img{\IVI}{coreOntology.png}{Core ontology}
+
+\img{\IVI}{variableTypes.png}{Variable types}
+
+\img{\IVI}{ontologyStatement.png}{Statement types and attributes}
+
+\img{\IVI}{tripleSet1.png}{Statement configuration dataset I}
+
+\img{\IVI}{tripleSet2.png}{Statement configuration dataset II.}
+
+\img{\IVI}{formDefinition1.png}{Statement definition I}
+
+\subsection{VIVO adoption}
+
+\itemI{As it was described in the previous section in VIVO each custom entry form is called by an HTTP request that contains three parameters: subjectUri, predicateUri and objectUri.}
+
+\img{\IVI}{base.png}{Base definition of the data input process}
+
+\itemI{So the key point is that the data input process instances can be queried by the property coming with the request.}
+
+\section{Server-side implementation}
 
 
 
