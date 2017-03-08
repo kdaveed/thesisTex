@@ -45,6 +45,12 @@
 \BOOKMARK [2][-]{subsection.4.2.4}{Data Dependencies}{section.4.2}% 45
 \BOOKMARK [2][-]{subsection.4.2.5}{Editing and deleting data}{section.4.2}% 46
 \BOOKMARK [2][-]{subsection.4.2.6}{Navigator}{section.4.2}% 47
-\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 48
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 49
-\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 50
+\BOOKMARK [1][-]{section.4.3}{Client-side implementation}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.3.1}{Object oriented JavaScript}{section.4.3}% 49
+\BOOKMARK [2][-]{subsection.4.3.2}{Form loading}{section.4.3}% 50
+\BOOKMARK [2][-]{subsection.4.3.3}{Generating form based on configuration data}{section.4.3}% 51
+\BOOKMARK [2][-]{subsection.4.3.4}{Selectors and sub form adders}{section.4.3}% 52
+\BOOKMARK [2][-]{subsection.4.3.5}{Showing existing data}{section.4.3}% 53
+\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 54
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 55
+\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 56

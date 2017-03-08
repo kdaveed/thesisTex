@@ -155,13 +155,91 @@ where,
 
 \img{\IVII}{selectorVsFormGraph.png}{Selector VS form graph}
 
-•	Goal is to display more information about instances to select in order to facilitate their finding
-•	By such advanced window it possible to offer filter options and loading the subset of the instances by introducing LIMIT on the SPARQL query. It could make the page more efficient
-•	But such element requires JavaScript code which could become complex
-•	Even if we need to offer some Navigator featured introduced in Section 3.2.3
+Goal is to display more information about instances to select in order to facilitate their finding
+By such advanced window it possible to offer filter options and loading the subset of the instances by introducing LIMIT on the SPARQL query. It could make the page more efficient
+But such element requires JavaScript code which could become complex
+Even if we need to offer some Navigator featured introduced in Section 3.2.3
 
 
 \img{\IVII}{navigatorClassDiagram.png}{Navigator class diagram}
 
 •	Example with RDF data configuration and routine for 
+
+
+
+\section{Client-side implementation}
+
+
+\subsection{Object oriented JavaScript}
+
+\img{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
+
+\img{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
+
+\subsection{Form loading}
+
+•	As each page in VIVO the form page is defined in an Freemarker Template File
+•	This template file contains only one HTML element – the div for the form
+•	Otherwise each JavaScript library is imported by the generic form
+•	Initially there is only one input variable of the .ftl file, which is the editKey.
+•	This variable editKey holds the values, based on the server finds the already initiated form configuration object
+
+\img{\IVIII}{2_1_formLoading_Workflow.png}{Form loading workflow }
+
+•	The form elements are loaded through the as well JavaScript classes
+•	The classes handles both the interface and data related parts of the form elements
+•	The form descriptor contains of four fields
+o	formDescriptor 
+o	dataDependencies
+o	independentData
+o	formData (in case if we are on edit mode)
+
+\img{\IVIII}{script1.png}{Initial loading }
+\img{\IVIII}{2_3_formLoaderClass.png}{Form loader class}
+
+\subsection{Generating form based on configuration data}
+
+
+•	This section introduces the basic principle of dynamic entry forms
+•	For this purpose I will show example configuration file
+•	The line with the AJAX call is simplified notation for routine which stops until the request from the server do not arrive
+•	The most important part is the form initialization on the x-th (numbering comes later) line where the new form object appears.
+•	The really first task of the Form object is to fill its container object with form elements
+
+
+\img{\IVIII}{3_1_Form_Class.png}{Form class}
+
+•	Where html is a utility functions which returns the DOM object for div
+•	Then this div is filled with container div for the elements
+•	So the class Form is just a collector in the first line of the element
+•	The input form elements will be loaded by the class FormElement which is the superclass of the form elements
+
+
+\img{\IVIII}{3_2_LiteralField.png}{Form class}
+
+\subsection{Selectors and sub form adders}
+
+•	The three object coming from the server
+•	FormDescriptor, DataDepencies, IndependentData
+•	Then after the processing of the form descriptor we can create the 
+
+\img{\IVIII}{selector.png}{Selector option setting}
+
+\img{\IVIII}{subformRoutine.png}{Sub form routine}
+
+•	The main form contains only variables that are independent, because there is now parent from whose values could act as inputs
+•	But in the sub form adder there can be 
+
+\img{\IVIII}{subFormClass.png}{Sub form routine}
+
+
+\subsection{Showing existing data}
+
+•	The code of the classes are gradually extended for better understanding
+
+\img{\IVIII}{existingData.png}{Editing routine}
+
+•	formData.formOptions
+•	Subform adds the existing form based on the array in the formData. 
+
 

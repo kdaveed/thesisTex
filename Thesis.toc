@@ -46,6 +46,12 @@
 \contentsline {subsection}{\numberline {4.2.4}Data Dependencies}{32}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Editing and deleting data}{33}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Navigator}{33}{subsection.4.2.6}
-\contentsline {chapter}{\numberline {A}Glossary}{38}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{43}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{43}{section.a.B.1}
+\contentsline {section}{\numberline {4.3}Client-side implementation}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Object oriented JavaScript}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Form loading}{34}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Generating form based on configuration data}{35}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Selectors and sub form adders}{36}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Showing existing data}{36}{subsection.4.3.5}
+\contentsline {chapter}{\numberline {A}Glossary}{43}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{48}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{48}{section.a.B.1}
