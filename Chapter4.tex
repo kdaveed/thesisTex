@@ -8,7 +8,7 @@
 	\item Computer programs are able to overtake exercise from humans to accelerate work. In this case work we want speed up is the application development. 
 \end{itemize}
 
-\img{\IVI}{basicFlow.png}{Basic workflow}
+\imgK{\IVI}{basicFlow.png}{Basic workflow}
 
 \begin{itemize}
 	\item  For example we have the form definition.
@@ -23,7 +23,7 @@
 </form>
 \end{lstlisting}
 
-\itemI{It can be modelled by a configuration dataset}
+\itemI{Can be modelled by a configuration dataset}
 
 \begin{lstlisting}[basicstyle=\footnotesize]
 {
@@ -36,24 +36,24 @@
 }
 \end{lstlisting}
 
-\img{\IVI}{frameworkFunc.png}{Framework functionality}
+\imgK{\IVI}{frameworkFunc.png}{Framework functionality}
 
 \itemI{The goal is store the configuration of the web application persistently in a database. In our case the goal is to store the data in RDF data.}
 
 \subsection{Form definition}
 
-\img{\IVI}{ontologyForm.png}{Web application ontology for the form}
+\imgK{\IVI}{ontologyForm.png}{Web application ontology for the form}
 
 \itemI{Explanation of the main elements and their functionality}
 
 \itemII{Next that each form element has to represent a variable.  This is denoted with blue the wa:Variable. And the variable name from Image X. is taken by variable instance, which is represented by the form}{Here is important to explain the difference between the wa:SubFormAdder and its two subclasses, wa:ClassSelectorSubformAdder, \\
 	and wa:InstanceSelectorSubformAdder. }
 
-\img{\IVI}{difference.png}{Difference between sub form adders}
+\imgK{\IVI}{difference.png}{Difference between sub form adders}
 
 \itemI{min, max cardinality will be here addressed}
 
-\img{\IVI}{formDescRDF.png}{Form descriptor RDF Data}
+\imgK{\IVI}{formDescRDF.png}{Form descriptor RDF Data}
 
 
 \subsection{Data definition}
@@ -62,7 +62,7 @@
 	\item The goal of the data definition data scheme is to store what kind of triples has to be created
 	\item The triples are denoted in the RDF vocabulary as statement
 \end{itemize}
-\img{\IVI}{statement.png}{Statement in RDF Vocabulary}
+\imgK{\IVI}{statement.png}{Statement in RDF Vocabulary}
 
 \begin{itemize}
 	\item There are two types of statements - the restriction and the data statement
@@ -70,7 +70,7 @@
 	wa:Variable
 	\item These three classes represent the core of the ontology for data
 \end{itemize}
-\img{\IVI}{coreOntology.png}{Core ontology}
+\imgK{\IVI}{coreOntology.png}{Core ontology}
 
 \begin{itemize}
 	\item The class wa:Variable is specified into Resource-, Class- and LiteralVariable
@@ -80,7 +80,7 @@
 	main input variables are always the subjectUri, predicateUri, and rangeUri.
 \end{itemize}
 
-\img{\IVI}{variableTypes.png}{Variable types}
+\imgK{\IVI}{variableTypes.png}{Variable types}
 
 \begin{itemize}
 	\item There are two different types of statements, the class and the instance restriction statements. 
@@ -91,34 +91,34 @@
 	\item Moreover the multi triple is really important because through them can be the multi dimensionality of the form expressed.
 \end{itemize}
 
-\img{\IVI}{ontologyStatement.png}{Statement types and attributes}
+\imgK{\IVI}{ontologyStatement.png}{Statement types and attributes}
 
 \begin{itemize}
 	\item	The following image show the configuration dataset for the problem in the previous chapter.
 	\item In the middle there is a multi statement which expresses that more addresses of to a user can be assigned.
 \end{itemize}
 
-\img{\IVI}{tripleSet1.png}{Statement configuration dataset I}
+\imgK{\IVI}{tripleSet1.png}{Statement configuration dataset I}
 
 
 \begin{itemize}
 	\item	And here comes the type statement which is in this case acts as a restriction, and an instance restriction triple between city and country.
 \end{itemize}
 
-\img{\IVI}{tripleSet2.png}{Statement configuration dataset II.}
+\imgK{\IVI}{tripleSet2.png}{Statement configuration dataset II.}
 
 \begin{itemize}
 	\item	The following image show the definition of the multi dimensional form.  
 	\item The literal field are not depicted for the sake of simplicity but they are connected to the \#form1 and \#subFormAdder instances
 \end{itemize}
 
-\img{\IVI}{formDefinition1.png}{Form definition dataset}
+\imgK{\IVI}{formDefinition1.png}{Form definition dataset}
 
 \subsection{VIVO adoption}
 
 \itemI{As it was described in the previous section in VIVO each custom entry form is called by an HTTP request that contains three parameters: subjectUri, predicateUri and objectUri.}
 
-\img{\IVI}{base.png}{Base definition of the data input process}
+\imgK{\IVI}{base.png}{Base definition of the data input process}
 
 \itemI{So the key point is that the data input process instances can be queried by the property coming with the request.}
 
@@ -135,19 +135,19 @@
 	\item The following image shows the most important steps of the data input process
 \end{itemize}
 
-\img{\IVII}{overview.png}{Overview of the mechanism on the server}
+\imgK{\IVII}{overview.png}{Overview of the mechanism on the server}
 
 
 \subsection{Form representation in Java}
 
-\img{\IVII}{uml1.png}{UML Diagram of the classes for the form}
+\imgK{\IVII}{uml1.png}{UML Diagram of the classes for the form}
 
 \begin{itemize}
 	\item The literal fields asks for the type of the variable it represents and the type of the descriptor will be based on this literal field.
 \end{itemize}
 
 
-\img{\IVII}{formDescriptor.png}{Form descriptor JSON object}
+\imgK{\IVII}{formDescriptor.png}{Form descriptor JSON object}
 
 \subsection{Data model in Java}
 
@@ -158,7 +158,7 @@
 \end{itemize}
 
 
-\img{\IVII}{graphUML.png}{Graph UML}
+\imgK{\IVII}{graphUML.png}{Graph UML}
 
 Validation:
 
@@ -168,7 +168,7 @@ Validation:
 	\item The graph has to be a tree. There are no use cases right now where any loop would be required
 \end{itemize}
 
-\img{\IVII}{jsonVSGraph.png}{JSON vs graph model}
+\imgK{\IVII}{jsonVSGraph.png}{JSON vs graph model}
 
 \begin{itemize}
 	\item Data saving mechanism explanation
@@ -187,20 +187,20 @@ Validation:
 \end{itemize}
 
 
-\img{\IVII}{exampleProblem.png}{Example problem}
+\imgK{\IVII}{exampleProblem.png}{Example problem}
 
 where,
 
-\img{\IVII}{explanation.png}{Elements of the simplified notation}
+\imgK{\IVII}{explanation.png}{Elements of the simplified notation}
 
-\img{\IVII}{restrictionDirection.png}{Two restriction directions}
+\imgK{\IVII}{restrictionDirection.png}{Two restriction directions}
 
 \begin{itemize}
 	\item Post processing for different restriction types
 \end{itemize}
 
 
-\img{\IVII}{variableDependency.png}{Getting dependent data}
+\imgK{\IVII}{variableDependency.png}{Getting dependent data}
 
 \subsection{Editing and deleting data}
 
@@ -209,12 +209,12 @@ where,
 \end{itemize}
 
 
-\img{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
+\imgK{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
 
 
 \subsection{Navigator}
 
-\img{\IVII}{selectorVsFormGraph.png}{Selector VS form graph}
+\imgK{\IVII}{selectorVsFormGraph.png}{Selector VS form graph}
 
 \begin{itemize}
 	\item Goal is to display more information about instances to select in order to facilitate their finding
@@ -224,7 +224,7 @@ where,
 \end{itemize}
 
 
-\img{\IVII}{navigatorClassDiagram.png}{Navigator class diagram}
+\imgK{\IVII}{navigatorClassDiagram.png}{Navigator class diagram}
 
 \begin{itemize}
 	\item Example with RDF data configuration and routine for 
@@ -283,8 +283,8 @@ for(var i = 0, i < formElements.length; i++){
 \end{lstlisting}
 
 
-%\img{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
-%\img{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
+%\imgK{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
+%\imgK{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
 
 \begin{itemize}
 	\item Explanation of the code ...
