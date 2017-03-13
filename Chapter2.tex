@@ -52,7 +52,7 @@ By the data entry creation the task of the controller is to get the values from 
 \imgK{\II}{9_example_java.png}{Example Java routine for data storage}
 
 
-\subsection{JavaScript}
+\subsection{JavaScript bacics}
 
 JavaScript (JS) is the programming language of the web browser. A JS code can be embedded into any HTML document between <script></script> tags. The most fundament capability of JS, is that it is capable of manipulating the elements of the web page. The following example illustrates a simple case, where clicking a button can change the page by adding a new div to an other div.
 
@@ -64,13 +64,43 @@ The HTML page contains with two divs with the id-s button and container. JavaScr
 
 to the script. The added function defines only one single operation, which uses the append function on the \$(“\#container”) div object. The input parameter is a new div object, created by JS with the text value Element. 
 
+
+\subsection{Data in JS}
+
+In JavaScript there are not typed variable, each type variable is defined by the keyword var. In the simplest case a JavaScript variable holds a single value of a  primitive type like boolean, string or number (a). Or it be an array (b) or an object (c), which is a set of key-value pairs. The following figure shows the definition of three main JavaScript variable types.
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript data types}, captionpos=b]
+var a = "someText"			//Data field
+var b = ["element", 3.45, false]	//Array
+var c = {				//JSON Object
+	name : "Bob",
+	friends : ["Jack", "John"],
+	studies : {
+		university : "University of Freiburg",
+		course : "Computer Science"
+	}		
+}
+\end{lstlisting}
+
+Important to note the values of JavaScript object (c) can be single values, arrays or even further objects. The access of these variables are quite simple.
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript data access}, captionpos=b]
+	b[2]  -->   3.45
+	c.studies.course --> "Computer Science"
+\end{lstlisting}
+
+
+These variables can be set either through the template variables like any value in the HTML document. Or the event handler routines can assign values to the variables based on user actions.
+
 \subsection{AJAX}
 
-AJAX is an abbreviation for Asynchronous JavaScript And XML. This is a technology that allows the web browser to exchange data with the server without reloading the whole page. AJAX calls are initiated from JavaScript and of course JS itself is responsible for handling the response. The following example shows and AJAX based solution for loading the whole text of an article.
+AJAX is an abbreviation for Asynchronous JavaScript And XML. This is a technology that allows the web browser to exchange data with the server without reloading the whole page. AJAX calls are initiated from JavaScript and of course JS itself is responsible for handling the response. This mechanism is where the JavaScript data plays a really important role. The following example shows and AJAX based solution for loading the whole text of an article.
 
 \imgK{\II}{11_ajax_load.png}{Loading new element through AJAX}
 
 The example from the image illustrates extends the previous case so that the click function contains the AJAX call. This call is practically the same as basic request from the <a/> tag in HTML. It has a URL and a data object. The data object in this example consists of only one key-value pair, with the key newsID. The value is the JavaScript variable id, whose own value was set at the beginning of the script part by \${news.id} template variable. This is the way that Java variables can be passed the JavaScript variables.  The done function of the AJAX routine defines what has to be done with the data that arrives. The response data coming from the server is accessible in the msg variable. In the example we assume the server return only the string of the whole text, which will be set as the text of the new div.
+
 
 \section{Semantic Web}
 
@@ -81,11 +111,12 @@ An RDF triple is called as well statement, which asserts that there is a relatio
 Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
 Common practice is to represent IRI with the notation prefix:suffix, where the prefix represents the namespace, and the expression means the concatenation of the namespace denoted by the prefix, with the suffix. This convention makes the RDF document more readable. The namespace of RDF is the http://www.w3.org/1999/02/22-rdf-syntax-ns\#, whose prefix is in most cases "rdf".   This is defined on the following way:
 
+
 \prefix{rdf}{http://www.w3.org/1999/02/22-rdf-syntax-ns\#}
 
 Literals are strings consisting of two elements. The first is the lexical form, which is the actual value, and the second is the data type IRI.  RDF uses the data types from XML schema. The prefix (commonly xsd) is the following :
 
-\prefix{xsd}{<http://www.w3.org/2001/XMLSchema\#}
+\prefix{xsd}{http://www.w3.org/2001/XMLSchema\#}
 
 So a literal value in RDF looks as follows:
 
@@ -138,8 +169,8 @@ Now everything is given to define the ontology for the example of the previous s
 
 OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. For example a restriction stating that the instances of the class eg:FootballTeam can build a triple through the eg:hasPlayer property only with the instances of eg:FootballPlayer class can be expressed the following way:
 
-\begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
-basicstyle=\ttfamily,frame=single]
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
+frame=single]
 eg:FootballTeam rdfs:subClassOf  [ 
 	rdf:type		owl:Restriction ; 
 	owl:onProperty		eg:hasPlayer ; 
@@ -152,7 +183,7 @@ Furthermore OWL is capable of expressing qualified cardinality restriction. For 
 
 
 \begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
-basicstyle=\ttfamily,frame=single]
+basicstyle=\footnotesize,frame=single]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX eg: <http://example.org> 
 
@@ -180,44 +211,44 @@ There are two new class types are the owl:Class and the owl:Restriction. The rdf
 
 SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a football player: 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query, label=lst:sparql,
-basicstyle=\ttfamily,frame=single]
-
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql,
+basicstyle=\footnotesize,frame=single]
 SELECT ?player  
 WHERE { 
-	?player	 	rdf:type		 eg:FootballPlayer .}	
+	?player		rdf:type	eg:FootballPlayer .	
 }
 \end{lstlisting}
 
 In the example the query consist of only one triple. The subject is a variable and the predicate and the object are constant. Therefore the triple store looks all the triples and checks the predicate is rdf:type and the object is eg:FootballPlayer. 
 It is well possible to not just ask the IRI of the players but further information by adding additional triples to the query in order to ask the name for example of the player:
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query, label=lst:sparql,
-basicstyle=\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql,
+basicstyle=\footnotesize,frame=single]
 SELECT ?player ?name 
 WHERE { 
-?player		rdf:type	 	eg:FootballPlayer .	
-?player		eg:name			?name .
+	?player		rdf:type	 eg:FootballPlayer .	
+	?player		eg:name		 ?name .
 }
 \end{lstlisting}
 
 The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query, label=lst:sparql,
-basicstyle=\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql,
+basicstyle=\footnotesize,frame=single]
 SELECT ?person ?name
 WHERE {
-eg:FootballTeam	rdfs:subClassOf		?restriction .
-?restriction	rdf:type		owl:Restriction .
-?restriction	owl:onProperty		eg:hasPlayer .
-?restriction	owl:allValuesFrom	?playerType .
-?player		rdf:type		?playerType .
-?player	eg:name	?name . }
+	eg:FootballTeam	rdfs:subClassOf		?restriction .
+	?restriction	rdf:type		owl:Restriction .
+	?restriction	owl:onProperty		eg:hasPlayer .
+	?restriction	owl:allValuesFrom	?playerType .
+	?player		rdf:type		?playerType .
+	?player	eg:name	?name . 
+}
 \end{lstlisting}
 
 \section{VIVO Framework}
 
-VIVO is an open source web application framework, developed particularly for browsing and editing RDF data. VIVO utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt the pages to the ontology.  It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset.  This dataset is in RDF too, and describes the way in which the data is displayed and edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without coding. Finally there is a possibility to import any RDF file to VIVO’s triple store.
+VIVO is an open source web application framework, developed particularly for browsing and editing RDF data. VIVO utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt its pages to the ontology.  It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset.  This dataset is in RDF too, and describes the way in which the data is displayed and can be edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without any coding. Finally there is a possibility to import any RDF file to VIVO’s triple store.
 
 \subsection{Class groups}
 
@@ -225,33 +256,35 @@ One important feature of the VIVO framework is the possibility to order the clas
 
 \imgK{\II}{18_document_class_group.png}{Document class group on the admin panel}
 
-Further possibility of class groups that it is possible to create links on the main menu (can be seen on the top of Figure 16), which redirects to a page where all the instances are listed that belong to one of the classes of the class group. 
+Further possibility of class groups that it is possible to create links on the main menu (can be seen on the top of \figref{classGroupPage}), which redirects to a page where all the instances are listed that belong to one of the classes of the class group.
 
-\imgK{\II}{19_vivo_class_group.png}{ VIVO class group page for documents}
+\img{\II}{19_vivo_class_group.png}{ VIVO class group page for documents}{classGroupPage}
 
-The application configuration showed in the last two images is  defined by the following set of configuration triples.
+The application configuration showed in the last two images is  defined by the set of configuration triples on \figref{rdfConfigData}.
 
-\imgK{\II}{20_rdf_config_data.png}{ RDF configuration data in VIVO}
+\img{\II}{20_rdf_config_data.png}{ RDF configuration data in VIVO}{rdfConfigData}
 
 There are three instances of the classes display:NavigationElement, display:ClassGroupPage and for vitro:ClassGroup. The triples itself are self-explanatory, but important to note that property vitro:inClassGroup is the one that connects the configuration dataset to the domain ontology.  
 
 \subsection{Profile Pages}
 
-A profile pages in VIVO displays information about a particular RDF instance. These pages can be reached from the list on the class group pages. The profile page organizes the information into tabs. Each tab displays the properties of a specific property group.  The next image shows a screenshot from the profile page under the Overview tab.
+A profile pages in VIVO displays information about a particular RDF instance. These pages can be reached by clicking one of the entries of the list on the class group pages. The profile page organizes data connected to the individual into tabs. Each tab displays the properties of a specific property group. \figref{vivoProfilePage} shows a screenshot from the profile page under the Overview tab.
 
-\imgK{\II}{21_profile_page.png}{VIVO profile page layout}
+\img{\II}{21_profile_page.png}{VIVO profile page layout}{vivoProfilePage}
 
 As it was already addressed this page adopts to the ontology by querying the properties whose domain or range is the type of the instance to display.  The properties bibo:author and vivo:description are assigned to the property group overview, and they appear on the page only because the both have the domain bibo:Document class.
 
-\imgK{\II}{22_profile_page_config.png}{Triples contributing to the displayed profile page layout}
+\img{\II}{22_profile_page_config.png}{Triples contributing to the displayed profile page layout}{configTriples}
+
+An additional important feature of VIVO is the definition of so-called faux properties. They are really similar to the rdfs:subProperty, but they are considered by the profile pages.
 
 \subsection{Default Data Entry Forms}
 
-On Figure 21, next to the predicate labels (authors, description) there are plus image elements, which are a links. These links redirect the user to data entry forms where new triple can be added. 
+On \figref{configTriples}, next to the predicate labels (authors, description) there are plus image elements, which are a links. These links redirect the user to data entry forms where new triple can be added. 
 
-\imgK{\II}{23_http_request.png}{HTTP request for data entry form}
+\img{\II}{23_http_request.png}{HTTP request for data entry form}{httpEntryForm}
 
-They initiate the HTTP request depicted on Figure 23. The server gets with which subject and predicate the triple has to be created.
+They initiate the HTTP request depicted on \figref{httpEntryForm}. The server gets with which subject and predicate the triple has to be created.
 
 The subject of the triple is the instance; from whose the profile page the request has been initiated. The predicate is the property to which the link belongs. The data entry forms allows the user to set the object of this triple. By the property bibo:author the domain is the class foaf:Person, thus application offers each existing instance of this class to select, or allows to add a new instance as an object. 
 
@@ -267,10 +300,11 @@ In the case of the property vivo:description, the domain is the class rdfs:Liter
 VIVO allows the editing of the triples through default entry forms only one by one. However it is often the case that it desired to add multiple triples, thus larger dataset by one entry form. This is as well possible in VIVO through custom entry form definition.
 Let assume an entry form, which let the user add new publications to person instance. About the publication its title, abstract and the date of publishing can be stored. The left part of following image shows dataset of the example. The red nodes denote the variables that are coming as input from the entry form; the green means that its value has to be an unused IRI, and the grey stands for constants. 
 
-\imgK{\II}{26_data_def.png}{Data definition graphical (left) and lexical (right)}
+\imgK{\II}{26_data_def.png}{Data definition graphical (left) and lexical (right)}{dataDef}
 
-The variable ?subject is the instance from whose profile page entry form was called.  To declare the information held by the graphical representation of the triples from Figure 25, three static Java variables are needed. Two arrays of string for the inputs and new resources (literalsFromRequest, newResources) and a string for the triples (tripleString).  Moreover the configuration class has an additional variable for defining the template file for the form layout (VIVO uses Freemarker template engine, and the .ftl extension stands for Freemarker Template File). 
+The variable ?subject is the instance from whose profile page entry form was called.  To declare the information held by the graphical representation of the triples from \figref{dataDef}, three static Java variables are needed. Two arrays of string for the inputs and new resources (literalsFromRequest, newResources) and a string for the triples (tripleString).  Moreover the configuration class has an additional variable for defining the template file for the form layout (VIVO uses Freemarker template engine, and the .ftl extension stands for Freemarker Template File). 
 The last step towards the definition of the custom entry form is to connect the property eg:Published with the predicate vitro:customEntryFormAnnotation to the literal value that holds the name of the entry form configuration class.
 
 \imgK{\II}{27_cef_class_def.png}{Definition of custom entry form configuration class }
+
 
