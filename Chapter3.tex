@@ -11,36 +11,44 @@ The subject of the anthropological investigations is primarily human skeletal re
 	\item Bone Organ – fma:5018
 \end{itemize}
 
-The class Bone Organ is the superclass of all bones in the human skeleton.  Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both case is expressed by the property fma:systemic\_part\_of. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions.
+The class \textit{Bone Organ} is the superclass of all bones in the human skeleton.  Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions.
 
 \imgK{\III}{1ontologyStructure.png}{Ontology structure for skeleton}
 
-The most important skeletal subdivision for our project is the skull. Skull has the peculiarity that it consists not directly of bones but two of other subdivisions, which consists of the Bone Organ subclasses.
 
-%
-\imgK{\III}{skullScheme.png}{FMA scheme for skull} 
-
-The following image illustrates then the data structure of skull.
-
-\imgK{\III}{rdfSkull.png}{RDF Triple representation of a skull} 
-
-To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has to be sent from the client to the server, but a multi dimensional dataset. 
-
-\subsection{Ontology Extensions}
-
-It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
-Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
-
-\imgK{\III}{skelInv.png}{Skeletal Inventory Data Structure} 
-
-The variable ?skeletalInventory is the instance of the class rdfbones:SkeletalInventory, while the ?boneSegment is from the class rdfbones:SegmentOfSkeletalElement. The core ontology of the project contains a subclass of the rdfbones:SkeletalInventory, the rdf:PrimarySkeletalInventory. This skeletal inventory type is for skeletal remain collections where only the whole bone organs have to be addressed.  The way to define custom bone segments is always through a custom skeletal inventories, which contains restrictions on the property obo:isAbout and on the class of custom bone segments. Of course the custom bone segments has to be assigned to the bone organ class they belong to, via restrictions on property obo:systemic\_part\_of. The following image illustrates the extension definition.
+In our project the most important element is the skull. \figref{tripleSkull} 
 
 
-\imgK{\III}{ontExtScheme.png}{Ontology extension scheme}
+\img{\III}{rdfSkull.png}{RDF Triple representation of a skull}{tripleSkull} 
 
-As these extensions are expressed by OWL restriction the application can query the definitions. Consequently if the custom entry form is called from the profile of a skeletal inventory instance, then the entry form processor routine can ask, what bone segment are defined to the type of the subject variable coming as input, and can offer them on the interface.
+
+To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has 
+to be sent from the client to the server, but a multi dimensional dataset. Like this: 
+
+
+\begin{lstlisting}[captionpos=b, caption=Form data representing skull, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+{
+	skeletalSubdivisionUri : "FMA:46565",
+	sytemic_parts : [{
+		uri : "FMA:53672",
+		systemic_parts : [{
+			uri : "FMA:52788",  //Right parietal bone
+		} , { ... }]
+	} , { ... }
+	]	
+}
+\end{lstlisting}
+
+
+Here the really important point the not only values are added like the simple form of the previous examples, but some elements can be added or just or just leaved. This leads to more dynamic
+interfaces.
 
 \subsection{Study Design Execution}
+
+
+\img{\III}{rdfBonesO.png}{RDF Triple representation of a skull}{tripleSkull} 
+
 
 In most investigations the researcher take a set of bones belong to one individual and examine different tokens. Tokens refer to specific features of parts or regions of bones. These token have particular expressions.
 
@@ -56,6 +64,22 @@ Where the variable ?categoricalLabel represents the expression of the token. The
 
 
 Mention that the task of the user is to add some elements if they exists or not.
+
+
+\subsection{Ontology Extensions}
+
+It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
+Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
+
+\imgK{\III}{skelInv.png}{Skeletal Inventory Data Structure} 
+
+The variable ?skeletalInventory is the instance of the class rdfbones:SkeletalInventory, while the ?boneSegment is from the class rdfbones:SegmentOfSkeletalElement. The core ontology of the project contains a subclass of the rdfbones:SkeletalInventory, the rdf:PrimarySkeletalInventory. This skeletal inventory type is for skeletal remain collections where only the whole bone organs have to be addressed.  The way to define custom bone segments is always through a custom skeletal inventories, which contains restrictions on the property obo:isAbout and on the class of custom bone segments. Of course the custom bone segments has to be assigned to the bone organ class they belong to, via restrictions on property obo:systemic\_part\_of. The following image illustrates the extension definition.
+
+
+\imgK{\III}{ontExtScheme.png}{Ontology extension scheme}
+
+As these extensions are expressed by OWL restriction the application can query the definitions. Consequently if the custom entry form is called from the profile of a skeletal inventory instance, then the entry form processor routine can ask, what bone segment are defined to the type of the subject variable coming as input, and can offer them on the interface.
+
 
 
 \section{RDF Data input}
