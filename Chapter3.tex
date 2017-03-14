@@ -35,6 +35,7 @@ Important that the skeletal subdivision instances do not appear on the dataset o
 
 The variable ?skeletalInventory is the instance of the class rdfbones:SkeletalInventory, while the ?boneSegment is from the class rdfbones:SegmentOfSkeletalElement. The core ontology of the project contains a subclass of the rdfbones:SkeletalInventory, the rdf:PrimarySkeletalInventory. This skeletal inventory type is for skeletal remain collections where only the whole bone organs have to be addressed.  The way to define custom bone segments is always through a custom skeletal inventories, which contains restrictions on the property obo:isAbout and on the class of custom bone segments. Of course the custom bone segments has to be assigned to the bone organ class they belong to, via restrictions on property obo:systemic\_part\_of. The following image illustrates the extension definition.
 
+
 \imgK{\III}{ontExtScheme.png}{Ontology extension scheme}
 
 As these extensions are expressed by OWL restriction the application can query the definitions. Consequently if the custom entry form is called from the profile of a skeletal inventory instance, then the entry form processor routine can ask, what bone segment are defined to the type of the subject variable coming as input, and can offer them on the interface.
@@ -54,31 +55,44 @@ Where the variable ?categoricalLabel represents the expression of the token. The
 \imgK{\III}{extGlab.png}{Ontology extension for Glabella}
 
 
+Mention that the task of the user is to add some elements if they exists or not.
+
+
 \section{RDF Data input}
 
 \subsection{Multi dimensional form}
 
-Imagine a problem of registering a new user to a web portal. The form offers the fields for name, e-mail address, birth, and address. The address consists of three fields, of the country city and the street-nr field. See figure~\ref{sVsM} illustrates two types of user registry form. On the left (a) there is single form, which consists of the six fields. Each field holds a literal value added by the user. However on the right (b), there is a multi dimensional form, that allows the user to add multiple addresses. The implementation of such entry form requires JavaScript routines, that dynamically loads as many subform, as many times the user clicks the add button. Moreover thus the static HTML form is not sufficient for this task, JS is responsible for the reading of the data from the elements into a JSON object. On figure~\ref{jSON_mVsM} the resulting data can be seen, where the blue box represents an array for the objects of the subform.
-Figure ~\ref{userDataModel} illustrates the data model, by denoting with an additional box, that multiple addresses can be added, where the key of the array will be the string "addresses".
+As it was addressed in the previous section each data input process of the application can be modeled by means of a tree style data structure. This means in terms of the data of the form, that just single key-value pairs like by the static HTML form is not sufficient for the problem. Therefore the task is provide such an interface that allows the user to add dynamically subforms, whose data object will be stored in arrays. \figref{mdfl} illustrates the idea of the structure. 
 
-\img{\III}{singleVsMultiDimensionalForm.png}{Single vs. multi dimensional form}{sVsM}
+\img{\III}{multiDimensionalForm.png}{Multi dimensional form layout}{mdfl}
 
-\img{\III}{multiJSON.png}{JSON object for multi dimensional forms}{jSON_mVsM}
-
-\img{\III}{multiAddressDataModel.png}{Data model}{userDataModel}
+So the forms consist of the selectors, and literalfield explained in the Chapter 1., but with an additional element that add further subforms. To achieve this JavaScript routine is required that adds the elements automatically and fills the form object with the data. The produced data of the form is looks as follows.
 
 
-\subsection{Existing instances and dependencies}
+\begin{lstlisting}[captionpos=b, caption=JSON object of the form, label=3rd:sparql,
+basicstyle=\footnotesize,frame=single]
+{
+	key1 : "value1",
+	key2 : "value2",
+	...
+	subFormKey1 : [
+	{
+		key1_1 : "value1_1",
+		...				
+	}, { ... }]
+}
+\end{lstlisting}
 
-\begin{itemize}
-	\item It can be a reasonable step in order to improve the registration, to let the users not write as string, but select the country and the city of their addresses. Moreover the interface could refresh the list of cities if the country has been selected. To solve it in RDF based application, it is necessary to have instances of the class County and City, and express their relationship with i.e the predicate eq:isInCountry.
-	\item The the task of the interface is to provide selectors, and refresh them according to user actions.
-	\item Figure~\ref{instanceSelection} shows the updated data model, with red triple which expresses a constraint
-\end{itemize}
 
-\img{\III}{countryCityConstraint.png}{Instance selection and dependency}{instanceSelection}
+\subsection{Form dependencies} \label{formDependencies}
+
+
+\img{\III}{subformDependency.png}{Subform dependencies}{mdfl}
+
+These dependencies can occur not only between subforms but as well by in form dependencies where the selector elements can change based on selections.
 
 \subsection{Instance browsing}
+
 
 \begin{itemize}
 	\item Figure ~\ref{navigator3} shows a further option for instance selection. 
@@ -91,13 +105,60 @@ Figure ~\ref{userDataModel} illustrates the data model, by denoting with an addi
 	\item Client side - programming the navigator window
 \end{itemize}
 
-\subsection{Sub form dependencies}
-	
+
 \subsection{Validation}
+
+As by each form there is required field - required - restrictions
+The client has to get the information, about restrictions, and so  
+
+
+\subsection{Editing form data}
 	
+As it was already addressed in section \ref{vivoCef}, the dataset created by the forms have to be edited as well. By editing, the HTTP request calling the entry form contains an additional field, namely the \textit{objectUri}. Based on the data model of the form, the server has to prepare the dataset, in our case a JSON object. The challenge of the server implementation is that in such multi dimensional dataset, it is not sufficient to perform only one query for the whole form data.
+
+\img{\III}{exampleDataModel.png}{Example data model}{exDatMod}
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL query for the form data, label={sparqlExisting},
+basicstyle=\footnotesize,frame=single]
+SELECT ?a ?b
+WHERE {
+	?objectUri		p1		?a .
+	?objectUri		p2		?b .
+	FILTER ( ?objectUri = <inputParameter>)
+}
+\end{lstlisting}
+
+The example data model from \figref{exDatMod} helps to understand the problem in more detail. If the SPARQL query on \listref{sparqlExisting} for variables ?a and ?b with incoming \textit{objectUri} value were executed, then result table of the query is inconvenient to process. For example if there are two instances for both ?a and ?b present in the dataset, then the result table contains \textit{2 x 2 = 4} elements (\tableref{sparqlResult}).
+
+\begin{table}
+
+	\begin{center}
+		\begin{tabular}{||c | c||} 
+			\hline
+			?a & ?b  \\ [0.5ex] 
+			\hline\hline
+			a1 & b1 \\ 
+			\hline
+			a1 & b2 \\
+			\hline
+			a2 & b1 \\
+			\hline
+			a2 & b2 \\ [1ex] 
+			\hline 
+		\end{tabular}
+	\end{center}
+	\caption{SPARQL Result}  \label{sparqlResult}
+\end{table}
+
+
+Therefore the data object of the form has to be retrieved gradually, by dividing the data model graph by the predicates, whose cardinality is larger than one.
+
+The next step after that the server has prepared the multi dimensional JSON object for the client, is to restore the state of the form, in which it was submitted by the user. This requires firstly the filling of the fields with the existing values, and adding the sub forms based on the arrays. Secondly the options of the selectors must be loaded, so that they conform to the dependencies explained in section \ref{formDependencies}. 
+
+Finally if a value of selector or literal field changes, or new sub forms has to be added or removed, the entry form data should not be completely sent again to the server, but only the data fields that are concerned by the modification. Thus it does not require a complete page reload, and these operation can be performed through AJAX calls. To achieve this the client has to be prepared to be able to send data modification requests to the server on change event of any form element or sub form.
+
 \subsection{Saving data}
 
-\subsection{Editing data on the forms}
 
 
 
