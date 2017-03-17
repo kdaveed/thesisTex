@@ -72,10 +72,10 @@ OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabula
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
 frame=single]
 eg:FootballTeam rdfs:subClassOf  [ 
-rdf:type		owl:Restriction ; 
-owl:onProperty		eg:hasPlayer ; 
-owl:allValuesFrom	eg:FootballPlayer ] . 
-}
+	rdf:type		owl:Restriction ; 
+	owl:onProperty		eg:hasPlayer ; 
+	owl:allValuesFrom	eg:FootballPlayer .
+]
 \end{lstlisting}
 
 owl:Restriction is class and owl:onProperty and owl:allValuesFrom are properties. It can be seen that class, on which the restriction applies is the subclass of the restriction blank node.
@@ -88,10 +88,11 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX eg: <http://example.org> 
 
 eg:BasketballTeam rdfs:subClassOf  [
-rdf:type	owl:Restriction ; 
-owl:onProperty	eg:hasPlayer ; 
-owl:onClass	  eg:Player ; 
-owl:qualifiedCardinality "5"(*@\textasciicircum@*)(*@\textasciicircum@*)xsd:nonnegativeInteger ] . 
+	rdf:type	owl:Restriction ; 
+	owl:onProperty	eg:hasPlayer ; 
+	owl:onClass	  eg:Player ; 
+	owl:qualifiedCardinality "5"(*@\textasciicircum@*)(*@\textasciicircum@*)xsd:nonnegativeInteger
+] . 
 
 \end{lstlisting}
 
@@ -114,7 +115,7 @@ SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a 
 basicstyle=\footnotesize,frame=single]
 SELECT ?player  
 WHERE { 
-?player		rdf:type	eg:FootballPlayer .	
+	?player		rdf:type	eg:FootballPlayer .	
 }
 \end{lstlisting}
 
@@ -125,8 +126,8 @@ It is well possible to not just ask the IRI of the players but further informati
 basicstyle=\footnotesize,frame=single]
 SELECT ?player ?name 
 WHERE { 
-?player		rdf:type	 eg:FootballPlayer .	
-?player		eg:name		 ?name .
+	?player		rdf:type	 eg:FootballPlayer .	
+	?player		eg:name		 ?name .
 }
 \end{lstlisting}
 
@@ -136,23 +137,20 @@ The result table in this case will contain two columns, one with the IRI of the 
 basicstyle=\footnotesize,frame=single]
 SELECT ?person ?name
 WHERE {
-eg:FootballTeam	rdfs:subClassOf		?restriction .
-?restriction	rdf:type		owl:Restriction .
-?restriction	owl:onProperty		eg:hasPlayer .
-?restriction	owl:allValuesFrom	?playerType .
-?player		rdf:type		?playerType .
-?player	eg:name	?name . 
+	eg:FootballTeam	rdfs:subClassOf		?restriction .
+	?restriction		rdf:type					owl:Restriction .
+	?restriction		owl:onProperty		eg:hasPlayer .
+	?restriction		owl:allValuesFrom	?playerType .
+	?player					rdf:type					?playerType .
+	?player					eg:name						?name . 
 }
 \end{lstlisting}
 
 
 \section{Applied Ontologies}
 
-
-Ontologies are use to represent the concepts and tasks of some domain. The concepts are represented by classes and their relationships with some properties.
-The rules are defined by means of restriction on properties. These ontologies are inevitable for data creation. However developing ontologies is a complex and tedious process. It is often done with the cooperation domain expert, philosophers and and mathematicans. In our project we apply two existing ontologies to accelerate the development, and our develop a framework so that they can be extended for custom processes.
-
-open source
+Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to used already defined 
+ontologies rather developing an own. The first reason is, that the development of an ontology is a complex and a tedious process, and requires a lot of resource. Secondly, it is reasonable to use standardized vocabularies, in order to make data from same domain but different sources inter-operable.
 
 
 \subsection{Foundational Model of Anatomy - \textit{FMA}} 
@@ -181,11 +179,10 @@ Finally the advantage of using the FMA ontology is that, if in the future furthe
 \subsection{Ontology for Biomedical Investigations - \textit{OBI}} 
 
 
-
 The aim of OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it continuously evolving as new research methods are being developed. Its main function to describe the rules how biological and medical investigations have to be performed. OBI reuses terms from BFO \textit{Basic Formal Ontology} IAO \textit{Information Artifact Ontology} and  OBO \textit{Open Biological and Biomedical Ontologies}\cite{10.1371/journal.pone.0154556}. To define processes OBI uses the following three general classes:
 
 \begin{itemize}
-	\item  \textit{Information Content Entity} - obo:IAO\_0000030s
+	\item  \textit{Information Content Entity} - obo:IAO\_0000030
 	\item  \textit{Material Entity} - obo:BFO\_0000040
 	\item  \textit{Process} - obo:BFO\_0000015
 \end{itemize}
@@ -211,7 +208,7 @@ In our project the following three properties are used:
 
 \section{Web applications}
 
-\subsection{Introduction}
+\subsection{Client-sever architecture}
 
 Usually web applications do not consist of one single page, but of several different pages. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. 
 Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 

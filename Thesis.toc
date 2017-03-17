@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Foundational Model of Anatomy - \textit {FMA}}{9}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Ontology for Biomedical Investigations - \textit {OBI}}{9}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Web applications}{11}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Introduction}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Client-sever architecture}{11}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}JavaScript bacics}{14}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Data in JS}{15}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}AJAX}{15}{subsection.2.4.4}
