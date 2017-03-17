@@ -4,26 +4,11 @@
 
 \subsection{Human skeleton}
 
-The subject of the anthropological investigations is primarily human skeletal remains. To be able to create data about these remains, first of all an ontology is required. As the human skeleton is complex, the ontology is not developed by us, but an existing have been taken. The used ontology is the subset of FMA (Foundation Model of Anatomy) ontology. For us the two most important classes are the following: 
-
-\begin{itemize}
-	\item Subdivision of skeletal system - fma:85544  
-	\item Bone Organ – fma:5018
-\end{itemize}
-
-The class \textit{Bone Organ} is the superclass of all bones in the human skeleton.  Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions.
-
-\imgK{\III}{1ontologyStructure.png}{Ontology structure for skeleton}
-
-
-In our project the most important element is the skull. \figref{tripleSkull} 
-
 
 \img{\III}{rdfSkull.png}{RDF Triple representation of a skull}{tripleSkull} 
 
 
-To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has 
-to be sent from the client to the server, but a multi dimensional dataset. Like this: 
+To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has  to be sent from the client to the server, but a multi dimensional dataset. Like this: 
 
 
 \begin{lstlisting}[captionpos=b, caption=Form data representing skull, label=skullJSON,

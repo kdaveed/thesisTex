@@ -2,6 +2,215 @@
 
 \section{Web applications}
 
+\section{Semantic Web}
+
+\subsection{RDF}
+
+In RDF, abbreviation for Resource Description Framework, the information of the web is represented by means of triples. Each triple consists of a subject, predicate and object. The set of triples constitute to an RDF graph, where the subject and object of the triples are the nodes, the predicates are the edges of the graph.
+An RDF triple is called as well statement, which asserts that there is a relationship defined by the predicate, between subject and the object. The subjects and the objects are RDF resources. A resource can be either an IRI (Internationalized Resource Identifier) or a literal or a blank node (discussed later). A resource represents any physical or abstract entity, while literals hold data values like string, integer or datum. 
+Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
+Common practice is to represent IRI with the notation prefix:suffix, where the prefix represents the namespace, and the expression means the concatenation of the namespace denoted by the prefix, with the suffix. This convention makes the RDF document more readable. The namespace of RDF is the http://www.w3.org/1999/02/22-rdf-syntax-ns\#, whose prefix is in most cases "rdf".   This is defined on the following way:
+
+
+\prefix{rdf}{http://www.w3.org/1999/02/22-rdf-syntax-ns\#}
+
+Literals are strings consisting of two elements. The first is the lexical form, which is the actual value, and the second is the data type IRI.  RDF uses the data types from XML schema. The prefix (commonly xsd) is the following :
+
+\prefix{xsd}{http://www.w3.org/2001/XMLSchema\#}
+
+So a literal value in RDF looks as follows:
+
+\cent{"Some literal value"ˆˆxsd:string}
+
+The RDF vocabulary provides some built-in IRIs. The two most important are, the rdf:type property, and the rdf:Property class. The meaning of the triples, where the predicate is the property rdf:type  is that the subject IRI is the instance of the class denoted by the object. Therefore the following statement holds in the RDF vocabulary:
+
+\cent{rdf:type 	rdf:type	rdf:Property.}
+
+It is maybe confusing that an IRI appears in a triple as subject and predicate as well, but we will see by the RDFS vocabulary that it is inevitable to express rules of the language.  
+To be able to represent information about a certain domain, it is necessary to extend the RDF vocabulary with properties and classes. The classes will be discussed in the next section, but here it is explained how custom properties can be defined. The namespace of the example is the following: 
+
+\prefix{eg}{http://example.org\#}
+
+
+The example dataset intends to express information about people, which university they attend and how old are them. To achieve this two properties are needed:
+
+\cent{eq:attends		rdf:type		rdf:Property .\\
+	eq:age			rdf:type		rdf:Property .}
+
+
+The actual data about a person:
+
+\cent{
+	eg:JanKlein		eq:attends		eq:UniversityOfFreiburg . \\
+	eg:JanKlein		eq:age			"21"ˆˆxsd:integer . }
+
+
+\subsection{RDF Schema}
+
+
+The previous section gave an insight into RDF world by showing how can information stored by means of triples. However the explanation did not mention that each RDF dataset has to have scheme, which is also called ontology. The ontology describes the set of properties and classes and how are they are related to each other. RDFS provides a mechanism to define such ontologies using RDF triples. The most important elements of the RDFS vocabulary can be seen on the following image. 
+
+\imgK{\II}{12_rdfs_vocabulary.png}{Main structure of the RDFS vocabulary}
+
+The two most important classes in the RDFS vocabulary is the rdfs:Class and the rdfs:Resource. The rdfs:Class is class, because it is the instance of itself, and the same way the rdfs:Resource is a class. The rdf:Propery and the rdfs:Literal are both classes as well. The rdfs:domain, rdfs:range, rdfs:subPropertyOf and rdfs:subClassOf are properties. Important to note that these properties are subjects and predicates in the same time in the RDFS vocabulary graph. Also they describe themselves like rdf:type.
+The properties rdfs:domain and rdfs:range describe for the property the type of the subject and object respectively, which with it can build a triple as predicate. The following image illustrates their meaning:
+
+\imgK{\II}{13_rdfs_domain_range.png}{RDFS domain and range definition}
+
+Since both the rdfs:domain and rdfs:range are properties themselves, they have as well their domain and range, which is the class rdfs:Resource. 
+The property rdfs:subClassOf expresses subclass relationship between classes. It means if a class B is a subclass of class A, and resource R is the instance of class B, then resource R is the instance of class A as well. Since it describes the relationship between two classes its both domain and range is the class rdfs:Class. 
+The property rdf:subPropertyOf expresses the relationship between two properties. If property P2 is sub property of P1 and two instances are related by P2 then they are related by P1 as well. Its domain and range is the class  rdf:Property.
+Now everything is given to define the ontology for the example of the previous section.
+
+\imgK{\II}{14_rdfs_ex_ontology.png}{RDFS domain and range definition}
+
+
+\subsection{OWL}
+
+OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. For example a restriction stating that the instances of the class eg:FootballTeam can build a triple through the eg:hasPlayer property only with the instances of eg:FootballPlayer class can be expressed the following way:
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
+frame=single]
+eg:FootballTeam rdfs:subClassOf  [ 
+rdf:type		owl:Restriction ; 
+owl:onProperty		eg:hasPlayer ; 
+owl:allValuesFrom	eg:FootballPlayer ] . 
+}
+\end{lstlisting}
+
+owl:Restriction is class and owl:onProperty and owl:allValuesFrom are properties. It can be seen that class, on which the restriction applies is the subclass of the restriction blank node.
+Furthermore OWL is capable of expressing qualified cardinality restriction. For example the statement that a basketball team has to have exactly five players, look as follows in OWL:
+
+
+\begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
+basicstyle=\footnotesize,frame=single]
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX eg: <http://example.org> 
+
+eg:BasketballTeam rdfs:subClassOf  [
+rdf:type	owl:Restriction ; 
+owl:onProperty	eg:hasPlayer ; 
+owl:onClass	  eg:Player ; 
+owl:qualifiedCardinality "5"(*@\textasciicircum@*)(*@\textasciicircum@*)xsd:nonnegativeInteger ] . 
+
+\end{lstlisting}
+
+
+These two examples cover the thesis related features of OWL. The next image depicts the OWL vocabulary. 
+
+\imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}
+
+
+There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the owl:ObjectProperty and owl:DataTypeProperty. owl:ObjectProperty represent the properties that links instances to instances, and the owl:DataTypeProperty is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.
+
+\imgK{\II}{16_object_properties.png}{OWL object properties}
+\imgK{\II}{17_qualified_card.png}{Properties for qualified cardinalities}
+
+\subsection{SPARQL}
+
+SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a football player: 
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql,
+basicstyle=\footnotesize,frame=single]
+SELECT ?player  
+WHERE { 
+?player		rdf:type	eg:FootballPlayer .	
+}
+\end{lstlisting}
+
+In the example the query consist of only one triple. The subject is a variable and the predicate and the object are constant. Therefore the triple store looks all the triples and checks the predicate is rdf:type and the object is eg:FootballPlayer. 
+It is well possible to not just ask the IRI of the players but further information by adding additional triples to the query in order to ask the name for example of the player:
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql,
+basicstyle=\footnotesize,frame=single]
+SELECT ?player ?name 
+WHERE { 
+?player		rdf:type	 eg:FootballPlayer .	
+?player		eg:name		 ?name .
+}
+\end{lstlisting}
+
+The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql,
+basicstyle=\footnotesize,frame=single]
+SELECT ?person ?name
+WHERE {
+eg:FootballTeam	rdfs:subClassOf		?restriction .
+?restriction	rdf:type		owl:Restriction .
+?restriction	owl:onProperty		eg:hasPlayer .
+?restriction	owl:allValuesFrom	?playerType .
+?player		rdf:type		?playerType .
+?player	eg:name	?name . 
+}
+\end{lstlisting}
+
+
+\section{Applied Ontologies}
+
+
+Ontologies are use to represent the concepts and tasks of some domain. The concepts are represented by classes and their relationships with some properties.
+The rules are defined by means of restriction on properties. These ontologies are inevitable for data creation. However developing ontologies is a complex and tedious process. It is often done with the cooperation domain expert, philosophers and and mathematicans. In our project we apply two existing ontologies to accelerate the development, and our develop a framework so that they can be extended for custom processes.
+
+open source
+
+
+\subsection{Foundational Model of Anatomy - \textit{FMA}} 
+
+The foundational Model of Anatomy ontology is an open source ontology written in OWL. FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge based applications. It contains more than 70 000 classes, and 168 different relationships, and organize its entities into a deep subclass tree \cite{Rosse2003478}. All types of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only the subset of the FMA. The taken elements are the subclasses of the following two classes and the three properties: 
+
+\begin{itemize}
+	\item{Classes}
+		\subitem \textit{Subdivision of skeletal system} - fma:85544 
+		\subitem \textit{Bone Organ} – fma:5018
+\end{itemize}
+
+\begin{itemize}
+	\item{Properties}
+		\subitem \textit{fma:systemic\_part\_of}
+		\subitem \textit{fma:constitutional\_part\_of}
+		\subitem \textit{regional\_part\_of}
+\end{itemize}
+
+The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belong to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions (see \figref{fma1}). The properties \textit{fma:constitutional\_part\_of} and \textit{fma:regional\_part\_of} \textit{fma:constitutional\_part\_of} are discussed later.
+
+\img{\III}{1ontologyStructure.png}{Ontology structure for skeleton}{fma1}
+
+Finally the advantage of using the FMA ontology is that, if in the future further elements of the human body have to be addressed by the research processes, i.e. muscles, then these classes can be easily integrated to the currently applied subset.
+
+\subsection{Ontology for Biomedical Investigations - \textit{OBI}} 
+
+
+
+The aim of OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it continuously evolving as new research methods are being developed. Its main function to describe the rules how biological and medical investigations have to be performed. OBI reuses terms from BFO \textit{Basic Formal Ontology} IAO \textit{Information Artifact Ontology} and  OBO \textit{Open Biological and Biomedical Ontologies}\cite{10.1371/journal.pone.0154556}. To define processes OBI uses the following three general classes:
+
+\begin{itemize}
+	\item  \textit{Information Content Entity} - obo:IAO\_0000030s
+	\item  \textit{Material Entity} - obo:BFO\_0000040
+	\item  \textit{Process} - obo:BFO\_0000015
+\end{itemize}
+
+Information Content Entity represent results of a specific measurement, while Material Entity stands for the objects, on which the meausurements have been performed. 
+The Process could mean any kind of step within an investigation, from the planning, through execution till the conclusion.
+
+\begin{itemize}
+	\item  \textit{Planning} - obo:OBI\_0000339
+	\item  \textit{Study Design Execution} - obo:OBI\_0000471
+	\item  \textit{Drawing a conclusion} - obo:OBI\_0000338
+\end{itemize}
+
+
+In our project the following three properties are used:
+
+\begin{itemize}
+	\item  \textit{has part} - obo:BFO\_00000051
+	\item  \textit{has specified input} - obo:OBI\_00000293
+	\item  \textit{has specified output} - obo:OBI\_00000299
+\end{itemize}
+
+
+\section{Web applications}
+
 \subsection{Introduction}
 
 Usually web applications do not consist of one single page, but of several different pages. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. 
@@ -102,149 +311,7 @@ AJAX is an abbreviation for Asynchronous JavaScript And XML. This is a technolog
 The example from the image illustrates extends the previous case so that the click function contains the AJAX call. This call is practically the same as basic request from the <a/> tag in HTML. It has a URL and a data object. The data object in this example consists of only one key-value pair, with the key newsID. The value is the JavaScript variable id, whose own value was set at the beginning of the script part by \${news.id} template variable. This is the way that Java variables can be passed the JavaScript variables.  The done function of the AJAX routine defines what has to be done with the data that arrives. The response data coming from the server is accessible in the msg variable. In the example we assume the server return only the string of the whole text, which will be set as the text of the new div.
 
 
-\section{Semantic Web}
 
-\subsection{RDF}
-
-In RDF, abbreviation for Resource Description Framework, the information of the web is represented by means of triples. Each triple consists of a subject, predicate and object. The set of triples constitute to an RDF graph, where the subject and object of the triples are the nodes, the predicates are the edges of the graph.
-An RDF triple is called as well statement, which asserts that there is a relationship defined by the predicate, between subject and the object. The subjects and the objects are RDF resources. A resource can be either an IRI (Internationalized Resource Identifier) or a literal or a blank node (discussed later). A resource represents any physical or abstract entity, while literals hold data values like string, integer or datum. 
-Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
-Common practice is to represent IRI with the notation prefix:suffix, where the prefix represents the namespace, and the expression means the concatenation of the namespace denoted by the prefix, with the suffix. This convention makes the RDF document more readable. The namespace of RDF is the http://www.w3.org/1999/02/22-rdf-syntax-ns\#, whose prefix is in most cases "rdf".   This is defined on the following way:
-
-
-\prefix{rdf}{http://www.w3.org/1999/02/22-rdf-syntax-ns\#}
-
-Literals are strings consisting of two elements. The first is the lexical form, which is the actual value, and the second is the data type IRI.  RDF uses the data types from XML schema. The prefix (commonly xsd) is the following :
-
-\prefix{xsd}{http://www.w3.org/2001/XMLSchema\#}
-
-So a literal value in RDF looks as follows:
-
-\cent{"Some literal value"ˆˆxsd:string}
-
-The RDF vocabulary provides some built-in IRIs. The two most important are, the rdf:type property, and the rdf:Property class. The meaning of the triples, where the predicate is the property rdf:type  is that the subject IRI is the instance of the class denoted by the object. Therefore the following statement holds in the RDF vocabulary:
-
-\cent{rdf:type 	rdf:type	rdf:Property.}
-
-It is maybe confusing that an IRI appears in a triple as subject and predicate as well, but we will see by the RDFS vocabulary that it is inevitable to express rules of the language.  
-To be able to represent information about a certain domain, it is necessary to extend the RDF vocabulary with properties and classes. The classes will be discussed in the next section, but here it is explained how custom properties can be defined. The namespace of the example is the following: 
-
-\prefix{eg}{http://example.org\#}
-
-
-The example dataset intends to express information about people, which university they attend and how old are them. To achieve this two properties are needed:
-
-\cent{eq:attends		rdf:type		rdf:Property .\\
-eq:age			rdf:type		rdf:Property .}
-
-
-The actual data about a person:
-
-\cent{
-eg:JanKlein		eq:attends		eq:UniversityOfFreiburg . \\
-eg:JanKlein		eq:age			"21"ˆˆxsd:integer . }
-
-
-\subsection{RDF Schema}
-
-
-The previous section gave an insight into RDF world by showing how can information stored by means of triples. However the explanation did not mention that each RDF dataset has to have scheme, which is also called ontology. The ontology describes the set of properties and classes and how are they are related to each other. RDFS provides a mechanism to define such ontologies using RDF triples. The most important elements of the RDFS vocabulary can be seen on the following image. 
-
-\imgK{\II}{12_rdfs_vocabulary.png}{Main structure of the RDFS vocabulary}
-
-The two most important classes in the RDFS vocabulary is the rdfs:Class and the rdfs:Resource. The rdfs:Class is class, because it is the instance of itself, and the same way the rdfs:Resource is a class. The rdf:Propery and the rdfs:Literal are both classes as well. The rdfs:domain, rdfs:range, rdfs:subPropertyOf and rdfs:subClassOf are properties. Important to note that these properties are subjects and predicates in the same time in the RDFS vocabulary graph. Also they describe themselves like rdf:type.
-The properties rdfs:domain and rdfs:range describe for the property the type of the subject and object respectively, which with it can build a triple as predicate. The following image illustrates their meaning:
-
-\imgK{\II}{13_rdfs_domain_range.png}{RDFS domain and range definition}
-
-Since both the rdfs:domain and rdfs:range are properties themselves, they have as well their domain and range, which is the class rdfs:Resource. 
-The property rdfs:subClassOf expresses subclass relationship between classes. It means if a class B is a subclass of class A, and resource R is the instance of class B, then resource R is the instance of class A as well. Since it describes the relationship between two classes its both domain and range is the class rdfs:Class. 
-The property rdf:subPropertyOf expresses the relationship between two properties. If property P2 is sub property of P1 and two instances are related by P2 then they are related by P1 as well. Its domain and range is the class  rdf:Property.
-Now everything is given to define the ontology for the example of the previous section.
-
-\imgK{\II}{14_rdfs_ex_ontology.png}{RDFS domain and range definition}
-
-
-\subsection{OWL}
-
-OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. For example a restriction stating that the instances of the class eg:FootballTeam can build a triple through the eg:hasPlayer property only with the instances of eg:FootballPlayer class can be expressed the following way:
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
-frame=single]
-eg:FootballTeam rdfs:subClassOf  [ 
-	rdf:type		owl:Restriction ; 
-	owl:onProperty		eg:hasPlayer ; 
-	owl:allValuesFrom	eg:FootballPlayer ] . 
-}
-\end{lstlisting}
-
-owl:Restriction is class and owl:onProperty and owl:allValuesFrom are properties. It can be seen that class, on which the restriction applies is the subclass of the restriction blank node.
-Furthermore OWL is capable of expressing qualified cardinality restriction. For example the statement that a basketball team has to have exactly five players, look as follows in OWL:
-
-
-\begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
-basicstyle=\footnotesize,frame=single]
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX eg: <http://example.org> 
-
-eg:BasketballTeam rdfs:subClassOf  [
-	rdf:type	owl:Restriction ; 
-	owl:onProperty	eg:hasPlayer ; 
-	owl:onClass	  eg:Player ; 
-	owl:qualifiedCardinality "5"(*@\textasciicircum@*)(*@\textasciicircum@*)xsd:nonnegativeInteger ] . 
-
-\end{lstlisting}
-
-
-
-These two examples cover the thesis related features of OWL. The next image depicts the OWL vocabulary. 
-
-\imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}
-
-
-There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the owl:ObjectProperty and owl:DataTypeProperty. owl:ObjectProperty represent the properties that links instances to instances, and the owl:DataTypeProperty is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.
-
-\imgK{\II}{16_object_properties.png}{OWL object properties}
-\imgK{\II}{17_qualified_card.png}{Properties for qualified cardinalities}
-
-\subsection{SPARQL}
-
-SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a football player: 
-
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql,
-basicstyle=\footnotesize,frame=single]
-SELECT ?player  
-WHERE { 
-	?player		rdf:type	eg:FootballPlayer .	
-}
-\end{lstlisting}
-
-In the example the query consist of only one triple. The subject is a variable and the predicate and the object are constant. Therefore the triple store looks all the triples and checks the predicate is rdf:type and the object is eg:FootballPlayer. 
-It is well possible to not just ask the IRI of the players but further information by adding additional triples to the query in order to ask the name for example of the player:
-
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql,
-basicstyle=\footnotesize,frame=single]
-SELECT ?player ?name 
-WHERE { 
-	?player		rdf:type	 eg:FootballPlayer .	
-	?player		eg:name		 ?name .
-}
-\end{lstlisting}
-
-The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
-
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql,
-basicstyle=\footnotesize,frame=single]
-SELECT ?person ?name
-WHERE {
-	eg:FootballTeam	rdfs:subClassOf		?restriction .
-	?restriction	rdf:type		owl:Restriction .
-	?restriction	owl:onProperty		eg:hasPlayer .
-	?restriction	owl:allValuesFrom	?playerType .
-	?player		rdf:type		?playerType .
-	?player	eg:name	?name . 
-}
-\end{lstlisting}
 
 \section{VIVO Framework}
 

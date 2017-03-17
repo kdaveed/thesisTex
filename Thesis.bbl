@@ -1,8 +1,35 @@
 \begin{thebibliography}{1}
 
+\bibitem{8793061}
+{OWL} 2 web ontology language document overview.
+\newblock {W3C} recommendation, W3C, October 2009.
+\newblock http://www.w3.org/TR/2009/REC-owl2-overview-20091027/.
+
 \bibitem{Arenas2009}
 Marcelo Arenas, Claudio Gutierrez, and Jorge P{\'e}rez.
 \newblock On the semantics of sparql.
 \newblock In {\em Semantic Web Information Management}, pages 281--307. 2009.
+
+\bibitem{10.1371/journal.pone.0154556}
+Anita Bandrowski, Ryan Brinkman, Mathias Brochhausen, Matthew~H. Brush, Bill
+  Bug, Marcus~C. Chibucos, Kevin Clancy, Mélanie Courtot, Dirk Derom, Michel
+  Dumontier, Liju Fan, Jennifer Fostel, Gilberto Fragoso, Frank Gibson,
+  Alejandra Gonzalez-Beltran, Melissa~A. Haendel, Yongqun He, Mervi Heiskanen,
+  Tina Hernandez-Boussard, Mark Jensen, Yu~Lin, Allyson~L. Lister, Phillip
+  Lord, James Malone, Elisabetta Manduchi, Monnie McGee, Norman Morrison,
+  James~A. Overton, Helen Parkinson, Bjoern Peters, Philippe Rocca-Serra, Alan
+  Ruttenberg, Susanna-Assunta Sansone, Richard~H. Scheuermann, Daniel Schober,
+  Barry Smith, Larisa~N. Soldatova, Christian~J. Stoeckert, Jr., Chris~F.
+  Taylor, Carlo Torniai, Jessica~A. Turner, Randi Vita, Patricia~L. Whetzel,
+  and Jie Zheng.
+\newblock The ontology for biomedical investigations.
+\newblock {\em PLOS ONE}, 11(4):1--19, 04 2016.
+
+\bibitem{Rosse2003478}
+Cornelius Rosse and José L.V.~Mejino Jr.
+\newblock A reference ontology for biomedical informatics: the foundational
+  model of anatomy.
+\newblock {\em Journal of Biomedical Informatics}, 36(6):478 -- 500, 2003.
+\newblock Unified Medical Language System.
 
 \end{thebibliography}
