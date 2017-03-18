@@ -305,21 +305,24 @@ By the data entry creation the task of the controller is to get the values from 
 
 \subsection{Applications with RDF Data} \label{rdfWebapp}
 
-This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. In the last section by the input input processes, a class (namely the people) could have been, which were instantiated. This means that in relational databases the each class of scheme is represented by a class of the programming language. But as we have seen in section \ref{ontologies} the vocabularies can contain thousands of class, and thus it is not an option the translate them into the class of server application program. 
-Therefore the semantic web based applications have a little bit different structure. First of all the most important is to see the main elements of an RDF dataset that can appear on the definition in the classes.
+This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. The most important feature of RDF that the data scheme, namely the ontology is stored in RDF triples too, thus can be queried.
 
-\img{\II}{rdfData1.png}{Ontology and data}{rdfData1}
+\img{\II}{rdfData1.png}{Ontology and data in RDF}{rdfData1}
 
+Therefore it is possible to generate web pages that can adapt to the ontology. The following query demonstrates that how it is possible to get all the instances, which are connected to a particular instance (\#459828).
 
 \begin{lstlisting}[captionpos=b, caption= Dynamic SPARQL query, label=skullJSON,
 basicstyle=\footnotesize,frame=single]
 SELECT ?property ?relatedInstance
 WHERE {
-	?instance 		rdf:type  		:ClassA .  
-	?property			rdfs:domain		:ClassA .
-	?instance			?property 		?relatedInstance .
+	?instance 			rdf:type  			?class .  
+	?property				rdfs:domain		?class .
+	?instance				?property 		?relatedInstance .
+	FILTER (?instance = #459828 ) .
 }
 \end{lstlisting}
+
+The first two lines of the query defines the properties whose domain class is the type of the input instance, while the third asks for all triples with the possible properties. If the result of the query is then grouped based on properties, then the dataset can be displayed by a template using two lists. The outer list ceates fields for the properties, and the inner show all the instances with that property.
 
 
 \begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=skullJSON,
@@ -331,31 +334,28 @@ basicstyle=\footnotesize,frame=single]
 \end{lstlisting}
 
 
+The VIVO framework applied in the RDFBones project generates the pages for instances this way.
+
 \img{\II}{21_profile_page.png}{VIVO Profile page}{rdfData1}
 
 Above the display of the existing data, RDF based applications are different as well in the data input mechanism. First of all, due to the fact that ontologies can contain thousand of class it is not an option to represent them all as classes of the server application language as well. It is time consuming and the system would loose its flexibility in the cases when new ontology subsets are supposed to be loaded. Therefore there are neither for each type of the database an entry form with a unique controller servlet, but more generic approaches are used.
 To define what dataset has to be created, semantic web based applications simply define them as a set of triples, with variables like in SPARQL, just the data flows the other way around.
 
- \img{\II}{rdfDataDef.png}{Triples representing a new instance}{rdfDataDef}
-
+\img{\II}{rdfDataDef.png}{Triples representing a new instance}{rdfDataDef}
 
 Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application for the new set of triples. The values of the \textit{type} and \text{label}, 
-are coming from the input form. Here the 
-
+are coming from the input form. The label is just like in the previous example, it is a string typed by the user it is stored as an attribute of the new entity. But the type of the instance is class IRI. The point is that the options of the selector field, from which the type value is coming, is filled with the results of a SPARQL query on the ontology. So for example if the entry form provide the possiblity to create any type of processes from the OBI ontology then the before the form loading the following query has to be executed.
 
 \begin{lstlisting}[captionpos=b, caption= SPARQL query for the input form, label=skullJSON,
 basicstyle=\footnotesize,frame=single]
 SELECT ?class ?label
 WHERE {
-	?class 			rdf:subClassOf* 	obo:OBI_0000339 .  
-	?class			rdf:label			?label . 
+	?class 			rdf:subClassOf	 	obo:OBI_0000339 .  
+	?class			rdf:label					?label . 
 }
 \end{lstlisting}
 
-will be a new unused IRI of the triple store, while the ?type variable come from the client. So let assume an entry form which displays the 
+will be a new unused IRI of the triple store, while the ?type variable come from the client from a selector field. The following image depicts this simple scheme of the data input process. 
 
- 
-
-
-
+\img{\II}{rdfForm.png}{Data input scheme by RDF}{rdfInput}
 
