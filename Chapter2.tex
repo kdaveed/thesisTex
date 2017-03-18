@@ -1,7 +1,5 @@
 \chapter{Preliminaries}
 
-\section{Web applications}
-
 \section{Semantic Web}
 
 \subsection{RDF}
@@ -147,7 +145,7 @@ WHERE {
 \end{lstlisting}
 
 
-\section{Applied Ontologies}
+\section{Applied Ontologies} \label{ontologies}
 
 Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to used already defined 
 ontologies rather developing an own. The first reason is, that the development of an ontology is a complex and a tedious process, and requires a lot of resource. Secondly, it is reasonable to use standardized vocabularies, in order to make data from same domain but different sources inter-operable.
@@ -166,7 +164,7 @@ The foundational Model of Anatomy ontology is an open source ontology written in
 	\item{Properties}
 		\subitem \textit{fma:systemic\_part\_of}
 		\subitem \textit{fma:constitutional\_part\_of}
-		\subitem \textit{regional\_part\_of}
+		\subitem \textit{fma:regional\_part\_of}
 \end{itemize}
 
 The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belong to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions (see \figref{fma1}). The properties \textit{fma:constitutional\_part\_of} and \textit{fma:regional\_part\_of} \textit{fma:constitutional\_part\_of} are discussed later.
@@ -207,38 +205,80 @@ In our project the following three properties are used:
 
 \section{Web applications}
 
-\subsection{Client-sever architecture}
+This chapter contains practical information about how web applications work. In section \ref{clientServer} the basic mechanism of data driven applications are discussed, like navigation between page, data display and creation. Section \ref{rdfWebapp} then focuses on the applications that are using semantic technologies, and addresses what kind of architectural changes that means.
 
-Usually web applications do not consist of one single page, but of several different pages. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. 
-Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
+\subsection{Client-sever architecture} \label{clientServer}
+
+
+A web application is program that runs on a machine, which is accessible through the web. The machine is called server, because its main purpose is to server request that are coming from the web browser. Web browsers are as well programs, but they run on personal computers, tablets, etc, and they are capable of sending request through web to the servers. The response to these requests are HTML document, which can be displayed by the browser. 
 
 \imgK{\II}{1_client_server.png}{Client server communication}
 
-Usually web applications do not consist of one single page, but of several different pages. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. 
-Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
 
-\imgK{\II}{2_http_request.png}{HTML Link}
+An HTML document contains definition of the elements of the pages, such as tables, buttons, etc. It contains as well so called CSS docuements (Cascading Style Sheet), which is responsible for the definition of the style of the elements. Moreover to make the web pages more interactive, JavaScript (JS) de can be embedded to HTML as well. 
 
-The link in Figure 2 shows the link for the subpage. Programming the server incorporates the task of assignment of the url-mappings to particular classes, which are responsible for the response preparation. In Java web application these responder classes are called servlets an the definition of the mapping-class assignment looks as follows:
+\img{\II}{html.png}{HTML document is interpreted by the browser}{html}
 
-\imgK{\II}{3_servlet_mapping.png}{Servlet mapping definition in web.xml}
+Initially web pages were static, which means that their only function was to show certain set of information. These applications usually web applications do not consist of one single page, but of several different pages. Like a web page for news, have normally a main page, and different sub pages for the particular topics. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
 
-A modern web application do not just send static web pages to the client, that contains in this case the political articles, but the articles are stored in a database, and the pages are generated dynamically by substituting the retrieved data into so-called template files. 
-First of all the task of responding requires a query that retrieves that data from the database. By applications using relational data model, the tables and attributes are always modeled by classes of the used object oriented programming (OOP) language. So the data retrieval is the instantiation of the classes in scope. 
+\begin{lstlisting}[captionpos=b, caption=Example link definitions, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+	<a href="http://newsPortal.com/politics"> Politics </a>
+	<a href="http://newsPortal.com/sport"> Sport </a>
+\end{lstlisting}
+
+If the user clicks on of these link (with the label 'Politics' and 'Sport') then these request will be sent to the news portal page. Each such request has to be served, differently to each mapping some routine has to be assigned. For example by Java web applications, the classes of the server that process the request are called servlets. On the next image it is shown, how the XML file defines, which class is responsible for the the mapping '/politics'.
+
+\begin{lstlisting}[captionpos=b, caption=Java servlet mapping definition, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+<servlet-mapping>
+	<url-pattern>/politics</url-pattern>
+	<servlet-class>servlets.PoliticsController</servlet-class>
+</servlet-mapping>
+\end{lstlisting}
+
+
+Then the responsibility of the class \textit{servlets.PoliticsController} is to respond the corresponding HTML page for the client. Figure \ref{navigation} show the main structure of the applications, where the rectangles on the client side represent the different pages of the application.
+
+
+\img{\II}{servletMapping.png}{Navigation through the web application}{navigation}
+
+
+\subsection{Data driven web applications} \label{dataDriven}
+
+
+This section aims to present the fundamentals of the web technologies that allows to build application for browsing and creating data. Modern web applications do not store the information in HTML documents. So the page loading process is not just the sending the HTML document, but a retrieval of a particular dataset, and the substitution into a web page. First of all the task of responding requires a query that retrieves that data from the database. By applications using relational data model, the tables and attributes are always modeled by classes of the used object oriented programming (OOP) language. So the data retrieval is the instantiation of the classes in scope. 
+
+Let assume that articles of a news portal is stored in a table with the attributes, id, type, title, summary and text. Then there has to be a class defined in the server code with the same attributes. To instantiate instances of the class, it is necessary to perform an SQL query.
 
 \imgK{\II}{4_data_flow.png}{Data flow}
 
-In our example the news are stored in the NEWS table and the application has a class named News with the same attributes that the table has.  Consequently one single row of the table can be stored in an instance of the News class. As the database returns a table with multiple news, thus the resulting Java data will have the type List<News>. Then this in this simple case the list is passed to the template engine together with the template file. 
 
-\imgK{\II}{5_template_file.png}{Template file}
+The query results not only one instance of the News class, but a list (\textit{List<News> newList}). To generate from this a HTML page that shows the articles, normally so called template engines are used. Templateing enables to define the HTML documents parametric, and passing them data, and they generate the result page automatically.   
 
-The template file is a description of how the data has to be converted into HTML document. It can be seen that it is possible for instance to declare a list on the input variable newsList. Then the template engine iterates through the News objects and by accessing its fields (title, summary, id) and generates the HTML for each element. 
+\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+<#list  newsList as news>
+	<h3>  ${news.title} </h3>
+	<p>  ${news.summary} </p>
+	<a  href = "http://newsPortal.com/wholeNews?id=${news.id}"> 
+		Read more 
+	</a>
+</#list>
+\end{lstlisting}
+
+
+The template file is a description of how the data has to be converted into HTML document. It can be seen that it is possible for instance to declare a list on the input variable newsList. Then the template engine iterates through the News objects and by accessing its fields (title, summary, id) and generates the HTML for each element. So the complete flow of data from the database to the client looks as follows: 
+
+\img{\II}{dataFlow1.png}{Flow of information from DB to client}{dataFlow}
+
 
 The template file contains the following link
 
-\begin{center}
-	\scriptsize{\html{a}{href="http://newsPortal.com/wholeNews?id=\${news.id}"}{Read more}}
-\end{center}
+\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+		http://newsPortal.com/wholeNews?id=${news.id
+\end{lstlisting}
 
 which redirects to the page where the whole article can be seen. To achieve this it is necessary to equip each link with the parameter id that holds the ID of NEWS item, order to inform the server about which article’s whole text has to be displayed. Then the servlet class of the mapping /wholeNews has to perform the following query where the id is the input.
 
@@ -257,117 +297,21 @@ By the data entry creation the task of the controller is to get the values from 
 \imgK{\II}{9_example_java.png}{Example Java routine for data storage}
 
 
-\subsection{JavaScript bacics}
-
-JavaScript (JS) is the programming language of the web browser. A JS code can be embedded into any HTML document between <script></script> tags. The most fundament capability of JS, is that it is capable of manipulating the elements of the web page. The following example illustrates a simple case, where clicking a button can change the page by adding a new div to an other div.
-
-\imgK{\II}{10_simple_js_example.png}{Simple JavaScript example}
-
-The HTML page contains with two divs with the id-s button and container. JavaScript handles each element on the page as objects. These objects can be referenced by \$(“\#id”) where the id is the id parameter of the html tag. Thus the definition of a click event to the first div is done by writing the following code:
-
-\boldcenter{\$(“\#button”).click( …   the handler function …)}
-
-to the script. The added function defines only one single operation, which uses the append function on the \$(“\#container”) div object. The input parameter is a new div object, created by JS with the text value Element. 
+\subsection{RDFData creation with HTML forms} \label{rdfWebapp}
 
 
-\subsection{Data in JS}
-
-In JavaScript there are not typed variable, each type variable is defined by the keyword var. In the simplest case a JavaScript variable holds a single value of a  primitive type like boolean, string or number (a). Or it be an array (b) or an object (c), which is a set of key-value pairs. The following figure shows the definition of three main JavaScript variable types.
-
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript data types}, captionpos=b]
-var a = "someText"			//Data field
-var b = ["element", 3.45, false]	//Array
-var c = {				//JSON Object
-	name : "Bob",
-	friends : ["Jack", "John"],
-	studies : {
-		university : "University of Freiburg",
-		course : "Computer Science"
-	}		
-}
-\end{lstlisting}
-
-Important to note the values of JavaScript object (c) can be single values, arrays or even further objects. The access of these variables are quite simple.
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript data access}, captionpos=b]
-	b[2]  -->   3.45
-	c.studies.course --> "Computer Science"
-\end{lstlisting}
-
-
-These variables can be set either through the template variables like any value in the HTML document. Or the event handler routines can assign values to the variables based on user actions.
-
-\subsection{AJAX}
-
-AJAX is an abbreviation for Asynchronous JavaScript And XML. This is a technology that allows the web browser to exchange data with the server without reloading the whole page. AJAX calls are initiated from JavaScript and of course JS itself is responsible for handling the response. This mechanism is where the JavaScript data plays a really important role. The following example shows and AJAX based solution for loading the whole text of an article.
-
-\imgK{\II}{11_ajax_load.png}{Loading new element through AJAX}
-
-The example from the image illustrates extends the previous case so that the click function contains the AJAX call. This call is practically the same as basic request from the <a/> tag in HTML. It has a URL and a data object. The data object in this example consists of only one key-value pair, with the key newsID. The value is the JavaScript variable id, whose own value was set at the beginning of the script part by \${news.id} template variable. This is the way that Java variables can be passed the JavaScript variables.  The done function of the AJAX routine defines what has to be done with the data that arrives. The response data coming from the server is accessible in the msg variable. In the example we assume the server return only the string of the whole text, which will be set as the text of the new div.
+This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. In the last section by the input input processes, a class (namely the people) could have been, which were instantiated. This means that in relational databases the each class of scheme is represented by a class of the programming language. But as we have seen in section \ref{ontologies} the vocabularies can contain thousands of class, and thus it were time consuming to write all of them into the programming language. Therefore the semantic web based applications have a little bit different structure. First of all the most important is to see the main elements of an RDF dataset that can appear on the definition in the classes.
 
 
 
 
-\section{VIVO Framework}
-
-VIVO is an open source web application framework, developed particularly for browsing and editing RDF data. VIVO utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt its pages to the ontology.  It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset.  This dataset is in RDF too, and describes the way in which the data is displayed and can be edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without any coding. Finally there is a possibility to import any RDF file to VIVO’s triple store.
-
-\subsection{Class groups}
-
-One important feature of the VIVO framework is the possibility to order the classes of the ontology into so-called class groups. If a class is assigned to a class group then it appears in the list of the admin panel, which is used to select the type of the new instance.
-
-\imgK{\II}{18_document_class_group.png}{Document class group on the admin panel}
-
-Further possibility of class groups that it is possible to create links on the main menu (can be seen on the top of \figref{classGroupPage}), which redirects to a page where all the instances are listed that belong to one of the classes of the class group.
-
-\img{\II}{19_vivo_class_group.png}{ VIVO class group page for documents}{classGroupPage}
-
-The application configuration showed in the last two images is  defined by the set of configuration triples on \figref{rdfConfigData}.
-
-\img{\II}{20_rdf_config_data.png}{ RDF configuration data in VIVO}{rdfConfigData}
-
-There are three instances of the classes display:NavigationElement, display:ClassGroupPage and for vitro:ClassGroup. The triples itself are self-explanatory, but important to note that property vitro:inClassGroup is the one that connects the configuration dataset to the domain ontology.  
-
-\subsection{Profile Pages}
-
-A profile pages in VIVO displays information about a particular RDF instance. These pages can be reached by clicking one of the entries of the list on the class group pages. The profile page organizes data connected to the individual into tabs. Each tab displays the properties of a specific property group. \figref{vivoProfilePage} shows a screenshot from the profile page under the Overview tab.
-
-\img{\II}{21_profile_page.png}{VIVO profile page layout}{vivoProfilePage}
-
-As it was already addressed this page adopts to the ontology by querying the properties whose domain or range is the type of the instance to display.  The properties bibo:author and vivo:description are assigned to the property group overview, and they appear on the page only because the both have the domain bibo:Document class.
-
-\img{\II}{22_profile_page_config.png}{Triples contributing to the displayed profile page layout}{configTriples}
-
-An additional important feature of VIVO is the definition of so-called faux properties. They are really similar to the rdfs:subProperty, but they are considered by the profile pages.
-
-\subsection{Default Data Entry Forms}
-
-On \figref{configTriples}, next to the predicate labels (authors, description) there are plus image elements, which are a links. These links redirect the user to data entry forms where new triple can be added. 
-
-\img{\II}{23_http_request.png}{HTTP request for data entry form}{httpEntryForm}
-
-They initiate the HTTP request depicted on \figref{httpEntryForm}. The server gets with which subject and predicate the triple has to be created.
-
-The subject of the triple is the instance; from whose the profile page the request has been initiated. The predicate is the property to which the link belongs. The data entry forms allows the user to set the object of this triple. By the property bibo:author the domain is the class foaf:Person, thus application offers each existing instance of this class to select, or allows to add a new instance as an object. 
-
-\imgK{\II}{24_object_prop_entry_form.png}{Object property entry form for bibo:author}
-
-In the case of the property vivo:description, the domain is the class rdfs:Literal thus the entry form displays a text input field.
-
-\imgK{\II}{25_data_prop_entry_form.png}{Data property entry form}
 
 
-\subsection{Custom Entry Forms} \label{vivoCef}
 
-VIVO allows the editing of the triples through default entry forms only one by one. However it is often the case that it desired to add multiple triples, thus larger dataset by one entry form. This is as well possible in VIVO through custom entry form definition.
-Let assume an entry form, which let the user add new publications to person instance. About the publication its title, abstract and the date of publishing can be stored. The left part of following image shows dataset of the example. The red nodes denote the variables that are coming as input from the entry form; the green means that its value has to be an unused IRI, and the grey stands for constants. 
 
-\imgK{\II}{26_data_def.png}{Data definition graphical (left) and lexical (right)}{dataDef}
 
-The variable ?subject is the instance from whose profile page entry form was called.  To declare the information held by the graphical representation of the triples from \figref{dataDef}, three static Java variables are needed. Two arrays of string for the inputs and new resources (literalsFromRequest, newResources) and a string for the triples (tripleString).  Moreover the configuration class has an additional variable for defining the template file for the form layout (VIVO uses Freemarker template engine, and the .ftl extension stands for Freemarker Template File). 
-The last step towards the definition of the custom entry form is to connect the property eg:Published with the predicate vitro:customEntryFormAnnotation to the literal value that holds the name of the entry form configuration class.
 
-\imgK{\II}{27_cef_class_def.png}{Definition of custom entry form configuration class }
+
+
 
 
