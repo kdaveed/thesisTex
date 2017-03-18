@@ -14,9 +14,10 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Data flow}}{13}{figure.2.11}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Flow of information from DB to client}}{14}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces SQL query with parameter}}{14}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Form layout and HTML document}}{15}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Request with parameters}}{15}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Example Java routine for data storage}}{15}{figure.2.16}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Links to data items}}{15}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Form layout and HTML document}}{15}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Request with parameters}}{15}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Example Java routine for data storage}}{16}{figure.2.17}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces RDF Triple representation of a skull}}{17}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces RDF Triple representation of a skull}}{18}{figure.3.2}

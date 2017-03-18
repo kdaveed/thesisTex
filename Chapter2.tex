@@ -273,16 +273,22 @@ The template file is a description of how the data has to be converted into HTML
 \img{\II}{dataFlow1.png}{Flow of information from DB to client}{dataFlow}
 
 
-The template file contains the following link
+The template shows only the summary of the article, but offers the following link: 
 
-\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=, label=skullJSON,
 basicstyle=\footnotesize,frame=single]
-		http://newsPortal.com/wholeNews?id=${news.id
+		http://newsPortal.com/wholeNews?id=${news.id}
 \end{lstlisting}
 
-which redirects to the page where the whole article can be seen. To achieve this it is necessary to equip each link with the parameter id that holds the ID of NEWS item, order to inform the server about which article’s whole text has to be displayed. Then the servlet class of the mapping /wholeNews has to perform the following query where the id is the input.
+
+The new feature is that after the url mapping there is a parameter \textit{id}, and its value will be the database id of the web application. The idea is that this link redirects to the page where the whole article can be seen. So there has to be a servlet class defined to the mapping /wholeNews, which to perform the following query where the id is the input.
+
 
 \imgK{\II}{6_sql_query.png}{SQL query with parameter}
+
+Thus it is achieved that different links are programmed to get access not only to different other pages, but to specific data items.
+  
+\imgK{\II}{linkID.png}{Links to data items}
 
 Web applications do not only just display existing data, but they allow the users to enter their new data. In HTML the element used for data input is called form. Form is a container, and it consists of particular form elements according to the data to be added. 
 
@@ -299,13 +305,8 @@ By the data entry creation the task of the controller is to get the values from 
 
 \subsection{RDFData creation with HTML forms} \label{rdfWebapp}
 
-
-This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. In the last section by the input input processes, a class (namely the people) could have been, which were instantiated. This means that in relational databases the each class of scheme is represented by a class of the programming language. But as we have seen in section \ref{ontologies} the vocabularies can contain thousands of class, and thus it were time consuming to write all of them into the programming language. Therefore the semantic web based applications have a little bit different structure. First of all the most important is to see the main elements of an RDF dataset that can appear on the definition in the classes.
-
-
-
-
-
+This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. In the last section by the input input processes, a class (namely the people) could have been, which were instantiated. This means that in relational databases the each class of scheme is represented by a class of the programming language. But as we have seen in section \ref{ontologies} the vocabularies can contain thousands of class, and thus it is not an option the translate them into the class of server application program. 
+Therefore the semantic web based applications have a little bit different structure. First of all the most important is to see the main elements of an RDF dataset that can appear on the definition in the classes.
 
 
 
