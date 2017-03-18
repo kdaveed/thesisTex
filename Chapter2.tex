@@ -217,7 +217,7 @@ A web application is program that runs on a machine, which is accessible through
 
 An HTML document contains definition of the elements of the pages, such as tables, buttons, etc. It contains as well so called CSS docuements (Cascading Style Sheet), which is responsible for the definition of the style of the elements. Moreover to make the web pages more interactive, JavaScript (JS) de can be embedded to HTML as well. 
 
-\img{\II}{html.png}{HTML document is interpreted by the browser}{html}
+\img{\II}{htmlBrowser.png}{HTML document is interpreted by the browser}{html}
 
 Initially web pages were static, which means that their only function was to show certain set of information. These applications usually web applications do not consist of one single page, but of several different pages. Like a web page for news, have normally a main page, and different sub pages for the particular topics. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
 
@@ -303,15 +303,52 @@ By the data entry creation the task of the controller is to get the values from 
 \imgK{\II}{9_example_java.png}{Example Java routine for data storage}
 
 
-\subsection{RDFData creation with HTML forms} \label{rdfWebapp}
+\subsection{Applications with RDF Data} \label{rdfWebapp}
 
 This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. In the last section by the input input processes, a class (namely the people) could have been, which were instantiated. This means that in relational databases the each class of scheme is represented by a class of the programming language. But as we have seen in section \ref{ontologies} the vocabularies can contain thousands of class, and thus it is not an option the translate them into the class of server application program. 
 Therefore the semantic web based applications have a little bit different structure. First of all the most important is to see the main elements of an RDF dataset that can appear on the definition in the classes.
 
+\img{\II}{rdfData1.png}{Ontology and data}{rdfData1}
+
+
+\begin{lstlisting}[captionpos=b, caption= Dynamic SPARQL query, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+SELECT ?property ?relatedInstance
+WHERE {
+	?instance 		rdf:type  		:ClassA .  
+	?property			rdfs:domain		:ClassA .
+	?instance			?property 		?relatedInstance .
+}
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+<#list properties as property>
+	<#list property.dataSet as instance> 
+	<#list> 
+</#list>
+\end{lstlisting}
+
+
+\img{\II}{21_profile_page.png}{VIVO Profile page}{rdfData1}
+
+Above the display of the existing data, RDF based applications are different as well in the data input mechanism. First of all, due to the fact that ontologies can contain thousand of class it is not an option to represent them all as classes of the server application language as well. It is time consuming and the system would loose its flexibility in the cases when new ontology subsets are supposed to be loaded. Therefore there are neither for each type of the database an entry form with a unique controller servlet, but more generic approaches are used.
+To define what dataset has to be created, semantic web based applications simply define them as a set of triples, with variables like in SPARQL, just the data flows the other way around.
+
+ \img{\II}{rdfDataDef.png}{Triples to store}{rdfDataDef}
+
+
+
+Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application  
 
 
 
 
+ will be a new unused IRI of the triple store, while the ?type variable come from the client. So let assume an entry form which displays the 
+
+ 
 
 
 
