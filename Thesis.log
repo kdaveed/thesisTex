@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 MAR 2017 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 MAR 2017 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,14 +925,14 @@ ies/1_client_server.png used on input line 215.
 (pdftex.def)             Requested size: 360.0pt x 65.6591pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png, id=
-406, 1366.10374pt x 245.91875pt>
+406, 1297.84875pt x 252.945pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png
  Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
 ies/htmlBrowser.png used on input line 220.
-(pdftex.def)             Requested size: 360.0pt x 64.80417pt.
+(pdftex.def)             Requested size: 360.0pt x 70.16025pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1094,7 +1094,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.
 png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/21_profile_page.png used on input line 335.
+ies/21_profile_page.png used on input line 334.
 (pdftex.def)             Requested size: 360.0pt x 145.58728pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png, id=4
@@ -1104,9 +1104,9 @@ Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/rdfDataDef.png used on input line 340.
+ies/rdfDataDef.png used on input line 339.
 (pdftex.def)             Requested size: 360.0pt x 59.00594pt.
-) (./Chapter3.tex
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1116,6 +1116,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [17 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.
 png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png>
 ]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 350.
+) (./Chapter3.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1126,7 +1129,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Chapter 3.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png, id
-=500, 415.7934pt x 142.6128pt>
+=506, 415.7934pt x 142.6128pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.pn
 g Graphic file (type png)
 
@@ -1139,7 +1142,7 @@ atement/rdfSkull.png used on input line 8.
 
  </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesO.png, i
-d=513, 1442.38875pt x 645.41125pt>
+d=519, 1442.38875pt x 645.41125pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesO.p
 ng Graphic file (type png)
 
@@ -1150,7 +1153,7 @@ atement/rdfBonesO.png used on input line 35.
 (pdftex.def)             Requested size: 360.0pt x 161.08652pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressions.
-png, id=514, 416.2752pt x 82.8696pt>
+png, id=520, 416.2752pt x 82.8696pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpress
 ions.png Graphic file (type png)
 
@@ -1170,7 +1173,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 g> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressio
 ns.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/studyDesEx.png, 
-id=526, 416.2752pt x 90.5784pt>
+id=532, 416.2752pt x 90.5784pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/studyDesEx.
 png Graphic file (type png)
 
@@ -1181,7 +1184,7 @@ atement/studyDesEx.png used on input line 44.
 (pdftex.def)             Requested size: 360.0pt x 78.33679pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png, id=
-527, 416.2752pt x 104.5506pt>
+533, 416.2752pt x 104.5506pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png
  Graphic file (type png)
 
@@ -1199,7 +1202,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ng> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extGlab.png>
 ]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png, id=
-534, 416.2752pt x 29.8716pt>
+540, 416.2752pt x 29.8716pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/skelInv.png
  Graphic file (type png)
 
@@ -1227,7 +1230,7 @@ he rdf-bones:SkeletalInventory,
 
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtScheme.png
-, id=535, 416.2752pt x 149.358pt>
+, id=541, 416.2752pt x 149.358pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtSchem
 e.png Graphic file (type png)
 
@@ -1247,7 +1250,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ontExtScheme.pn
 g>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensional
-Form.png, id=543, 1343.0175pt x 525.965pt>
+Form.png, id=549, 1343.0175pt x 525.965pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimens
 ionalForm.png Graphic file (type png)
 
@@ -1266,7 +1269,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [23 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensi
 onalForm.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDependenc
-y.png, id=560, 1352.05125pt x 336.25626pt>
+y.png, id=566, 1352.05125pt x 336.25626pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepe
 ndency.png Graphic file (type png)
 
@@ -1277,7 +1280,7 @@ atement/subformDependency.png used on input line 99.
 (pdftex.def)             Requested size: 360.0pt x 89.53334pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.png, i
-d=562, 1508.63625pt x 246.9225pt>
+d=568, 1508.63625pt x 246.9225pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.p
 ng Graphic file (type png)
 
@@ -1300,7 +1303,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 dency.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navig
 ator.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleDataModel
-.png, id=570, 1243.64626pt x 295.1025pt>
+.png, id=576, 1243.64626pt x 295.1025pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleData
 Model.png Graphic file (type png)
 
@@ -1410,10 +1413,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 11518 strings out of 493014
- 166040 string characters out of 6133351
+ 11529 strings out of 493014
+ 166205 string characters out of 6133351
  312525 words of memory out of 5000000
- 14536 multiletter control sequences out of 15000+600000
+ 14541 multiletter control sequences out of 15000+600000
  27076 words of font info for 65 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  31i,12n,43p,947b,1950s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1436,10 +1439,10 @@ pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/ur
 w/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb>
-Output written on Thesis.pdf (47 pages, 1800492 bytes).
+Output written on Thesis.pdf (47 pages, 1812642 bytes).
 PDF statistics:
- 747 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 754 PDF objects out of 1000 (max. 8388607)
+ 618 compressed objects within 7 object streams
+ 224 named destinations out of 1000 (max. 500000)
  433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

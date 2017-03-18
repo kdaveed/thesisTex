@@ -322,7 +322,6 @@ WHERE {
 \end{lstlisting}
 
 
-
 \begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=skullJSON,
 basicstyle=\footnotesize,frame=single]
 <#list properties as property>
@@ -337,16 +336,23 @@ basicstyle=\footnotesize,frame=single]
 Above the display of the existing data, RDF based applications are different as well in the data input mechanism. First of all, due to the fact that ontologies can contain thousand of class it is not an option to represent them all as classes of the server application language as well. It is time consuming and the system would loose its flexibility in the cases when new ontology subsets are supposed to be loaded. Therefore there are neither for each type of the database an entry form with a unique controller servlet, but more generic approaches are used.
 To define what dataset has to be created, semantic web based applications simply define them as a set of triples, with variables like in SPARQL, just the data flows the other way around.
 
- \img{\II}{rdfDataDef.png}{Triples to store}{rdfDataDef}
+ \img{\II}{rdfDataDef.png}{Triples representing a new instance}{rdfDataDef}
 
 
-
-Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application  
-
-
+Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application for the new set of triples. The values of the \textit{type} and \text{label}, 
+are coming from the input form. Here the 
 
 
- will be a new unused IRI of the triple store, while the ?type variable come from the client. So let assume an entry form which displays the 
+\begin{lstlisting}[captionpos=b, caption= SPARQL query for the input form, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+SELECT ?class ?label
+WHERE {
+	?class 			rdf:subClassOf* 	obo:OBI_0000339 .  
+	?class			rdf:label			?label . 
+}
+\end{lstlisting}
+
+will be a new unused IRI of the triple store, while the ?type variable come from the client. So let assume an entry form which displays the 
 
  
 
