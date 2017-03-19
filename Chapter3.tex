@@ -42,7 +42,7 @@ An investigation is done by execution of the a study design. It has three parts,
 \img{\III}{rdfBonesO.png}{Applied subset of OBI ontology}{rdfBonesO} 
 
 
-To understand a bit more what this data model can be actually used, let us take the example of an investigation, whose goal is to determine if a taken skull belonged to a male or female. The basis is that the male and female skeleton has different peculiarities that can be quantified, how expressed they are. \figref{glabella} illustrates an example the token \textit{Glabella}, which is a segment of the \textit{Nasal bone}, and its expressions.  
+To understand a bit more what this data model can be actually used, let us take the example of an investigation, whose goal is to determine if a taken skull belonged to a male or female. The basis is that the male and female skeleton has different peculiarities that can be quantified, how expressed they are. \figref{glabella} illustrates an example the token \textit{Glabella}, which is on the \textit{Nasal bone}, and its expressions.  
 
 \img{\III}{glabExpressions.png}{Glabella and its expressions}{glabella}
 
@@ -59,25 +59,9 @@ Where the light grey boxes are the instances of \textit{Assay}, \textit{Data Tra
 
 
 
-Where the variable ?categoricalLabel represents the expression of the token. The values this variable can take are defined in the ontology extension. The variable ?boneSegment is the bone on which the glabella can be found. This instance won’t be as well newly created, but an already added bone has to be selected on the interface. The ?assay and the ?meausurementDatum variables are new instances.  To be able to generate an entry form for the problem, the following ontology extension has to be defined.
+\imgK{\III}{siExt.png}{Ontology extension for skeletal inventories}
 
-\imgK{\III}{extGlab.png}{Ontology extension for Glabella}
-
-
-Mention that the task of the user is to add some elements if they exists or not.
-
-
-It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
-Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
-
-\imgK{\III}{skelInv.png}{Skeletal Inventory Data Structure} 
-
-The variable ?skeletalInventory is the instance of the class rdfbones:SkeletalInventory, while the ?boneSegment is from the class rdfbones:SegmentOfSkeletalElement. The core ontology of the project contains a subclass of the rdfbones:SkeletalInventory, the rdf:PrimarySkeletalInventory. This skeletal inventory type is for skeletal remain collections where only the whole bone organs have to be addressed.  The way to define custom bone segments is always through a custom skeletal inventories, which contains restrictions on the property obo:isAbout and on the class of custom bone segments. Of course the custom bone segments has to be assigned to the bone organ class they belong to, via restrictions on property obo:systemic\_part\_of. The following image illustrates the extension definition.
-
-
-\imgK{\III}{ontExtScheme.png}{Ontology extension scheme}
-
-As these extensions are expressed by OWL restriction the application can query the definitions. Consequently if the custom entry form is called from the profile of a skeletal inventory instance, then the entry form processor routine can ask, what bone segment are defined to the type of the subject variable coming as input, and can offer them on the interface.
+\imgK{\III}{extensionAssay.png}{Ontology extension for sex estimation}
 
 
 
