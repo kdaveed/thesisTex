@@ -1,7 +1,7 @@
 \chapter{Problem Statement}
 
 
-This chapter is divided into two sections. As the application is highly dependent on the underlying data model, the first section dedicated to explanation of the data scheme describing the investigations in scope. The second chapter in turn addresses the problems of the web application, that allows the creation of RDF data outlined in the first section. It covers the issues of both the client and server side implementation and their communication.
+This chapter is divided into three sections. As the application is highly dependent on the underlying data model, the first section is dedicated to the data scheme describing the investigations in scope. The second chapter in turn addresses the problem of web applications that allows the creation of RDF data explained in the first section. It covers the issues of both the client and server side implementation and their communication. Finally section \ref{33} outlines the scheme of the solution proposed and implemented by the thesis work.
 
 
 \section{Modeling anthropological research activity} \label{ps1}
@@ -13,40 +13,51 @@ This section consist of three subsections. The first two (\ref{331} and \ref{332
 \subsection{Data on skeletal remains} \label{331}
 
 
-We have seen in the section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The instutute where these investigations are conducted posses mainly  skeletal remains of skulls. The skull has the peculiarity that it consists of not directly of bones, but from two sub skeletal division, and these to subdivisions contain the bone organs. \figref{tripleSkull} shows the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
+We have seen in section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The institute where these investigations are conducted posses mainly  skeletal remains of skulls. The skull has the peculiarity that it does not consists directly of bones organs, but from two sub skeletal divisions, and these two subdivisions contain the bone organs. \figref{tripleSkull} shows the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
 
 \img{\III}{rdfSkull.png}{Ontology and triples of the skull}{tripleSkull} 
 
-So we know how skull and it subdivision and bone organs are represented by RDF but, there are processes where specific bone segments have to be addressed as well. To to be able to express this, RDFBones have the class \textit{rdfbones:SegmentOfSkeletalElement}. This instances of this class is connected to the instances of the class \textit{Bone Organ} with the property \textit{fma:regional\_part\_of}. 
+So we know how skull and its subdivisions and bone organs are represented by RDF, but there are processes where specific bone segments have to be addressed as well. Therefor RDFBones have the class \textit{rdfbones:SegmentOfSkeletalElement}. This instances of this class is connected to the instances of the class \textit{Bone Organ} with the property \textit{fma:regional\_part\_of}.
 
 \img{\III}{rdfBonesCard.png}{Bone segment in RDFBones}{rdfBonesCard} 
 
-Furthermore these instances referring to skeletal remain do not stay in the database individually. If a researcher takes a specific skull from the collection of the institute it makes a so-called skeletal inventory, which records what bones are present in the skull. The information about the presence is stored in further instance called \textit{Completeness 2 states}.  
+Furthermore these instances representing skeletal remains do not stay in the database individually. If a researcher takes a specific skull from the collection of the institute, it makes a so-called skeletal inventory, which records what bones segments are complete, partly present or missing. To store these information in the RDFBones ontology introduces three further classes (above the one for bone segment), which are all the subclasses of \textit{OBI} classes. 
 
 
 \img{\III}{core.png}{RDFBones as extension of OBI}{rdfBonesCard} 
 
+\figref{case1} illustrates the dataset through a simple problem. The upper left part of the figure shows that a specific bone is divided into three bone segments, while the right shows the existing bone from which the data has to be stored. It can be seen the section I. is complete, section II. is just partly present and the III. is missing. The lower part of the figure then shows that the three segment are represented as subclass of the \textit{:SegmentOfSkeletalElement} class (denoted with blue), and from the third type there are no instance have been created, while the first two are connected to the skeletal inventory and compleness label instances through \textit{:Completeness2States} instances. 
 
 \img{\III}{case1.png}{Custom bone segment example}{case1} 
 
 
-
-Here the really important point the not only values are added like the simple form of the previous examples, but some elements can be added or just or just leaved. This leads to more dynamic
-interfaces.
-
-\subsection{Study Design Execution}\label{332}
+This is the way how the information is stored about skeletal remains using the RDFBones ontology.
 
 
-\img{\III}{rdfBonesO.png}{RDF Triple representation of a skull}{tripleSkull} 
+\subsection{Investigation process}\label{332}
 
 
-In most investigations the researcher take a set of bones belong to one individual and examine different tokens. Tokens refer to specific features of parts or regions of bones. These token have particular expressions.
+An investigation is done by execution of the a study design. It has three parts, the assay, the data transformation and the drawing of a conclusion. From assays and data transformations there can be more in one execution, but there is only one conclusion. The inputs of the assays are always segments of skeletal elements, an their output is always a measurement datum, while the data transformation's  input and output are both measurement datums.
 
-\imgK{\III}{glabExpressions.png}{Glabella and its expressions}
+\img{\III}{rdfBonesO.png}{Applied subset of OBI ontology}{rdfBonesO} 
 
-The previous images show the token called glabella, and its expressions. The task of the web application is let the researcher select one of the already added Nasal Bones (because on that bone is the glabella token), and set the expression of it. The following data structure models the process.
 
-\imgK{\III}{studyDesEx.png}{Study Design Execution Data Structure}
+To understand a bit more what this data model can be actually used, let us take the example of an investigation, whose goal is to determine if a taken skull belonged to a male or female. The basis is that the male and female skeleton has different peculiarities that can be quantified, how expressed they are. \figref{glabella} illustrates an example the token \textit{Glabella}, which is a segment of the \textit{Nasal bone}, and its expressions.  
+
+\img{\III}{glabExpressions.png}{Glabella and its expressions}{glabella}
+
+
+The larger the numbers for masculine and the lowers are feminine expression. An assay in this case is an assignment of a scalar value to a bone segment. The investigation process does not take only one bone segment but several different ones, to reduce the possibility of the erroneous output. \figref{sde} shows a dataset of a study design execution where the green arrows stand for \textit{has specified input} and the blue ones for the \textit{has specified output} predicates. The idea is simple, the output of the assays are aggregated, and if the output is smaller then zero then it was a male, otherwise a female.
+
+\img{\III}{sde.png}{Study design execution dataset}{sde} 
+
+
+Where the light grey boxes are the instances of \textit{Assay}, \textit{Data Transformation} and \textit{Drawing conclusion} classes respectively.
+
+
+\subsection{Ontology Extensions} \label{333}
+
+
 
 Where the variable ?categoricalLabel represents the expression of the token. The values this variable can take are defined in the ontology extension. The variable ?boneSegment is the bone on which the glabella can be found. This instance won’t be as well newly created, but an already added bone has to be selected on the interface. The ?assay and the ?meausurementDatum variables are new instances.  To be able to generate an entry form for the problem, the following ontology extension has to be defined.
 
@@ -55,8 +66,6 @@ Where the variable ?categoricalLabel represents the expression of the token. The
 
 Mention that the task of the user is to add some elements if they exists or not.
 
-
-\subsection{Ontology Extensions} \label{332}
 
 It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
 Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
@@ -195,7 +204,7 @@ Finally if a value of selector or literal field changes, or new sub forms has to
 
 
 
-
+\section{Solution Scheme} \label{33}
 
 
 
