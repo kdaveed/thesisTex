@@ -1,15 +1,19 @@
 \chapter{Problem Statement}
 
-\section{Modeling anthropological research activity}
 
-This section is based on section \ref{ontologies}, but it addresses the RDFBones ontology, developed by the colleagues. The rough discussion of the RDFBones ontology is inevitable to understand the software problems of the project. 
-
+This chapter is divided into two sections. As the application is highly dependent on the underlying data model, the first section dedicated to explanation of the data scheme describing the investigations in scope. The second chapter in turn addresses the problems of the web application, that allows the creation of RDF data outlined in the first section. It covers the issues of both the client and server side implementation and their communication.
 
 
-\subsection{Data on skeletal remains}
+\section{Modeling anthropological research activity} \label{ps1}
 
 
-We have seen in the section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The instutute where these investigations are conducted posses mainly skull skeletal remains. The skull has the peculiarity that it consist of not directly of bones, but from two sub skeletal division, and these to subdivisions contain the bones. Figure \figref{tripleSkull} following image show the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
+This section consist of three subsections. The first two (\ref{331} and \ref{332}) describes how the RDFBones ontology (developed during the project) integrates the \textit{FMA} and \textit{OBI} ontologies for describing research processes related to anthropology. While the third section (\ref{333}) discusses how can the core ontology be extended to define custom bone segments and processes.
+
+
+\subsection{Data on skeletal remains} \label{331}
+
+
+We have seen in the section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The instutute where these investigations are conducted posses mainly  skeletal remains of skulls. The skull has the peculiarity that it consists of not directly of bones, but from two sub skeletal division, and these to subdivisions contain the bone organs. \figref{tripleSkull} shows the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
 
 \img{\III}{rdfSkull.png}{Ontology and triples of the skull}{tripleSkull} 
 
@@ -17,35 +21,20 @@ So we know how skull and it subdivision and bone organs are represented by RDF b
 
 \img{\III}{rdfBonesCard.png}{Bone segment in RDFBones}{rdfBonesCard} 
 
-
-
 Furthermore these instances referring to skeletal remain do not stay in the database individually. If a researcher takes a specific skull from the collection of the institute it makes a so-called skeletal inventory, which records what bones are present in the skull. The information about the presence is stored in further instance called \textit{Completeness 2 states}.  
 
 
 \img{\III}{core.png}{RDFBones as extension of OBI}{rdfBonesCard} 
 
 
+\img{\III}{case1.png}{Custom bone segment example}{case1} 
 
-
-\begin{lstlisting}[captionpos=b, caption= data representing skull, label=skullJSON,
-basicstyle=\footnotesize,frame=single]
-{
-	skeletalSubdivisionUri : "FMA:46565",
-	sytemic_parts : [{
-		uri : "FMA:53672",
-		systemic_parts : [{
-			uri : "FMA:52788",  //Right parietal bone
-		} , { ... }]
-	} , { ... }
-	]	
-}
-\end{lstlisting}
 
 
 Here the really important point the not only values are added like the simple form of the previous examples, but some elements can be added or just or just leaved. This leads to more dynamic
 interfaces.
 
-\subsection{Study Design Execution}
+\subsection{Study Design Execution}\label{332}
 
 
 \img{\III}{rdfBonesO.png}{RDF Triple representation of a skull}{tripleSkull} 
@@ -67,7 +56,7 @@ Where the variable ?categoricalLabel represents the expression of the token. The
 Mention that the task of the user is to add some elements if they exists or not.
 
 
-\subsection{Ontology Extensions}
+\subsection{Ontology Extensions} \label{332}
 
 It is often the case that in an investigation not only the bone itself, but also particular segments has to be addressed. However the bone segments of the bones are not standard, and they can differ according to researcher or research project. Therefore FMA do not contain any bone segment of the bone organs, and consequently we have to define it on our own. 
 Important that the skeletal subdivision instances do not appear on the dataset on their own, but they are connected to Skeletal Inventories. Skeletal inventories are used to gather information about particular skeletal remains.  The following image show the triple structure of skeletal inventories.
@@ -107,6 +96,25 @@ basicstyle=\footnotesize,frame=single]
 	}, { ... }]
 }
 \end{lstlisting}
+
+
+
+
+
+\begin{lstlisting}[captionpos=b, caption= data representing skull, label=skullJSON,
+basicstyle=\footnotesize,frame=single]
+{
+skeletalSubdivisionUri : "FMA:46565",
+sytemic_parts : [{
+uri : "FMA:53672",
+systemic_parts : [{
+uri : "FMA:52788",  //Right parietal bone
+} , { ... }]
+} , { ... }
+]	
+}
+\end{lstlisting}
+
 
 
 \subsection{Form dependencies} \label{formDependencies}
