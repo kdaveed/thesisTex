@@ -23,16 +23,18 @@
 \contentsline {figure}{\numberline {2.20}{\ignorespaces Triples representing a new instance}}{17}{figure.2.20}
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Data input scheme by RDF}}{18}{figure.2.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces RDF Triple representation of a skull}}{19}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces RDF Triple representation of a skull}}{20}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Glabella and its expressions}}{20}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Study Design Execution Data Structure}}{21}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Ontology extension for Glabella}}{21}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Skeletal Inventory Data Structure}}{22}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ontology extension scheme}}{22}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Multi dimensional form layout}}{23}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Subform dependencies}}{24}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Navigator example}}{24}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Example data model}}{25}{figure.3.11}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and triples of the skull}}{20}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bone segment in RDFBones}}{20}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces RDFBones as extension of OBI}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces RDF Triple representation of a skull}}{21}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Glabella and its expressions}}{21}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Study Design Execution Data Structure}}{22}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Ontology extension for Glabella}}{22}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Skeletal Inventory Data Structure}}{23}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Ontology extension scheme}}{23}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Multi dimensional form layout}}{24}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Subform dependencies}}{25}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Navigator example}}{25}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Example data model}}{26}{figure.3.13}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

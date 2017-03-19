@@ -1,17 +1,33 @@
 \chapter{Problem Statement}
 
-\section{Challanges of the RDFBones project}
+\section{Modeling anthropological research activity}
 
-\subsection{Human skeleton}
-
-
-\img{\III}{rdfSkull.png}{RDF Triple representation of a skull}{tripleSkull} 
+This section is based on section \ref{ontologies}, but it addresses the RDFBones ontology, developed by the colleagues. The rough discussion of the RDFBones ontology is inevitable to understand the software problems of the project. 
 
 
-To implement an entry form that allows the user to create such triple set takes considerably more effort then the cases explained in the previous sections, because not only key value pairs has  to be sent from the client to the server, but a multi dimensional dataset. Like this: 
+
+\subsection{Data on skeletal remains}
 
 
-\begin{lstlisting}[captionpos=b, caption=Form data representing skull, label=skullJSON,
+We have seen in the section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The instutute where these investigations are conducted posses mainly skull skeletal remains. The skull has the peculiarity that it consist of not directly of bones, but from two sub skeletal division, and these to subdivisions contain the bones. Figure \figref{tripleSkull} following image show the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
+
+\img{\III}{rdfSkull.png}{Ontology and triples of the skull}{tripleSkull} 
+
+So we know how skull and it subdivision and bone organs are represented by RDF but, there are processes where specific bone segments have to be addressed as well. To to be able to express this, RDFBones have the class \textit{rdfbones:SegmentOfSkeletalElement}. This instances of this class is connected to the instances of the class \textit{Bone Organ} with the property \textit{fma:regional\_part\_of}. 
+
+\img{\III}{rdfBonesCard.png}{Bone segment in RDFBones}{rdfBonesCard} 
+
+
+
+Furthermore these instances referring to skeletal remain do not stay in the database individually. If a researcher takes a specific skull from the collection of the institute it makes a so-called skeletal inventory, which records what bones are present in the skull. The information about the presence is stored in further instance called \textit{Completeness 2 states}.  
+
+
+\img{\III}{core.png}{RDFBones as extension of OBI}{rdfBonesCard} 
+
+
+
+
+\begin{lstlisting}[captionpos=b, caption= data representing skull, label=skullJSON,
 basicstyle=\footnotesize,frame=single]
 {
 	skeletalSubdivisionUri : "FMA:46565",

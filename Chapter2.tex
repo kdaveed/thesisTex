@@ -150,7 +150,7 @@ WHERE {
 Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to used already defined 
 ontologies rather developing an own. The first reason is, that the development of an ontology is a complex and a tedious process, and requires a lot of resource. Secondly, it is reasonable to use standardized vocabularies, in order to make data from same domain but different sources inter-operable.
 
-\subsection{Foundational Model of Anatomy - \textit{FMA}} 
+\subsection{Foundational Model of Anatomy - \textit{FMA}}  \label{fma}
 
 The foundational Model of Anatomy ontology is an open source ontology written in OWL. FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge based applications. It contains more than 70 000 classes, and 168 different relationships, and organize its entities into a deep subclass tree \cite{Rosse2003478}. All types of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only the subset of the FMA. The taken elements are the subclasses of the following two classes and the three properties: 
 
@@ -173,7 +173,7 @@ The class \textit{Bone Organ} is the superclass of all bones in the human skelet
 
 Finally the advantage of using the FMA ontology is that, if in the future further elements of the human body have to be addressed by the research processes, i.e. muscles, then these classes can be easily integrated to the currently applied subset.
 
-\subsection{Ontology for Biomedical Investigations - \textit{OBI}} 
+\subsection{Ontology for Biomedical Investigations - \textit{OBI}} \label{obi}
 
 
 The aim of OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it continuously evolving as new research methods are being developed. Its main function to describe the rules how biological and medical investigations have to be performed. OBI reuses terms from BFO \textit{Basic Formal Ontology} IAO \textit{Information Artifact Ontology} and  OBO \textit{Open Biological and Biomedical Ontologies}\cite{10.1371/journal.pone.0154556}. To define processes OBI uses the following three general classes:
@@ -332,7 +332,6 @@ basicstyle=\footnotesize,frame=single]
 	<#list> 
 </#list>
 \end{lstlisting}
-
 
 The VIVO framework applied in the RDFBones project generates the pages for instances this way.
 
