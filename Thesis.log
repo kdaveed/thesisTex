@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAR 2017 20:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 MAR 2017 19:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,12 +558,6 @@ LaTeX Warning: Label `skullJSON' multiply defined.
 LaTeX Warning: Label `rdfBonesCard' multiply defined.
 
 
-LaTeX Warning: Label `fig:label' multiply defined.
-
-
-LaTeX Warning: Label `fig:label' multiply defined.
-
-
 LaTeX Warning: Label `3rd:sparql' multiply defined.
 
 
@@ -571,6 +565,81 @@ LaTeX Warning: Label `skullJSON' multiply defined.
 
 
 LaTeX Warning: Label `mdfl' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
+
+
+LaTeX Warning: Label `fig:label' multiply defined.
 
 )
 \openout1 = `Thesis.aux'.
@@ -647,7 +716,7 @@ LaTeX Info: Redefining \nameref on input line 2.
 mf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<./pics/unifr-logo.jpg, id=144, 139.9629pt x 165.0165pt>
+<./pics/unifr-logo.jpg, id=221, 139.9629pt x 165.0165pt>
 File: ./pics/unifr-logo.jpg Graphic file (type jpg)
 
 <use ./pics/unifr-logo.jpg>
@@ -688,7 +757,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4
 
-])
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5])
 \tf@toc=\write6
 \openout6 = `Thesis.toc'.
 
@@ -699,9 +775,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] (./Thesis.lof [6
+[6] (./Thesis.lof [7
 
-])
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8])
 \tf@lof=\write7
 \openout7 = `Thesis.lof'.
 
@@ -712,13 +795,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] (./Thesis.lot)
+[9] (./Thesis.lot)
 \tf@lot=\write8
 \openout8 = `Thesis.lot'.
 
- [8
+ [10
 
-] [9] [10] (./Chapter1-Intro.tex
+] [11] [12] (./Chapter1-Intro.tex
 Chapter 1.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -746,7 +829,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabulary.p
-ng, id=323, 417.2388pt x 151.767pt>
+ng, id=477, 417.2388pt x 151.767pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabul
 ary.png Graphic file (type png)
 
@@ -757,7 +840,7 @@ ies/12_rdfs_vocabulary.png used on input line 51.
 (pdftex.def)             Requested size: 360.0pt x 130.95242pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_range
-.png, id=325, 416.2752pt x 83.8332pt>
+.png, id=479, 416.2752pt x 83.8332pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/13_rdfs_domain_
 range.png Graphic file (type png)
 
@@ -779,7 +862,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/12_rdfs_vocabular
 y.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex_ontology.
-png, id=332, 415.7934pt x 119.4864pt>
+png, id=485, 415.7934pt x 119.4864pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/14_rdfs_ex_onto
 logy.png Graphic file (type png)
 
@@ -808,7 +891,7 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 7.65005pt on input line 85.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png, id
-=344, 415.7934pt x 140.6856pt>
+=497, 415.7934pt x 140.6856pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.pn
 g Graphic file (type png)
 
@@ -825,7 +908,7 @@ and owl:DataTypeProperty.
 
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_properties
-.png, id=345, 415.7934pt x 96.36pt>
+.png, id=498, 415.7934pt x 96.36pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/16_object_prope
 rties.png Graphic file (type png)
 
@@ -844,7 +927,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [6 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png>
 ]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualified_card.pn
-g, id=364, 415.7934pt x 100.2144pt>
+g, id=519, 415.7934pt x 100.2144pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/17_qualified_ca
 rd.png Graphic file (type png)
 
@@ -882,7 +965,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologyStructu
-re.png, id=400, 415.7934pt x 133.9404pt>
+re.png, id=554, 415.7934pt x 133.9404pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/1ontologySt
 ructure.png Graphic file (type png)
 
@@ -908,7 +991,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server.png,
- id=416, 1265.72874pt x 230.8625pt>
+ id=570, 1265.72874pt x 230.8625pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server
 .png Graphic file (type png)
 
@@ -919,7 +1002,7 @@ ies/1_client_server.png used on input line 215.
 (pdftex.def)             Requested size: 360.0pt x 65.6591pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png, id=
-417, 1297.84875pt x 252.945pt>
+571, 1297.84875pt x 252.945pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png
  Graphic file (type png)
 
@@ -937,7 +1020,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/htmlBrowser.png
 >]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/servletMapping.png, 
-id=425, 1143.27126pt x 355.3275pt>
+id=579, 1143.27126pt x 355.3275pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/servletMapping.
 png Graphic file (type png)
 
@@ -958,7 +1041,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png, id=
-440, 416.2752pt x 89.6148pt>
+595, 416.2752pt x 89.6148pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png
  Graphic file (type png)
 
@@ -975,8 +1058,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [13 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/servletMapping.p
 ng> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/4_data_flow.png>
 ]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/dataFlow1.png, id=44
-9, 1203.49625pt x 130.4875pt>
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/dataFlow1.png, id=60
+4, 1203.49625pt x 130.4875pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/dataFlow1.png G
 raphic file (type png)
 
@@ -986,7 +1069,7 @@ ies/dataFlow1.png used on input line 273.
 (pdftex.def)             Requested size: 360.0pt x 39.03305pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png, id=
-450, 416.757pt x 52.998pt>
+605, 416.757pt x 52.998pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png
  Graphic file (type png)
 
@@ -995,7 +1078,7 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
 ies/6_sql_query.png used on input line 287.
 (pdftex.def)             Requested size: 360.0pt x 45.78036pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/linkID.png, id=451, 
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/linkID.png, id=606, 
 1268.74pt x 312.16624pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/linkID.png Grap
 hic file (type png)
@@ -1017,7 +1100,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [14 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/dataFlow1.png> <
 /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/6_sql_query.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_html.p
-ng, id=468, 416.757pt x 93.951pt>
+ng, id=621, 416.757pt x 93.951pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_h
 tml.png Graphic file (type png)
 
@@ -1028,7 +1111,7 @@ ies/7_form_layout_html.png used on input line 295.
 (pdftex.def)             Requested size: 360.0pt x 81.15611pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_parameter.
-png, id=469, 415.7934pt x 25.0536pt>
+png, id=622, 415.7934pt x 25.0536pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_param
 eter.png Graphic file (type png)
 
@@ -1039,7 +1122,7 @@ ies/8_request_parameter.png used on input line 299.
 (pdftex.def)             Requested size: 360.0pt x 21.69208pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.png, 
-id=470, 416.757pt x 38.0622pt>
+id=623, 416.757pt x 38.0622pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.
 png Graphic file (type png)
 
@@ -1062,7 +1145,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ers/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/7_form_layout_html.png> 
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/8_request_parameter.
 png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfData1.png, id=478
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfData1.png, id=632
 , 1219.55624pt x 299.1175pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfData1.png Gr
 aphic file (type png)
@@ -1081,7 +1164,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [16 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/9_example_java.p
 ng> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfData1.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.png,
- id=496, 415.7934pt x 168.1482pt>
+ id=650, 415.7934pt x 168.1482pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page
 .png Graphic file (type png)
 
@@ -1091,8 +1174,8 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
 ies/21_profile_page.png used on input line 338.
 (pdftex.def)             Requested size: 360.0pt x 145.58728pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png, id=4
-97, 1273.75874pt x 208.78pt>
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png, id=6
+51, 1273.75874pt x 208.78pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png 
 Graphic file (type png)
 
@@ -1110,7 +1193,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [17 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/21_profile_page.
 png> </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfDataDef.png>
 ]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfForm.png, id=507,
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfForm.png, id=661,
  1353.055pt x 418.56375pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfForm.png Gra
 phic file (type png)
@@ -1133,7 +1216,7 @@ Chapter 3.
 
 ]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png, id
-=529, 415.7934pt x 142.6128pt>
+=684, 415.7934pt x 142.6128pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.pn
 g Graphic file (type png)
 
@@ -1150,7 +1233,7 @@ Overfull \hbox (73.58171pt too wide) in paragraph at lines 20--21
 
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesCard.png
-, id=530, 1319.93124pt x 212.795pt>
+, id=685, 1319.93124pt x 212.795pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesCar
 d.png Graphic file (type png)
 
@@ -1160,7 +1243,7 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
 atement/rdfBonesCard.png used on input line 22.
 (pdftex.def)             Requested size: 360.0pt x 58.03662pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/core.png, id=531
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/core.png, id=686
 , 1322.9425pt x 402.50375pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/core.png Gr
 aphic file (type png)
@@ -1182,8 +1265,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [20 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfSkull.png
 > </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesCard.p
 ng>]
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/case1.png, id=54
-0, 1489.565pt x 657.45625pt>
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/case1.png, id=69
+4, 1489.565pt x 657.45625pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/case1.png G
 raphic file (type png)
 
@@ -1201,7 +1284,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [21 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/core.png> </
 Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/case1.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesO.png, i
-d=547, 1442.38875pt x 645.41125pt>
+d=701, 1442.38875pt x 645.41125pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesO.p
 ng Graphic file (type png)
 
@@ -1212,7 +1295,7 @@ atement/rdfBonesO.png used on input line 42.
 (pdftex.def)             Requested size: 360.0pt x 161.08652pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressions.
-png, id=549, 1296.845pt x 263.98625pt>
+png, id=703, 1296.845pt x 263.98625pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpress
 ions.png Graphic file (type png)
 
@@ -1231,7 +1314,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [22 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBonesO.pn
 g> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/glabExpressio
 ns.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/sde.png, id=557,
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/sde.png, id=711,
  1398.22375pt x 296.10625pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/sde.png Gra
 phic file (type png)
@@ -1241,26 +1324,30 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
 atement/sde.png used on input line 52.
 (pdftex.def)             Requested size: 360.0pt x 76.23578pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png, id=55
-8, 1305.87875pt x 366.36874pt>
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png, id=71
+2, 1266.7325pt x 432.61626pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png G
 raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/siExt.png used on input line 62.
-(pdftex.def)             Requested size: 360.0pt x 100.99489pt.
+atement/siExt.png used on input line 65.
+(pdftex.def)             Requested size: 360.0pt x 122.94705pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extensionAssay.p
-ng, id=559, 1351.0475pt x 410.53375pt>
+ng, id=715, 1389.19pt x 418.56375pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extensionAs
 say.png Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extensionAss
 ay.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/extensionAssay.png used on input line 64.
-(pdftex.def)             Requested size: 360.0pt x 109.38602pt.
+atement/extensionAssay.png used on input line 70.
+(pdftex.def)             Requested size: 360.0pt x 108.46634pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1268,49 +1355,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/sde.png> </U
-sers/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png> </Users/
-konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extensionAssay.png>]
+[23 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/sde.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensional
-Form.png, id=568, 1343.0175pt x 525.965pt>
+Form.png, id=722, 1343.0175pt x 525.965pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimens
 ionalForm.png Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensi
 onalForm.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/multiDimensionalForm.png used on input line 74.
+atement/multiDimensionalForm.png used on input line 78.
 (pdftex.def)             Requested size: 360.0pt x 140.98517pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[24 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensi
-onalForm.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDependenc
-y.png, id=586, 1352.05125pt x 336.25626pt>
-File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepe
-ndency.png Graphic file (type png)
-
-<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepen
-dency.png>
-Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/subformDependency.png used on input line 116.
-(pdftex.def)             Requested size: 360.0pt x 89.53334pt.
-
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.png, i
-d=588, 1508.63625pt x 246.9225pt>
-File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.p
-ng Graphic file (type png)
-
-<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.pn
-g>
-Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/navigator.png used on input line 127.
-(pdftex.def)             Requested size: 360.0pt x 58.91974pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1321,21 +1376,60 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepen
-dency.png>]
+[24 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/siExt.png> <
+/Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/extensionAssay.pn
+g>]
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDependenc
+y.png, id=730, 1352.05125pt x 336.25626pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepe
+ndency.png Graphic file (type png)
 
-LaTeX Warning: Reference `vivoCef' on page 26 undefined on input line 143.
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepen
+dency.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/subformDependency.png used on input line 120.
+(pdftex.def)             Requested size: 360.0pt x 89.53334pt.
 
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/multiDimensi
+onalForm.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.png, i
+d=760, 1508.63625pt x 246.9225pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.p
+ng Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.pn
+g>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
+atement/navigator.png used on input line 131.
+(pdftex.def)             Requested size: 360.0pt x 58.91974pt.
+
+
+LaTeX Warning: Reference `vivoCef' on page 26 undefined on input line 147.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/subformDepen
+dency.png> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navig
+ator.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleDataModel
-.png, id=605, 1243.64626pt x 295.1025pt>
+.png, id=767, 1243.64626pt x 295.1025pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleData
 Model.png Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleDataM
 odel.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/exampleDataModel.png used on input line 145.
+atement/exampleDataModel.png used on input line 149.
 (pdftex.def)             Requested size: 360.0pt x 85.42442pt.
 
 
@@ -1344,16 +1438,458 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/navigator.pn
-g> </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleDataMo
-del.png>])
+[27 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/exampleDataM
+odel.png>]) (./Chapter4.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27] [28] (./AppendixA-Glossary.tex
+[28]
+Chapter 4.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/basicFlow.p
+ng, id=788, 1485.55pt x 90.3375pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/basicF
+low.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/basicFl
+ow.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/basicFlow.png used on input line 11.
+(pdftex.def)             Requested size: 360.0pt x 21.89096pt.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+) [29
+
+ </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/basicFlow.
+png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/frameworkFu
+nc.png, id=803, 1343.0175pt x 509.905pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/framew
+orkFunc.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/framewo
+rkFunc.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/frameworkFunc.png used on input line 39.
+(pdftex.def)             Requested size: 360.0pt x 136.68028pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontologyFor
+m.png, id=804, 1289.81876pt x 492.84125pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontolo
+gyForm.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontolog
+yForm.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/ontologyForm.png used on input line 45.
+(pdftex.def)             Requested size: 360.0pt x 137.5509pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/framewo
+rkFunc.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input
+/ontologyForm.png>]
+Overfull \hbox (12.08847pt too wide) in paragraph at lines 50--50
+[]\T1/cmr/m/n/10.95 Here is im-por-tant to ex-plain the dif-fer-ence be-tween t
+he wa:SubFormAdder
+ []
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/difference.
+png, id=818, 1651.16875pt x 430.60875pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/differ
+ence.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/differe
+nce.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/difference.png used on input line 52.
+(pdftex.def)             Requested size: 360.0pt x 93.88004pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDescRDF
+.png, id=819, 1289.81876pt x 299.1175pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDe
+scRDF.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDes
+cRDF.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/formDescRDF.png used on input line 56.
+(pdftex.def)             Requested size: 360.0pt x 83.48303pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/statement.p
+ng, id=820, 1251.67625pt x 276.03125pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/statem
+ent.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/stateme
+nt.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/statement.png used on input line 65.
+(pdftex.def)             Requested size: 360.0pt x 79.38995pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/differe
+nce.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/fo
+rmDescRDF.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/coreOntolog
+y.png, id=827, 1221.56375pt x 247.92625pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/coreOn
+tology.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/coreOnt
+ology.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/coreOntology.png used on input line 73.
+(pdftex.def)             Requested size: 360.0pt x 73.06572pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/variableTyp
+es.png, id=828, 1147.28625pt x 482.80376pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/variab
+leTypes.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/variabl
+eTypes.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/variableTypes.png used on input line 83.
+(pdftex.def)             Requested size: 360.0pt x 151.49463pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/stateme
+nt.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/cor
+eOntology.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontologySta
+tement.png, id=835, 1306.8825pt x 382.42876pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontolo
+gyStatement.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/ontolog
+yStatement.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/ontologyStatement.png used on input line 94.
+(pdftex.def)             Requested size: 360.0pt x 105.34036pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/variabl
+eTypes.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input
+/ontologyStatement.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tripleSet1.
+png, id=842, 1265.72874pt x 406.51875pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/triple
+Set1.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tripleS
+et1.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/tripleSet1.png used on input line 101.
+(pdftex.def)             Requested size: 360.0pt x 115.61713pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tripleSet2.
+png, id=843, 1337.99875pt x 408.52625pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/triple
+Set2.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tripleS
+et2.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/tripleSet2.png used on input line 108.
+(pdftex.def)             Requested size: 360.0pt x 109.91707pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDefinit
+ion1.png, id=844, 1380.15625pt x 268.00125pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDe
+finition1.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDef
+inition1.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/formDefinition1.png used on input line 115.
+(pdftex.def)             Requested size: 360.0pt x 69.90358pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/base.png, i
+d=845, 1043.9pt x 191.71625pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/base.p
+ng Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/base.pn
+g>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modellin
+g_Data_Input/base.png used on input line 121.
+(pdftex.def)             Requested size: 360.0pt x 66.11584pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tripleS
+et1.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/tr
+ipleSet2.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png, id=852, 137
+7.145pt x 473.77pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png Graphic
+ file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/o
+verview.png used on input line 138.
+(pdftex.def)             Requested size: 360.0pt x 123.8496pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png, id=853, 1279.78
+125pt x 446.66875pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png Graphic fil
+e (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/u
+ml1.png used on input line 143.
+(pdftex.def)             Requested size: 360.0pt x 125.64572pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35 </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Input/formDef
+inition1.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_1_Modelling_Data_Inp
+ut/base.png> </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png
+>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png, id=86
+2, 1395.2125pt x 527.9725pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png G
+raphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/f
+ormDescriptor.png used on input line 150.
+(pdftex.def)             Requested size: 360.0pt x 136.23036pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png, id=863, 133
+4.9875pt x 361.35pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png Graphic
+ file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/g
+raphUML.png used on input line 161.
+(pdftex.def)             Requested size: 360.0pt x 97.4445pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png> </Users/kon
+kolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png, id=871, 
+1358.07375pt x 537.00626pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png Grap
+hic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/j
+sonVSGraph.png used on input line 171.
+(pdftex.def)             Requested size: 360.0pt x 142.34694pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png> </Users
+/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/exampleProblem.png, id=87
+8, 1309.89375pt x 402.50375pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/exampleProblem.png G
+raphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/exampleProblem.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
+xampleProblem.png used on input line 190.
+(pdftex.def)             Requested size: 360.0pt x 110.61824pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png, id=879, 
+1449.415pt x 85.31876pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png Grap
+hic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
+xplanation.png used on input line 194.
+(pdftex.def)             Requested size: 360.0pt x 21.19032pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection.png,
+ id=880, 1476.51625pt x 118.4425pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection
+.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection.
+png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/r
+estrictionDirection.png used on input line 196.
+(pdftex.def)             Requested size: 360.0pt x 28.87679pt.
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/variableDependency.png, i
+d=881, 1582.91376pt x 356.33125pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/variableDependency.p
+ng Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/variableDependency.pn
+g>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/v
+ariableDependency.png used on input line 203.
+(pdftex.def)             Requested size: 360.0pt x 81.03557pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/edit.png, id=882, 1473.50
+5pt x 265.99374pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/edit.png Graphic fil
+e (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/edit.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
+dit.png used on input line 212.
+(pdftex.def)             Requested size: 360.0pt x 64.98436pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/selectorVsFormGraph.png, 
+id=883, 1382.16376pt x 281.05pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/selectorVsFormGraph.
+png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/selectorVsFormGraph.p
+ng>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/s
+electorVsFormGraph.png used on input line 217.
+(pdftex.def)             Requested size: 360.0pt x 73.19992pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/exampleProblem.png> <
+/Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png> </Users/k
+onkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/navigatorClassDiagram.png
+, id=891, 1403.2425pt x 374.39874pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/navigatorClassDiagra
+m.png Graphic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/navigatorClassDiagram
+.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/n
+avigatorClassDiagram.png used on input line 227.
+(pdftex.def)             Requested size: 360.0pt x 96.05026pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (12.40863pt too wide) in paragraph at lines 238--239
+[]\T1/cmr/m/n/10.95 In this chap-ter it is dis-cussed how the forms are im-ple-
+mented in JavaScript 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/variableDependency.pn
+g> </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/edit.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/selectorVsFormGraph.p
+ng> </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/navigatorClassDiagram
+.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]
+Overfull \hbox (65.02715pt too wide) in paragraph at lines 378--379
+[]\T1/cmr/m/n/10.95 The same way the sub-form adder checks if the this.formData
+[this.descriptor.dataKey]
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43] [44] (./AppendixA-Glossary.tex
 Appendix A.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 9.30756pt on input line 3.
@@ -1377,7 +1913,7 @@ Overfull \hbox (5.43306pt too wide) in alignment at lines 63--108
  [] [] 
  []
 
-[29
+[45
 
 ]
 Overfull \hbox (5.43306pt too wide) in alignment at lines 108--138
@@ -1390,7 +1926,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30]
+[46]
 Overfull \hbox (5.43306pt too wide) in alignment at lines 138--163
  [] [] 
  []
@@ -1401,25 +1937,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31])
+[47])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32] [33] (./AppendixB.tex
+[48] [49] (./AppendixB.tex
 Appendix B.
-) [34
+) [50
 
 ]
 Overfull \hbox (50.09671pt too wide) in paragraph at lines 81--92
 [] 
  []
 
-[35] [36] (./Thesis.bbl) 
+[51] [52] (./Thesis.bbl) 
 AED: lastpage setting LastPage
-[37
+[53
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
@@ -1428,7 +1964,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 05352AFADDFD737E032925E641CCB423;2312.
+(rerunfilecheck)             Checksum: 373237D25CFF5072BD883F5858F6641F;3632.
 
 
 LaTeX Warning: There were undefined references.
@@ -1439,13 +1975,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 11561 strings out of 493014
- 167243 string characters out of 6133351
- 312525 words of memory out of 5000000
- 14564 multiletter control sequences out of 15000+600000
+ 12092 strings out of 493014
+ 180995 string characters out of 6133351
+ 337986 words of memory out of 5000000
+ 14918 multiletter control sequences out of 15000+600000
  27076 words of font info for 65 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 31i,12n,43p,947b,1950s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,12n,51p,947b,1950s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -1465,10 +2001,10 @@ pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/ur
 w/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb>
-Output written on Thesis.pdf (48 pages, 1969806 bytes).
+Output written on Thesis.pdf (66 pages, 2819425 bytes).
 PDF statistics:
- 785 PDF objects out of 1000 (max. 8388607)
- 642 compressed objects within 7 object streams
- 230 named destinations out of 1000 (max. 500000)
- 456 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1169 PDF objects out of 1200 (max. 8388607)
+ 955 compressed objects within 10 object streams
+ 373 named destinations out of 1000 (max. 500000)
+ 733 words of extra memory for PDF output out of 10000 (max. 10000000)
 

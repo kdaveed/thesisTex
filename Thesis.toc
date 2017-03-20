@@ -1,7 +1,7 @@
 \select@language {english}
 \contentsline {chapter}{Abstract}{II}{chapter*.1}
 \contentsline {chapter}{Kurzfassung}{III}{chapter*.2}
-\contentsline {chapter}{List of Tables}{VIII}{chapter*.5}
+\contentsline {chapter}{List of Tables}{X}{chapter*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Initial goal and contributions}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Thesis outline}{1}{section.1.2}
@@ -25,12 +25,31 @@
 \contentsline {subsection}{\numberline {3.1.3}Ontology Extensions}{23}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}RDF Data input}{24}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Multi dimensional form}{24}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Form dependencies}{25}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Instance browsing}{25}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.2}Form dependencies}{26}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Instance browsing}{26}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Validation}{26}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Editing form data}{26}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Saving data}{27}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Solution Scheme}{27}{section.3.3}
-\contentsline {chapter}{\numberline {A}Glossary}{29}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{34}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{34}{section.a.B.1}
+\contentsline {subsection}{\numberline {3.2.6}Saving data}{28}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Solution Scheme}{28}{section.3.3}
+\contentsline {chapter}{\numberline {4}Implementation}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Web application ontology}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Introduction}{29}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Form definition}{30}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Data definition}{31}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}VIVO adoption}{34}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Server-side implementation}{35}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Overview}{35}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Form representation in Java}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Data model in Java}{36}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Data Dependencies}{37}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Editing and deleting data}{38}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Navigator}{38}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Client-side implementation}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Object oriented JavaScript}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Handling data}{41}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Sub form adders}{42}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Data dependency}{43}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Form validation}{43}{subsection.4.3.5}
+\contentsline {chapter}{\numberline {A}Glossary}{45}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{50}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{50}{section.a.B.1}

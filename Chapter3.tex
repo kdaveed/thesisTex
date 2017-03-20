@@ -55,15 +55,19 @@ The larger the numbers for masculine and the lowers are feminine expression. An 
 Where the light grey boxes are the instances of \textit{Assay}, \textit{Data Transformation} and \textit{Drawing conclusion} classes respectively.
 
 
+
+
 \subsection{Ontology Extensions} \label{333}
 
 
+The previous two sections introduced the data scheme of the problems of the project. This part provides a more detailed explanation about how exactly these ontologies can be extended to tackle custom problems. By skeletal inventories as we have seen, \textit{RDFBones} ontology allows to define custom bone segments of the bone organs, in order to enable more fine-grained representation of the research activity. However by most of the cases it is sufficient to address the bone as a whole. For such cases \textit{RDFBones} has the class \textit{:PrimarySkeletalInventory}, and \textit{:EntireBoneOrgan}, which has for each bone organ a subclass. Furthermore to connect the entire bones with the skeletal inventories there are the subclasses of the \textit{:Completeness2State} as well.
 
-\imgK{\III}{siExt.png}{Ontology extension for skeletal inventories}
+\img{\III}{siExt.png}{Ontology extension for skeletal inventories}{prim}
 
-\imgK{\III}{extensionAssay.png}{Ontology extension for sex estimation}
+The reason is why there is not only one entire bone class for all bone organs, is that the input of the assays must be a bone segment. By the study design execution only the assay part will be covered because the data transformation has exactly the same structure. As it was already mentioned through the example from \figref{sde}, each assay addresses a bone segment has a measurement value as an output. To define a custom study design execution (\figref{sdeExt})at first a subclass is needed (\text{:SexExstimation}),
+and the different custom assays (denoted with blue) are connected to it again with restrictions.
 
-
+\img{\III}{extensionAssay.png}{Ontology extension for sex estimation}{sdeExt}
 
 \section{RDF Data input}
 
