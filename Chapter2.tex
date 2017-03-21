@@ -325,7 +325,7 @@ WHERE {
 The first two lines of the query defines the properties whose domain class is the type of the input instance, while the third asks for all triples with the possible properties. If the result of the query is then grouped based on properties, then the dataset can be displayed by a template using two lists. The outer list ceates fields for the properties, and the inner show all the instances with that property.
 
 
-\begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=template,
 basicstyle=\footnotesize,frame=single]
 <#list properties as property>
 	<#list property.dataSet as instance> 

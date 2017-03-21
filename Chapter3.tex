@@ -111,77 +111,81 @@ The server then in turn has to be prepared that a particular subgraph of the dat
 \subsection{Adoption form elements to the ontology} \label{322}
 
 
-The previous section showed the basics of forms for multi dimensional data input. An important issue which was just partly addressed in \ref{233}, is how the options of the particular selector fields are loaded. In order to load the options of the initial selector can template files be used, that gets the list of the classes coming from a SPARQL query on the ontology. But there are elements, for example the second selector field in \figref{332_1}, whose values are dependent on the previous elements. This means their option can be loaded dynamically only after selector of it ancestor element.
+The previous section showed the basics of forms for multi dimensional data input. An important issue which was just partly addressed in \ref{233}, is how the options of the particular selector fields are loaded. In order to load the options of the initial selector can template files be used, that gets the list of the classes coming from a SPARQL query on the ontology. In the example these are all skeletal subdivisions. But there are elements, for example the second selector field in \figref{332_1}, whose values are dependent on the previous elements, which his means their options must be loaded dynamically only after selector of its ancestor element.
 
 \img{\III}{322_1.png}{Initial state of the form}{322_2}
 
 
-Thus a further task of the client code is to be aware of the dependent selector elements and set the appropriate values of them. This problem requires first of all again a data structure about the ontology on the client. A solution could be the following JSON object, which stores the list of the skeletal sub subdivisions grouped by the IRI of the skeletal subdivision. Thus after the selection the program could insert the appropriate list and set to the second selector of the form.
+Therefore their values are not part of the initial HTML document like possibly in the case of the independent skeletal subdivision class selector, but they have to be set as values of JS variables, so that they can be loaded after the selection. This can be achieved the same way by template file routines, that gets the set of sub sudivisions grouped by skeletal division.
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL query for the form data, label={sparqlExisting},
+\begin{lstlisting}[captionpos=b, caption= Form option data structure in JSON, label={322L1},
 basicstyle=\footnotesize,frame=single]
 var subSubDivisions = {
-	fma_5058 : [{ .. } ... { .. }],
-	fma_5923 : [{ .. } ... { .. }],
+	skull : [{ neurocranium } ... { .. }],
+	vertebralColumn : [{ cervical vertebra } ... { .. }],
 	...
 }
 \end{lstlisting}
 
+The data set on the listing \ref{322L1} stores the lists of the sub ubdivision with the corresponding keys (the keys are real IRIs in practice). Such data can be written to JS with template routines by means of two lists, like in listing \ref{template}. Then if the user selects the first field, JS can access based on the selected value the array to be loaded as options.
 
+But as the example on Figure \figref{321_1} shows that after adding the sub subdivision the bone organs are supposed to be selected to. Therefore the client has to have the same data structure for bone organs as well grouped by the sub sudivsion. The problem is that this data on the form can easily became too large, which may lead to performance issues. Additionally if the whole dataset is queried by the page load then it can be as well inefficient. Therefore it is common a practice that data of the form is loading dynamically through AJAX (Asychronous JavaScript and XML). AJAX is technology that allows the client to communicate with the server without reloading the whole page. This makes the pages more interactive and as well more efficient.
+ 
+\img{\III}{322_2.png}{Loading form data through AJAX}{322_2}
 
-\img{\III}{subformDependency.png}{Subform dependencies}{mdfl}
-
-These dependencies can occur not only between subforms but as well by in form dependencies where the selector elements can change based on selections.
+The idea is that JS is programmed so that upon certain events, a particular request data is assembled and sent to the server. The response then in this case is not a whole HTML page but a dataset in XML or JSON format. After the response arrives, a JS routine continues its. This more elegant solution addresses further JS programming, and of course new server routines, that handles the requests, perform the queries with the incoming parameters, and respond the results.
 
 
 \subsection{Editing form data}
 	
-As it was already addressed in section \ref{vivoCef}, the dataset created by the forms have to be edited as well. By editing, the HTTP request calling the entry form contains an additional field, namely the \textit{objectUri}. Based on the data model of the form, the server has to prepare the dataset, in our case a JSON object. The challenge of the server implementation is that in such multi dimensional dataset, it is not sufficient to perform only one query for the whole form data.
+	
+The dataset created by the forms have be browsed and edited as well. This means that the form has to be restored to the same state as it submitted for initial data creation. This is the other direction of the data flow. Here the existing data will be retrieved by SPARQL, JSON object is generated and the form algorithm generates the form by adding the sub forms based on the data.
 
-\img{\III}{exampleDataModel.png}{Example data model}{exDatMod}
+\img{\III}{323_1.png}{Two directions of the data flow}{exDatMod}
+
+
+Important issue regarding the server implementation is that in such multi dimensional dataset, it is not sufficient to perform only one query for the whole form data. For example there can be more elaborate assays that have multiple inputs and output (i.e \figref{323_2}).
+
+\img{\III}{323_2.png}{Multi dimensional data example}{323_2}
+
+
+This means if the following query is executed on the dataset, then the result is such a table ((\tableref{sparqlResult})) that is hard to process.
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL query for the form data, label={sparqlExisting},
 basicstyle=\footnotesize,frame=single]
-SELECT ?a ?b
+SELECT ?boneSegment ?measurementDatum
 WHERE {
-	?objectUri		p1		?a .
-	?objectUri		p2		?b .
-	FILTER ( ?objectUri = <inputParameter>)
+	?assay		:has_specified_input				?boneSegment .
+	?assay		:has_specified_output       ?measurementDatum .
+	FILTER ( ?assay = ${inputParameter})
 }
 \end{lstlisting}
 
-The example data model from \figref{exDatMod} helps to understand the problem in more detail. If the SPARQL query on \listref{sparqlExisting} for variables ?a and ?b with incoming \textit{objectUri} value were executed, then result table of the query is inconvenient to process. For example if there are two instances for both ?a and ?b present in the dataset, then the result table contains \textit{2 x 2 = 4} elements (\tableref{sparqlResult}).
 
 \begin{table}
-
 	\begin{center}
 		\begin{tabular}{||c | c||} 
 			\hline
-			?a & ?b  \\ [0.5ex] 
+			?boneSegment & ?measurementDatum  \\ [0.5ex] 
 			\hline\hline
-			a1 & b1 \\ 
+			BS1 & MD1 \\ 
 			\hline
-			a1 & b2 \\
+			BS1 & MD2 \\ 
 			\hline
-			a2 & b1 \\
+			BS2 & MD1 \\ 
 			\hline
-			a2 & b2 \\ [1ex] 
+			BS2 & MD2 \\  [1ex] 
 			\hline 
 		\end{tabular}
 	\end{center}
-	\caption{SPARQL Result}  \label{sparqlResult}
+	\caption{SPARQL result table}  \label{sparqlResult}
 \end{table}
 
 
-Therefore the data object of the form has to be retrieved gradually, by dividing the data model graph by the predicates, whose cardinality is larger than one.
-
-The next step after that the server has prepared the multi dimensional JSON object for the client, is to restore the state of the form, in which it was submitted by the user. This requires firstly the filling of the fields with the existing values, and adding the sub forms based on the arrays. Secondly the options of the selectors must be loaded, so that they conform to the dependencies explained in section \ref{formDependencies}. 
-
-Finally if a value of selector or literal field changes, or new sub forms has to be added or removed, the entry form data should not be completely sent again to the server, but only the data fields that are concerned by the modification. Thus it does not require a complete page reload, and these operation can be performed through AJAX calls. To achieve this the client has to be prepared to be able to send data modification requests to the server on change event of any form element or sub form.
+Therefore the data object of the form has to be retrieved gradually, by dividing the data model graph by the predicates, whose cardinality is larger than one. The process have to start with main graph, and the results of the sub graph queries then has to be stored arrays of the form data JSON object. Based on this data the task of the client is interpret the data and generate again the form. Important part of the form reloading based on existing data is that, not only the values of the literal fields have to be restored but the selector field options as well. So that for example if the existing dataset contains a skeletal subdivision, it is necessary to load to the subform the possible bone organs into the selector, so that the user can add additional bone segments conveniently.
+Finally if a value of a literal field changes, or new sub forms has to be added or removed, the entry form data should not be completely sent again to the server, but only the data fields that are concerned by the modification. Thus it does not require a complete page reload, and these operation can be performed again through AJAX calls. To achieve this the client has to be prepared to be able to send data modification requests to the server on change event of any form element or sub form.
 
 \subsection{Saving data}
-
-
 
 
 \section{Solution Scheme} \label{33}
