@@ -2,51 +2,34 @@
 \BOOKMARK [0][-]{chapter*.2}{Kurzfassung}{}% 2
 \BOOKMARK [0][-]{chapter*.5}{List of Tables}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
-\BOOKMARK [1][-]{section.1.1}{Initial goal and contributions}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.2}{Thesis outline}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Preliminaries}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Semantic Web}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.1.1}{RDF}{section.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.1.2}{RDF Schema}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.3}{OWL}{section.2.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.4}{SPARQL}{section.2.1}% 12
-\BOOKMARK [1][-]{section.2.2}{Applied Ontologies}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.1}{Foundational Model of Anatomy - FMA}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.2}{Ontology for Biomedical Investigations - OBI}{section.2.2}% 15
-\BOOKMARK [1][-]{section.2.3}{Web applications}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.3.1}{Client-sever architecture}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.2}{Data driven web applications}{section.2.3}% 18
-\BOOKMARK [2][-]{subsection.2.3.3}{Applications with RDF Data}{section.2.3}% 19
-\BOOKMARK [0][-]{chapter.3}{Problem Statement}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Modeling anthropological research activity}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.1.1}{Data on skeletal remains}{section.3.1}% 22
-\BOOKMARK [2][-]{subsection.3.1.2}{Investigation process}{section.3.1}% 23
-\BOOKMARK [2][-]{subsection.3.1.3}{Ontology Extensions}{section.3.1}% 24
-\BOOKMARK [1][-]{section.3.2}{RDF Data input}{chapter.3}% 25
-\BOOKMARK [2][-]{subsection.3.2.1}{Dynamic data entry forms}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.2}{Adoption form elements to the ontology}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.3}{Editing form data}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.4}{Saving data}{section.3.2}% 29
+\BOOKMARK [1][-]{section.1.1}{RDFBones Project}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Goal of the thesis}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.3}{Thesis outline}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Preliminaries}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Semantic Web}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{RDF}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{RDF Schema}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.3}{OWL}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.4}{SPARQL}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Applied Ontologies}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Foundational Model of Anatomy - FMA}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Ontology for Biomedical Investigations - OBI}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Web applications}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Client-sever architecture}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{Data driven web applications}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.3}{Applications with RDF Data}{section.2.3}% 20
+\BOOKMARK [0][-]{chapter.3}{Problem Statement}{}% 21
+\BOOKMARK [1][-]{section.3.1}{Modeling anthropological research activity}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.1.1}{Data on skeletal remains}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.2}{Investigation process}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.3}{Ontology Extensions}{section.3.1}% 25
+\BOOKMARK [1][-]{section.3.2}{RDF Data input}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Dynamic data entry forms}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Adoption form elements to the ontology}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.3}{Editing form data}{section.3.2}% 29
 \BOOKMARK [1][-]{section.3.3}{Solution Scheme}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Web application ontology}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.1.1}{Introduction}{section.4.1}% 33
-\BOOKMARK [2][-]{subsection.4.1.2}{Form definition}{section.4.1}% 34
-\BOOKMARK [2][-]{subsection.4.1.3}{Data definition}{section.4.1}% 35
-\BOOKMARK [2][-]{subsection.4.1.4}{VIVO adoption}{section.4.1}% 36
-\BOOKMARK [1][-]{section.4.2}{Server-side implementation}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.2.1}{Overview}{section.4.2}% 38
-\BOOKMARK [2][-]{subsection.4.2.2}{Form representation in Java}{section.4.2}% 39
-\BOOKMARK [2][-]{subsection.4.2.3}{Data model in Java}{section.4.2}% 40
-\BOOKMARK [2][-]{subsection.4.2.4}{Data Dependencies}{section.4.2}% 41
-\BOOKMARK [2][-]{subsection.4.2.5}{Editing and deleting data}{section.4.2}% 42
-\BOOKMARK [2][-]{subsection.4.2.6}{Navigator}{section.4.2}% 43
-\BOOKMARK [1][-]{section.4.3}{Client-side implementation}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.3.1}{Object oriented JavaScript}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.2}{Handling data}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.3}{Sub form adders}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.4}{Data dependency}{section.4.3}% 48
-\BOOKMARK [2][-]{subsection.4.3.5}{Form validation}{section.4.3}% 49
-\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 50
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 51
-\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 52
+\BOOKMARK [2][-]{subsection.3.3.1}{Model for RDF data input processes}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.2}{Software framework outline}{section.3.3}% 32
+\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 33
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 34
+\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 35
