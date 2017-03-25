@@ -187,40 +187,42 @@ Therefore the data object of the form has to be retrieved gradually, by dividing
 Finally if a value of a literal field has been edited by the user, or new sub forms has to be added or removed, the saving operation should be done immediately through AJAX. 
 To achieve this JS has to assign events to each literal fields and sub form container, and be able to send the appropriate request to the server.
 
-
+\newpage
 \section{Solution Scheme} \label{33}
-
-
-The idea of the thesis is to model the previously described problems with a high-level vocabulary that abstracts from the implementation details. Each vocabulary consist of the types of the entities involved in the problems, and from their relationship and attributes. Section \ref{[331]} introduces the scheme of the designed vocabulary, while section \ref{[332} outlines the main units of the software framework, that is capable of interpreting and operating upon such abstract definition.
-
 
 \subsection{Model for RDF data input processes} \label{[331]}
 
+The task of the implementation of a data input forms addresses two main questions. Firstly is what dataset has to be created, and secondly how this dataset is represented on the form. The vocabulary which is capable of defining the whole input process, has to be able to answer both these question. Therefore the model is divided into two sections, to the data definition and the form definition. The data definition consist of a set of RDF nodes and triples, while the interface definition consist of the forms and the data input fields.
+ 
+Nevertheless we have the previous chapters we have seen that the scheme of the ontology plays an important role of the data entry form process. Namely if a set restriction statement assign multiple classes to one, like i.e. bone organs to a skeletal subdivisions, then the web user interface has to be adapted to this scheme, and it has to of the possibility to add sub forms dynamically. So to make the vocabulary complete is it inevitable to expresses what triples may be added multiple times and of which form elements adds further sub forms.
 
 
-
-In the previous chapters we have seen, that there are two only participants contributing to the data input processes, the client and the server. On the client there are first of all a set of input fields (i.e text field, selector) that build the form. Therefore the main two element of the vocabulary are the input field and the form, whith the relationship \textit{contains}. Moreover for the cases where multi level data have to be created on the form, the model contains a relatiship on the other way around. This is the \textit{subform}, which expresses that the form element adds a new subform to the form dynamically.
-
-\img{\III}{331_1.png}{Main elements and relationships}{331_1}
+\img{\III}{331_1.png}{Vocabulary for RDF data input processes}{331_1}
 
 
-The client and the server side is connected in the definition by means of the  \textit{represents} relationship. This connects the input fields to the RDF nodes. RDF nodes can be subject or object of a triple, and triple is contained in graph. As well the client has the \textit{subform} relationship, the server has to be able to express this hierarchical relationship. It is solved the sugraph predicate. 
+Figure \figref{331_1} shows the main elements and relationships of the vocabulary. It can be seen that the connection between the data and the form definition is established through the represents predicate that connects form elements to RDF nodes. Moreover the \text{MultiTriple} is a subclass of the triple, and it that allows to expresses the scheme of the ontology subset, for which the RDF data will be created.
 
 
 \subsection{Software framework outline} \label{[332}
 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL query for the form data, label={sparqlExisting},
+The above introduced vocabulary is represented currently by means of Java classes. Thus the definition of the problems is the creation of Java objects from the classes. 
+
+
+\begin{lstlisting}[captionpos=b, caption=Vocabulary implementation, label={sparqlExisting},
 basicstyle=\footnotesize,frame=single]
+	//Classes of the vocabulary
+	class MultiTriple extends Triple { ... }
+	//Problem definition with Java instances
 	RDFNode subdivision = new RDFNode("subdivision");
 	RDFNode boneOrgan = new RDFNode("boneOrgan");
-	Triple triple = new Triple(boneOrgan, "fma:systemic_part_of", subdivision);
+	Triple triple = new MultiTriple(boneOrgan, "fma:systemic_part_of", subdivision);
 \end{lstlisting}
 
 
-\img{\III}{332_1.png}{Elements of the implementation}{332_1}
+The idea is that framework operates completely upon this definition. The first task is to process the definition and generate JSON objects that describes the forms layout, and further Java objects for the data operations.
 
 
-
+\img{\III}{332_1.png}{Implementation workflow}{332_1}
 
 
