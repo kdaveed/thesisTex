@@ -209,14 +209,20 @@ Figure \figref{331_1} shows the main elements and relationships of the vocabular
 The above introduced vocabulary is represented currently by means of Java classes. Thus the definition of the problems is the creation of Java objects from the classes. 
 
 
-\begin{lstlisting}[captionpos=b, caption=Vocabulary implementation, label={sparqlExisting},
+\begin{lstlisting}[captionpos=b, caption=Input process definition in Java, label={sparqlExisting},
 basicstyle=\footnotesize,frame=single]
-	//Classes of the vocabulary
-	class MultiTriple extends Triple { ... }
-	//Problem definition with Java instances
+	//Data definition
+	List<Triple> triples = new ArrayList<Triple>();
 	RDFNode subdivision = new RDFNode("subdivision");
 	RDFNode boneOrgan = new RDFNode("boneOrgan");
-	Triple triple = new MultiTriple(boneOrgan, "fma:systemic_part_of", subdivision);
+	triples.add(new MultiTriple(boneOrgan, "fma:systemic_part_of", subdivision));
+	...
+	//Form definition
+	Form form = new Form();
+	form.addElement(new LiteralField("label"));
+	...
+	//FormConfiguration
+	FormConfig skeletalInventory = new FormConfig(form, triples);
 \end{lstlisting}
 
 

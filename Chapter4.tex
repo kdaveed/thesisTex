@@ -14,22 +14,22 @@ Figure \ref{411_1} shows the workflow of a data entry process. On the right prof
 
 Figure \ref{41_3} shows all the nodes types and their attributes. Above the \textit{mainInput} boolean flag, there is the variable name, which is required, and the constant value in case. There are three types of variable, the class, resource and literal. The literal variable itself denotes a string value and it has several subclasses for the other primitive types.
 
-
 \img{\IV}{1_2.png}{Variable types and their attributes}{41_2}
 
+The other, more important is the modeling of the triples in the dataset. The vocabulary for triples has the purpose to express different constraint on the data scheme as well. Above the class \textit{Triple} and \textit{MultiTriple}, which were addressed in the end of the last chapter, there are two types of restriction triples. One for the classes and one for the instances. As we have seen in the description of the OWL ontologies, there are different types of restrictions can be defined. For this reason it should be possible to allow the definition of which restriction is used by the ontology, upon the entry form should operate. This can be expressed by the three boolean, types of the \textit{classRestrictionTriple}. Moreover the greedy boolean flag means that the SPARQL query that queries the ontology has to return not only the result class but their superclasses too. Finally the instance restriction triples as the name indicates, expresses constraints between instances on the form. The examples in the next section will make the usage of the vocabulary more clear.
 
-The other, more important is the modeling of the triples in the dataset. The vocabulary for triples has the purpose to express different constraint on the data scheme as well. Above the class \textit{Triple} and \textit{MultiTriple}, which were addressed in the end of the last chapter, there are two types of restriction triples. One for the classes and one for the instances. As we have seen in the description of the OWL ontologies, there are different types of restrictions can be defined. For this reason it should be possible to allow the definition of which restriction is used by the ontology, upon the entry form should operate. This can be expressed by the three boolean, types of the \textit{classRestrictionTriple}.
-
-
-
-
-\img{\IV}{1_3.png}{Variable types and their attributes}{41_3}
+\img{\IV}{1_3.png}{Triple types}{41_3}
 
 \subsection{Form definition}
 
+The class \textit{Form} acts like a container for the form elements. There are two main types of form elements, the literal field and the selector. The literal field do not have further subclasseses because its type, is defined through the type of the variable it represents. It would be a sort of over definition. This is the simples case where the form adopts to the data model.
 
-\img{\IV}{1_4.png}{Classes for form}{411_1}
+The selector can refer both instances and classes. If it represent and instance, so it let the selection of an existing instance, then it is possible to define an \textit{InstanceViewer}. This feature allows to define a table with several columns. The utility is that the application can show more information about an instance than only the label in the selector field. Each column has a title and a number, and they refer to as well \textit{RDFNodes}, whose values they show in the entries.
 
+The class \textit{SubformAdder} is the subclass of the selector, and has a relationship to the form with the predicate sub form. With this connection it is possible to define the sub form as new form instance. Moreover it has boolean flag, that allow to define a button add all should appear on, which adds all the possible subforms. This feature is useful be the skeletal subdivisions that contains much bones.
+
+
+\img{\IV}{1_4.png}{Form definition}{411_1}
 
 
 \section{Use-cases of the \textit{RDFBones} project}
