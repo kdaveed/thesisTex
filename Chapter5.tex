@@ -1,21 +1,253 @@
-\chapter{Evaluation}
 
-\section{Problems of the RDF Bones Project}
+\chapter{Framework functionality} \label{5}
+
+\section{Main software modules and tasks} \label{51}
+
+\subsection{Descriptor data processor} \label{511}
+\subsection{Web interface generation and user action handling} \label{512}
+\subsection{Saving and querying the RDF data} \label{513}
+
+
+
+
+\section{Implementation}
+
+\subsection{Server side} \label{512}
+
 
 \begin{itemize}
-	\item Most of the problems of the project were solved by the higher level language 
-	\item Thus the code of the application could be significantly reduced
-	\item This enables a more concise and readable documentation, which is a really important issue by such open-source projects.
+	\item This section introduces how application on the server is able to operate based on data queried from the configuration dataset
+	
+\end{itemize}
+
+\subsubsection{Overview}
+
+\begin{itemize}
+	\item The following image shows the most important steps of the data input process
+\end{itemize}
+
+\imgK{\IVII}{overview.png}{Overview of the mechanism on the server}
+
+
+\subsubsection{Form representation in Java}
+
+\imgK{\IVII}{uml1.png}{UML Diagram of the classes for the form}
+
+\begin{itemize}
+	\item The literal fields asks for the type of the variable it represents and the type of the descriptor will be based on this literal field.
 \end{itemize}
 
 
-\section{Self configurable web application}
+\imgK{\IVII}{formDescriptor.png}{Form descriptor JSON object}
+
+\subsubsection{Data model in Java}
+
 
 \begin{itemize}
-	\item As the configuration data is in the form of RDF triples as well, they could be added through web interfaces to accelerate the development.
-	\item The most important advantage of the framework that the web application ontology can describe the input forms for itself. 
-	\item Another utility that in such case not only the data can be exchanged between institutes using RDF data, but the application descriptor as well.
+	\item Querying the configuration triples regarding statements
+	\item Processing into the tree structured graph model
 \end{itemize}
 
-\section{Limitations of the system}
 
+\imgK{\IVII}{graphUML.png}{Graph UML}
+
+Validation:
+
+\begin{itemize}
+	\item Data dependencies can be over graphs
+	\item But graphs can be connected only through multi statements
+	\item The graph has to be a tree. There are no use cases right now where any loop would be required
+\end{itemize}
+
+\imgK{\IVII}{jsonVSGraph.png}{JSON vs graph model}
+
+\begin{itemize}
+	\item Data saving mechanism explanation
+	\item Data retrieval mechanism explanation
+\end{itemize}
+
+\subsubsection{Data Dependencies}
+
+
+\begin{itemize}
+	\item The data dependencies are important only for the form. 
+	\item Everything starts with the form descriptor.
+	\item There are cases where from the main form no element appears on the form.
+	\item A have to bring examples to some problems that illustrate the problem.
+	\item Here comes at first the ontology awareness into question....
+\end{itemize}
+
+
+\imgK{\IVII}{exampleProblem.png}{Example problem}
+
+where,
+
+\imgK{\IVII}{explanation.png}{Elements of the simplified notation}
+
+\imgK{\IVII}{restrictionDirection.png}{Two restriction directions}
+
+\begin{itemize}
+	\item Post processing for different restriction types
+\end{itemize}
+
+
+\imgK{\IVII}{variableDependency.png}{Getting dependent data}
+
+\subsubsection{Editing and deleting data}
+
+\begin{itemize}
+	\item This feature was not introduced on the overview image but it is really important.
+\end{itemize}
+
+
+\imgK{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
+
+
+\subsection{Client side} \label{511}
+
+\begin{itemize}
+	\item In this chapter it is discussed how the forms are implemented in JavaScript
+	\item Each subsection contains code examples that gradually introduce the functionalities
+	\item Codes are mostly simplified to facilitate the understanding		
+\end{itemize}
+
+
+\subsubsection{Object oriented JavaScript}
+
+\begin{itemize}
+	\item The task of code in on the interface is to operate based on a configuration data dynamically.
+	\item There two subtasks, the generation of the UI elements (i.e input fields, buttons, etc.) and manage the data input and display on the form
+	\item To solve these problem, an object oriented approach is applied
+	\item This means that there are classes that handles both the UI and the data related tasks
+	\item See an example for the class definition in JS
+\end{itemize}
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript class}, captionpos=b]
+class StringField {
+constructor(...){
+this.container = $("<div/>")
+...
+}
+someMethod(){...}			
+}
+\end{lstlisting}
+
+\begin{itemize}
+	\item Each form elements are represented by such objects, and the form loading based on the descriptor runs by the initialisation of these elements.  
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form generation based on configuration data}, captionpos=b]
+var formData = new Object()
+for(var i = 0, i < formElements.length; i++){
+var descriptor = formElements[i]
+var element = null
+switch(descriptor.type){
+case "stringField":
+element = new StringField(descriptor, formData)
+break;
+case "..." : 
+}
+$("#formContainer").append(element.container)
+}	
+\end{lstlisting}
+
+
+%\imgK{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
+%\imgK{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
+
+\begin{itemize}
+	\item Explanation of the code ...
+	\item This is the way how it is possible to generate interfaces
+\end{itemize}
+
+
+\subsubsection{Handling data}
+
+\begin{itemize}
+	\item Above the element generation for the different forms it is necessary to handle of course the data based on the descriptor
+	\item Each form element's descriptor contains a field called dataKey. The value of this field will be the key of data in the form data object.
+\end{itemize}
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
+class StringField {
+constructor(descriptor, formData){
+this.descriptor = descritor
+this.formData = formData
+this.inputField = $("<input/>").change(this.handler)
+}
+
+handler(){
+this.formData[this.descriptor.dataKey]=this.inputField.val() 
+}			
+}
+\end{lstlisting}
+
+
+
+\begin{itemize}
+	\item The previous code illustrates how the form element object set the global form data field based on configuration data
+	\item Further details about the code...
+\end{itemize}
+
+\begin{itemize}
+	\item Handling existing data
+	\item It can be the case that form is loaded for editing. Then in this case the formData variable coming as input to the constructor contains the value for the dataKey? 
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
+class StringField {
+constructor(descriptor, formData){
+if(formData[descriptor.dataKey] != undefined){
+this.editMode = true
+}
+}
+
+handler(){
+if(this.editMode){
+var oldValue = this.formData[this.descriptor.dataKey]
+var newValue = this.inputField.val() 
+}
+AJAX.updateField(oldValue, newValue)
+}			
+}
+\end{lstlisting}
+
+
+\subsubsection{Sub form adders}
+
+
+\begin{itemize}
+	\item Descriptor of the sub form adder contains a field called subform
+	\item Then the initialisation of the form happend through the Form class.	
+	\item This is used by the initial form loading as well
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, captionpos=b]
+class SubformAdder {
+constructor(descriptor, formData){
+...
+this.addButton = $("<div/>").text("Add").click(this.add)    
+this.subFormDescriptor = this.descriptor.subForm
+this.formData[this.descriptor.dataKey] = []
+}
+
+add(){
+var subformDataObject = new Object()
+this.formData[this.descriptor.dataKey].
+push(subFormDataObject) 
+this.subFormContainer.append(
+new Form(this.subFormDescriptor, subFormDataObject))
+}
+}
+\end{lstlisting}
+
+\begin{itemize}
+	\item Important for each subform a new JSON object is generated which is pushed to the array		
+	\item The same way the subform adder checks if the this.formData[this.descriptor.dataKey] contains already existing data and adds them if they are there
+\end{itemize}
+
+\subsection{Data dependency}
+
+\subsection{Form validation}

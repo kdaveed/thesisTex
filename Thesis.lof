@@ -41,4 +41,23 @@
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Vocabulary for RDF data input processes}}{33}{figure.3.16}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Implementation workflow}}{34}{figure.3.17}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Complete workflow of data input process}}{36}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Variable types and their attributes}}{36}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Variable types and their attributes}}{37}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Classes for form}}{37}{figure.4.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the mechanism on the server}}{39}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces UML Diagram of the classes for the form}}{39}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Form descriptor JSON object}}{40}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Graph UML}}{40}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces JSON vs graph model}}{41}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Example problem}}{41}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Elements of the simplified notation}}{42}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Two restriction directions}}{42}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Getting dependent data}}{43}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Difference between the submissions and edit data on the form}}{43}{figure.5.10}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Scheme of scheme}}{48}{figure.7.1}
+\addvspace {10\p@ }
 \addvspace {10\p@ }

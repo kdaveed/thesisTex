@@ -30,6 +30,30 @@
 \BOOKMARK [1][-]{section.3.3}{Solution Scheme}{chapter.3}% 30
 \BOOKMARK [2][-]{subsection.3.3.1}{Model for RDF data input processes}{section.3.3}% 31
 \BOOKMARK [2][-]{subsection.3.3.2}{Software framework outline}{section.3.3}% 32
-\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 33
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 34
-\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 35
+\BOOKMARK [0][-]{chapter.4}{Vocabulary for web application domain}{}% 33
+\BOOKMARK [1][-]{section.4.1}{Elements of the vocabulary}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.1.1}{Data definitions}{section.4.1}% 35
+\BOOKMARK [2][-]{subsection.4.1.2}{Form definition}{section.4.1}% 36
+\BOOKMARK [1][-]{section.4.2}{Use-cases of the RDFBones project}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.2.1}{Skeletal Inventories}{section.4.2}% 38
+\BOOKMARK [2][-]{subsection.4.2.2}{Study Design Execution}{section.4.2}% 39
+\BOOKMARK [0][-]{chapter.5}{Framework functionality}{}% 40
+\BOOKMARK [1][-]{section.5.1}{Main software modules and tasks}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.1.1}{Descriptor data processor}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.2}{Web interface generation and user action handling}{section.5.1}% 43
+\BOOKMARK [2][-]{subsection.5.1.3}{Saving and querying the RDF data}{section.5.1}% 44
+\BOOKMARK [1][-]{section.5.2}{Implementation}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.2.1}{Server side}{section.5.2}% 46
+\BOOKMARK [2][-]{subsection.5.2.2}{Client side}{section.5.2}% 47
+\BOOKMARK [2][-]{subsection.5.2.3}{Data dependency}{section.5.2}% 48
+\BOOKMARK [2][-]{subsection.5.2.4}{Form validation}{section.5.2}% 49
+\BOOKMARK [0][-]{chapter.6}{Evaluation}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Expressivity of the framework}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.2}{Reduced amount of code}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.3}{Limitations of the system}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.7}{Conclusion and future work}{}% 54
+\BOOKMARK [1][-]{section.7.1}{Summary of achievements}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.2}{Future work}{chapter.7}% 56
+\BOOKMARK [0][-]{Appendix.a.A}{Glossary}{}% 57
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix}{}% 58
+\BOOKMARK [1][-]{section.a.B.1}{Something you need in the appendix}{Appendix.a.B}% 59
