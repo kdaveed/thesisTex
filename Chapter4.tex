@@ -1,7 +1,7 @@
 \chapter{Vocabulary for web application domain}
 
-\section{Elements of the vocabulary}
 
+\section{Elements of the vocabulary}
 
 \subsection{Data definitions}
 
@@ -12,10 +12,18 @@ To understand the necessity of certain elements of the vocabulary, further detai
 
 Figure \ref{411_1} shows the workflow of a data entry process. On the right profile page of a skeletal inventory can be seen, which lists the added skeletal elements. The profile page is configured that the \textit{rangeUri} parameter holds in the links the URI of the classes of  skull and vertebral column respectively. These parameters have to be considered by the form loading because they influences the options of the first selector which let the user add the skeletal sub sub division. So therefore it necessary to introduce a flag into the vocabulary that sign if a variable is coming with the HTTP request for the form loading, or with the JSON object after the submission.
 
-\img{\IV}{1_2.png}{Variable types and their attributes}{411_1}
+Figure \ref{41_3} shows all the nodes types and their attributes. Above the \textit{mainInput} boolean flag, there is the variable name, which is required, and the constant value in case. There are three types of variable, the class, resource and literal. The literal variable itself denotes a string value and it has several subclasses for the other primitive types.
 
 
-\img{\IV}{1_3.png}{Variable types and their attributes}{411_1}
+\img{\IV}{1_2.png}{Variable types and their attributes}{41_2}
+
+
+The other, more important is the modeling of the triples in the dataset. The vocabulary for triples has the purpose to express different constraint on the data scheme as well. Above the class \textit{Triple} and \textit{MultiTriple}, which were addressed in the end of the last chapter, there are two types of restriction triples. One for the classes and one for the instances. As we have seen in the description of the OWL ontologies, there are different types of restrictions can be defined. For this reason it should be possible to allow the definition of which restriction is used by the ontology, upon the entry form should operate. This can be expressed by the three boolean, types of the \textit{classRestrictionTriple}.
+
+
+
+
+\img{\IV}{1_3.png}{Variable types and their attributes}{41_3}
 
 \subsection{Form definition}
 

@@ -34,10 +34,10 @@
 \contentsline {chapter}{\numberline {4}Vocabulary for web application domain}{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}Elements of the vocabulary}{35}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Data definitions}{35}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Form definition}{36}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{36}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.1.2}Form definition}{37}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{37}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{37}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}Framework functionality}{38}{chapter.5}
 \contentsline {section}{\numberline {5.1}Main software modules and tasks}{38}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Descriptor data processor}{38}{subsection.5.1.1}
