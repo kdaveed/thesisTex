@@ -34,6 +34,41 @@ The class \textit{SubformAdder} is the subclass of the selector, and has a relat
 
 \section{Use-cases of the \textit{RDFBones} project}
 
+The aim of this section is to show how it is possible to solve different problems with designed vocabulary. It covers the two main tasks of the project, the skeletal inventories and the study design execution. These two examples are sufficient to show the utility of the particular elements in the vocabulary and exemplify how their assembly can lead to a compact definition of complex web application problems.
+
+
 \subsection{Skeletal Inventories}
 
+Skeletal inventories were already addressed in section \ref{[331]}. Their goal is to define what kind of skeletal elements are present. In this part the creation of the primary skeletal inventories are discussed in more detail. This use-case addresses some additional challenges of the software, that were not mentioned yet.
+
+The explanation starts with the illustration of the implemented interface, to show what the logic has to define. As it was mentioned in figure \ref{411_1}, the entry forms can have inputs. In this case the input is the class URI of the skeletal subdivision that has to be added with it sub subdivisions and bone organs.
+
+
+
+
+Figure \figref{421_1} show the triple scheme representing the skeletal inventories. All the rectangle are representing instances. All of them will be newly created insted of the subjectUri, which comes as a main input. The arrows with double line depicts multi triples. Important to note that between the variable \textit{boneOrgan} and \textit{boneSegment} there is only a single triple (\textit{fma:regional\_part\_of}) this use-case is simplified version and only entire bone segments will be added.
+
+
+\img{\IV}{2_1.png}{Skeletal inventory data triples}{421_1}
+
+But above the instances to be created the classes have to be represented in the model too. Figure \figref{422_1} is depicts the complete data model of the problem.
+
+\img{\IV}{2_2.png}{Complete data definition}{421_2}
+
+As we have seen that the 
+
+
+In this image for the better readability the predicates are not denoted, but their value can be found in figure \figref{421_1}. Each instance (rectangles) is connected to the class variable (ellipses). The red dotted arrows indicates restriction statements.
+
+
+
+
+
+The large three rectangles, that encompass set of triples are the graph, which are connecting to each other by means of multi triples. This is the structure which is followed by the form as well. 
+
+
+
 \subsection{Study Design Execution}
+
+
+
