@@ -45,21 +45,26 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Variable types and their attributes}}{36}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Triple types}}{37}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Form definition}}{38}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Skeletal inventory data triples}}{39}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Complete data definition}}{39}{figure.4.6}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Input form for skeletal inventories}}{39}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Skeletal inventory data triples}}{40}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Complete data definition}}{40}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Form layout definition}}{40}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Input form for study design execution}}{41}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Instance selector for existing bone segment}}{42}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Complete data model}}{42}{figure.4.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the mechanism on the server}}{41}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces UML Diagram of the classes for the form}}{41}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Form descriptor JSON object}}{42}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Graph UML}}{42}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces JSON vs graph model}}{43}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Example problem}}{43}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Elements of the simplified notation}}{44}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Two restriction directions}}{44}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Getting dependent data}}{45}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Difference between the submissions and edit data on the form}}{45}{figure.5.10}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the mechanism on the server}}{44}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces UML Diagram of the classes for the form}}{44}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Form descriptor JSON object}}{45}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Graph UML}}{45}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces JSON vs graph model}}{46}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Example problem}}{46}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Elements of the simplified notation}}{47}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Two restriction directions}}{47}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Getting dependent data}}{48}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Difference between the submissions and edit data on the form}}{48}{figure.5.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Scheme of scheme}}{49}{figure.7.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Scheme of scheme}}{52}{figure.7.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
