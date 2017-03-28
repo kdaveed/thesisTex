@@ -7,30 +7,30 @@
 \chapter{Framework functionality} \label{5}
 
 
-The aim of this chapter is to present the main mechanism in of the implemented software framework, which is capable of operating on high-level configuration data. Section \ref{51} is more abstract description ob the functionality, while section \ref{52} goes into the implementation details both of the server and client code. By both case the mechanisms are illustrated on the examples of the previous section.
+The aim of this chapter is to present the main mechanisms of the implemented software framework, which is capable of operating on high-level configuration data. Section \ref{51} contains a more abstract description of the functionality, while section \ref{52} goes into the implementation details both of the server and client side programming, including how the framework can be integrated into the applied web application. In both sections the explanation refers to the examples discussed in the previous chapter.
 
 
 \section{Main software modules and tasks} \label{51}
 
 
-In \figref{332_1} we have seen the main work flow and components of the framework. \figref{scheme_1} is in turn a more detailed depiction of the components.
- 
- 
+In \figref{332_1} we have seen the main work flow and components of the framework. \figref{scheme_1} is in turn a more detailed depiction of the software modules and processes of the application.
+
+
 \img{\V}{scheme_1.png}{More detailed scheme}{scheme_1}
 
 
-As it was described in the previous chapter the whole process starts from the pages for data display with the HTTP requests initiated by the links of the data fields. This section is divided into three components. First is the part (section \ref{511}) discusses the  processing of the configuration data and generation of the functionality descriptor objects for the client and the server. The second part (section \ref{522}) is about the client functionality including the asynchronous communication for asking form data. Finally the third part covers the process after the submission, namely how the RDF data is stored in the database.
+This section is divided into three subsections. First is the part (section \ref{511}) discusses the  processing of the configuration data and generation of the functionality descriptor objects for the client and the server. The second part (section \ref{512}) is about the client functionality including the asynchronous communication with the server. Finally the third (section \ref{513}) part covers the process after the submission, namely how the RDF data is generated based on the data coming from the client, as well as how the existing data is retrieved from the triples store.
 
 
 \subsection{Descriptor data processor} \label{511}
 
 
-This request arrives to the server and based on the parameter \textit{predicateUri} the application finds the configuration triples. More details about how this parameter value is assigned to the configuration setting will be provided in the next chapter.
 
 
+The processor algorithm has four main task to solve, the validation of the configuration data, generation of the form descriptor JSON object, and the Java object for data dependencies and for  the graph model. 
 
-\img{\V}{processor_tasks.png}{More detailed scheme}{processor_tasks}
 
+\img{\V}{processor_tasks.png}{Processor tasks}{processor_tasks}
 \begin{itemize}	
 	\item{Validation - cyclic graph - multiple dependencies}
 	\item{subgraph subform dependencies}
@@ -38,9 +38,15 @@ This request arrives to the server and based on the parameter \textit{predicateU
 \end{itemize}
 
 
-\subsection{Web interface generation and user action handling} \label{512}
+
+\img{\V}{valid_1.png}{Validation 1}{valid_1}
+
+\img{\V}{valid_2.png}{Validation 1}{valid_2}
+
+\img{\V}{dependency.png}{Dependency}{dependency}
 
 
+\subsection{Web interface generation and user action handling}  \label{512}
 \begin{itemize}	
 	\item{Form element generation}
 	\item{Form dependency handling}
@@ -48,7 +54,7 @@ This request arrives to the server and based on the parameter \textit{predicateU
 \end{itemize}
 
 
-\subsection{Saving and querying the RDF data} \label{513}
+\subsection{Saving and querying the RDF data}  \label{513}
 
 
 \begin{itemize}	
@@ -62,7 +68,13 @@ This request arrives to the server and based on the parameter \textit{predicateU
 \section{Implementation} \label{52}
 
 
-\subsection{Server side} \label{512}
+This request arrives to the server and based on the parameter \textit{predicateUri} the application finds the configuration triples. More details about how this parameter value is assigned to the configuration setting will be provided in the next chapter.
+
+As it was described in the previous chapter the whole process starts from the pages for data display with the HTTP requests initiated by the links of the data fields. 
+
+
+
+\subsection{Server side} 
 
 \begin{itemize}
 	\item This section introduces how application on the server is able to operate based on data queried from the configuration dataset
@@ -152,7 +164,7 @@ where,
 \imgK{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
 
 
-\subsection{Client side} \label{511}
+\subsection{Client side}
 
 \begin{itemize}
 	\item In this chapter it is discussed how the forms are implemented in JavaScript
