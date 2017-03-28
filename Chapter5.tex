@@ -56,9 +56,14 @@ The use-cases of the previous chapter showed that input nodes of the form are de
 
 Important that form elements on the form has a specific order, and the rule is that a node cannot be dependent on an other node which comes in the form after it, because its value is not available at the moment when the options for the node before it has to be loaded, thus it cannot contribute to the SPARQL query with its value. However each node is dependent on the main input nodes, because their value is given before the form loading.
 
-\img{\V}{dependency.png}{Dependency}{dependency}
+
+\img{\V}{dependency.png}{Skeletal inventory data constraints}{dependency}
 
 
+\figref{dependency} show the constraint of the problem of the skeletal inventories. In this case there are two main inputs, the \textit{subjectUri} and the \textit{rangeUri} and there form nodes.
+The first task is to get the graph path that with the inputs for each variable. The process starts with the first node (\textit{subSubdivision}). The rule is that algorithm start to discover the graph starting from the node in scope, and stops if find a node which is a smaller input of it. So for varible denoted with one, the dependecy contains all the triples from the figure because only the main input nodes are available by the loading of the form. But for variable 2 (\textit{boneOrgan}) the value of variable 1 is available, therefore it dependencies has 
+
+\img{\V}{dependencyResult.png}{Form dependencies}{dependency}
 
 
 
