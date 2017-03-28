@@ -47,35 +47,38 @@ The next task regarding the nodes is to check if each has a value by the RDF tri
 Above the nodes important itself the whole graph built by the triples have to be investigated. In the previous chapter the triple type \textit{MultiTriple} were introduced. The rule regarding this type of triple that it divides the graph into subgraphs, and the subgraphs can connect to each other only be these triples. \figref{valid_2} illustrates the valid and invalid graph arrangements. The reason is that only to this type of scheme can the JSON object of the created by the data input process be mapped.
 
 
-
 \subsection{Dependencies and form descriptor generation}  \label{512}
 
 
-The previous section outlined the rules of the data model. This and the following section although discusses the scheme of the object and the main principles of how the client and the server operates upon it. 
-The use-cases of the previous chapter showed that input nodes of the form are dependent from the main input nodes and from each other as well. The task is to infer from the graph model the variable dependencies, that is build by the triples of the participant. Each variable dependency consists of the set of input nodes and triples, and one output node. 
+The set of triples describing the data model builds a graph where the various input nodes are connected to each other. Further task of the processor algorithm to determine the subgraphs that define the SPARQL queries for the variable that appear on the form. The elements on the form has a specified order, and the rule that have to be considered during the processing, is that a variable can be dependent only of the main input variables or such variables that are before it on the form. The reason is that the dependency means that the SPARQL query has one or more inputs, whose values are substituted into the variables, that constraints the output.
 
-Important that form elements on the form has a specific order, and the rule is that a node cannot be dependent on an other node which comes in the form after it, because its value is not available at the moment when the options for the node before it has to be loaded, thus it cannot contribute to the SPARQL query with its value. However each node is dependent on the main input nodes, because their value is given before the form loading.
+\img{\V}{form.png}{Form element order}{form}
 
-
-\img{\V}{dependency.png}{Skeletal inventory data constraints}{dependency}
+\figref{form} shows the simplified form layout of the skeletal inventories and emphasises the order of the elements with the number. The idea is that values of the selector for variable \textit{subSubdivision} can be only dependent on the main input nodes because it is the first node. The \textit{boneOrgan} in turn can be dependent on the \textit{subSubDivision} too because its value has to be set before the options of the subform is loaded, thus it can be substituted into a SPARQL query.
 
 
-\figref{dependency} show the constraint of the problem of the skeletal inventories. In this case there are two main inputs, the \textit{subjectUri} and the \textit{rangeUri} and there form nodes.
-The first task is to get the graph path that with the inputs for each variable. The process starts with the first node (\textit{subSubdivision}). The rule is that algorithm start to discover the graph starting from the node in scope, and stops if find a node which is a smaller input of it. So for varible denoted with one, the dependecy contains all the triples from the figure because only the main input nodes are available by the loading of the form. But for variable 2 (\textit{boneOrgan}) the value of variable 1 is available, therefore it dependencies has 
+\img{\V}{skeletalInventory.png}{Skeletal inventory data constraints}{skeletalInventory}
+
+\figref{skeletalInventory} depicts the scheme of the data constraints of the skeletal inventory, based on which the dependency retriever algorithm can be exemplified. As it was mentioned the task is to get one or more path from the variable of to an other node whose value is available for it.  As the form's first element refers to the node \textit{subDivision} its dependency has to be evaluted first. Since the node \textit{subSubDivision} contributes to two restriction triples in the data scheme it is necessary to check the both paths. Since this node cannot be dependent on any other form node, it is dependent on the two main input nodes (\textit{subjectUri} and \textit{rangeUri}). While the by dependency for the node \textit{boneOrgan} the \textit{rangeUri}
+does not count, since the algorithm terminates already by the \textit{subSubdivison} variable. \figref{dependency} shows the results subgraphs of the algrithm, where the output is depicted with green and the inputs with red and light red respectively.
 
 \img{\V}{dependencyResult.png}{Form dependencies}{dependency}
 
+
+This result of the processor concerns both the descriptor of the client, and the server. On the server the depencies are stored a classes that have the necessary fields, for the inputs and output and for the triples. Then these initialized dependency descriptor class objects are stored in a data map, where the key is the variable name of the output node. This map is a field of the form configuration class, thus if the client asks for the appropriate form variable through AJAX these SPARQL query assemble by the triples for can be executed with the incoming values.
+
+
+
+
+\img{\V}{formDescriptor.png}{Form descriptor JSON}{formDescriptor}
 
 
 \subsection{Graph model generation}  \label{513}
 
 
-\begin{itemize}	
-	\item{Graph model}
-	\item{New instances}
-	\item{Delete}
-	\item{Existing data loading}
-\end{itemize}
+\img{\V}{graphData.png}{Main fields of the graph}{graphData}
+
+\img{\V}{graphProcess.png}{Main fields of the graph}{graphProcess}
 
 
 \section{Implementation} \label{52}
