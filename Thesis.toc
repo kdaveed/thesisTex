@@ -43,12 +43,12 @@
 \contentsline {subsection}{\numberline {5.1.1}Validation}{45}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{47}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Graph model generation}{49}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Implementation}{49}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Server side}{50}{subsection.5.2.1}
-\contentsline {subsubsection}{Overview}{50}{section*.6}
+\contentsline {section}{\numberline {5.2}Implementation}{50}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Server side}{51}{subsection.5.2.1}
+\contentsline {subsubsection}{Overview}{51}{section*.6}
 \contentsline {subsubsection}{Form representation in Java}{51}{section*.7}
 \contentsline {subsubsection}{Data model in Java}{51}{section*.8}
-\contentsline {subsubsection}{Data Dependencies}{52}{section*.9}
+\contentsline {subsubsection}{Data Dependencies}{53}{section*.9}
 \contentsline {subsubsection}{Editing and deleting data}{54}{section*.10}
 \contentsline {subsection}{\numberline {5.2.2}Client side}{54}{subsection.5.2.2}
 \contentsline {subsubsection}{Object oriented JavaScript}{54}{section*.11}
