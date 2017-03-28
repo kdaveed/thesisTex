@@ -39,9 +39,9 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{Study Design Execution}{section.4.2}% 39
 \BOOKMARK [0][-]{chapter.5}{Framework functionality}{}% 40
 \BOOKMARK [1][-]{section.5.1}{Main software modules and tasks}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.1.1}{Descriptor data processor}{section.5.1}% 42
-\BOOKMARK [2][-]{subsection.5.1.2}{Web interface generation and user action handling}{section.5.1}% 43
-\BOOKMARK [2][-]{subsection.5.1.3}{Saving and querying the RDF data}{section.5.1}% 44
+\BOOKMARK [2][-]{subsection.5.1.1}{Validation}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.2}{Dependencies and form descriptor generation}{section.5.1}% 43
+\BOOKMARK [2][-]{subsection.5.1.3}{Graph model generation}{section.5.1}% 44
 \BOOKMARK [1][-]{section.5.2}{Implementation}{chapter.5}% 45
 \BOOKMARK [2][-]{subsection.5.2.1}{Server side}{section.5.2}% 46
 \BOOKMARK [2][-]{subsection.5.2.2}{Client side}{section.5.2}% 47
