@@ -38,31 +38,31 @@
 \contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{38}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{38}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{41}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Framework functionality}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Main software modules and tasks}{43}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Descriptor data processor}{43}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Web interface generation and user action handling}{43}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Saving and querying the RDF data}{43}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Implementation}{43}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Server side}{43}{subsection.5.2.1}
-\contentsline {subsubsection}{Overview}{43}{section*.6}
-\contentsline {subsubsection}{Form representation in Java}{43}{section*.7}
-\contentsline {subsubsection}{Data model in Java}{44}{section*.8}
-\contentsline {subsubsection}{Data Dependencies}{45}{section*.9}
-\contentsline {subsubsection}{Editing and deleting data}{46}{section*.10}
-\contentsline {subsection}{\numberline {5.2.2}Client side}{46}{subsection.5.2.2}
-\contentsline {subsubsection}{Object oriented JavaScript}{46}{section*.11}
-\contentsline {subsubsection}{Handling data}{48}{section*.12}
-\contentsline {subsubsection}{Sub form adders}{49}{section*.13}
-\contentsline {subsection}{\numberline {5.2.3}Data dependency}{50}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Form validation}{50}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Evaluation}{51}{chapter.6}
-\contentsline {section}{\numberline {6.1}Expressivity of the framework}{51}{section.6.1}
-\contentsline {section}{\numberline {6.2}Reduced amount of code}{51}{section.6.2}
-\contentsline {section}{\numberline {6.3}Limitations of the system}{51}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusion and future work}{52}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary of achievements}{52}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future work}{52}{section.7.2}
-\contentsline {chapter}{\numberline {A}Glossary}{54}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{59}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{59}{section.a.B.1}
+\contentsline {chapter}{\numberline {5}Framework functionality}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}Main software modules and tasks}{44}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Descriptor data processor}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Web interface generation and user action handling}{45}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Saving and querying the RDF data}{45}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Implementation}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Server side}{46}{subsection.5.2.1}
+\contentsline {subsubsection}{Overview}{46}{section*.6}
+\contentsline {subsubsection}{Form representation in Java}{46}{section*.7}
+\contentsline {subsubsection}{Data model in Java}{46}{section*.8}
+\contentsline {subsubsection}{Data Dependencies}{47}{section*.9}
+\contentsline {subsubsection}{Editing and deleting data}{48}{section*.10}
+\contentsline {subsection}{\numberline {5.2.2}Client side}{49}{subsection.5.2.2}
+\contentsline {subsubsection}{Object oriented JavaScript}{49}{section*.11}
+\contentsline {subsubsection}{Handling data}{51}{section*.12}
+\contentsline {subsubsection}{Sub form adders}{52}{section*.13}
+\contentsline {subsection}{\numberline {5.2.3}Data dependency}{53}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Form validation}{53}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Evaluation}{54}{chapter.6}
+\contentsline {section}{\numberline {6.1}Expressivity of the framework}{54}{section.6.1}
+\contentsline {section}{\numberline {6.2}Reduced amount of code}{54}{section.6.2}
+\contentsline {section}{\numberline {6.3}Limitations of the system}{54}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusion and future work}{55}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary of achievements}{55}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future work}{55}{section.7.2}
+\contentsline {chapter}{\numberline {A}Glossary}{57}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{62}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{62}{section.a.B.1}
