@@ -9,7 +9,7 @@ An RDF triple is called as well statement, which asserts that there is a relatio
 
 Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
 Common practice is to represent IRI with the notation prefix:suffix, where the prefix represents the namespace, and the expression means the concatenation of the namespace denoted by the prefix, with the suffix. This convention makes the RDF document more readable. The namespace of RDF is the http://www.w3.org/1999/02/22-rdf-syntax-ns\#, whose prefix is in most cases "rdf".   This is defined on the following way:
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Prefix notation in RDF, label=lst:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Prefix notation in RDF, label=lst:sparql,
 frame=single]
  @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
 \end{lstlisting}
@@ -31,7 +31,7 @@ frame=single]
 The RDF vocabulary provides some built-in IRIs. The two most important are, the rdf:type property, and the rdf:Property class. The meaning of the triples, where the predicate is the property rdf:type  is that the subject IRI is the instance of the class denoted by the object. Therefore the following statement holds in the RDF vocabulary:
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=rdf:type is a property, label=lst:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=rdf:type is a property, label=lst:sparql, ,belowskip=1em, aboveskip=2em,
 frame=single]
 						rdf:type		 	rdf:type			rdf:Property
 \end{lstlisting}
@@ -40,7 +40,7 @@ It is maybe confusing that an IRI appears in a triple as subject and predicate a
 To be able to represent information about a certain domain, it is necessary to extend the RDF vocabulary with properties and classes. The classes will be discussed in the next section, but here it is explained how custom properties can be defined. The namespace of the example is the following: 
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Example prefix, label=lst:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Example prefix, label=lst:sparql,belowskip=1em, aboveskip=2em,
 frame=single]
 @prefix example:   <http://example.org\#>
 \end{lstlisting}
@@ -87,7 +87,7 @@ Now everything is given to define the ontology for the example of the previous s
 
 OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary \cite{Dean:04:OWO}. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. For example a restriction stating that the instances of the class eg:FootballTeam can build a triple through the eg:hasPlayer property only with the instances of eg:FootballPlayer class can be expressed the following way:
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
 eg:FootballTeam rdfs:subClassOf  [ 
 	rdf:type		owl:Restriction ; 
@@ -100,7 +100,7 @@ owl:Restriction is class and owl:onProperty and owl:allValuesFrom are properties
 Furthermore OWL is capable of expressing qualified cardinality restriction. For example the statement that a basketball team has to have exactly five players, look as follows in OWL:
 
 
-\begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql,
+\begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX eg: <http://example.org> 
@@ -129,7 +129,7 @@ There are two new class types are the owl:Class and the owl:Restriction. The rdf
 
 SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a football player: 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql,
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql, belowskip=1em, aboveskip=2em, 
 basicstyle=\footnotesize,frame=single]
 SELECT ?player  
 WHERE { 
@@ -140,7 +140,7 @@ WHERE {
 In the example the query consist of only one triple. The subject is a variable and the predicate and the object are constant. Therefore the triple store looks all the triples and checks the predicate is rdf:type and the object is eg:FootballPlayer. 
 It is well possible to not just ask the IRI of the players but further information by adding additional triples to the query in order to ask the name for example of the player:
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql,
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?player ?name 
 WHERE { 
@@ -151,7 +151,7 @@ WHERE {
 
 The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql,
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?person ?name
 WHERE {
@@ -241,7 +241,7 @@ An HTML document contains definition of the elements of the pages, such as table
 
 Initially web pages were static, which means that their only function was to show certain set of information. These applications usually web applications do not consist of one single page, but of several different pages. Like a web page for news, have normally a main page, and different sub pages for the particular topics. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
 
-\begin{lstlisting}[captionpos=b, caption=Example link definitions, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=Example link definitions, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 	<a href="http://newsPortal.com/politics"> Politics </a>
 	<a href="http://newsPortal.com/sport"> Sport </a>
@@ -249,7 +249,7 @@ basicstyle=\footnotesize,frame=single]
 
 If the user clicks on of these link (with the label 'Politics' and 'Sport') then these request will be sent to the news portal page. Each such request has to be served, differently to each mapping some routine has to be assigned. For example by Java web applications, the classes of the server that process the request are called servlets. On the next image it is shown, how the XML file defines, which class is responsible for the the mapping '/politics'.
 
-\begin{lstlisting}[captionpos=b, caption=Java servlet mapping definition, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=Java servlet mapping definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <servlet-mapping>
 	<url-pattern>/politics</url-pattern>
@@ -276,7 +276,7 @@ Let assume that articles of a news portal is stored in a table with the attribut
 
 The query results not only one instance of the News class, but a list (\textit{List<News> newList}). To generate from this a HTML page that shows the articles, normally so called template engines are used. Templateing enables to define the HTML documents parametric, and passing them data, and they generate the result page automatically.   
 
-\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <#list  newsList as news>
 	<h3>  ${news.title} </h3>
@@ -295,7 +295,7 @@ The template file is a description of how the data has to be converted into HTML
 
 The template shows only the summary of the article, but offers the following link: 
 
-\begin{lstlisting}[captionpos=b, caption=, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption=, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 		http://newsPortal.com/wholeNews?id=${news.id}
 \end{lstlisting}
@@ -331,7 +331,7 @@ This section aims to give an insight to web application that are based on RDF da
 
 Therefore it is possible to generate web pages that can adapt to the ontology. The following query demonstrates that how it is possible to get all the instances, which are connected to a particular instance (\#459828).
 
-\begin{lstlisting}[captionpos=b, caption= Dynamic SPARQL query, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption= Dynamic SPARQL query, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?property ?relatedInstance
 WHERE {
@@ -365,7 +365,7 @@ To define what dataset has to be created, semantic web based applications simply
 Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application for the new set of triples. The values of the \textit{type} and \text{label}, 
 are coming from the input form. The label is just like in the previous example, it is a string typed by the user it is stored as an attribute of the new entity. But the type of the instance is class IRI. The point is that the options of the selector field, from which the type value is coming, is filled with the results of a SPARQL query on the ontology. So for example if the entry form provide the possiblity to create any type of processes from the OBI ontology then the before the form loading the following query has to be executed.
 
-\begin{lstlisting}[captionpos=b, caption= SPARQL query for the input form, label=skullJSON,
+\begin{lstlisting}[captionpos=b, caption= SPARQL query for the input form, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?class ?label
 WHERE {
