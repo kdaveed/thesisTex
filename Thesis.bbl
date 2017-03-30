@@ -13,7 +13,7 @@ Anita Bandrowski, Ryan Brinkman, Mathias Brochhausen, Matthew~H. Brush, Bill
   Taylor, Carlo Torniai, Jessica~A. Turner, Randi Vita, Patricia~L. Whetzel,
   and Jie Zheng.
 \newblock The ontology for biomedical investigations.
-\newblock {\em PLOS ONE}, 11(4):1--19, 04 2016.
+\newblock {\em PLOS ONE}, 11, 11 2015.
 
 \bibitem{Brickley:04:RVD}
 Dan Brickley and Ramanathan Guha.
@@ -26,6 +26,12 @@ Mike Dean and Guus Schreiber.
 \newblock {OWL} web ontology language reference.
 \newblock {W3C} recommendation, W3C, February 2004.
 \newblock http://www.w3.org/TR/2004/REC-owl-ref-20040210/.
+
+\bibitem{infrastructure}
+Felix Engel, Stefan Schlager, and Ursula Witwer-Backofen.
+\newblock An infrastructure for digital standardisation in physical
+  anthropology.
+\newblock 11, 04 2016.
 
 \bibitem{Lanthaler:14:RCA}
 Markus Lanthaler, David Wood, and Richard Cyganiak.

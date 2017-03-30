@@ -4,24 +4,26 @@
 
 \section{RDFBones Project}
 
-The master thesis is written in the frame of the project called \textit{RDFBones}. The goal of the project is to develop a data standard, as well a web application for documenting research activity related to biological anthropology. In anthropology each institute has different set of skeletal remains and they conduct their investigations differently, thus it is not possible to cover during the project period the problem of other institute as well. Therefore the core idea of the project is that to make possible the definition of custom processes through ontology extensions. This is only possible by means of RDF data, because the ontologies in OWL can be extended, and specific rules can be defined through restrictions.
-We are using Semantic Web application framework called \textit{VIVO}, which is capable of editing not only the RDF data itself but the ontology as well. So the idea of the project that not only the data will be exchangeable but the extensions as well.
-The task of the application is to generate the data input forms based on the ontology extensions. 
-
-Web application so that they do not 
-
+The master thesis is written in the frame of the project called \textit{RDFBones}. The goal of the project is to develop a data standard, as well a web application for documenting research activity related to biological anthropology. The challenge is that in anthropology each institute has different set of skeletal remains and have different research interest and scopes. So to achieve that the developed application can be used by various cases it has to extensible. For this reason RDF data model is applied, since it is more suitable for such purposes than relational data model.\cite{infrastructure}
+Building web application is large effort, therefore the software is not developed from scratch, but an existing Semantic Web application framework, called VIVO is used. The advantage of VIVO that the it has a capability to adopt his interface to the ontology, which is highly desirable feature for our project. 
 
 
 \section{Goal of the thesis}
 
 
-The data input forms and the data model is tightly coupled. Which means that the application has limited tasks of exercises. The 
-The goal is to implement a such vocabulary that allows abstracts from the low implementation. This would allow the developers 
-the implementation of data input processes of people without programming experience. This
 
-The vocabulary incorporates the definition of the input form layout, and the underlying data structure. Based on this compact definition
-the framework has to be able to generate the interfaces and perform the necessary data operations.
-T
+
 
 \section{Thesis outline}
+
+The second chapter contains the background information, that is necessary to understand the problem the thesis aims to solve. In the first subsection handles the RDF data model and the ontologies applied in the project, while the third section is about the basics of the web applications.
+
+The third chapter presents the problem statement. The first section discusses the scheme of the data that has to be created to document anthropological research, while the second section show what does it mean in terms of the web application programming. 
+
+The fourth and the fifth chapter are describing the proposed solution for the problem. The fourth chapter outlines the higher-level modeling of the application, and fifth in turn describes the how the implemented framework can operate upon the declarative definition.
+
+The last, sixth chapter covers the conclusion and the evaluation of the achieved system, and present the further potential in the idea. \figref{outline} 
+
+
+\img{\I}{Outline.png}{Structure of the chapters}{outline}
 
