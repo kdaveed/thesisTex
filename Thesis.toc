@@ -5,7 +5,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}RDFBones Project}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Goal of the thesis}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Thesis outline}{1}{section.1.3}
+\contentsline {section}{\numberline {1.3}Thesis outline}{2}{section.1.3}
 \contentsline {chapter}{\numberline {2}Preliminaries}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Semantic Web}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}RDF}{3}{subsection.2.1.1}
