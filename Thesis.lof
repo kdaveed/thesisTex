@@ -1,80 +1,80 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Main structure of the RDFS vocabulary}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Main structure of the RDFS vocabulary}}{6}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces RDFS domain and range definition}}{6}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces RDFS domain and range definition}}{6}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces A subset of OWL vocabulary}}{7}{figure.2.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces RDFS domain and range definition}}{7}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A subset of OWL vocabulary}}{8}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces OWL object properties}}{8}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Properties for qualified cardinalities}}{8}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ontology structure for skeleton}}{11}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Client server communication}}{12}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces HTML document is interpreted by the browser}}{13}{figure.2.9}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Navigation through the web application}}{14}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Data flow}}{15}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Flow of information from DB to client}}{15}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces SQL query with parameter}}{16}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Links to data items}}{16}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Form layout and HTML document}}{16}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Request with parameters}}{17}{figure.2.16}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Example Java routine for data storage}}{17}{figure.2.17}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Ontology and data in RDF}}{17}{figure.2.18}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces VIVO Profile page}}{18}{figure.2.19}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Triples representing a new instance}}{19}{figure.2.20}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Data input scheme by RDF}}{20}{figure.2.21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Properties for qualified cardinalities}}{9}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ontology structure for skeleton}}{12}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Client server communication}}{13}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces HTML document is interpreted by the browser}}{14}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Navigation through the web application}}{15}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Data flow}}{16}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Flow of information from DB to client}}{16}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces SQL query with parameter}}{17}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Links to data items}}{17}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Form layout and HTML document}}{17}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Request with parameters}}{18}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Example Java routine for data storage}}{18}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Ontology and data in RDF}}{18}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces VIVO Profile page}}{19}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Triples representing a new instance}}{20}{figure.2.20}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Data input scheme by RDF}}{21}{figure.2.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and triples of the skull}}{22}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Bone segment in RDFBones}}{22}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces RDFBones as extension of OBI}}{23}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Custom bone segment example}}{23}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Applied subset of OBI ontology}}{24}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Glabella and its expressions}}{24}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Study design execution dataset}}{25}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Ontology extension for skeletal inventories}}{25}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Ontology extension for sex estimation}}{26}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Multi dimensional form layout}}{27}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Multi dimensional RDF dataset}}{28}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Initial state of the form}}{29}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Loading form data through AJAX}}{30}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Two directions of the data flow}}{30}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Multi dimensional data example}}{31}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Vocabulary for RDF data input processes}}{33}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Implementation workflow}}{34}{figure.3.17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and triples of the skull}}{23}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Bone segment in RDFBones}}{23}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces RDFBones as extension of OBI}}{24}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Custom bone segment example}}{24}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Applied subset of OBI ontology}}{25}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Glabella and its expressions}}{25}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Study design execution dataset}}{26}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Ontology extension for skeletal inventories}}{26}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Ontology extension for sex estimation}}{27}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Multi dimensional form layout}}{28}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Multi dimensional RDF dataset}}{29}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Initial state of the form}}{30}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Loading form data through AJAX}}{31}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Two directions of the data flow}}{31}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Multi dimensional data example}}{32}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Vocabulary for RDF data input processes}}{34}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Implementation workflow}}{35}{figure.3.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Complete workflow of data input process}}{36}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Variable types and their attributes}}{36}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Triple types}}{37}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Form definition}}{38}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Input form for skeletal inventories}}{39}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Skeletal inventory data triples}}{40}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Complete data definition}}{40}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Form layout definition}}{40}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Input form for study design execution}}{41}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Instance selector for existing bone segment}}{42}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Complete data model}}{42}{figure.4.11}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Complete workflow of data input process}}{37}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Variable types and their attributes}}{37}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Triple types}}{38}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Form definition}}{39}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Input form for skeletal inventories}}{40}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Skeletal inventory data triples}}{41}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Complete data definition}}{41}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Form layout definition}}{41}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Input form for study design execution}}{42}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Instance selector for existing bone segment}}{43}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Complete data model}}{43}{figure.4.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces More detailed scheme}}{44}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Processor tasks}}{45}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Valid and invalid nodes}}{46}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Valid and invalid graph}}{46}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Form element order}}{47}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Skeletal inventory data constraints}}{48}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Form dependency subgraphs}}{48}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Form descriptor JSON}}{50}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Main fields of the graph}}{50}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Main fields of the graph}}{51}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Overview of the mechanism on the server}}{51}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces UML Diagram of the classes for the form}}{52}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Form descriptor JSON object}}{52}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Graph UML}}{53}{figure.5.14}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces JSON vs graph model}}{53}{figure.5.15}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Example problem}}{54}{figure.5.16}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Elements of the simplified notation}}{54}{figure.5.17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces More detailed scheme}}{45}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Processor tasks}}{46}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Valid and invalid nodes}}{47}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Valid and invalid graph}}{47}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Form element order}}{48}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Skeletal inventory data constraints}}{49}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Form dependency subgraphs}}{49}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Form descriptor JSON}}{51}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Graph dataset from triples}}{51}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Main fields of the graph}}{52}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Overview of the mechanism on the server}}{52}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces UML Diagram of the classes for the form}}{53}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Form descriptor JSON object}}{53}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Graph UML}}{54}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces JSON vs graph model}}{54}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Example problem}}{55}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Elements of the simplified notation}}{55}{figure.5.17}
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Two restriction directions}}{55}{figure.5.18}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Getting dependent data}}{55}{figure.5.19}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Getting dependent data}}{56}{figure.5.19}
 \contentsline {figure}{\numberline {5.20}{\ignorespaces Difference between the submissions and edit data on the form}}{56}{figure.5.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Scheme of scheme}}{60}{figure.7.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Scheme of scheme}}{61}{figure.7.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

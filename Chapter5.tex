@@ -97,16 +97,16 @@ Where the \textit{this.title} has contains the value for the title of the form o
 
 \subsection{Graph model generation}  \label{513}
 
-Above the form generation form descriptor and the dependencies the output of the processor algorithm is the graph model that represent the data of the form. The task of this graph model is to generate the data coming from the form submission, and make it available for
+Above the form generation form descriptor and the dependencies the output of the processor algorithm is the graph model that represent the data of the form. The task of this graph model is to generate the data coming from the form submission, and make it available for client by the editing. The set of triples of the descriptor dataset builds a graph that can be divides into subgraph by the multi triples. The \textit{Graph} is class in the framework that incorporates the list of triples belongs to it, the as well the subgraph objects. This means in the first line is the descriptor dataset is converted into an other type of dataset in the server. This graph object has not only the triples it contains further fields that based on the data creation algrorithm can operate.
 
+\img{\V}{graphModel.png}{Graph dataset from triples}{graphModel}
 
-Like by the form it is as well a hierarchical data structure. It starts with the graph model.
-
-
-
-\img{\V}{graphData.png}{Main fields of the graph}{graphData}
 
 \img{\V}{graphProcess.png}{Main fields of the graph}{graphProcess}
+
+
+
+
 
 
 \section{Implementation} \label{52}
