@@ -94,15 +94,32 @@ Where the \textit{this.title} has contains the value for the title of the form o
 \img{\V}{formDescriptor.png}{Form descriptor JSON}{formDescriptor}
 
 
-
 \subsection{Graph model generation}  \label{513}
 
-Above the form generation form descriptor and the dependencies the output of the processor algorithm is the graph model that represent the data of the form. The task of this graph model is to generate the data coming from the form submission, and make it available for client by the editing. The set of triples of the descriptor dataset builds a graph that can be divides into subgraph by the multi triples. The \textit{Graph} is class in the framework that incorporates the list of triples belongs to it, the as well the subgraph objects. This means in the first line is the descriptor dataset is converted into an other type of dataset in the server. This graph object has not only the triples it contains further fields that based on the data creation algrorithm can operate.
 
-\img{\V}{graphModel.png}{Graph dataset from triples}{graphModel}
+The previous section outlined how the set of Java objects are converted into the form decriptor JSON object, and into Java objects describing the variable dependencies for the AJAX requests. Further task of the framework is to receive the submitted multi level JSON object coming from the client and generate the appropriate set of RDF triples. So in order to prepare the server for the reception of the form data, the same object structure have to be generated, which is coming from the form. We have seen in the previous chapters, that the form data object has the same scheme as the form has, and form follows the scheme defined by the multi triples in the triple set. Therefore the task of the last part of the processor algorithm is to decompose the set of triples by multi triples into graphs. The graph structure is represented in the server by a Java class called \textit{Graph}. 
 
+\img{\V}{graphModel.png}{Conversion from triples into graph model}{graphModel}
 
-\img{\V}{graphProcess.png}{Main fields of the graph}{graphProcess}
+The decomposition starts by the initial RDF node, which defines the main graph. The class \textit{Graph} has a Map<String, Graph> field where the subgraphs are stored. The keys of the map are equivalent to the keys of the keys of the arrays in the incoming JSON object. The other keys of the JSON are the variables of the corresponding graph. The following code snippet shows the basics of the RDF data generation from multi level JSON object. 
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Subform descriptor}, label=dataGeneration captionpos=b, belowskip=1em, aboveskip=2em]
+saveData(JSONObject formData){
+	this.save(formData);
+	for(String keys : this.subGraphs.keys()){
+		JSONArray array = formData.get(key);
+		Graph subGraph = this.subGraphs.get(key);
+		subGraph.saveArray(array)					
+	}
+}
+\end{lstlisting}
+ 
+ 
+ 
+  
+
+\img{\V}{graphProcess.png}{Graph decomposition}{graphDecomposition}
+
 
 
 \newpage
@@ -117,9 +134,7 @@ The description of the implementation starts with the client side because it is 
 This subsection presents the basics of the JavaScript implementation that realizes the dynamic form generation and event handling based on JSON form configuration data. The first part covers the creation of a form itself, and how the data is set to form data object, while the second part is about how the form enables multi dimensional data input by means of sub form adders.
  
 
-
 \subsubsection{Form loading}
-
 
 In contrast to Java, JavaScript codes are not necessarily built up in an object-oriented manner. On pages where the elements are statically defined in HTML, it is sufficient to assign event handler routines to them. However in our case none of the elements of the page is coded into HTML, but everything is dynamic and thus added by JavaScript. In the implementation JavaScript classes are applied, whose input is the descriptor object, based on which they generate the corresponding data input fields, and handles the data entered through them by the user. In this section the functionality of the two main classes, the \textit{Form} and \textit{Formelement} is discussed.  
 
@@ -172,33 +187,34 @@ The previous section explained how the form algorithm creates the JSON object of
 \img{\V}{JS_subFormAdder.png}{SubForm and sub form adder}{JS_subFormAdder}
 
 
-\figref{JS_subformAdder} depicts the UI elements of the two classes. The routines and fields are inherited from the parent classes.
+\figref{JS_subformAdder} depicts the UI elements of the two classes. The routines and fields are inherited from the parent classes. The class \textit{SubFormAdder} has a button, which lets the user add new sub forms, which are appended into the sub form container. The class \textit{SubForm} has additionally to the parent class a delete button for the cases if the user wants to delete the added dataset.  
+
+Listing \ref{JS_subFormRoutine} shows the relevant part of the code in the class \textit{SubFormAdder}. The essence of the class is that the constructor initiates an array (with "[]") in the form data object, to which the sub form data object will be added dynamically upon the click events. So if the user clicks the add button, then new object is initialized (\textit{subFormDataObject}), which will be the data object of the sub form. Important to note that this object will contain value of the selected option of the sub form adder with the key defined in the \textit{dataKey} field of the descriptor. After the initialization of the object, it is pushed to the array, and the new \textit{SubFormAdder} instance is created, whose container is appended to the sub form container of the sub form adder. 
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, captionpos=b, belowskip=1em, aboveskip=2em]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, label=JS_subFormRoutine, captionpos=b, belowskip=1em, aboveskip=2em]
 class SubformAdder {
 	
 	constructor(descriptor, formData){
 		this.addButton = $("<div/>").text("Add").click(this.add)    
 		this.subFormDescriptor = this.descriptor.subForm
-		this.formData[this.descriptor.dataKey] = []
+		this.formData[this.descriptor.predicate] = []
 	}
 
 	add(){
 		var subformDataObject = new Object()
-		this.formData[this.descriptor.dataKey].push(subFormDataObject) 
+		subFormDataObject[this.descriptor.dataKey] = this.selector.val()
+		this.formData[this.descriptor.predicate].push(subFormDataObject) 
 		this.subFormContainer.append(
-				new SubForm(this.subFormDescriptor, subFormDataObject))
+				new SubForm(this, this.subFormDescriptor, subFormDataObject).container)
 	}
 }
 \end{lstlisting}
 
 
-\begin{itemize}
-	\item Important for each subform a new JSON object is generated which is pushed to the array		
-%	\item The same way the subform adder checks if the this.formData[this.descriptor.dataKey] contains already existing data and adds them if they are there
-\end{itemize}
+The class \textit{SubForm} works almost the same way as its parent, but with the difference that it checks if there is such selector among its elements, whose data has to be loaded dynamically through AJAX, because its value is dependent on one or more previously set elements of the form.  
 
+\newpage
 \subsection{Server side} 
 
 \begin{itemize}
