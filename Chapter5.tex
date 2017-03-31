@@ -72,7 +72,7 @@ For the client the dependency description is just the an assignment of an array,
 
 Above the dependency the descriptor the JavaScript framework obtains the descriptor data file for the form elements upon which it can generate the form. The mechanism of the form description retrieval a quite simple because it is practically the convestion of a Java object into a JSON object. The fields of the Java object appear in the JSON objects as key. In 
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Java to JSON}, captionpos=b]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Java to JSON}, captionpos=b, belowskip=1em, aboveskip=2em]
 public JSONObject getDescriptor(){
 	JSONObject object = new JSONObject();
 	object.put("title", this.title)
@@ -84,7 +84,7 @@ public JSONObject getDescriptor(){
 Where the \textit{this.title} has contains the value for the title of the form object in the descriptor Java object. The same way if the Java class has list field, like the form has list of form elements, then getDescriptor() routines of each element is called and inserted into a JSON array. Moreover if the form element is sub form adder then it has a field \textit{subForm}. This comes as well of course into the descriptor, and this is the way how the multi level JSON is created.
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Subform descriptor}, captionpos=b]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Subform descriptor}, captionpos=b, belowskip=1em, aboveskip=2em]
 	object.put("subForm", this.subForm.getDescriptor());
 \end{lstlisting}
 
@@ -105,17 +105,99 @@ Above the form generation form descriptor and the dependencies the output of the
 \img{\V}{graphProcess.png}{Main fields of the graph}{graphProcess}
 
 
-
-
 \newpage
 \section{Implementation} \label{52}
 
 
-This request arrives to the server and based on the parameter \textit{predicateUri} the application finds the configuration triples. More details about how this parameter value is assigned to the configuration setting will be provided in the next chapter.
-
-As it was described in the previous chapter the whole process starts from the pages for data display with the HTTP requests initiated by the links of the data fields. 
+The description of the implementation starts with the client side because it is more independent from the other parts, and it sufficient to understand properly the functionality of the server. While in the last subsection it is discussed how can the developed framework integrated into the VIVO web application. 
 
 
+\subsection{Client side}
+
+This subsection presents the basics of the JavaScript implementation that realizes the dynamic form generation and event handling based on JSON form configuration data. The first part covers the creation of a form itself, and how the data is set to form data object, while the second part is about how the form enables multi dimensional data input by means of sub form adders.
+ 
+
+
+\subsubsection{Form loading}
+
+
+In contrast to Java, JavaScript codes are not necessarily built up in an object-oriented manner. On pages where the elements are statically defined in HTML, it is sufficient to assign event handler routines to them. However in our case none of the elements of the page is coded into HTML, but everything is dynamic and thus added by JavaScript. In the implementation JavaScript classes are applied, whose input is the descriptor object, based on which they generate the corresponding data input fields, and handles the data entered through them by the user. In this section the functionality of the two main classes, the \textit{Form} and \textit{Formelement} is discussed.  
+
+\img{\V}{JS_form_formElement.png}{Form and form element classes}{JS_form_element}
+
+\figref{JS_form_element} illustrate the structure of the two main classes. The most fundamental difference betwen these JavaScript classes to Java classes, that they do not contain only fields and routines (or methods) but UI elements as well. The UI elements can represent and HTML tag, and can be added or removed any time by the routines. Each class of the implemented JavaScript library has a defined set of UI elements. 
+
+The form generation processes starts with the initialization of a \textit{Form} object, where the constructor (like in Java) gets the descriptor JSON object coming from the server. As it was described in the previous chapter the descriptor contains a list of the form element descriptor objects. The \textit{loadFormElements()} routine iterates through on this array, and initiates the form element objects.
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form generation based on configuration data}, label=formGen captionpos=b, belowskip=1em, aboveskip=2em]
+var formData = new Object()
+for(var i = 0, i < formElements.length; i++){
+	switch(formElements[i].type){
+		case "stringField":
+			var element = new StringField(formElements[i], formData)
+			break;
+		case "selector" :  ...
+	}
+	this.elements.append(element.container)
+}	
+\end{lstlisting}
+
+
+Each form element type is represented as subclass of the \textit{formElement} class. They all have a container UI field, that contains their title and input field HTML element. This container field is added to the \textit{elements} field of the \textit{Form} object.
+
+Listing \ref{formElement} show a small cut from the code of the StringField, which is the subclass of the \textit{FormElement} class. The field \textit{inputField} is the HTML <input/> tag, and if its value changes then the \textit{editHandler} routine is called. The editHandler is the function that realizes the dynamic form data creation, by setting the value of the input field into the form data object with the key defined in its the descriptor. The key is stored in the \textit{dataKey} field of the descriptor, which is the variable name of the RDFNode the input element represents.
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form element}, label=formElement, captionpos=b, belowskip=1em, aboveskip=2em]
+class StringField extends FormElement{
+	constructor(descriptor, formData){
+		super(descriptor, formData)
+		this.inputField = $("<input/>").type("text").change(this.editHandler)
+		...
+	}
+	editHandler(){
+		this.formData[this.descriptor.dataKey]=this.inputField.val() 
+	}			
+}
+\end{lstlisting}
+
+This is the basic mechanism of how object-oriented JavaScript can be employed to generate forms, and put the entered values in to JSON object based on configuration data.
+
+
+\subsubsection{Sub forms}
+
+
+The previous section explained how the form algorithm creates the JSON object of the form data. This section extends the explanation of how it is possible to add the multi level data by sub form adders. To this two new JavaScript class functionality is outline, the \textit{SubFormAdder} and the \textit{SubForm}. The former is the subclass of the \textit{FormElement} and the latter of the \textit{Form} class. 
+
+\img{\V}{JS_subFormAdder.png}{SubForm and sub form adder}{JS_subFormAdder}
+
+
+\figref{JS_subformAdder} depicts the UI elements of the two classes. The routines and fields are inherited from the parent classes.
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, captionpos=b, belowskip=1em, aboveskip=2em]
+class SubformAdder {
+	
+	constructor(descriptor, formData){
+		this.addButton = $("<div/>").text("Add").click(this.add)    
+		this.subFormDescriptor = this.descriptor.subForm
+		this.formData[this.descriptor.dataKey] = []
+	}
+
+	add(){
+		var subformDataObject = new Object()
+		this.formData[this.descriptor.dataKey].push(subFormDataObject) 
+		this.subFormContainer.append(
+				new SubForm(this.subFormDescriptor, subFormDataObject))
+	}
+}
+\end{lstlisting}
+
+
+\begin{itemize}
+	\item Important for each subform a new JSON object is generated which is pushed to the array		
+%	\item The same way the subform adder checks if the this.formData[this.descriptor.dataKey] contains already existing data and adds them if they are there
+\end{itemize}
 
 \subsection{Server side} 
 
@@ -207,151 +289,6 @@ where,
 \imgK{\IVII}{edit.png}{Difference between the submissions and edit data on the form}
 
 
-\subsection{Client side}
+\section{VIVO integration} \label{523}
 
-\begin{itemize}
-	\item In this chapter it is discussed how the forms are implemented in JavaScript
-	\item Each subsection contains code examples that gradually introduce the functionalities
-	\item Codes are mostly simplified to facilitate the understanding		
-\end{itemize}
-
-
-\subsubsection{Object oriented JavaScript}
-
-\begin{itemize}
-	\item The task of code in on the interface is to operate based on a configuration data dynamically.
-	\item There two subtasks, the generation of the UI elements (i.e input fields, buttons, etc.) and manage the data input and display on the form
-	\item To solve these problem, an object oriented approach is applied
-	\item This means that there are classes that handles both the UI and the data related tasks
-	\item See an example for the class definition in JS
-\end{itemize}
-
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={JavaScript class}, captionpos=b]
-class StringField {
-constructor(...){
-this.container = $("<div/>")
-...
-}
-someMethod(){...}			
-}
-\end{lstlisting}
-
-\begin{itemize}
-	\item Each form elements are represented by such objects, and the form loading based on the descriptor runs by the initialisation of these elements.  
-\end{itemize}
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form generation based on configuration data}, captionpos=b]
-var formData = new Object()
-for(var i = 0, i < formElements.length; i++){
-var descriptor = formElements[i]
-var element = null
-switch(descriptor.type){
-case "stringField":
-element = new StringField(descriptor, formData)
-break;
-case "..." : 
-}
-$("#formContainer").append(element.container)
-}	
-\end{lstlisting}
-
-
-%\imgK{\IVIII}{1_1_oopJS.png}{UML Class diagram for the JS implementation}
-%\imgK{\IVIII}{1_2_layoutOfClasses.png}{DOM Elements of the classes}
-
-\begin{itemize}
-	\item Explanation of the code ...
-	\item This is the way how it is possible to generate interfaces
-\end{itemize}
-
-
-\subsubsection{Handling data}
-
-\begin{itemize}
-	\item Above the element generation for the different forms it is necessary to handle of course the data based on the descriptor
-	\item Each form element's descriptor contains a field called dataKey. The value of this field will be the key of data in the form data object.
-\end{itemize}
-
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
-class StringField {
-constructor(descriptor, formData){
-this.descriptor = descritor
-this.formData = formData
-this.inputField = $("<input/>").change(this.handler)
-}
-
-handler(){
-this.formData[this.descriptor.dataKey]=this.inputField.val() 
-}			
-}
-\end{lstlisting}
-
-
-
-\begin{itemize}
-	\item The previous code illustrates how the form element object set the global form data field based on configuration data
-	\item Further details about the code...
-\end{itemize}
-
-\begin{itemize}
-	\item Handling existing data
-	\item It can be the case that form is loaded for editing. Then in this case the formData variable coming as input to the constructor contains the value for the dataKey? 
-\end{itemize}
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Data saving}, captionpos=b]
-class StringField {
-constructor(descriptor, formData){
-if(formData[descriptor.dataKey] != undefined){
-this.editMode = true
-}
-}
-
-handler(){
-if(this.editMode){
-var oldValue = this.formData[this.descriptor.dataKey]
-var newValue = this.inputField.val() 
-}
-AJAX.updateField(oldValue, newValue)
-}			
-}
-\end{lstlisting}
-
-
-\subsubsection{Sub form adders}
-
-
-\begin{itemize}
-	\item Descriptor of the sub form adder contains a field called subform
-	\item Then the initialisation of the form happend through the Form class.	
-	\item This is used by the initial form loading as well
-\end{itemize}
-
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, captionpos=b]
-class SubformAdder {
-constructor(descriptor, formData){
-...
-this.addButton = $("<div/>").text("Add").click(this.add)    
-this.subFormDescriptor = this.descriptor.subForm
-this.formData[this.descriptor.dataKey] = []
-}
-
-add(){
-var subformDataObject = new Object()
-this.formData[this.descriptor.dataKey].
-push(subFormDataObject) 
-this.subFormContainer.append(
-new Form(this.subFormDescriptor, subFormDataObject))
-}
-}
-\end{lstlisting}
-
-\begin{itemize}
-	\item Important for each subform a new JSON object is generated which is pushed to the array		
-	\item The same way the subform adder checks if the this.formData[this.descriptor.dataKey] contains already existing data and adds them if they are there
-\end{itemize}
-
-\subsection{Data dependency}
-
-\subsection{Form validation}
+%\img{\IVII}{vivoIntegration.png}{Example problem}{vivoIntegration}
