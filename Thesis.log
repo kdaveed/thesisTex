@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 APR 2017 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 APR 2017 00:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1870,7 +1870,7 @@ ng Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphProcess.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/graphProcess.png used on input line 121.
+tion/graphProcess.png used on input line 122.
 (pdftex.def)             Requested size: 360.0pt x 74.65764pt.
 
 
@@ -1889,7 +1889,7 @@ ement.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_form_formEle
 ment.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_form_formElement.png used on input line 141.
+tion/JS_form_formElement.png used on input line 142.
 (pdftex.def)             Requested size: 360.0pt x 152.85431pt.
 
 
@@ -1918,12 +1918,12 @@ r.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_subFormAdder
 .png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_subFormAdder.png used on input line 187.
+tion/JS_subFormAdder.png used on input line 188.
 (pdftex.def)             Requested size: 360.0pt x 86.61133pt.
 
 
 LaTeX Warning: Reference `JS_subformAdder' on page 55 undefined on input line 1
-90.
+91.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1954,7 +1954,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/overview.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/o
-verview.png used on input line 231.
+verview.png used on input line 232.
 (pdftex.def)             Requested size: 360.0pt x 123.8496pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png, id=1099, 1279.7
@@ -1964,7 +1964,7 @@ e (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/uml1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/u
-ml1.png used on input line 236.
+ml1.png used on input line 237.
 (pdftex.def)             Requested size: 360.0pt x 125.64572pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png, id=11
@@ -1974,7 +1974,7 @@ raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/formDescriptor.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/f
-ormDescriptor.png used on input line 243.
+ormDescriptor.png used on input line 244.
 (pdftex.def)             Requested size: 360.0pt x 136.23036pt.
 
 
@@ -1995,7 +1995,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/graphUML.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/g
-raphUML.png used on input line 254.
+raphUML.png used on input line 255.
 (pdftex.def)             Requested size: 360.0pt x 97.4445pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png, id=1111,
@@ -2005,7 +2005,7 @@ hic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/jsonVSGraph.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/j
-sonVSGraph.png used on input line 264.
+sonVSGraph.png used on input line 265.
 (pdftex.def)             Requested size: 360.0pt x 142.34694pt.
 
 
@@ -2026,7 +2026,7 @@ raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/exampleProblem.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
-xampleProblem.png used on input line 283.
+xampleProblem.png used on input line 284.
 (pdftex.def)             Requested size: 360.0pt x 110.61824pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png, id=1120,
@@ -2036,7 +2036,7 @@ hic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/explanation.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
-xplanation.png used on input line 287.
+xplanation.png used on input line 288.
 (pdftex.def)             Requested size: 360.0pt x 21.19032pt.
 
 
@@ -2051,7 +2051,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/restrictionDirection.
 png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/r
-estrictionDirection.png used on input line 289.
+estrictionDirection.png used on input line 290.
 (pdftex.def)             Requested size: 360.0pt x 28.87679pt.
 
 
@@ -2066,7 +2066,7 @@ ng Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/variableDependency.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/v
-ariableDependency.png used on input line 296.
+ariableDependency.png used on input line 297.
 (pdftex.def)             Requested size: 360.0pt x 81.03557pt.
 
 
@@ -2087,7 +2087,7 @@ e (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/edit.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_2_Server/e
-dit.png used on input line 305.
+dit.png used on input line 306.
 (pdftex.def)             Requested size: 360.0pt x 64.98436pt.
 
 
@@ -2202,7 +2202,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
  11791 strings out of 493014
- 180058 string characters out of 6133351
+ 180052 string characters out of 6133351
  309525 words of memory out of 5000000
  14570 multiletter control sequences out of 15000+600000
  27777 words of font info for 66 fonts, out of 8000000 for 9000
@@ -2228,7 +2228,7 @@ public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
 blic/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb>
-Output written on Thesis.pdf (84 pages, 3414741 bytes).
+Output written on Thesis.pdf (84 pages, 3410094 bytes).
 PDF statistics:
  1340 PDF objects out of 1440 (max. 8388607)
  1080 compressed objects within 11 object streams

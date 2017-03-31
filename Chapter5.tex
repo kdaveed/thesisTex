@@ -113,18 +113,15 @@ saveData(JSONObject formData){
 	}
 }
 \end{lstlisting}
- 
- 
- 
-  
 
-\img{\V}{graphProcess.png}{Graph decomposition}{graphDecomposition}
+The save routine creates the RDF triples of the graph based on the data fields of the JSON object. The a loop iterates through the subgraphs of the graph and gets the arrays with the same key from the JSON and passes it to the corresponding subgraphs, that perform the same algorithm as many times, as many elements of the input array have. This is the way how the multi dimensional JSON is processed by the same structure of graph model on the server. 
 
+\figurename{graphProcess} illustrates the process of the JSON-RDF conversion by means of graph model. The advantage of this graph model that it can be applied the same way for the data retriaval, where the graph performs the SPARQL queries based on its triples, and generates the arrays of objects from the result table. 
 
+\img{\V}{graphProcess.png}{Graph decomposition}{graphProcess}
 
 \newpage
 \section{Implementation} \label{52}
-
 
 The description of the implementation starts with the client side because it is more independent from the other parts, and it sufficient to understand properly the functionality of the server. While in the last subsection it is discussed how can the developed framework integrated into the VIVO web application. 
 
