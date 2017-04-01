@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 APR 2017 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 APR 2017 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,6 +583,9 @@ LaTeX Warning: Label `sparqlExisting' multiply defined.
 
 
 LaTeX Warning: Label `411_1' multiply defined.
+
+
+LaTeX Warning: Label `JS_subFormRoutine' multiply defined.
 
 
 LaTeX Warning: Label `JS_subFormRoutine' multiply defined.
@@ -1927,28 +1930,36 @@ aphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/initial.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/initial.png used on input line 222.
+tion/initial.png used on input line 232.
 (pdftex.def)             Requested size: 360.0pt x 167.99316pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png, id=1085
-, 1183.42125pt x 314.17375pt>
+, 1492.57625pt x 452.69125pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png Gra
 phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_fc.png used on input line 224.
-(pdftex.def)             Requested size: 360.0pt x 95.57117pt.
+tion/UML_fc.png used on input line 234.
+(pdftex.def)             Requested size: 360.0pt x 109.1869pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wac.png, id=108
-6, 1328.965pt x 230.8625pt>
-File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wac.png Gr
-aphic file (type png)
 
-<use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wac.png>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png, id=1086
+, 1490.56876pt x 426.59375pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png Gra
+phic file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_wac.png used on input line 226.
-(pdftex.def)             Requested size: 360.0pt x 62.53801pt.
+tion/UML_wc.png used on input line 236.
+(pdftex.def)             Requested size: 360.0pt x 103.029pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1959,26 +1970,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/initial.png> </
-Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png, id=1095
+[58]
+</Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png, id=1104
 , 1276.77pt x 306.14375pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png Gra
 phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_wd.png used on input line 241.
+tion/UML_wd.png used on input line 251.
 (pdftex.def)             Requested size: 360.0pt x 86.3176pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png, id=1
-096, 1282.7925pt x 546.04pt>
+105, 1282.7925pt x 546.04pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png 
 Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_graph.png used on input line 256.
+tion/UML_graph.png used on input line 266.
 (pdftex.def)             Requested size: 360.0pt x 153.2401pt.
 
 
@@ -1987,16 +2001,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[59 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wac.png> </
-Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png>])
+[59 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/initial.png> </
+Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png>])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png>]
-[61] (./AppendixA-Glossary.tex
+[60 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png> </U
+sers/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wd.png> </Users/ko
+nkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png>] [61]
+(./AppendixA-Glossary.tex
 Appendix A.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 9.30756pt on input line 3.
@@ -2093,10 +2109,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 11786 strings out of 493014
- 178815 string characters out of 6133351
- 315525 words of memory out of 5000000
- 14561 multiletter control sequences out of 15000+600000
+ 11792 strings out of 493014
+ 178904 string characters out of 6133351
+ 309525 words of memory out of 5000000
+ 14564 multiletter control sequences out of 15000+600000
  27777 words of font info for 66 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  31i,12n,43p,1134b,1921s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2120,10 +2136,10 @@ public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
 blic/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb>
-Output written on Thesis.pdf (83 pages, 3221122 bytes).
+Output written on Thesis.pdf (83 pages, 3253542 bytes).
 PDF statistics:
- 1328 PDF objects out of 1440 (max. 8388607)
- 1079 compressed objects within 11 object streams
- 418 named destinations out of 1000 (max. 500000)
+ 1332 PDF objects out of 1440 (max. 8388607)
+ 1083 compressed objects within 11 object streams
+ 421 named destinations out of 1000 (max. 500000)
  741 words of extra memory for PDF output out of 10000 (max. 10000000)
 

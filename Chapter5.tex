@@ -218,12 +218,22 @@ This section covers the functionality of the server. On the client side the impl
 
 \subsubsection{VIVO integration}
 
+As it was mention in the previous chapter the process of the form loading start with the profile pages of VIVO. In VIVO the entry form loading is initiated by the property fields. Normally the programming in VIVO happens through so called generator classes. The task of the generator classes is to define the dataset that have to be created in the form, and reference the Freemarker template file for entry form.
+
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Custom entry form definition in VIVO}, label=JS_subFormRoutine, captionpos=b, belowskip=1em, aboveskip=2em]
+<someProperty>  vivo:customEntryFormAnnot 
+											"rdfbones.DrawingConclusionGenerator.java"
+\end{lstlisting}
+
+The approach implemented in the frame does not replace this structure, but makes it simpler. In our cases we use as well generator classes, but the definition of the data is much simpler and we apply only a generic ftl template file that is used for all data entry form.
+
+
 
 \img{\V}{initial.png}{Form loading process}{initial}
 
 \img{\V}{UML_fc.png}{UML class diagram for FormConfiguration}{UML_fc}
 
-\img{\V}{UML_wac.png}{UML class diagram for WebappConnector}{UML_wac}
+\img{\V}{UML_wc.png}{UML class diagram for WebappConnector}{UML_wc}
 
 \subsubsection{Form data loading}
 
@@ -254,5 +264,4 @@ WHERE {
 \subsubsection{Saving, editing and retrieval of RDF Data}
 
 \img{\V}{UML_graph.png}{UML class diagram for Graph}{UML_graph}
-
 
