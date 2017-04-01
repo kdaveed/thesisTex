@@ -66,15 +66,10 @@
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Graph decomposition}}{52}{figure.5.10}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Form and form element classes}}{54}{figure.5.11}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces SubForm and sub form adder}}{55}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Overview of the mechanism on the server}}{58}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces UML Diagram of the classes for the form}}{58}{figure.5.14}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Form descriptor JSON object}}{59}{figure.5.15}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Graph UML}}{59}{figure.5.16}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces JSON vs graph model}}{60}{figure.5.17}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Example problem}}{60}{figure.5.18}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Elements of the simplified notation}}{61}{figure.5.19}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Two restriction directions}}{61}{figure.5.20}
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Getting dependent data}}{62}{figure.5.21}
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Difference between the submissions and edit data on the form}}{62}{figure.5.22}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Form loading process}}{58}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces UML class diagram for FormConfiguration}}{58}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces UML class diagram for WebappConnector}}{59}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces UML class diagram for VariableDependency}}{59}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces UML class diagram for Graph}}{60}{figure.5.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
