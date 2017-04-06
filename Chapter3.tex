@@ -1,234 +1,37 @@
 \chapter{Problem Statement}
 
 
-This chapter is divided into three sections. As the application is highly dependent on the underlying data model, the first section is dedicated to the data scheme describing the investigations in scope. The second chapter in turn addresses the problem of web applications that allows the creation of RDF data explained in the first section. It covers the issues of both the client and server side implementation and their communication. Finally section \ref{33} outlines the scheme of the solution proposed and implemented by the thesis work.
+In section (ontologies) in particular in the 2.2.3 \textit{RDFBones} ontology scheme of the dataset that represents anthropological research activity has been discussed, while the section 2.3.2 introduced the basics of RDF data input. 
 
 
-\section{Modeling anthropological research activity} \label{ps1}
+\section{Multi level data input}
 
 
-This section consist of three subsections. The first two (\ref{331} and \ref{332}) describes how the RDFBones ontology (developed during the project) integrates the \textit{FMA} and \textit{OBI} ontologies for describing research processes related to anthropology. While the third section (\ref{333}) discusses how can the core ontology be extended to define custom bone segments and processes.
+The examples from the previous chapter showed simple examples of data input problem, where the values of the form elements were substituted into a predefined set of RDF triples. In the presented cases the simplicity lies in that number of RDF instances, that were created is constant, and only their types and attributes are set by the user. But if an input form have to make possible the creation of more complex dataset, then it requires a code on the client side too and bit more elaborate data definition on the server.
+
+\figref{multiLevel} shows a general example that illustrate the essence of problem. The upper box with the ellipses contains the ontology, and the lower boxes contains the actual RDF triples.
+The two main classes are the \textit{Element} and the \textit{Component}, whose relationship is expressed by the \textit{partOf} property. The smaller ellipses are the subclasses of the two main classes respectively. The red arrows represent OWL restrictions on the property \textit{partOf}. At this point it does not matter, if the restriction is \textit{owl:someValuesFrom}, \textit{owl:allValuesFrom} or a qualified cardinality. The point that through OWL restrictions it is possible to express the rules of a domain, in this case which component is part of which element. 
+
+\img{\III}{multiLevel.png}{Multi level data}{multiLevel}
 
 
-\subsection{Data on skeletal remains} \label{331}
+The lower box shows two RDF dataset, that conforms to the rules of the ontology. Important to note that right dataset do not contain all the possible component instances. This aims to illustrates that by such more complex dataset the user not only set literal values and types but have to decide about if a component of something is there. Which is for example by the digitalization of skeletal remains it is important because, it is often the case some of the bone organs are missing. 
 
+\figref{multiLevelForm} show the layout of a form that allows the addition of the component dynamically. The additional element is a button, that let the user add the add the selected component.
+This form functionality poses a new requirement to the form data, which has to be multi level. Under multi level data, is such form object is meant, that does not only contain such key value pairs, where the values are literals, but can be arrays of further objects. 
 
-We have seen in section \ref{fma} the base structure of the human skeleton. The most important point is that not only individual bones will be represented in the data we create, but the skeletal regions as well, like skull or vertebral column. The institute where these investigations are conducted posses mainly  skeletal remains of skulls. The skull has the peculiarity that it does not consists directly of bones organs, but from two sub skeletal divisions, and these two subdivisions contain the bone organs. \figref{tripleSkull} shows the ontology subset for the skull and the data instances (each denoted with \#). The red arrows denotes restrictions on the properties \textit{fma:systemic\_part\_of}.  
+Further task of the form that refresh the options of the selector field for the components because is is dependent on the selected element.
 
-\img{\III}{rdfSkull.png}{Ontology and triples of the skull}{tripleSkull} 
+\img{\III}{multiLevelForm.png}{Multi level form}{multiLevelForm} 
 
-So we know how skull and its subdivisions and bone organs are represented by RDF, but there are processes where specific bone segments have to be addressed as well. Therefor RDFBones have the class \textit{rdfbones:SegmentOfSkeletalElement}. This instances of this class is connected to the instances of the class \textit{Bone Organ} with the property \textit{fma:regional\_part\_of}.
-
-\img{\III}{rdfBonesCard.png}{Bone segment in RDFBones}{rdfBonesCard} 
-
-Furthermore these instances representing skeletal remains do not stay in the database individually. If a researcher takes a specific skull from the collection of the institute, it makes a so-called skeletal inventory, which records what bones segments are complete, partly present or missing. To store these information in the RDFBones ontology introduces three further classes (above the one for bone segment), which are all the subclasses of \textit{OBI} classes. 
-
-
-\img{\III}{core.png}{RDFBones as extension of OBI}{rdfBonesCard} 
-
-\figref{case1} illustrates the dataset through a simple problem. The upper left part of the figure shows that a specific bone is divided into three bone segments, while the right shows the existing bone from which the data has to be stored. It can be seen the section I. is complete, section II. is just partly present and the III. is missing. The lower part of the figure then shows that the three segment are represented as subclass of the \textit{:SegmentOfSkeletalElement} class (denoted with blue), and from the third type there are no instance have been created, while the first two are connected to the skeletal inventory and compleness label instances through \textit{:Completeness2States} instances. 
-
-\img{\III}{case1.png}{Custom bone segment example}{case1} 
-
-
-This is the way how the information is stored about skeletal remains using the RDFBones ontology.
-
-
-\subsection{Investigation process}\label{332}
-
-
-An investigation is done by execution of the a study design. It has three parts, the assay, the data transformation and the drawing of a conclusion. From assays and data transformations there can be more in one execution, but there is only one conclusion. The inputs of the assays are always segments of skeletal elements, an their output is always a measurement datum, while the data transformation's  input and output are both measurement datums.
-
-\img{\III}{rdfBonesO.png}{Applied subset of OBI ontology}{rdfBonesO} 
-
-
-To understand a bit more what this data model can be actually used, let us take the example of an investigation, whose goal is to determine if a taken skull belonged to a male or female. The basis is that the male and female skeleton has different peculiarities that can be quantified, how expressed they are. \figref{glabella} illustrates an example the token \textit{Glabella}, which is on the \textit{Nasal bone}, and its expressions.  
-
-\img{\III}{glabExpressions.png}{Glabella and its expressions}{glabella}
-
-
-The larger the numbers for masculine and the lowers are feminine expression. An assay in this case is an assignment of a scalar value to a bone segment. The investigation process does not take only one bone segment but several different ones, to reduce the possibility of the erroneous output. \figref{sde} shows a dataset of a study design execution where the green arrows stand for \textit{has specified input} and the blue ones for the \textit{has specified output} predicates. The idea is simple, the output of the assays are aggregated, and if the output is smaller then zero then it was a male, otherwise a female.
-
-\img{\III}{sde.png}{Study design execution dataset}{sde} 
-
-
-Where the light grey boxes are the instances of \textit{Assay}, \textit{Data Transformation} and \textit{Drawing conclusion} classes respectively.
-
-
-
-
-\subsection{Ontology Extensions} \label{333}
-
-
-The previous two sections introduced the data scheme of the problems of the project. This part provides a more detailed explanation about how exactly these ontologies can be extended to tackle custom problems. By skeletal inventories \textit{RDFBones} ontology allows to define custom bone segments of the bone organs in order to enable more fine-grained representation of the research activity. However by most of the cases it is sufficient to address the bone as a whole. For such cases \textit{RDFBones} has the class \textit{:PrimarySkeletalInventory} which encompasses all the entire bone organs. The definition of this inventory can be seen on the upper part of \figref{prim}.
-
-\img{\III}{siExt.png}{Ontology extension for skeletal inventories}{prim}
-
-The class \textit{:EntireBoneOrgan} has as many subclass as many bone organs are there. The classes \textit{X} and \textit{Y} represents the set of all bone organs. Furthermore each of the entire bones are connected to the custom subclasses of \textit{:Completeness2States}, to establish the connection to the primary skeletal inventory. The reason why there is not only one entire bone class for all bone organs, is that the input of the assays must be a bone segment, and it must be possible to address each of them individually. The lower part of \figref{prim} shows a custom inventory definition, by new completeness and bone segment classes.
-
-
-By the study design execution only the assay part will be covered, because the data transformation has exactly the same structure. As it was already mentioned through the example from \figref{sde}, each assay must address a bone segment an input, and a measurement datum as an output. To define a custom study design execution (\figref{sdeExt}) at first a subclass is needed (\text{:SexExstimation}), and the different custom assays (denoted with blue) that are connected to each other again with restrictions. Then the outputs of the assays are custom scalar measurement datum classes.
-
-\img{\III}{extensionAssay.png}{Ontology extension for sex estimation}{sdeExt}
-
-
-\newpage
-\section{RDF Data input} \label{32}
-
-\subsection{Dynamic data entry forms} \label{321}
-
-
-In section \ref{223} it was explained that the simplest data input process by RDF data is the substitution of the values coming from the client into a predefined set of RDF triples. In this case the interface is a static HTML form, the input data is a set of key-value pairs, while the RDF triples are defined on the server simply by a string. However in the previous section we have seen that the data models of the problems contain relationships with 1 to n cardinalities. This means that the data input process may contain, above a selection of the type, and setting some of the literal values of one new RDF instance, the dynamic adding of sub forms that represent further instances that are connected to the main instance with cardinality n. 
-
-
-\img{\III}{321_1.png}{Multi dimensional form layout}{321_1}
-
-
-\figref{321_1} depicts a form which allows to add new sub forms that represent the sud subdivisions of the selected skeletal subdivision. Such functionality can be implemented by means of JavaScript routines embedded into the HTML document. The idea is that there is a main form, which consist of the same type of elements like the static forms, and one of its selector field is equipped with a button that initiates the loading of a new sub form. Then the sub form consists of again the standard elements, and maybe of further sub form adders. In the example the sub
-sud subdivision form contains an other sub form adder field for the bone organs.
-
-The task of the JavaScript code running on the client is handle these click events and add the new form elements to the HTML document dynamically. Moreover it has to access the input elements and insert the values into the form data object with defined keys. As there can be multiple sub forms added to the forms their data object stored by means of arrays. Listing \ref{321L1} shows the JSON data (JavaScript Object Notation) of the form in \figref{321_1}. 
-
-\begin{lstlisting}[captionpos=b, caption=JSON object generated by the form, label=321L1,
-basicstyle=\footnotesize,frame=single]
-var formData = {
-	subdivisionType : "fma:5018",
-	subDivisionLabel : "Skull_5733FS2",
-	systemic_parts : [
-		{
-			subsubdivisionType : "fma:45720",
-			subSubdivisionLabel : "Neurocranium:_93KE43",
-		}, { ... } ]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Multi level form data in JSON}, label=JS_subFormRoutine, captionpos=b, belowskip=1em, aboveskip=2em]
+{	uri : "componentA",
+	elements : [
+		{ uri : "componentA1" },
+		{ uri : "componentA2" }
+	]
 }
 \end{lstlisting}
 
-
-The server then in turn has to be prepared that a particular subgraph of the data model has to be created multiple times, and the values are arriving in arrays. The following image shows the data model of the entry form.  
-
-
-\img{\III}{321_2.png}{Multi dimensional RDF dataset}{321_2}
-
-
-
-\subsection{Adoption form elements to the ontology} \label{322}
-
-
-The previous section showed the basics of forms for multi dimensional data input. An important issue which was just partly addressed in \ref{233}, is how the options of the particular selector fields are loaded. In order to load the options of the initial selector can template files be used, that gets the list of the classes coming from a SPARQL query on the ontology. In the example these are all skeletal subdivisions. But there are elements, for example the second selector field in \figref{332_1}, whose values are dependent on the previous elements, which his means their options must be loaded dynamically only after selector of its ancestor element.
-
-\img{\III}{322_1.png}{Initial state of the form}{322_2}
-
-
-Therefore their values are not part of the initial HTML document like possibly in the case of the independent skeletal subdivision class selector, but they have to be set as values of JS variables, so that they can be loaded after the selection. This can be achieved the same way by template file routines, that gets the set of sub sudivisions grouped by skeletal division.
-
-\begin{lstlisting}[captionpos=b, caption= Form option data structure in JSON, label={322L1},
-basicstyle=\footnotesize,frame=single]
-var subSubDivisions = {
-	skull : [{ neurocranium } ... { .. }],
-	vertebralColumn : [{ cervical vertebra } ... { .. }],
-	...
-}
-\end{lstlisting}
-
-The data set on the listing \ref{322L1} stores the lists of the sub ubdivision with the corresponding keys (the keys are real IRIs in practice). Such data can be written to JS with template routines by means of two lists, like in listing \ref{template}. Then if the user selects the first field, JS can access based on the selected value the array to be loaded as options.
-
-But as the example on Figure \figref{321_1} shows that after adding the sub subdivision the bone organs are supposed to be selected to. Therefore the client has to have the same data structure for bone organs as well grouped by the sub sudivsion. The problem is that this data on the form can easily became too large, which may lead to performance issues. Additionally if the whole dataset is queried by the page load then it can be as well inefficient. Therefore it is common a practice that data of the form is loading dynamically through AJAX (Asychronous JavaScript and XML). AJAX is technology that allows the client to communicate with the server without reloading the whole page. This makes the pages more interactive and as well more efficient.
- 
-\img{\III}{322_2.png}{Loading form data through AJAX}{322_2}
-
-The idea is that JS is programmed so that upon certain events, a particular request data is assembled and sent to the server. The response then in this case is not a whole HTML page but a dataset in XML or JSON format. After the response arrives, a JS routine continues its. This more elegant solution addresses further JS programming, and of course new server routines, that handles the requests, perform the queries with the incoming parameters, and respond the results.
-
-
-\subsection{Editing form data}
-	
-	
-The dataset created by the forms have be browsed and edited as well. This means that the application has to be able to restore the form to the same state as it submitted for initial data creation. This is the other direction of the data flow, bacause here the existing data will be retrieved by SPARQL, whose result comes into a JSON object, based on which the form can reset the its state.
-
-\img{\III}{323_1.png}{Two directions of the data flow}{exDatMod}
-
-
-Important issue regarding the server implementation is that in such multi dimensional dataset, it is not sufficient to perform only one query for the whole form data. For example there can be more elaborate assays that have multiple inputs and output (i.e \figref{323_2}).
-
-\img{\III}{323_2.png}{Multi dimensional data example}{323_2}
-
-
-This means if the following query is executed on the dataset, results such a table ((\tableref{sparqlResult})) that is hard to process. 
-
-\begin{lstlisting}[captionpos=b, caption=SPARQL query for the form data, label={sparqlExisting},
-basicstyle=\footnotesize,frame=single]
-SELECT ?boneSegment ?measurementDatum
-WHERE {
-	?assay		:has_specified_input				?boneSegment .
-	?assay		:has_specified_output       ?measurementDatum .
-	FILTER ( ?assay = ${inputParameter})
-}
-\end{lstlisting}
-
-
-\begin{table}
-	\begin{center}
-		\begin{tabular}{||c | c||} 
-			\hline
-			?boneSegment & ?measurementDatum  \\ [0.5ex] 
-			\hline\hline
-			BS1 & MD1 \\ 
-			\hline
-			BS1 & MD2 \\ 
-			\hline
-			BS2 & MD1 \\ 
-			\hline
-			BS2 & MD2 \\  [1ex] 
-			\hline 
-		\end{tabular}
-	\end{center}
-	\caption{SPARQL result table}  \label{sparqlResult}
-\end{table}
-
-Therefore the data object of the form has to be retrieved gradually, by dividing the data model graph by the predicates, whose cardinality is larger than one. The process have to start with the main graph, and the results of the sub graph queries then has to be stored in arrays of the form data JSON object. The task of the client is to iterate on the arrays and reload the sub forms. Important part of the form reloading is that, not only the values of the literal fields have to be restored, but the selector field options as well. So that for example if the existing dataset contains a skeletal subdivision, it is necessary to load the possible bone organs into the selector, so that the user can add additional bone segments conveniently.
-Finally if a value of a literal field has been edited by the user, or new sub forms has to be added or removed, the saving operation should be done immediately through AJAX. 
-To achieve this JS has to assign events to each literal fields and sub form container, and be able to send the appropriate request to the server.
-
-\newpage
-\section{Solution Scheme} \label{33}
-
-\subsection{Model for RDF data input processes} \label{[331]}
-
-The task of the implementation of a data input forms addresses two main questions. Firstly is what dataset has to be created, and secondly how this dataset is represented on the form. The vocabulary which is capable of defining the whole input process, has to be able to answer both these question. Therefore the model is divided into two sections, to the data definition and the form definition. The data definition consist of a set of RDF nodes and triples, while the interface definition consist of the forms and the data input fields.
- 
-Nevertheless we have the previous chapters we have seen that the scheme of the ontology plays an important role of the data entry form process. Namely if a set restriction statement assign multiple classes to one, like i.e. bone organs to a skeletal subdivisions, then the web user interface has to be adapted to this scheme, and it has to of the possibility to add sub forms dynamically. So to make the vocabulary complete is it inevitable to expresses what triples may be added multiple times and of which form elements adds further sub forms.
-
-
-\img{\III}{331_1.png}{Vocabulary for RDF data input processes}{331_1}
-
-
-Figure \figref{331_1} shows the main elements and relationships of the vocabulary. It can be seen that the connection between the data and the form definition is established through the represents predicate that connects form elements to RDF nodes. Moreover the \text{MultiTriple} is a subclass of the triple, and it that allows to expresses the scheme of the ontology subset, for which the RDF data will be created.
-
-
-\subsection{Software framework outline} \label{[332}
-
-
-The above introduced vocabulary is represented currently by means of Java classes. Thus the definition of the problems is the creation of Java objects from the classes. 
-
-
-\begin{lstlisting}[captionpos=b, caption=Input process definition in Java, label={dataDefinition},
-basicstyle=\footnotesize,frame=single]
-	//Data definition
-	List<Triple> triples = new ArrayList<Triple>();
-	RDFNode subdivision = new RDFNode("subdivision");
-	RDFNode boneOrgan = new RDFNode("boneOrgan");
-	triples.add(new MultiTriple(boneOrgan, "fma:systemic_part_of", subdivision));
-	...
-	//Form definition
-	Form form = new Form();
-	form.addElement(new LiteralField("label"));
-	...
-	//FormConfiguration
-	FormConfig skeletalInventory = new FormConfig(form, triples);
-\end{lstlisting}
-
-
-The idea is that framework operates completely upon this definition. The first task is to process the definition and generate JSON objects that describes the forms layout, and further Java objects for the data operations.
-
-
-\img{\III}{332_1.png}{Implementation workflow}{332_1}
-
+\section{Solution scheme}
 
