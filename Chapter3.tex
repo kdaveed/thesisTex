@@ -7,31 +7,42 @@ In section (ontologies) in particular in the 2.2.3 \textit{RDFBones} ontology sc
 \section{Multi level data input}
 
 
-The examples from the previous chapter showed simple examples of data input problem, where the values of the form elements were substituted into a predefined set of RDF triples. In the presented cases the simplicity lies in that number of RDF instances, that were created is constant, and only their types and attributes are set by the user. But if an input form have to make possible the creation of more complex dataset, then it requires a code on the client side too and bit more elaborate data definition on the server.
+The previous chapter showed simple cases of data input problems, where the values of the HTML form elements were substituted into a predefined set of RDF triples. In the presented cases the simplicity lies in that the number of the created RDF instances was constant, and only their types and attributes were set by the user. This meant that it was sufficient to send a request consisted only of such key-value pairs. Nevertheless there are more complicated cases where the set of instances created during the data input process are defined by the user. This requires such web interfaces that allow the user to add form elements dynamically and can create the appropriate form data.
 
-\figref{multiLevel} shows a general example that illustrate the essence of problem. The upper box with the ellipses contains the ontology, and the lower boxes contains the actual RDF triples.
-The two main classes are the \textit{Element} and the \textit{Component}, whose relationship is expressed by the \textit{partOf} property. The smaller ellipses are the subclasses of the two main classes respectively. The red arrows represent OWL restrictions on the property \textit{partOf}. At this point it does not matter, if the restriction is \textit{owl:someValuesFrom}, \textit{owl:allValuesFrom} or a qualified cardinality. The point that through OWL restrictions it is possible to express the rules of a domain, in this case which component is part of which element. 
+\figref{multiLevel} shows an example ontology and two RDF datasets, through which the functionality of the dynamic interface can be illustrated. The upper box shows the ontology, whose two main classes are the \textit{Element} and \textit{Component}. Each type of element and component is represented by specific subclasses, and the rules regarding which component belongs to which elements are defined through OWL restrictions on the property \textit{partOf} (\textit{red arrows}). At this point it does not matter, if the restriction is \textit{owl:someValuesFrom}, \textit{owl:allValuesFrom} or a qualified cardinality. 
+
+
+The upper box with the ellipses contains the ontology, and the lower boxes contains the actual RDF triples. It can be seen that both RDF triple set conforms to the rules of the ontology. Important to note that right dataset do not contain all the possible component instances. This aims to illustrates that by such more complex dataset the user not only set literal values and types but have to decide about if a component of something is there. Which is for example by the digitalization of skeletal remains it is important because, it is often the case some of the bone organs are missing. 
+
 
 \img{\III}{multiLevel.png}{Multi level data}{multiLevel}
 
 
-The lower box shows two RDF dataset, that conforms to the rules of the ontology. Important to note that right dataset do not contain all the possible component instances. This aims to illustrates that by such more complex dataset the user not only set literal values and types but have to decide about if a component of something is there. Which is for example by the digitalization of skeletal remains it is important because, it is often the case some of the bone organs are missing. 
 
 \figref{multiLevelForm} show the layout of a form that allows the addition of the component dynamically. The additional element is a button, that let the user add the add the selected component.
 This form functionality poses a new requirement to the form data, which has to be multi level. Under multi level data, is such form object is meant, that does not only contain such key value pairs, where the values are literals, but can be arrays of further objects. 
 
-Further task of the form that refresh the options of the selector field for the components because is is dependent on the selected element.
+
+Furthermore important task of the application is to refresh the selector options upon user actions. With other words the task is to ensure that the user cannot create incorrect data structure.
+
+
+task of the form that refresh the options of the selector field for the components because is is dependent on the selected element.
 
 \img{\III}{multiLevelForm.png}{Multi level form}{multiLevelForm} 
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Multi level form data in JSON}, label=JS_subFormRoutine, captionpos=b, belowskip=1em, aboveskip=2em]
 {	uri : "componentA",
-	elements : [
+	components : [
 		{ uri : "componentA1" },
 		{ uri : "componentA2" }
 	]
 }
 \end{lstlisting}
+
+
+
+
+
 
 \section{Solution scheme}
 
