@@ -41,16 +41,24 @@ This section gave an insight into challenges of the multi level data input. The 
 
 \section{Solution scheme}
 
-The task of the implementation of a data input forms addresses two main questions. Firstly is what dataset has to be created, and secondly how this dataset is represented on the form. The vocabulary which is capable
-of defining the whole input process, has to be able to answer both these question. Therefore the model is divided into two sections, to the data definition and the form definition. The data definition consist of a set of RDF nodes and triples, while the interface definition consist of the forms and the data input fields. Nevertheless we have the previous chapters we have seen that the scheme of the ontology plays an important role of the data entry form process. Namely if a set restriction statement assign multiple classes to one, like i.e. bone organs to a skeletal subdivisions, then the web user interface has to
-be adapted to this scheme, and it has to of the possibility to add sub forms dynamically. So to make the vocabulary complete is it inevitable to expresses
-what triples may be added multiple times and of which form elements adds further sub forms.
+
+The aim of the thesis is to develop a web application framework that allows the definition of input processes on high level declarative way. This means the application development, which normally incorporates coding in HTML, JavaScript and Java is reduced to the creation of simple descriptor dataset that defines the form layout and the RDF dataset that has to be created.
+
+The first task is to design a vocabulary that is models the whole data input process. This vocabulary is the scheme of the descriptor dataset. The vocabulary like an ontology contains the classes representing the entities of the problaem domain, and their relatioships and attributes.
+
 
 \img{\III}{dl.png}{Classes and relationships of the vocabulary}{ss1}
 
-\figref{ss1} shows the main elements and relationships of the vocabulary. It can be seen that the connection between the data and the form definition is established through the represents predicate that connects form elements to RDF nodes. Moreover the MultiTriple is a subclass of the class \textit{Triple}, and it that allows to expresses the scheme of the ontology subset, for which the RDF data will be created.
+The three classes on the left in \figref{ss1} models the interface, and the other three on the right in turn are for the data model. The most important class is the \textit{Form} that contains the form elements. To achieve the multi level layout explained in the previous section the vocabulary contains a form element \textit{Subform adder}, to which a sub form can be defined. The connection between the form and data is expressed by the \textit{represents} relationship. The nodes in the data model build triples, and those triples that may appear in the final RDF dataset after the form submission is modeled by the class \textit{Multi triple}. So the multi level functionality is expressed with the two subclasses.
 
-The idea is that framework operates completely upon this definition. The first task is to process the definition and generate JSON objects that describes the forms layout, and further Java objects for the data operations.
+The second task is to implement the libraries both on the server and client side that is capable of operating dynamically on descriptor objects. The workflow starts with the processing of the configuration dataset. This have three main task, the validation of the input data, and the generation of the descriptor objects for the server and the client.
 
 \img{\III}{332_1.png}{Framework functionality outline}{ss2}
+
+
+The form descriptor data is JSON objects that contains the defintion form elements including the subforms, and data dependencies between the form elements, so that it can get the options of the sub selectors dynamically. The server side is a hierarchical object set that is capable of processing the incoming multi level data. The most important feature the from the triple definition it is capable of the saving and retrieving the requeired RDF dataset.
+
+
+
+
 
