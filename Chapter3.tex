@@ -1,17 +1,19 @@
 \chapter{Problem Statement}
 
 
-In section (ontologies) in particular in the 2.2.3 \textit{RDFBones} ontology scheme of the dataset that represents anthropological research activity has been discussed, while the section 2.3.2 introduced the basics of RDF data input. 
-
-
 \section{Multi level data input}
 
 
-The previous chapter showed simple cases of data input problems, where the values of the HTML form elements were substituted into a predefined set of RDF triples. In the presented cases the simplicity lies in that the number of the created RDF instances was constant, and only their types and attributes were set by the user. This meant that it was sufficient to send a request consisted only of such key-value pairs. Nevertheless there are more complicated cases where the set of instances created during the data input process are defined by the user. This requires such web interfaces that allow the user to add form elements dynamically and can create the appropriate form data.
+In the previous chapter it has been discussed how can we implement simple data input forms within the VIVO framework. The simplicity of the illustrated problems lied in that the number of instances which were created through the forms was constant, in particular one, and only their types and literal attributes were set by the user through HTML input elements. Nevertheless there are such entities that are more complex, and they consist of several sub part, that are represented in the ontology with further classes. Such as a skeletal subdivision consists of bone organs, or a study design execution consists of assays, which consist of input bones and output data. Consequently the RDF dataset by such entities incorporates a set of instances organized into a tree structure (\figref{ps1}, where the green node is that main instance). 
+
+\img{\III}{ps1.png}{RDF triples for complex entities}{ps1}
+
+
+This means in terms of the data input form that it has to offer such interface elements which allows the user to add the components step by step. 
 
 
 
-\img{\III}{ps1.png}{Multi level data}{ps1}
+
 
 
 
