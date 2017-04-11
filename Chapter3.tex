@@ -41,6 +41,16 @@ This section gave an insight into challenges of the multi level data input. The 
 
 \section{Solution scheme}
 
+The task of the implementation of a data input forms addresses two main questions. Firstly is what dataset has to be created, and secondly how this dataset is represented on the form. The vocabulary which is capable
+of defining the whole input process, has to be able to answer both these question. Therefore the model is divided into two sections, to the data definition and the form definition. The data definition consist of a set of RDF nodes and triples, while the interface definition consist of the forms and the data input fields. Nevertheless we have the previous chapters we have seen that the scheme of the ontology plays an important role of the data entry form process. Namely if a set restriction statement assign multiple classes to one, like i.e. bone organs to a skeletal subdivisions, then the web user interface has to
+be adapted to this scheme, and it has to of the possibility to add sub forms dynamically. So to make the vocabulary complete is it inevitable to expresses
+what triples may be added multiple times and of which form elements adds further sub forms.
 
+\img{\III}{dl.png}{Classes and relationships of the vocabulary}{ss1}
 
+\figref{ss1} shows the main elements and relationships of the vocabulary. It can be seen that the connection between the data and the form definition is established through the represents predicate that connects form elements to RDF nodes. Moreover the MultiTriple is a subclass of the class \textit{Triple}, and it that allows to expresses the scheme of the ontology subset, for which the RDF data will be created.
+
+The idea is that framework operates completely upon this definition. The first task is to process the definition and generate JSON objects that describes the forms layout, and further Java objects for the data operations.
+
+\img{\III}{332_1.png}{Framework functionality outline}{ss2}
 
