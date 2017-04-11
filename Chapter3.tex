@@ -17,7 +17,6 @@ Such dataset poses the requirement for the input form, that the user has to be o
 
 Listing \ref{multiData} shows the JSON object generated during by form from \figref{ps2}, where the objects are surrounded with ("\{\}"), while the arrays with ("[]"). After the submission the server has to process this object by iterating through the arrays of the objects, and generate the appropriate RDF triples.
 
-
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Multi level form data in JSON}, label=multiData, captionpos=b, belowskip=1em, aboveskip=2em]
 {	type : "eq:elementA",
 	label : "Element_4391",
@@ -31,11 +30,9 @@ Listing \ref{multiData} shows the JSON object generated during by form from \fig
 }
 \end{lstlisting}
 
-
 Further challenge is that the options of the type selector on the sub forms, are dependent on the selected type of the parent form (the form which the sub form has been added from). This means that the client has to load asynchronously the values, by sending AJAX request containing the selected type value to server. The task of the server is to perform the query that retrieves the classes defined through restrictions in the ontology. The goal of this functionality is firstly to ensure that only such data is created that conforms to the rules defined in the ontology, secondly the interface is much more usable if not all the components are listed, just the ones that are belong to the selected element. Moreover in this way the validation on the server after submission can be omitted.
 
 Finally important part of problem is the editing of the data. The first step by the editing is the restore the submitted data and send to the client. In the previous chapter we have seen that it is currently solved by defining  SPARQL queries that retrieves the form variables. But since the form data is not just a set of key value-pairs but a multi level data object, this approach is not sufficient. An algorithm is required that generates the multi level JSON object from the existing triples iteratively. Furthermore after the arrival of the existing data to the client, an other routine has to reset the state of the form with the appropriate sub forms and certain selector options as well.
-
 
 This section gave an insight into challenges of the multi level data input. The emphasis lied on that these problem require more complex form functionality and server algorithm. For such cases unfortunately VIVO does not provide any libraries or option for some declarative definition, thus these advanced forms has to be implemented almost from scratch, and poorly documented parts of the source code have to be understood.
 
@@ -56,5 +53,4 @@ The implemented framework takes the descriptor dataset, which is currently set o
 The form descriptor data is a JSON object containing the definition of the form elements including the sub forms, and data dependencies between the form elements, so that it can get the options of the sub selectors dynamically. The essence of the routines running on the client is to convert the descriptor JSON object into the form fields, and initiate the necessary AJAX calls.
 
 The server has three main tasks, loading the form data upon the AJAX calls, convert the submitted JSON object to the RDF data, and retrieve the stored data by the edition. The utility of the implemented framework that it exploits that the SPARQL query and the RDF datasets are both RDF graph patterns, and thus they both can be generated automatically from the triple definition part of the descriptor dataset. This feature enable a more compact data definition then what is required in the current VIVO framework.
-
 
