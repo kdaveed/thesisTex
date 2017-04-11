@@ -4,19 +4,18 @@
 \section{Multi level data input}
 
 
-In the previous chapter it has been discussed how can we implement simple data input forms within the VIVO framework. The simplicity of the illustrated problems lied in that the number of instances which were created through the forms was constant, in particular one, and only their types and literal attributes were set by the user through HTML input elements. Nevertheless there are such entities that are more complex, and they consist of several sub part, that are represented in the ontology with further classes. Such as a skeletal subdivision consists of bone organs, or a study design execution consists of assays, which consist of input bones and output data. Consequently the RDF dataset for such entities incorporates a set of instances organized into a tree structure (\figref{ps1}, where the green node is that main instance).
+In the previous chapter it has been discussed how can we implement simple data input forms within the VIVO framework. The simplicity of the illustrated problems lied in that the number of instances which were created through the forms was constant, in particular one, and only their types and literal attributes were set by the user through HTML input elements. 
 
-\img{\III}{ps1.png}{RDF triples for complex entities}{ps1}
+\img{\III}{ps1.png}{Ontology and RDF triples for complex entities}{ps1}
 
+Nevertheless there are such entities that are more complex, and they consist of several sub part, that are represented in the ontology with further classes. Such as a skeletal subdivision consists of bone organs, or a study design execution consists of assays, which consist of input bones and output data. Consequently the RDF dataset for such entities incorporates a set of instances organized into a tree structure. \figref{ps1} shows and example ontology and two RDF dataset (grey rectangles).
 
 This means in terms of the data input form that it has to offer such interface elements which allows the user to add the components step by step. Since these sub components are such RDF instances like the main instance they appear on the form as sub forms with selectors and literal fields. 
 
-
 \img{\III}{ps2.png}{Multi level form}{ps2}
 
-
 \figref{ps2} shows the layout of the form for multi level data. Each for each instance the form offers a selector for its type and text field for its label. The field \textit{Components} has a button (+), which allows the addition of the sub forms. The sub form has as well a dynamic field for sub sub form. To realize such functionality a JavaScript routine is needed that adds the sub forms to the appropriate fields. 
-Furthermore this hierarchical form layout requires an appropriate data structure. By static forms from the previous chapter, the HTML \textit{<form/>} element created automatically the HTTP request with the key-value pairs. But in this case JavaScript has to put the data created by the user into a JSON object. This data objects contains as well key value pair, but there is at least one key, where the value is a array of further objects. 
+Furthermore this hierarchical form layout requires an appropriate data structure. By static forms from the previous chapter, the HTML \textit{<form/>} element created automatically the HTTP request with the key-value pairs. But in this case JavaScript has to put the data created by the user into a JSON object. This data objects contains as well key value pair, but there is at least one key, where the value is a array of further objects.
 
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Multi level form data in JSON}, label=multiData, captionpos=b, belowskip=1em, aboveskip=2em]
@@ -26,17 +25,23 @@ Furthermore this hierarchical form layout requires an appropriate data structure
 		{ type : "eq:componentA1",
 		  label : "Component_8531",	
 		  subComponents : [ { ... } ],
-		},
-		{ ... }
-	]
+		},{ 
+			... 
+		}]
 }
 \end{lstlisting}
 
 Listing \ref{multiData} shows the JSON object generated during by form from \figref{ps2}. The objects are surrounded with ("\{\}"), while the arrays with ("[]"). So the most fundamental task of form handler JavaScript routine is to create new data object if new sub forms are added, and push them to the appropriate array in the form data. 
 
+Further challenges is that the options of the type selector of the sub forms are dependent on the selected type of the parent form (the form to which the sub form was added). This means that the client has to load asynchronously the values, by sending AJAX request containing the selected type value to server. The task of the server is to perform the query that retrieves the classes defined through restrictions in the ontology. Moreover the saving process after the submission requires algorithm on the server, which iterates through the arrays of the data object.
 
-\img{\III}{ps3.png}{Ontology}{ps3}
+Finally important part of problem is the editing of the data. The first step by the editing is the restore the submitted data and send to the client. In the previous chapter we have seen that it is currently solved by defining  SPARQL queries that retrieves the form variables. But since the form data is not just a set of key value-pairs but a multi level object this approach is not sufficient. An algorithm is required that generates the multi level JSON object from the existing triples iteratively. Moreover the form has to process the existing data and restore the form layout, with the selector options as well. 
+
+This section gave an insight into the problem. The emphasis lied on the multi level data requires more complex form functionality and more complex server algorithm. In such case the code is not really complicated but large amount. The goal of the thesis is to model this form and data scheme, and let the definition of such advanced functionality without coding, in declarative way. 
 
 
 \section{Solution scheme}
+
+
+
 
