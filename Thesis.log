@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 APR 2017 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 APR 2017 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,7 +1199,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/ps1.png used on input line 9.
+atement/ps1.png used on input line 8.
 (pdftex.def)             Requested size: 360.0pt x 150.6891pt.
 
 [22
@@ -1212,7 +1212,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps2.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/ps2.png used on input line 15.
+atement/ps2.png used on input line 14.
 (pdftex.def)             Requested size: 360.0pt x 198.9856pt.
 
 
@@ -1236,7 +1236,7 @@ hic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/dl.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/dl.png used on input line 47.
+atement/dl.png used on input line 48.
 (pdftex.def)             Requested size: 360.0pt x 82.73984pt.
 
 
@@ -1253,7 +1253,7 @@ raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/332_1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/332_1.png used on input line 53.
+atement/332_1.png used on input line 54.
 (pdftex.def)             Requested size: 360.0pt x 121.97241pt.
 )
 (./Chapter4.tex
@@ -1899,7 +1899,7 @@ Here is how much of TeX's memory you used:
  14460 multiletter control sequences out of 15000+600000
  27777 words of font info for 66 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 31i,12n,43p,1186b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,12n,43p,1185b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -1920,7 +1920,7 @@ public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
 blic/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb>
-Output written on Thesis.pdf (75 pages, 2623155 bytes).
+Output written on Thesis.pdf (75 pages, 2622940 bytes).
 PDF statistics:
  1170 PDF objects out of 1200 (max. 8388607)
  956 compressed objects within 10 object streams
