@@ -36,31 +36,25 @@ Further challenge is that the options of the type selector on the sub forms, are
 Finally important part of problem is the editing of the data. The first step by the editing is the restore the submitted data and send to the client. In the previous chapter we have seen that it is currently solved by defining  SPARQL queries that retrieves the form variables. But since the form data is not just a set of key value-pairs but a multi level data object, this approach is not sufficient. An algorithm is required that generates the multi level JSON object from the existing triples iteratively. Furthermore after the arrival of the existing data to the client, an other routine has to reset the state of the form with the appropriate sub forms and certain selector options as well.
 
 
-This section gave an insight into challenges of the multi level data input. The emphasis lied on that these problem require more complex form functionality and server algorithm. For such cases unfortunately VIVO does not provide any libraries or option for some declarative definition, thus these advanced forms has to be implemented almost from scratch, and such parts of the source code have to be understood that are poorly documented.
+This section gave an insight into challenges of the multi level data input. The emphasis lied on that these problem require more complex form functionality and server algorithm. For such cases unfortunately VIVO does not provide any libraries or option for some declarative definition, thus these advanced forms has to be implemented almost from scratch, and poorly documented parts of the source code have to be understood.
 
 
 \section{Solution scheme}
 
+The aim of the thesis is to develop a web application framework that allows the definition of input processes on high level declarative way. This means that the application development, which normally incorporates coding in HTML, JavaScript and Java, is reduced to the creation of simple descriptor dataset defining the form layout and the RDF dataset that has to be created.
 
-The aim of the thesis is to develop a web application framework that allows the definition of input processes on high level declarative way. This means the application development, which normally incorporates coding in HTML, JavaScript and Java is reduced to the creation of simple descriptor dataset that defines the form layout and the RDF dataset that has to be created.
-
-The first task is to design a vocabulary that is models the whole data input process. This vocabulary is the scheme of the descriptor dataset. The vocabulary like an ontology contains the classes representing the entities of the problaem domain, and their relatioships and attributes.
-
+The first task is to design a vocabulary that models the whole data input process. This vocabulary is the scheme of the descriptor dataset. The vocabulary, like an ontology contains the classes representing the entities of the problem domain, and their relationships and attributes.
 
 \img{\III}{dl.png}{Classes and relationships of the vocabulary}{ss1}
 
-The three classes on the left in \figref{ss1} models the interface, and the other three on the right in turn are for the data model. The most important class is the \textit{Form} that contains the form elements. To achieve the multi level layout explained in the previous section the vocabulary contains a form element \textit{Subform adder}, to which a sub form can be defined. The connection between the form and data is expressed by the \textit{represents} relationship. The nodes in the data model build triples, and those triples that may appear in the final RDF dataset after the form submission is modeled by the class \textit{Multi triple}. So the multi level functionality is expressed with the two subclasses.
+\figref{ss1} depicts the main classes of the vocabulary with ellipses, and the relationships with arrows. The attributes and some further subclasses are not displayed here, for the sake of readability, but they will be covered in the following chapter. The three classes on the left models the interface, and the other three on the right in turn are for the data model. The most important class is the \textit{Form} that contains the form elements. To achieve the multi level layout explained in the previous section the vocabulary contains a form element \textit{SubformAdder}, to which a sub form can be defined with the \textit{subForm} relationship. The connection between the form and data is expressed by the \textit{represents} relationship. The whole data model is built up of triples, that have of course subject and object nodes. In the data modelling the concepts multi level data is expressed wuth the class \textit{MultiTriple}. 
 
 The second task is to implement the libraries both on the server and client side that is capable of operating dynamically on descriptor objects. The workflow starts with the processing of the configuration dataset. This have three main task, the validation of the input data, and the generation of the descriptor objects for the server and the client.
 
+
 \img{\III}{332_1.png}{Framework functionality outline}{ss2}
 
-The form descriptor data is JSON objects that contains the defintion form elements including the subforms, and data dependencies between the form elements, so that it can get the options of the sub selectors dynamically. The server side is a hierarchical object set that is capable of processing the incoming multi level data. The most important feature the from the triple definition it is capable of the saving and retrieving the requeired RDF dataset.
+The form descriptor data is a JSON object containing the definition of the form elements including the sub forms, and data dependencies between the form elements, so that it can get the options of the sub selectors dynamically. The essence of the routines running on the client is to convert the descriptor JSON object into the form fields, and initiate the necessary AJAX calls.
 
-
-
-
-
-
-
+The server has three main tasks, loading the form data upon the AJAX calls, convert the submitted JSON object to the RDF data, and retrieve the stored data by the edition. These operations requires SPARQL queries and RDF triple strings, which all is generated automatically from the dataset descriptor object.
 
