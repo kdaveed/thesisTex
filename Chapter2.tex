@@ -227,7 +227,10 @@ In our project the following three properties are used:
 
 This chapter contains practical information about how web applications work. In section \ref{clientServer} the basic mechanism of data driven applications are discussed, like navigation between page, data display and creation. Section \ref{rdfWebapp} then focuses on the applications that are using semantic technologies, and addresses what kind of architectural changes that means.
 
-\subsection{Client-sever architecture} \label{clientServer}
+
+\subsection{Fundamentals} \label{fundamentals}
+
+\subsubsection{Client-sever architecture} \label{clientServer}
 
 
 A web application is program that runs on a machine, which is accessible through the web. The machine is called server, because its main purpose is to server request that are coming from the web browser. Web browsers are as well programs, but they run on personal computers, tablets, etc, and they are capable of sending request through web to the servers. The response to these requests are HTML document, which can be displayed by the browser. 
@@ -249,22 +252,8 @@ basicstyle=\footnotesize,frame=single]
 
 If the user clicks on of these link (with the label 'Politics' and 'Sport') then these request will be sent to the news portal page. Each such request has to be served, differently to each mapping some routine has to be assigned. For example by Java web applications, the classes of the server that process the request are called servlets. On the next image it is shown, how the XML file defines, which class is responsible for the the mapping '/politics'.
 
-\begin{lstlisting}[captionpos=b, caption=Java servlet mapping definition, label=skullJSON, belowskip=1em, aboveskip=2em,
-basicstyle=\footnotesize,frame=single]
-<servlet-mapping>
-	<url-pattern>/politics</url-pattern>
-	<servlet-class>servlets.PoliticsController</servlet-class>
-</servlet-mapping>
-\end{lstlisting}
 
-
-Then the responsibility of the class \textit{servlets.PoliticsController} is to respond the corresponding HTML page for the client. Figure \ref{navigation} show the main structure of the applications, where the rectangles on the client side represent the different pages of the application.
-
-
-\img{\II}{servletMapping.png}{Navigation through the web application}{navigation}
-
-
-\subsection{Data driven web applications} \label{dataDriven}
+\subsubsection{Data driven web applications} \label{dataDriven}
 
 
 This section aims to present the fundamentals of the web technologies that allows to build application for browsing and creating data. Modern web applications do not store the information in HTML documents. So the page loading process is not just the sending the HTML document, but a retrieval of a particular dataset, and the substitution into a web page. First of all the task of responding requires a query that retrieves that data from the database. By applications using relational data model, the tables and attributes are always modeled by classes of the used object oriented programming (OOP) language. So the data retrieval is the instantiation of the classes in scope. 
@@ -286,7 +275,6 @@ basicstyle=\footnotesize,frame=single]
 	</a>
 </#list>
 \end{lstlisting}
-
 
 The template file is a description of how the data has to be converted into HTML document. It can be seen that it is possible for instance to declare a list on the input variable newsList. Then the template engine iterates through the News objects and by accessing its fields (title, summary, id) and generates the HTML for each element. So the complete flow of data from the database to the client looks as follows: 
 
@@ -358,7 +346,12 @@ basicstyle=\footnotesize,frame=single]
 \end{lstlisting}
 
 
-\subsection{Applications with RDF Data} \label{233}
+\subsection{VIVO framework} \label{233}
+
+
+\subsubsection{Profile pages} \label{233}
+
+
 
 This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. The most important feature of RDF that the data scheme, namely the ontology is stored in RDF triples too, thus can be queried.
 
@@ -394,6 +387,9 @@ The VIVO framework applied in the RDFBones project generates the pages for insta
 
 Above the display of the existing data, RDF based applications are different as well in the data input mechanism. First of all, due to the fact that ontologies can contain thousand of class it is not an option to represent them all as classes of the server application language as well. It is time consuming and the system would loose its flexibility in the cases when new ontology subsets are supposed to be loaded. Therefore there are neither for each type of the database an entry form with a unique controller servlet, but more generic approaches are used.
 To define what dataset has to be created, semantic web based applications simply define them as a set of triples, with variables like in SPARQL, just the data flows the other way around.
+
+
+\subsubsection{Data entry forms} \label{233}
 
 \img{\II}{rdfDataDef.png}{Triples representing a new instance}{rdfDataDef}
 

@@ -11,18 +11,17 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Ontology structure for skeleton}}{12}{figure.2.7}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Client server communication}}{13}{figure.2.8}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces HTML document is interpreted by the browser}}{14}{figure.2.9}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Navigation through the web application}}{15}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Data flow}}{16}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Flow of information from DB to client}}{16}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces SQL query with parameter}}{17}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Links to data items}}{17}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Form layout and HTML document}}{18}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Request with parameters}}{18}{figure.2.16}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Static and dynamic web pages}}{18}{figure.2.17}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Ontology and data in RDF}}{20}{figure.2.18}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces VIVO Profile page}}{21}{figure.2.19}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Triples representing a new instance}}{21}{figure.2.20}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Data input scheme by RDF}}{22}{figure.2.21}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Data flow}}{15}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Flow of information from DB to client}}{16}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces SQL query with parameter}}{16}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Links to data items}}{17}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Form layout and HTML document}}{17}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Request with parameters}}{17}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Static and dynamic web pages}}{18}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Ontology and data in RDF}}{20}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces VIVO Profile page}}{21}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Triples representing a new instance}}{21}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Data input scheme by RDF}}{22}{figure.2.20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and RDF triples for complex entities}}{23}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Multi level form}}{24}{figure.3.2}
