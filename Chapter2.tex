@@ -256,57 +256,38 @@ If the user clicks on of these link (with the label 'Politics' and 'Sport') then
 \subsubsection{Data driven web applications} \label{dataDriven}
 
 
-This section aims to present the fundamentals of the web technologies that allows to build application for browsing and creating data. Modern web applications do not store the information in HTML documents. So the page loading process is not just the sending the HTML document, but a retrieval of a particular dataset, and the substitution into a web page. First of all the task of responding requires a query that retrieves that data from the database. By applications using relational data model, the tables and attributes are always modeled by classes of the used object oriented programming (OOP) language. So the data retrieval is the instantiation of the classes in scope. 
+Most of the web applications nowadays incorporates databases, which are applied to store large amount data in an organized way. To access data in databases, database management systems (DBMS) are used. DBMS is the bridge between the web application. Its main functions is to allow the entry and retrieval of data into the database. In the following the two modules, the database and DBMS will be referred as database.  
 
-Let assume that articles of a news portal is stored in a table with the attributes, id, type, title, summary and text. Then there has to be a class defined in the server code with the same attributes. To instantiate instances of the class, it is necessary to perform an SQL query.
-
-\imgK{\II}{4_data_flow.png}{Data flow}
+So on the server is running an application that server the request and access is the database. In this section we will take a look at the principles how can we show data on the web pages and how can we navigate. 
 
 
-The query results not only one instance of the News class, but a list (\textit{List<News> newList}). To generate from this a HTML page that shows the articles, normally so called template engines are used. Templateing enables to define the HTML documents parametric, and passing them data, and they generate the result page automatically.   
+We have seen that from the client different request can come. The requests are differing in their URL pattern, based on which the application decides which routine has to performed. In the simplest case the process starts with a execution of a query, in particular the sending of a query to the database, which return the desired dataset. This dataset is mostly can be imagined as table, which means in terms of the application data an list of objects. Under object a general data type is meant that organizes its values by keys. The elements of the result list represent the rows of the result table, and the fields of the object in turn the rows respectively. 
+
+After getting the data from the database, it will be passed to the template engine with a template file, whose output will the HTML document. 
+
+The template file defines the way how the input data has to be converted into the HTML document. The template file is written in the template language. The following listing shows table can be generated from query result list. 
 
 \begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-<#list  newsList as news>
-	<h3>  ${news.title} </h3>
-	<p>  ${news.summary} </p>
-	<a  href = "http://newsPortal.com/wholeNews?id=${news.id}"> 
-		Read more 
-	</a>
+<#list students as student>
+	<tr>
+		<td>${student.name}</td>
+		<td> <@linkButton "grades" ${student.id} /> </td>
+	</tr>
 </#list>
 \end{lstlisting}
 
-The template file is a description of how the data has to be converted into HTML document. It can be seen that it is possible for instance to declare a list on the input variable newsList. Then the template engine iterates through the News objects and by accessing its fields (title, summary, id) and generates the HTML for each element. So the complete flow of data from the database to the client looks as follows: 
+In the web application the list is name \textit{students} and it is passed to the engine. Its fields are name and id. Template language The \textit{\#list} defines loop for. Moreover there is possibility to define macros, that make the code more overseeable. For instance the macro \textit{\@linkButton} incorporates and \textit{<a/>} and a certain image.
 
-\img{\II}{dataFlow1.png}{Flow of information from DB to client}{dataFlow}
-
-
-The template shows only the summary of the article, but offers the following link: 
-
-\begin{lstlisting}[captionpos=b, caption=, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-		http://newsPortal.com/wholeNews?id=${news.id}
+<#macro linkButton urlMapping id>
+	<a href="webapp.com/${urlMapping}?id=${id}">
+		<img src="webapp.com/images/jump.jpg"/>
+	</a>
+</#macro>
 \end{lstlisting}
 
-
-The new feature is that after the url mapping there is a parameter \textit{id}, and its value will be the database id of the web application. The idea is that this link redirects to the page where the whole article can be seen. So there has to be a servlet class defined to the mapping /wholeNews, which to perform the following query where the id is the input.
-
-
-\imgK{\II}{6_sql_query.png}{SQL query with parameter}
-
-Thus it is achieved that different links are programmed to get access not only to different other pages, but to specific data items.
-  
-\imgK{\II}{linkID.png}{Links to data items}
-
-Web applications do not only just display existing data, but they allow the users to enter their new data. In HTML the element used for data input is called form. Form is a container, and it consists of particular form elements according to the data to be added. 
-
-\imgK{\II}{7_form_layout_html.png}{Form layout and HTML document}
-
-Submitting the form to the server send an HTTP request with multiple parameters, where they are divided through the \& character.
-
-\imgK{\II}{8_request_parameter.png}{Request with parameters}
-
-By the data entry creation the task of the controller is to get the values from the request an instantiate the class representing the data to be created. Then initialized class instance is passed to the database where the entered data will be persistently stored.
 
 
 \newpage
