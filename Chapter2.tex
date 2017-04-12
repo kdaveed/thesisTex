@@ -320,7 +320,42 @@ Submitting the form to the server send an HTTP request with multiple parameters,
 
 By the data entry creation the task of the controller is to get the values from the request an instantiate the class representing the data to be created. Then initialized class instance is passed to the database where the entered data will be persistently stored.
 
-\imgK{\II}{9_example_java.png}{Example Java routine for data storage}
+
+\newpage
+
+\subsubsection{Interactive web pages}
+
+The previous section showed the principles of how data can be browsed by means of web pages and links. In such static cases the HTML document was assembled completely by the server, and the links initiated the loading of whole new pages. Nevertheless it is often more efficient and leads to better user experience if the new content is added dynamically to the current web page. Such functionality can be achieved with JavaScript (JS), which is a programming language run by the browser. The two most fundamental features of JS, that it is capable of storing data in variables and can modify the content of HTML elements of the pages. 
+
+\img{\II}{js2.png}{Static and dynamic web pages}{js2}
+
+\figref{js2} illustrates the difference between static and dynamic web pages, where the blue rectangle stand for the client side. The idea of dynamic web pages in data driven web applications, that if new content has to be shown on the page, then not an HTTP request is sent to the server, but a JS routine is called. JS code is defined in the HTML document within the \textit{<script/>} tag. The routines are assigned to HTML elements by their id-s in the following way:
+
+\begin{lstlisting}[captionpos=b, caption=JavaScript routine assigned to an HTML element, label=jsListing, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+	<html>
+		<div id = "button"> Show content </div>
+		<div id = "content"></div>
+		<script>
+			...
+			$("#button").click(function(){
+				$("#content").append(data)
+			})
+			...	
+		</script>
+	</html>
+\end{lstlisting}
+
+
+This simple JS code illustrates how it is possible to load new content to the HTML element. In the example the \textit{append} function sets the text of the div with id \textit{button}. The \textit{data} is a JS variable holding
+some text. The value variable can be either initialized by the server by the page assembly, or by AJAX calls. AJAX is an acronym for \textit{Asynchronous JavaScript and XML}. The AJAX is technology that allows JS to load data from the server asynchronously, which means that the request is initiated through JS routine, and response arrives as well to JS routine. The data by AJAX is mostly is JSON format. JSON stands for \textit{JavaScript Object Notation}, which is standard data form. A JSON object consists of a set of key-value pairs, where the value can be any data, arrays or even further objects.
+
+\begin{lstlisting}[captionpos=b, caption=JSON object example, label=jsListing, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+{	key1 : "data",
+	key2 : ["value1", "value2"],
+	key3 : { key : "value"}  }
+\end{lstlisting}
 
 
 \subsection{Applications with RDF Data} \label{233}
