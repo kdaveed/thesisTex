@@ -328,13 +328,39 @@ basicstyle=\footnotesize,frame=single]
 
 VIVO is an open source web application framework, developed particularly for browsing and editing RDF data. VIVO utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt the pages to the ontology. It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset. This dataset is in RDF format too, and defines the way in which the data is displayed and edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without coding.
 
+VIVO maintains two basic type of pages. The first is for displaying the existing data, and one for creating and editing data. The former will be referred as profile page, because it shows the data related to one individual RDF instances, and the latter will be referred as entry form. 
+
 
 \subsubsection{Profile pages} \label{vivoPp}
 
+The task of the profile pages in VIVO, is to display all instances and literals that constitute to a triple with instance, whose page has been called. These neighbor nodes are shown on the page grouped into the properties. Furthermore the properties are organized into so-called property groups.  A property groups can be defined through the following set of configuration RDF triples. 
+
+\begin{lstlisting}[captionpos=b, caption=Property group definition, label=jsListing, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+vivo:overView				rdf:type			vivo:PropertyGroup .
+vivo:overView				rdfs:label			"Overview" .
+\end{lstlisting}
+
+As we can see there is a class vivo:PropertyGroup, which indicates that VIVO incorporates a small ontology for web application configuration. Any property of a domain ontology loaded into VIVO can be assigned to a property group by an additional RDF triple:
+
+\begin{lstlisting}[captionpos=b, caption=Assigning property to propery group, label=jsListing, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+obo:OBI_00000299		vivo:inPropertyGroup 		vivo:overView .
+\end{lstlisting}
+
+
+This means if an applied ontology is extended with further properties then they just have to be assigned to a property groups and VIVO profile pages can display them, and no modification is required in the template file or in the application code.
+
+Other useful configuration possibility are offered by the so-called faux properties, which allow further grouping of RDF instances on the profile pages. They make possible to group instances based on their types even if they are connected to the main instance with the same property. Their definition lies in RDF triples as well, and for each one the base property, the range class and property group has to be set.
+
+\img{\II}{faux.png}{Faux properties on VIVO profile pages}{faux}
+
+
+\figref{faux} show a profile page of skeletal inventory. The blue entries represent the instances, and they are links to the profile pages of the individual skeletal subdivision. Both the \textit{Skull} and the \textit{Vertebral column} instances are connected to the skeletal inventory with the property \textit{rdfbones:hasSkeletalSubdivision}, but since two faux properties (\textit{skull} and \textit{vertebral column}) are defined, these instances appear separately on the profile page.
+
+
 
 \subsubsection{Custom entry forms} \label{vivoCef}
-
-
 
 
 This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. The most important feature of RDF that the data scheme, namely the ontology is stored in RDF triples too, thus can be queried.
