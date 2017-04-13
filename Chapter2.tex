@@ -232,25 +232,34 @@ This chapter contains practical information about how web applications work. In 
 
 \subsubsection{Client-sever architecture} \label{clientServer}
 
-
-A web application is program that runs on a machine, which is accessible through the web. The machine is called server, because its main purpose is to server request that are coming from the web browser. Web browsers are as well programs, but they run on personal computers, tablets, etc, and they are capable of sending request through web to the servers. The response to these requests are HTML document, which can be displayed by the browser. 
+A web applications have two main units, the client and the server. The client is the application, which the user interacts with, while the server is an other application that runs on the request coming from the client. The client and server programs are running normally on different machines, and they communicate through Hypertext Transfer Protocol (HTTP). The main mechanism is that client, which is a web browser application, sends an HTTP request through the web. The server is found based on the URI of the HTTP request, and upon the content request the server returns a document written in Hypertext Markup Language (HTML). The HTML document contains the definition of the elements of the interface and it interpreted by the web browser.
 
 \imgK{\II}{1_client_server.png}{Client server communication}
 
 
-An HTML document contains definition of the elements of the pages, such as tables, buttons, etc. It contains as well so called CSS docuements (Cascading Style Sheet), which is responsible for the definition of the style of the elements. Moreover to make the web pages more interactive, JavaScript (JS) de can be embedded to HTML as well. 
+An HTML document consist of different elements like buttons, tables input fields. Each element is represent by specific tags. The HTML has a hierarchical structure, and each element is the child of the tag \textit{html}. On listing \ref{exHTML} it can be seen that each tag has a opening and closing element. 
 
-\img{\II}{htmlBrowser.png}{HTML document is interpreted by the browser}{html}
-
-Initially web pages were static, which means that their only function was to show certain set of information. These applications usually web applications do not consist of one single page, but of several different pages. Like a web page for news, have normally a main page, and different sub pages for the particular topics. In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the <a/> tag.  The most important parameter of this tag is href, whose value contains the URL of the HTTP request. Let assume that an application’s main page is accessible through the URL http://newsPortal.com. Common practice that subpages of the application can be called through various url-mappings, which means the main URL is extended with a keyword that denotes the page to be requested. 
-
-\begin{lstlisting}[captionpos=b, caption=Example link definitions, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption=Example HTML document, label=exHTML, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-	<a href="http://newsPortal.com/politics"> Politics </a>
-	<a href="http://newsPortal.com/sport"> Sport </a>
+<html>
+	<div> Content </div>
+	<a href="http://webapp.com/page1"> Page 1 </a>
+</html>
 \end{lstlisting}
 
-If the user clicks on of these link (with the label 'Politics' and 'Sport') then these request will be sent to the news portal page. Each such request has to be served, differently to each mapping some routine has to be assigned. For example by Java web applications, the classes of the server that process the request are called servlets. On the next image it is shown, how the XML file defines, which class is responsible for the the mapping '/politics'.
+
+
+In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the \textit{<a/>} tag. The most important parameter of this tag is \textit{href}, whose value contains the URI of the HTTP request they initiate. In listing \ref{exHTML} an example HTML document is illustrated.
+
+\begin{lstlisting}[captionpos=b, caption=Example HTML document, label=exHTML, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+<html>
+	<div class="welcome"> Welcome </div>
+	<a href="http://webapp.com/page1"> Page 1 </a>
+</html>
+\end{lstlisting}
+
+The request initiated by the link with the text \text{Page 1} arrives to the same server, and the application processes it return an other HTML page.
 
 
 \subsubsection{Data driven web applications} \label{dataDriven}
@@ -285,7 +294,7 @@ basicstyle=\footnotesize,frame=single]
 \end{lstlisting}
 
 
-In the macro definition it can be seen that the url of the link contains the parameter \textit{id}. Based on the mapping the server decides which routine has to be called. The point is that the value of the \textit{id} parameter is substituted into the query that return the grades of the student. In this way can be achieved that the links points to other pages displaying information individually about the students. This is the fundamental mechnaisms how data can be discovered in web pages.
+In the macro definition it can be seen that the url of the link contains the parameter \textit{id}, which is an additional information in the HTTP request. The idea is that the request is handled by a such server routine that substitutes the value of the parameter into a query, in order to get data about individuals. Then the returned page may contain additional link for further data entries. This is the fundamental method how web pages are used to discover data from databases.
 
 
 
@@ -307,7 +316,7 @@ basicstyle=\footnotesize,frame=single]
 		<script>
 			...
 			$("#button").click(function(){
-				$("#content").append(data)
+				$("#content").text(data)
 			})
 			...	
 		</script>
