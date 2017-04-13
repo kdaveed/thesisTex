@@ -242,24 +242,12 @@ An HTML document consist of different elements like buttons, tables input fields
 \begin{lstlisting}[captionpos=b, caption=Example HTML document, label=exHTML, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <html>
-	<div> Content </div>
+	<div class = "welcome">  Welcome on the web application </div>
 	<a href="http://webapp.com/page1"> Page 1 </a>
 </html>
 \end{lstlisting}
 
-
-
-In order to navigate between the pages of the application, the HTML document contains links that trigger further HTTP requests. Links in HTML can be defined by means of the \textit{<a/>} tag. The most important parameter of this tag is \textit{href}, whose value contains the URI of the HTTP request they initiate. In listing \ref{exHTML} an example HTML document is illustrated.
-
-\begin{lstlisting}[captionpos=b, caption=Example HTML document, label=exHTML, belowskip=1em, aboveskip=2em,
-basicstyle=\footnotesize,frame=single]
-<html>
-	<div class="welcome"> Welcome </div>
-	<a href="http://webapp.com/page1"> Page 1 </a>
-</html>
-\end{lstlisting}
-
-The request initiated by the link with the text \text{Page 1} arrives to the same server, and the application processes it return an other HTML page.
+The tag, like the \textit{html} in the example can contain further tags, and have normally at least one paramater (i.e \textit{class} and \textit{href}). The tag \textit{div} is the most general element of web pages, while the \textit{a} tag defines link, where the \textit{href} parameter is defines the URI of the HTTP request they initiate. The request of the example link arrives to the same server, and the task of the application is to process the request URI and return the HTML document for the new page. 
 
 
 \subsubsection{Data driven web applications} \label{dataDriven}
