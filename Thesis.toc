@@ -20,7 +20,7 @@
 \contentsline {subsubsection}{Client-sever architecture}{13}{section*.6}
 \contentsline {subsubsection}{Data driven web applications}{14}{section*.7}
 \contentsline {subsubsection}{Interactive web pages}{16}{section*.8}
-\contentsline {subsection}{\numberline {2.3.2}VIVO framework}{18}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}VIVO framework}{17}{subsection.2.3.2}
 \contentsline {subsubsection}{Profile pages}{18}{section*.9}
 \contentsline {subsubsection}{Custom entry forms}{19}{section*.10}
 \contentsline {chapter}{\numberline {3}Problem Statement}{23}{chapter.3}
