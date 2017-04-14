@@ -284,10 +284,6 @@ basicstyle=\footnotesize,frame=single]
 
 In the macro definition it can be seen that the url of the link contains the parameter \textit{id}, which is an additional information in the HTTP request. The idea is that the request is handled by a such server routine that substitutes the value of the parameter into a query, in order to get data about individuals. Then the returned page may contain additional link for further data entries. This is the fundamental method how web pages are used to discover data from databases.
 
-
-
-\newpage
-
 \subsubsection{Interactive web pages}
 
 The previous section showed the principles of how data can be browsed by means of web pages and links. In such static cases the HTML document was assembled completely by the server, and the links initiated the loading of whole new pages. Nevertheless it is often more efficient and leads to better user experience if the new content is added dynamically to the current web page. Such functionality can be achieved with JavaScript (JS), which is a programming language run by the browser. The two most fundamental features of JS, that it is capable of storing data in variables and can modify the content of HTML elements of the pages. 
@@ -361,7 +357,7 @@ Other useful configuration possibility are offered by the so-called faux propert
 
 \subsubsection{Custom entry forms} \label{vivoCef}
 
-Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a \textit{+} sign can be seen. That button is link to data entry form. Peculiarity of VIVO that from each profile page's each property fields the form page request arrive to the save handler routine on the server. These request have always three parameters:
+Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a + sign can be seen, which is link to a data entry form page. The peculiarity of VIVO that from each property field the request arrives to the same handler routine on the server. These requests have always three parameters:
 
 \begin{itemize}
 	\item{subjectUri}
@@ -369,18 +365,17 @@ Important part of the application is the creation of new RDF data. On \figref{fa
 	\item{rangeUri}
 \end{itemize}
 
-Where the first is the URI of the instance to whom the profile page belongs, the second is URI of the property (can be a faux property), and the third is the uri of the  range class of the property. By default VIVO redirects the user to page where only one instance or literal can be added. However it is possible to define conveniently custom forms for more complex dataset.
+Where the first is the URI of the instance to whom the profile page belongs, the second is the URI of the property (can be a faux property), and the third is the URI of the range class of the property. By default VIVO redirects the user to page where only one instance or literal can be added. However it is possible to define conveniently custom forms for more complex dataset.
 
-The data input process has two main parts to define. The first is the elements of data input form in HTML, and secondly the set of RDF triples that have to be created. In VIVO these definition have to placed into a class, and the class have to be assigned to the property with again RDF configuration triples. 
+By custom data input processes, there are two main parts to define. The first is the elements of data input form in HTML, and the second is the RDF data that has to be created. In VIVO these definition have to placed into a class, and the class have to be assigned to the property with again RDF configuration triples. 
 
 \begin{lstlisting}[captionpos=b, caption= Entry form generator class definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-
 rdfbones:hasSkeletalSubdivision		vivo:customEntryForm	
 		"rdfbones.SkeletalSubdivisionFormGenerator.java".
 \end{lstlisting}
 
-Thus if the request from the profile page arrives to the server, VIVO queries the class name and instantiates it. By writing a class during the development incorporates the static definition of its variables. Each customly defined class implements a predefined VIVO interface, thus it has specific set of variable that have be initialized for the definition. The first is the string variable \texit{templateFile} that holds the value of the freemarker file that have to be displayed.
+Thus if the request from the profile page arrives to the server, VIVO queries the class name by the parameter \textit{predicateUri} and instantiates it. By writing a class during the development incorporates the static definition of its variables. Each customly defined class implements a predefined VIVO interface, thus there is a specific set of variables that have to be initialized for the definition. The most important is the string variable \textit{templateFile}, that holds the value of the freemarker file that have to be displayed.
 
 
 \begin{lstlisting}[captionpos=b, caption= Form defintion in Java, label=skullJSON, belowskip=1em, aboveskip=2em,
@@ -400,8 +395,7 @@ basicstyle=\footnotesize,frame=single]
 </form>	
 \end{lstlisting}
 
-The next fundamental variable of the generator class is the \textit{triplesToCreate}, which contain the RDF triples to be create during the data input process. 
-
+The next fundamental variable of the generator class is the \textit{triplesToCreate}, which contain the RDF triples to be created during the data input process. 
 
 \begin{lstlisting}[captionpos=b, caption= RDF Triples to create, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -413,7 +407,7 @@ this.triplesToCreate = "
 \end{lstlisting}
 
 
-It can be seen that there are variables like in SPARQL, defined with question mark. Above the triples, it has to be declared what types. For this purpose there are three lists, on for the URIs on the form, one for the literals on the form, and for the new instances, whose URI do not come from the form but will be generated during the data creation.
+It can be seen that there are variables like in SPARQL, defined with question mark. Above the triples, it has to be defined for each what types are they. For this purpose there are three lists, on for the URIs on the form, one for the literals on the form, and for the new instances, whose URI do not come from the form but will be generated during the data creation.
 
 \begin{lstlisting}[captionpos=b, caption= Variable type definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -423,7 +417,7 @@ basicstyle=\footnotesize,frame=single]
 \end{lstlisting}
 
 
-The last type of the definition in such simple case, is to define the SPARQL query that retrieves the options for the selector field on the form. This variable is \textit{Map<String, String} type in Java. The key of the map is always the variable name, and the value is the SPARQL query.
+The last type of the definition in such simple case, is to define the SPARQL query that retrieves the options for the selector field on the form. This variable is \textit{Map<String, String>} type in Java. The key of the map is always the variable name, and the value is the SPARQL query.
 
 \begin{lstlisting}[captionpos=b, caption= Query for form data, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -434,8 +428,11 @@ this.formVariables.put("type",
 		?uri	rdfs:label			?label	.	}
 \end{lstlisting}
 
+This query is executed before the form page loading, and the result is passed to the template engine, which generates the options withing the \textit{selector} macro. Please note that the variable \textit{rangeUri} coming as an input with the HTTP request. This way it is ensured that the type of the \textit{subDivision} variable, will be the subclass of the range class.
 
-Please note that the variable \textit{rangeUri}
+These section gave an insight into how it is possible to define data input processes in a declarative way within the VIVO framework.
+
+
 
 
 
