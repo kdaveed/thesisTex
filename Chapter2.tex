@@ -359,63 +359,83 @@ Other useful configuration possibility are offered by the so-called faux propert
 \figref{faux} show a profile page of skeletal inventory. The blue entries represent the instances, and they are links to the profile pages of the individual skeletal subdivision. Both the \textit{Skull} and the \textit{Vertebral column} instances are connected to the skeletal inventory with the property \textit{rdfbones:hasSkeletalSubdivision}, but since two faux properties (\textit{skull} and \textit{vertebral column}) are defined, these instances appear separately on the profile page.
 
 
-
 \subsubsection{Custom entry forms} \label{vivoCef}
 
+Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a \textit{+} sign can be seen. That button is link to data entry form. Peculiarity of VIVO that from each profile page's each property fields the form page request arrive to the save handler routine on the server. These request have always three parameters:
 
-This section aims to give an insight to web application that are based on RDF data. It will be covered what kind of requirements do the software have on the server side to create RDF data, and what is the difference between the RDF model based applications and the relational ones. The most important feature of RDF that the data scheme, namely the ontology is stored in RDF triples too, thus can be queried.
+\begin{itemize}
+	\item{subjectUri}
+	\item{predicateUri}
+	\item{rangeUri}
+\end{itemize}
 
-\img{\II}{rdfData1.png}{Ontology and data in RDF}{rdfData1}
+Where the first is the URI of the instance to whom the profile page belongs, the second is URI of the property (can be a faux property), and the third is the uri of the  range class of the property. By default VIVO redirects the user to page where only one instance or literal can be added. However it is possible to define conveniently custom forms for more complex dataset.
 
-Therefore it is possible to generate web pages that can adapt to the ontology. The following query demonstrates that how it is possible to get all the instances, which are connected to a particular instance (\#459828).
+The data input process has two main parts to define. The first is the elements of data input form in HTML, and secondly the set of RDF triples that have to be created. In VIVO these definition have to placed into a class, and the class have to be assigned to the property with again RDF configuration triples. 
 
-\begin{lstlisting}[captionpos=b, caption= Dynamic SPARQL query, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption= Entry form generator class definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?property ?relatedInstance
-WHERE {
-	?instance 			rdf:type  			?class .  
-	?property				rdfs:domain		?class .
-	?instance				?property 		?relatedInstance .
-	FILTER (?instance = #459828 ) .
-}
+
+rdfbones:hasSkeletalSubdivision		vivo:customEntryForm	
+		"rdfbones.SkeletalSubdivisionFormGenerator.java".
 \end{lstlisting}
 
-The first two lines of the query defines the properties whose domain class is the type of the input instance, while the third asks for all triples with the possible properties. If the result of the query is then grouped based on properties, then the dataset can be displayed by a template using two lists. The outer list ceates fields for the properties, and the inner show all the instances with that property.
+Thus if the request from the profile page arrives to the server, VIVO queries the class name and instantiates it. By writing a class during the development incorporates the static definition of its variables. Each customly defined class implements a predefined VIVO interface, thus it has specific set of variable that have be initialized for the definition. The first is the string variable \texit{templateFile} that holds the value of the freemarker file that have to be displayed.
 
 
-\begin{lstlisting}[captionpos=b, caption=Ontology adaptive template file, label=template,
+\begin{lstlisting}[captionpos=b, caption= Form defintion in Java, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-<#list properties as property>
-	<#list property.dataSet as instance> 
-	<#list> 
-</#list>
+	this.templateFile = "subdivision.ftl"
 \end{lstlisting}
 
-The VIVO framework applied in the RDFBones project generates the pages for instances this way.
+Of course this template file has to be created too. The following code shows the definition of a template file using \textit{Freemarker} macros. In the provided example there is one selector on the form, which allows the selection of the type of the new skeletal subdivision. Furthermore there are two literal fields, one for the catalog number and one for the weight. VIVO contains some useful \textit{Freemarker} macros that makes the form definition quicker. Each form element has to have a variable name, through its value after the submission can be identified.
 
-\img{\II}{21_profile_page.png}{VIVO Profile page}{rdfData1}
-
-Above the display of the existing data, RDF based applications are different as well in the data input mechanism. First of all, due to the fact that ontologies can contain thousand of class it is not an option to represent them all as classes of the server application language as well. It is time consuming and the system would loose its flexibility in the cases when new ontology subsets are supposed to be loaded. Therefore there are neither for each type of the database an entry form with a unique controller servlet, but more generic approaches are used.
-To define what dataset has to be created, semantic web based applications simply define them as a set of triples, with variables like in SPARQL, just the data flows the other way around.
-
-
-\subsubsection{Data entry forms} \label{233}
-
-\img{\II}{rdfDataDef.png}{Triples representing a new instance}{rdfDataDef}
-
-Figure \ref{rdfDataDef} simple set of triples that have to be created by new data entry generation. The value of the variable textit{?instance} will be IRI that have not been used. This is an essential part of every triple store implementation that they provide unused uris for the server application for the new set of triples. The values of the \textit{type} and \text{label}, 
-are coming from the input form. The label is just like in the previous example, it is a string typed by the user it is stored as an attribute of the new entity. But the type of the instance is class IRI. The point is that the options of the selector field, from which the type value is coming, is filled with the results of a SPARQL query on the ontology. So for example if the entry form provide the possiblity to create any type of processes from the OBI ontology then the before the form loading the following query has to be executed.
-
-\begin{lstlisting}[captionpos=b, caption= SPARQL query for the input form, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption= Convenient form defintion with macros, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?class ?label
-WHERE {
-	?class 			rdf:subClassOf	 	obo:OBI_0000339 .  
-	?class			rdf:label					?label . 
-}
+<form>
+	<@selector	"type">
+	<@textField	"nr">
+	<@floatField "wieght">
+	<@submitButton>
+</form>	
 \end{lstlisting}
 
-will be a new unused IRI of the triple store, while the ?type variable come from the client from a selector field. The following image depicts this simple scheme of the data input process. 
+The next fundamental variable of the generator class is the \textit{triplesToCreate}, which contain the RDF triples to be create during the data input process. 
 
-\img{\II}{rdfForm.png}{Data input scheme by RDF}{rdfInput}
+
+\begin{lstlisting}[captionpos=b, caption= RDF Triples to create, label=skullJSON, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+this.triplesToCreate = "
+	?subjectUri		rdfbones:hasSkeletalSubdivision		?subDivision.
+	?subDivision	rdf:type													?type.
+	?subDivision	eq:catalogNr											?nr.
+	?subDivision	eq:weight													?weight. "
+\end{lstlisting}
+
+
+It can be seen that there are variables like in SPARQL, defined with question mark. Above the triples, it has to be declared what types. For this purpose there are three lists, on for the URIs on the form, one for the literals on the form, and for the new instances, whose URI do not come from the form but will be generated during the data creation.
+
+\begin{lstlisting}[captionpos=b, caption= Variable type definition, label=skullJSON, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+	this.urisOnForm = {"type"};
+	this.literalsOnForm	= {"nr", "weight"};
+	this.newInstances = {"subDivision"};
+\end{lstlisting}
+
+
+The last type of the definition in such simple case, is to define the SPARQL query that retrieves the options for the selector field on the form. This variable is \textit{Map<String, String} type in Java. The key of the map is always the variable name, and the value is the SPARQL query.
+
+\begin{lstlisting}[captionpos=b, caption= Query for form data, label=skullJSON, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+this.formVariables.put("type", 
+	"SELECT ?uri ?label
+		WHERE {
+		?uri	rdfs:subClassOf		?rangeUri	.
+		?uri	rdfs:label			?label	.	}
+\end{lstlisting}
+
+
+Please note that the variable \textit{rangeUri}
+
+
 
