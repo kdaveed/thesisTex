@@ -4,129 +4,63 @@
 
 \subsection{RDF}
 
-In Resource Description Framework (RDF), the information of the web is represented by means of triples. Each triple consists of a subject, predicate and object. The set of triples constitute to an RDF graph, where the subject and object of the triples are the nodes, the predicates are the edges of the graph.
-An RDF triple is called as well statement, which asserts that there is a relationship defined by the predicate, between subject and the object. The subjects and the objects are RDF resources. A resource can be either an IRI (Internationalized Resource Identifier) or a literal or a blank node (discussed later). A resource represents any physical or abstract entity, while literals hold data values like string, integer or datum \cite{Lanthaler:14:RCA}.
 
-Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
-Common practice is to represent IRI with the notation prefix:suffix, where the prefix represents the namespace, and the expression means the concatenation of the namespace denoted by the prefix, with the suffix. This convention makes the RDF document more readable. The namespace of RDF is the http://www.w3.org/1999/02/22-rdf-syntax-ns\#, whose prefix is in most cases "rdf".   This is defined on the following way:
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Prefix notation in RDF, label=lst:sparql,
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Information in triples, label=lst:sparql, ,belowskip=1em, aboveskip=2em,
 frame=single]
- @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
+	Bob						instanceOf				Student  .
+	UniFreiburg		instanceOf				University . 		
+	Bob						attends						UniFreiburg .
+	Bob						avgGrade					1.73 .
 \end{lstlisting}
 
-Literals are strings consisting of two elements. The first is the lexical form, which is the actual value, and the second is the data type IRI.  RDF uses the data types from XML schema. The prefix (commonly xsd) is the following :
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=XML Schema prefix, label=lst:sparql,belowskip=1em, aboveskip=2em,
+\imgK{\II}{rdfData.png}{RDF Data}
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDF data in N3 serialization format, label=lst:sparql,
 frame=single]
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema\#>
+@prefix rdf:  	 <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+@prefix xsd:  	<http://www.w3.org/2001/XMLSchema\#>
+@prefix domain:  <http://myDomain.com\#>
+
+domain:857329			rdf:type				domain:Student 	.
+domain:857329			rdfs:label			"Bob"^^xsd:string 	.
 \end{lstlisting}
-
-So a literal value in RDF looks as follows:
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=String value as RDF data, label=lst:sparql,belowskip=1em, aboveskip=2em,
-frame=single]
-								"Some literal value"^^xsd:string
-\end{lstlisting}
-
-The RDF vocabulary provides some built-in IRIs. The two most important are, the rdf:type property, and the rdf:Property class. The meaning of the triples, where the predicate is the property rdf:type  is that the subject IRI is the instance of the class denoted by the object. Therefore the following statement holds in the RDF vocabulary:
-
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=rdf:type is a property, label=lst:sparql, ,belowskip=1em, aboveskip=2em,
-frame=single]
-						rdf:type		 	rdf:type			rdf:Property
-\end{lstlisting}
-
-It is maybe confusing that an IRI appears in a triple as subject and predicate as well, but we will see by the RDFS vocabulary that it is inevitable to express rules of the language.  
-To be able to represent information about a certain domain, it is necessary to extend the RDF vocabulary with properties and classes. The classes will be discussed in the next section, but here it is explained how custom properties can be defined. The namespace of the example is the following: 
-
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Example prefix, label=lst:sparql,belowskip=1em, aboveskip=2em,
-frame=single]
-@prefix example:   <http://example.org\#>
-\end{lstlisting}
-
-The example dataset intends to express information about people, which university they attend and how old are them. To achieve this two properties are needed:
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Example properties, label=lst:sparql, belowskip=1em, aboveskip=2em,
-frame=single]	
-					eq:attends			rdf:type			rdf:Property .
-					eq:age					rdf:type			rdf:Property .
-\end{lstlisting}
-
-
-The actual data about a person:
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Example prefix, label=lst:sparql, belowskip=1em, aboveskip=2em,
-frame=single]
-			eg:JanKlein		eq:attends		eq:UniversityOfFreiburg .
-			eg:JanKlein		eq:age				"21"^^xsd:integer 
-\end{lstlisting}
-
-
-
-Moreover the literal have as well types, but it is expressed.
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=XML Schema prefix, label=lst:sparql,belowskip=1em, aboveskip=2em,
-frame=single]
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema\#>
-\end{lstlisting}
-
-Literal definition
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=String value as RDF data, label=lst:sparql,belowskip=1em, aboveskip=2em,
-frame=single]
-"1.72"^^xsd:float 
-\end{lstlisting}
-
 
 
 
 \subsection{RDF Schema}
 
-The RDF data has a scheme. The scheme defines how the graph can be built from the resources an literals. Here the most important to introduce the concept of classes. Each RDF resource must belong to class, otherwise it does not have a meaning.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Instances of classes, label=lst:sparql,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
 frame=single]
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
-eq:Bob						rdf:type			eq:Student .
-eq:University				rdf:type			eq:University .
+domain:Student					rdf:type						rdfs:Class .
+domain:University				rdf:type						rdfs:Class	.
+domain:Person						rdf:type						rdfs:Class .
+domain:Student					rdfs:subClassOf			domain:Person .
+\end{lstlisting}
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,
+frame=single]
+domain:attends					rdf:type					rdf:Property .
+domain:attends					rdfs:domain				domain:Student	.
+domain:attends					rdfs:range				domain:University .
+\end{lstlisting}
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition II., label=lst:sparql,
+frame=single]
+eq:avgGrade					rdf:type					rdf:Property .
+eq:avgGrade					rdfs:domain				eq:Person	.
+eq:avgGrade					rdfs:range				xsd:float	.
 \end{lstlisting}
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Prefix notation in RDF, label=lst:sparql,
-frame=single]
-@prefix rdfs:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
-eq:Student					rdf:type				rdfs:Class .
-eq:University				rdf:type				rdfs:Class	.
-eq:attends					rdf:type				rdf:Property .
-eq:attends					rdfs:domain				eq:Student	.
-eq:attends					rdfs:range				eq:University .
-\end{lstlisting}
-
- 
+\imgK{\II}{vocabulary.png}{Vocabulary}
 
 
-
-
-The resources and literals from the previous section have as well types. In the case of resources 
-
-
-
-The previous section gave an insight into RDF world by showing how can information stored by means of triples. However the explanation did not mention that each RDF dataset has to have scheme, which is also called ontology. The ontology describes the set of properties and classes and how are they are related to each other. RDFS provides a mechanism to define such ontologies using RDF triples. The most important elements of the RDFS vocabulary can be seen on the following image. 
-
-\imgK{\II}{12_rdfs_vocabulary.png}{Main structure of the RDFS vocabulary}
-
-The two most important classes in the RDFS vocabulary is the rdfs:Class and the rdfs:Resource. The rdfs:Class is class, because it is the instance of itself, and the same way the rdfs:Resource is a class. The rdf:Propery and the rdfs:Literal are both classes as well. The rdfs:domain, rdfs:range, rdfs:subPropertyOf and rdfs:subClassOf are properties. Important to note that these properties are subjects and predicates in the same time in the RDFS vocabulary graph. Also they describe themselves like rdf:type.
-The properties rdfs:domain and rdfs:range describe for the property the type of the subject and object respectively, which with it can build a triple as predicate. The following image illustrates their meaning:
-
-\imgK{\II}{13_rdfs_domain_range.png}{RDFS domain and range definition}
-
-Since both the rdfs:domain and rdfs:range are properties themselves, they have as well their domain and range, which is the class rdfs:Resource. 
-The property rdfs:subClassOf expresses subclass relationship between classes. It means if a class B is a subclass of class A, and resource R is the instance of class B, then resource R is the instance of class A as well. Since it describes the relationship between two classes its both domain and range is the class rdfs:Class. 
-The property rdf:subPropertyOf expresses the relationship between two properties. If property P2 is sub property of P1 and two instances are related by P2 then they are related by P1 as well. Its domain and range is the class  rdf:Property.
-Now everything is given to define the ontology for the example of the previous section. \cite{Brickley:04:RVD}
-
-\imgK{\II}{14_rdfs_ex_ontology.png}{RDFS domain and range definition}
+\imgK{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}
 
 
 \subsection{OWL}
