@@ -4,7 +4,7 @@
 
 \subsection{RDF}
 
-In RDF, abbreviation for Resource Description Framework, the information of the web is represented by means of triples. Each triple consists of a subject, predicate and object. The set of triples constitute to an RDF graph, where the subject and object of the triples are the nodes, the predicates are the edges of the graph.
+In Resource Description Framework (RDF), the information of the web is represented by means of triples. Each triple consists of a subject, predicate and object. The set of triples constitute to an RDF graph, where the subject and object of the triples are the nodes, the predicates are the edges of the graph.
 An RDF triple is called as well statement, which asserts that there is a relationship defined by the predicate, between subject and the object. The subjects and the objects are RDF resources. A resource can be either an IRI (Internationalized Resource Identifier) or a literal or a blank node (discussed later). A resource represents any physical or abstract entity, while literals hold data values like string, integer or datum \cite{Lanthaler:14:RCA}.
 
 Basically there are two types of triples, the one that links two entities to each other, and the other that links a literal to an entity. The former expresses a relationship between two entities, and the latter in turn assign an attribute to the entity.
@@ -63,7 +63,53 @@ frame=single]
 \end{lstlisting}
 
 
+
+Moreover the literal have as well types, but it is expressed.
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=XML Schema prefix, label=lst:sparql,belowskip=1em, aboveskip=2em,
+frame=single]
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema\#>
+\end{lstlisting}
+
+Literal definition
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=String value as RDF data, label=lst:sparql,belowskip=1em, aboveskip=2em,
+frame=single]
+"1.72"^^xsd:float 
+\end{lstlisting}
+
+
+
+
 \subsection{RDF Schema}
+
+The RDF data has a scheme. The scheme defines how the graph can be built from the resources an literals. Here the most important to introduce the concept of classes. Each RDF resource must belong to class, otherwise it does not have a meaning.
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Instances of classes, label=lst:sparql,
+frame=single]
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
+eq:Bob						rdf:type			eq:Student .
+eq:University				rdf:type			eq:University .
+\end{lstlisting}
+
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Prefix notation in RDF, label=lst:sparql,
+frame=single]
+@prefix rdfs:   <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
+eq:Student					rdf:type				rdfs:Class .
+eq:University				rdf:type				rdfs:Class	.
+eq:attends					rdf:type				rdf:Property .
+eq:attends					rdfs:domain				eq:Student	.
+eq:attends					rdfs:range				eq:University .
+\end{lstlisting}
+
+ 
+
+
+
+
+The resources and literals from the previous section have as well types. In the case of resources 
+
 
 
 The previous section gave an insight into RDF world by showing how can information stored by means of triples. However the explanation did not mention that each RDF dataset has to have scheme, which is also called ontology. The ontology describes the set of properties and classes and how are they are related to each other. RDFS provides a mechanism to define such ontologies using RDF triples. The most important elements of the RDFS vocabulary can be seen on the following image. 
