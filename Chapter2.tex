@@ -138,7 +138,7 @@ owl:minQualifiedCardinality "2"^^xsd:nonnegativeInteger .
 
 \subsection{SPARQL}
 
-SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a football player: 
+SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a student: 
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql, belowskip=1em, aboveskip=2em, 
 basicstyle=\footnotesize,frame=single]
@@ -165,14 +165,14 @@ The result table in this case will contain two columns, one with the IRI of the 
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?person ?name
+SELECT ?courseIRI ?courseLabel
 WHERE {
-	eg:FootballTeam	rdfs:subClassOf		?restriction .
-	?restriction		rdf:type					owl:Restriction .
-	?restriction		owl:onProperty		eg:hasPlayer .
-	?restriction		owl:allValuesFrom	?playerType .
-	?player					rdf:type					?playerType .
-	?player					eg:name						?name . 
+	domain:CS_Student	rdfs:subClassOf			?restriction .
+	?restriction			rdf:type						owl:Restriction .
+	?restriction			owl:onProperty			domain:attends .
+	?restriction			owl:allValuesFrom		?courseType .
+	?courseIRI				rdf:type						?courseType .
+	?courseIRI				rdfs:label					?courseLabel . 
 }
 \end{lstlisting}
 
