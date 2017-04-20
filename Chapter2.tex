@@ -110,30 +110,23 @@ Instead of depicting the range and domain of the particular properties in OWL, t
 
 \img{\II}{restrictionScheme.png}{Scheme of the restrictions}{restScheme}
 
-On the left side the scheme of the value restriction, and on the left side the scheme of the qualified cardinality restriction is depicted. Important by both case central restriction instance (rectangle) is not an RDF resource but a blank node. Blank nodes are such RDF nodes that do not have a IRI. Later in this section example will be provided about how they can be defined. 
+On the left side the scheme of the value restriction, and on the left side the scheme of the qualified cardinality restriction is depicted. The multiple predicates on the figure shows the possible properties that can be applied for the triple. Important by both cases that the central restriction instance (rectangle) is not an RDF resource but a blank node. Blank nodes are such RDF nodes that do not have a IRI. Later in this section example will be provided about how they can be defined. 
 
-The idea is that the restriction node encompasses the triples that describing the rule of the domain. The class on which the restriction is applied is the subclass of the restriction blank node, while the property is connected with the \textit{owl:onProperty} property. By the value restriction the \textit{owl:someValuesFrom}/\textit{owl:allValuesFrom} properties define the instances of \textit{ClassA} can constitute a triple with property \textit{Property1} at least with one instance/and only with instances of \textit{ClassB}. By the qualified cardinality restrictions there is an additional triple that asserts the cardinality of the restrictions.
-
-
-To illustrate the utility of restrictions, the ontology from the previous section was extended with three subclasses (\figref{ontExt1}). The abbreviations \textit{CS} stands for computer science.
+The idea is that the restriction node encompasses the triples that describing the rule of the domain. The class on which the restriction is applied is the subclass of the restriction blank node, while the property is connected with the \textit{owl:onProperty} property. By the value restriction the \textit{owl:someValuesFrom}/\textit{owl:allValuesFrom} properties define the instances of \textit{ClassA} can constitute a triple with property \textit{Property1} at least with one instance/and only with instances of \textit{ClassB}. By the qualified cardinality restrictions there is an additional triple that asserts the how many instances have to present at least/exactly/at most, and the second class is assigned to the restriction node with the \textit{owl:onClass} property.
 
 \img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
 
 
-The following two restriction asserts that a computer science student is allowed to attend only computer science course, and has to take at least two key courses.
+In order to illustrate the utility of restrictions, the ontology from the previous section was extended with three subclasses (\figref{ontExt1}). The abbreviations \textit{CS} stands for computer science. The following two restriction asserts that a computer science student is allowed to attend only computer science course, and has to take at least two key courses.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Restriction blank nodes, label=lst:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Restrictions defined as blank nodes, label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
 domain:CS_Student rdfs:subClassOf  [ 
 	rdf:type					owl:Restriction ; 
 	owl:onProperty		domain:attends ; 
 	owl:allValuesFrom	domain:CS_Course .
 ]
-\end{lstlisting}
 
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Restriction blank nodes, label=lst:sparql, belowskip=1em, aboveskip=2em,
-frame=single]
 domain:CS_Student rdfs:subClassOf  [
 rdf:type										owl:Restriction ; 
 owl:onProperty							domain:attends ; 
@@ -182,6 +175,7 @@ WHERE {
 	?player					eg:name						?name . 
 }
 \end{lstlisting}
+
 
 \newpage
 \section{Applied Ontologies} \label{22}
