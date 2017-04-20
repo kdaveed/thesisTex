@@ -101,19 +101,20 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 \end{lstlisting}
 
 
-\figref{owlVocab} shows a subset of the OWL vocabulary, that is relevant for the thesis. There are two new class the \textit{owl:Class} and \textit{owl:Restriction}, and two new properties \textit{owl:ObjectProperty} and \textit{owl:DataProperty}. The further subproperties are discussed later through the examples.
+\figref{owlVocab} shows a subset of the OWL vocabulary, that is relevant for the thesis.
+
+\img{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}{owlVocab}
 
 
-\imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}{owlVocab}
+Instead of depicting the range and domain of the particular properties in OWL, the following figure show the scheme of the definition of the types of restrictions used in our project.
+
+\img{\II}{restrictionScheme.png}{Scheme of the restrictions}{restScheme}
+
+On the left side the scheme of the value restriction, and on the left side the scheme of the qualified cardinality restriction is depicted. Important by both case central restriction instance (rectangle) is not an RDF resource but a blank node. Blank nodes are such RDF nodes that do not have a IRI. Later in this section example will be provided about how they can be defined. 
+
+The idea is that the restriction node encompasses the triples that describing the rule of the domain. The class on which the restriction is applied is the subclass of the restriction blank node, while the property is connected with the \textit{owl:onProperty} property. By the value restriction the \textit{owl:someValuesFrom}/\textit{owl:allValuesFrom} properties define the instances of \textit{ClassA} can constitute a triple with property \textit{Property1} at least with one instance/and only with instances of \textit{ClassB}. By the qualified cardinality restrictions there is an additional triple that asserts the cardinality of the restrictions.
 
 
-For us the most important are the restrictions. 
-
-
-\imgK{\II}{restrictionScheme.png}{Scheme of the restrictions}{restScheme}
-
-
-For us the most important feature of OWL are the restrictions. With a restrictions it is possible to express further constraints on the RDF data, above the range and domain definitions. To illustrate the utility of restriction the ontology from the previous section is extended with three further subclasses (\figref{ontExt})
 
 \img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
 
@@ -128,8 +129,6 @@ Restrictions are conventionally expressed by blank nodes. Blank nodes do not hav
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-
 domain:CS_Student rdfs:subClassOf  [ 
 	rdf:type					owl:Restriction ; 
 	owl:onProperty		domain:attends ; 
@@ -153,8 +152,6 @@ domain:CS_Student rdfs:subClassOf  [
 
 
 These two examples cover the thesis related features of OWL. The next image depicts the OWL vocabulary. 
-
-
 
 
 There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the \textit{owl:ObjectProperty} and \textit{owl:DataTypeProperty}. \textit{owl:ObjectProperty} represent the properties that links instances to instances, and the \textit{owl:DataTypeProperty} is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.

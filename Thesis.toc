@@ -11,41 +11,41 @@
 \contentsline {subsection}{\numberline {2.1.1}Resource Description Framework}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}RDF Schema}{5}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}OWL}{7}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}SPARQL}{9}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Applied Ontologies}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Foundational Model of Anatomy - \textit {FMA}}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations - \textit {OBI}}{12}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Web applications}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Fundamentals}{13}{subsection.2.3.1}
-\contentsline {subsubsection}{Client-sever architecture}{13}{section*.6}
-\contentsline {subsubsection}{Data driven web applications}{14}{section*.7}
-\contentsline {subsubsection}{Interactive web pages}{16}{section*.8}
-\contentsline {subsection}{\numberline {2.3.2}VIVO framework}{17}{subsection.2.3.2}
-\contentsline {subsubsection}{Profile pages}{18}{section*.9}
-\contentsline {subsubsection}{Custom entry forms}{19}{section*.10}
-\contentsline {chapter}{\numberline {3}Problem Statement}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}Multi level data input}{23}{section.3.1}
-\contentsline {section}{\numberline {3.2}Solution scheme}{26}{section.3.2}
-\contentsline {chapter}{\numberline {4}Vocabulary for web application domain}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}Elements of the vocabulary}{28}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Data definitions}{28}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Form definition}{30}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{31}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{31}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{34}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Framework functionality}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Main software modules and tasks}{37}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Validation}{38}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{40}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph model generation}{42}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Implementation}{45}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Client side}{45}{subsection.5.2.1}
-\contentsline {subsubsection}{Form loading}{45}{section*.11}
-\contentsline {subsubsection}{Sub forms}{47}{section*.12}
-\contentsline {subsection}{\numberline {5.2.2}Server side}{50}{subsection.5.2.2}
-\contentsline {subsubsection}{VIVO integration}{50}{section*.13}
-\contentsline {subsubsection}{Form data loading}{52}{section*.14}
-\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{53}{section*.15}
-\contentsline {chapter}{\numberline {A}Glossary}{56}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{61}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{61}{section.a.B.1}
+\contentsline {subsection}{\numberline {2.1.4}SPARQL}{10}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Applied Ontologies}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Foundational Model of Anatomy - \textit {FMA}}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations - \textit {OBI}}{13}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Web applications}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Fundamentals}{14}{subsection.2.3.1}
+\contentsline {subsubsection}{Client-sever architecture}{14}{section*.6}
+\contentsline {subsubsection}{Data driven web applications}{15}{section*.7}
+\contentsline {subsubsection}{Interactive web pages}{17}{section*.8}
+\contentsline {subsection}{\numberline {2.3.2}VIVO framework}{18}{subsection.2.3.2}
+\contentsline {subsubsection}{Profile pages}{19}{section*.9}
+\contentsline {subsubsection}{Custom entry forms}{20}{section*.10}
+\contentsline {chapter}{\numberline {3}Problem Statement}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}Multi level data input}{24}{section.3.1}
+\contentsline {section}{\numberline {3.2}Solution scheme}{27}{section.3.2}
+\contentsline {chapter}{\numberline {4}Vocabulary for web application domain}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Elements of the vocabulary}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Data definitions}{29}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Form definition}{31}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{35}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Framework functionality}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Main software modules and tasks}{38}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Validation}{39}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{41}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph model generation}{43}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Implementation}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Client side}{46}{subsection.5.2.1}
+\contentsline {subsubsection}{Form loading}{46}{section*.11}
+\contentsline {subsubsection}{Sub forms}{48}{section*.12}
+\contentsline {subsection}{\numberline {5.2.2}Server side}{51}{subsection.5.2.2}
+\contentsline {subsubsection}{VIVO integration}{51}{section*.13}
+\contentsline {subsubsection}{Form data loading}{53}{section*.14}
+\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{54}{section*.15}
+\contentsline {chapter}{\numberline {A}Glossary}{57}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{62}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{62}{section.a.B.1}
