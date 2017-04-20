@@ -91,21 +91,45 @@ On the left of \figref{voc} the class \textit{rdfs:Class} is depicted. It is cla
 
 The four grey ellipses (one contains two properties) represent the five most relevant properties in the RDF/RDFS vocabulary. Each of them are the instances of the class \textit{rdf:Property}, and for each the domain and the range classes are depicted.
 
-
-
-
 \subsection{OWL}
 
+Ontology Web Language(OWL) is an extension of the RDFS vocabulary \cite{Dean:04:OWO}. OWL offers several useful classes and properties, that allows more fine grained modeling. OWL has its own namespace, which is normally denoted with the \textit{owl} prefix.
 
-OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary \cite{Dean:04:OWO}. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. 
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL namespace, label=lst:sparql, belowskip=1em, aboveskip=2em,
+frame=single]
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+\end{lstlisting}
+
+
+\figref{owlVocab} shows a subset of the OWL vocabulary, that is relevant for the thesis. There are two new class the \textit{owl:Class} and \textit{owl:Restriction}, and two new properties \textit{owl:ObjectProperty} and \textit{owl:DataProperty}. The further subproperties are discussed later through the examples.
+
+
+\imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}{owlVocab}
+
+
+For us the most important are the restrictions. 
+
+
+\imgK{\II}{restrictionScheme.png}{Scheme of the restrictions}{restScheme}
+
+
+For us the most important feature of OWL are the restrictions. With a restrictions it is possible to express further constraints on the RDF data, above the range and domain definitions. To illustrate the utility of restriction the ontology from the previous section is extended with three further subclasses (\figref{ontExt})
 
 \img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
+
+
+The abbreviations \textit{CS} stands for computer science. With OWL restrictions it is possible to express for example the rules that a computer science student is allowed to attend only computer science course, and has to take at least two key courses.
+
+Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, so they are referred as well as anonymus resources.
+
+
+
 
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
- 
+
 domain:CS_Student rdfs:subClassOf  [ 
 	rdf:type					owl:Restriction ; 
 	owl:onProperty		domain:attends ; 
@@ -130,7 +154,7 @@ domain:CS_Student rdfs:subClassOf  [
 
 These two examples cover the thesis related features of OWL. The next image depicts the OWL vocabulary. 
 
-\imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}
+
 
 
 There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the \textit{owl:ObjectProperty} and \textit{owl:DataTypeProperty}. \textit{owl:ObjectProperty} represent the properties that links instances to instances, and the \textit{owl:DataTypeProperty} is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.
