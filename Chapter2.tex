@@ -2,21 +2,34 @@
 
 \section{Semantic Web}
 
-\subsection{RDF}
+\subsection{Resource Description Framework}
 
 
+The Resource Description Framework (RDF) is a metadata data model used for representing information on the web. The data in RDF is organized into triples, where each triple consist of a subject, predicate and object. The set of RDF triples constitutes a directed graph, which is referred as RDF graph. The nodes of the graph are the subject and the object, while the edges are the predicates.
 
+In RDF there are three main type of nodes, instances, classes and literals. An instance represent concrete entities like person, institute or even abstract concepts. Classes are general concepts, to which the instances can belong, while literals represent data values assigned to instances. The following Listing shows some example triples that illustrates the basics of information representation in triples.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Information in triples, label=lst:sparql, ,belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Information in triples, label=ex3, ,belowskip=1em, aboveskip=2em,
 frame=single]
-	Bob						instanceOf				Student  .
-	UniFreiburg		instanceOf				University . 		
-	Bob						attends						UniFreiburg .
-	Bob						avgGrade					1.73 .
+	Bob								instanceOf					Student  .
+	Math							instanceOf					Course . 		
+	Bob								attends							Math . 		
+	Bob								avgGrade						1.73 .
 \end{lstlisting}
 
+In the example the \textit{Bob} and \textit{Math} are instance,the \textit{Course} and \textit{Student} are classes and the value 1.73 is literal. The values of the predicates are called properties. There are three main types of it, the one which connects instances to class (\textit{instanceOf}), one the expresses relationship between instances (\textit{attends}), and one which assigns a literal value to an instance. 
 
-\imgK{\II}{rdfData.png}{RDF Data}
+\img{\II}{rdfData.png}{RDF Data}{rdfG}
+
+
+\figref{rdfG} illustrate the three main type of nodes and triples in RDF graphs. In the following this type of notation will be used on the figures, namely ellipse for the classes, rectangle for the instances and rhombus for the literals.
+
+
+In the following section we will see, that classes are in a certain sense are instance as well, and together the classes and instances are referred in the RDF world as resources. Each resource in an RDF graph has to have Internationalized Resource Identifier(IRI). There IRIs are grouped into specific namespaces. If someone wants to represent an information then it is necessary to choose an own namespace, which is the domain URI. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may instance \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. Since this namespace have to be unique these IRI are unique too.
+
+
+Due to the triple structure and RDF dataset can be stored by means of text document. There are different serialization formats, and the simples is the N3 format. In that format the namespaces are abbreviated with predefined prefixes to make the RDF document more readable. Above the own domain the following listing contains three namespaces the RDF, RDF Schema (RDFS) and XML Scheme. 
+
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDF data in N3 serialization format, label=lst:sparql,
 frame=single]
@@ -25,54 +38,82 @@ frame=single]
 @prefix xsd:  	<http://www.w3.org/2001/XMLSchema\#>
 @prefix domain:  <http://myDomain.com\#>
 
-domain:857329			rdf:type				domain:Student 	.
-domain:857329			rdfs:label			"Bob"^^xsd:string 	.
+domain:1			rdf:type						domain:Student 	.
+domain:1			rdfs:label					"Bob"^^xsd:string 	.
+domain:2			rdf:type						domain:Course 	.
+domain:2			rdfs:label					"Math"^^xsd:string 	.
+domain:1			domain:attends			domain:2 	.
+domain:1			domain:avgGrade			"1.72"^^xsd:float .
 \end{lstlisting}
 
+
+The property \textit{rdf:type} assing instance to classes, while the \textit{rdfs:label} assigns label to them. The XML Schema is standard for representing data types like \textit{string} or \textit{float}. The syntax for literals are the value and after comes the type. 
 
 
 \subsection{RDF Schema}
 
+RDF Schema (RDFS) was mentioned in the previous section too, but just for the labeling. However its has a really important rule in the RDF document. 
+The RDFS together with RDF offer classes and properties that allow to express the rules of the RDF data. In the previous section we just assumed there are the two classes and two properties. However this has to be defined as well. For this definition there are two meta classes the \textit{rdfs:Class} and \textit{rdf:Property}. These two class can be used as domain classes with the \textit{rdf:type} property. So the class definition for the previous example looks as follows.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
 frame=single]
 domain:Student					rdf:type						rdfs:Class .
-domain:University				rdf:type						rdfs:Class	.
+domain:Course					rdf:type						rdfs:Class	.
+domain:attends					rdf:type						rdf:Property .
+domain:avgGrade					rdf:type						rdf:Property .
+\end{lstlisting}
+
+Furthermore there is an important modelling concept, the sub class. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
+frame=single]
 domain:Person						rdf:type						rdfs:Class .
 domain:Student					rdfs:subClassOf			domain:Person .
 \end{lstlisting}
 
+This the really first step in modelling the reality. This way we can know that if an instance belongs to the Student class, then it is at the same time a person too.
+
+Further task of the vocabulary definition is express, that the property \textit{domain:attends} can be the predicat of triples, where the subject is the instance of \textit{domain:Student} and the object is the instance of \textit{domain:University}. The same way for the \textit{domain:avgGrade} where the object is literal with the type floating point. For this definition there are two properties the \textit{rdfs:domain} and \textit{rdfs:range}.
+
+
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,
 frame=single]
-domain:attends					rdf:type					rdf:Property .
 domain:attends					rdfs:domain				domain:Student	.
-domain:attends					rdfs:range				domain:University .
-\end{lstlisting}
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition II., label=lst:sparql,
-frame=single]
-eq:avgGrade					rdf:type					rdf:Property .
-eq:avgGrade					rdfs:domain				eq:Person	.
-eq:avgGrade					rdfs:range				xsd:float	.
+domain:attends					rdfs:range				domain:Course .
+domain:avgGrade					rdfs:domain				domain:Student	.
+domain:avgGrade					rdfs:range				xsd:float	.
 \end{lstlisting}
 
 
 \imgK{\II}{vocabulary.png}{Vocabulary}
 
 
-\imgK{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}
+\img{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}{voc}
+
+
+On the left of \figref{voc} the class \textit{rdfs:Class} is depicted. It is class since it is the instance of itself. The same way \textit{rdfs:Resource} is class. Furthermore \textit{rdfs:Class} is the sub class of the \textit{rdfs:Resource}, from which it follows that an instance of any class is resource too. 
+
+The four grey ellipses (one contains two properties) represent the five most relevant properties in the RDF/RDFS vocabulary. Each of them are the instances of the class \textit{rdf:Property}, and for each the domain and the range classes are depicted.
+
+
 
 
 \subsection{OWL}
 
-OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary \cite{Dean:04:OWO}. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. For example a restriction stating that the instances of the class eg:FootballTeam can build a triple through the eg:hasPlayer property only with the instances of eg:FootballPlayer class can be expressed the following way:
+
+OWL, abbreviation for Ontology Web Language is an extension of the RDFS vocabulary \cite{Dean:04:OWO}. OWL allows expressing additional constraints on the data, above the range and domain definitions. These constraints are called restrictions. Restrictions are conventionally expressed by blank nodes. Blank nodes do not have IRIs, but it is defined through the triples in which they participate as a subject. 
+
+\img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
+
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
-eg:FootballTeam rdfs:subClassOf  [ 
-	rdf:type		owl:Restriction ; 
-	owl:onProperty		eg:hasPlayer ; 
-	owl:allValuesFrom	eg:FootballPlayer .
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+ 
+domain:CS_Student rdfs:subClassOf  [ 
+	rdf:type					owl:Restriction ; 
+	owl:onProperty		domain:attends ; 
+	owl:allValuesFrom	domain:CS_Course .
 ]
 \end{lstlisting}
 
@@ -82,16 +123,12 @@ Furthermore OWL is capable of expressing qualified cardinality restriction. For 
 
 \begin{lstlisting}[captionpos=b, caption=OWL restriction in N3 format, label=lst:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX eg: <http://example.org> 
-
-eg:BasketballTeam rdfs:subClassOf  [
-	rdf:type	owl:Restriction ; 
-	owl:onProperty	eg:hasPlayer ; 
-	owl:onClass	  eg:Player ; 
-	owl:qualifiedCardinality "5"(*@\textasciicircum@*)(*@\textasciicircum@*)xsd:nonnegativeInteger
+domain:CS_Student rdfs:subClassOf  [
+	rdf:type										owl:Restriction ; 
+	owl:onProperty							domain:attends ; 
+	owl:onClass								  domain:KeyCourse; 
+	owl:minQualifiedCardinality "2"^^xsd:nonnegativeInteger .
 ] . 
-
 \end{lstlisting}
 
 
@@ -100,10 +137,7 @@ These two examples cover the thesis related features of OWL. The next image depi
 \imgK{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}
 
 
-There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the owl:ObjectProperty and owl:DataTypeProperty. owl:ObjectProperty represent the properties that links instances to instances, and the owl:DataTypeProperty is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.
-
-\imgK{\II}{16_object_properties.png}{OWL object properties}
-\imgK{\II}{17_qualified_card.png}{Properties for qualified cardinalities}
+There are two new class types are the owl:Class and the owl:Restriction. The rdf:Property has two subclasses, the \textit{owl:ObjectProperty} and \textit{owl:DataTypeProperty}. \textit{owl:ObjectProperty} represent the properties that links instances to instances, and the \textit{owl:DataTypeProperty} is those that link instances to literals. The following two images shows the domain and range definitions of the OWL properties used to describe restrictions.
 
 \subsection{SPARQL}
 
@@ -111,9 +145,9 @@ SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a 
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql, belowskip=1em, aboveskip=2em, 
 basicstyle=\footnotesize,frame=single]
-SELECT ?player  
+SELECT ?student  
 WHERE { 
-	?player		rdf:type	eg:FootballPlayer .	
+	?student		rdf:type	domain:Student .	
 }
 \end{lstlisting}
 
@@ -122,10 +156,11 @@ It is well possible to not just ask the IRI of the players but further informati
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?player ?name 
+SELECT ?student ?name 
 WHERE { 
-	?player		rdf:type	 eg:FootballPlayer .	
-	?player		eg:name		 ?name .
+	?student		rdf:type	 domain:Student .	
+	?student		rdfs:label	 ?label  .
+	OPTIONAL { ?student	domain:avgGrade	?grade  } 
 }
 \end{lstlisting}
 
