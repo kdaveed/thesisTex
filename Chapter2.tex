@@ -17,7 +17,7 @@ frame=single]
 	Bob								avgGrade						1.73 .
 \end{lstlisting}
 
-In the example the \textit{Bob} and \textit{Math} are instance,the \textit{Course} and \textit{Student} are classes and the value 1.73 is literal. The values of the predicates are called properties. There are three main types of it, the one which connects instances to class (\textit{instanceOf}), one the expresses relationship between instances (\textit{attends}), and one which assigns a literal value to an instance. 
+In the example the \textit{Bob} and \textit{Math} are instance,the \textit{Course} and \textit{Student} are classes and the value 1.73 is literal. The values of the predicates are called properties. There are three main types of it, the one which connects instances to class (\textit{instanceOf}), one the expresses relationship between instances (\textit{attends}), and one which assigns a literal value to an instance (\textit{avgGrade}). 
 
 \img{\II}{rdfData.png}{RDF Data}{rdfG}
 
@@ -25,10 +25,9 @@ In the example the \textit{Bob} and \textit{Math} are instance,the \textit{Cours
 \figref{rdfG} illustrate the three main type of nodes and triples in RDF graphs. In the following this type of notation will be used on the figures, namely ellipse for the classes, rectangle for the instances and rhombus for the literals.
 
 
-In the following section we will see, that classes are in a certain sense are instance as well, and together the classes and instances are referred in the RDF world as resources. Each resource in an RDF graph has to have Internationalized Resource Identifier(IRI). There IRIs are grouped into specific namespaces. If someone wants to represent an information then it is necessary to choose an own namespace, which is the domain URI. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may instance \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. Since this namespace have to be unique these IRI are unique too.
+In the following section we will see, that classes are in a certain sense are instance as well, and together the classes and instances are referred in the RDF world as resources. Each resource in an RDF graph has to have Internationalized Resource Identifier(IRI). There IRIs are grouped into specific namespaces. If someone wants to represent an information then it is necessary to choose an own namespace, which is the domain URI. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may instance \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. Since this namespace have to be unique these IRI are unique too. 
 
-
-Due to the triple structure and RDF dataset can be stored by means of text document. There are different serialization formats, and the simples is the N3 format. In that format the namespaces are abbreviated with predefined prefixes to make the RDF document more readable. Above the own domain the following listing contains three namespaces the RDF, RDF Schema (RDFS) and XML Scheme. 
+Due to the triple structure and RDF dataset can be stored by means of text document. There are different serialization formats, and the simples is the N3 format. In that format the namespaces can be abbreviated with predefined prefixes to make the RDF document more readable. Above the own domain the following listing contains three namespaces the RDF, RDF Schema (RDFS) and XML Schema.
 
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDF data in N3 serialization format, label=lst:sparql,
@@ -49,21 +48,19 @@ domain:1			domain:avgGrade			"1.72"^^xsd:float .
 
 The property \textit{rdf:type} assing instance to classes, while the \textit{rdfs:label} assigns label to them. The XML Schema is standard for representing data types like \textit{string} or \textit{float}. The syntax for literals are the value and after comes the type. 
 
-
 \subsection{RDF Schema}
 
-RDF Schema (RDFS) was mentioned in the previous section too, but just for the labeling. However its has a really important rule in the RDF document. 
-The RDFS together with RDF offer classes and properties that allow to express the rules of the RDF data. In the previous section we just assumed there are the two classes and two properties. However this has to be defined as well. For this definition there are two meta classes the \textit{rdfs:Class} and \textit{rdf:Property}. These two class can be used as domain classes with the \textit{rdf:type} property. So the class definition for the previous example looks as follows.
+The RDFS together with RDF offer classes and properties that allow to express the rules of the RDF data. In the previous section we just assumed there are the two classes and two properties, but this information has to be defined in the graph as well. For this definition there are two classes,  the \textit{rdfs:Class} and \textit{rdf:Property}. To define own properties and classes, just like by the instance the \textit{rdf:type} property is used.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
 frame=single]
 domain:Student					rdf:type						rdfs:Class .
-domain:Course					rdf:type						rdfs:Class	.
+domain:Course						rdf:type						rdfs:Class	.
 domain:attends					rdf:type						rdf:Property .
 domain:avgGrade					rdf:type						rdf:Property .
 \end{lstlisting}
 
-Furthermore there is an important modelling concept, the sub class. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
+Furthermore there is an important modeling concept, the sub class. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
 frame=single]
@@ -71,10 +68,7 @@ domain:Person						rdf:type						rdfs:Class .
 domain:Student					rdfs:subClassOf			domain:Person .
 \end{lstlisting}
 
-This the really first step in modelling the reality. This way we can know that if an instance belongs to the Student class, then it is at the same time a person too.
-
-Further task of the vocabulary definition is express, that the property \textit{domain:attends} can be the predicat of triples, where the subject is the instance of \textit{domain:Student} and the object is the instance of \textit{domain:University}. The same way for the \textit{domain:avgGrade} where the object is literal with the type floating point. For this definition there are two properties the \textit{rdfs:domain} and \textit{rdfs:range}.
-
+This means that if there is instance of the class \textit{domain:Student}, then it is automatically the instance of the class \textit{domain:Person} too. Further task is to define that the property \textit{domain:attends} can be the predicate of triples, where the subject is the instance of \textit{domain:Student} and the object is the instance of \textit{domain:University}. The same way for the \textit{domain:avgGrade} where the object is literal with the type floating point. For this definition there are two properties the \textit{rdfs:domain} and \textit{rdfs:range}.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,
 frame=single]
@@ -84,8 +78,10 @@ domain:avgGrade					rdfs:domain				domain:Student	.
 domain:avgGrade					rdfs:range				xsd:float	.
 \end{lstlisting}
 
+\figref{vocab} illustrates the essence of the vocabulary definition in general way. The white ellipses without notations are the classes of the vocabulary and the grey ellipse is the property. On the bottom the triple with predicate \textit{Property1} shows is valid, because it conforms to the domain and range definition.
 
-\imgK{\II}{vocabulary.png}{Vocabulary}
+
+\img{\II}{vocabulary.png}{RDF/RDFS Vocabulary}{vocab}
 
 
 \img{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}{voc}
