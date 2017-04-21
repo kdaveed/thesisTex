@@ -7,7 +7,7 @@
 
 The Resource Description Framework (RDF) is a metadata data model used for representing information on the web. The data in RDF is organized into triples, where each triple consist of a subject, predicate and object. The set of RDF triples constitutes a directed graph, which is referred as RDF graph. The nodes of the graph are the subject and the object, while the edges are the predicates.
 
-In RDF there are three main type of nodes, instances, classes and literals. An instance represent concrete entities like person, institute or even abstract concepts. Classes are general concepts, to which the instances can belong, while literals represent data values assigned to instances. The following Listing shows some example triples that illustrates the basics of information representation in triples.
+The three most important type of nodes are the instances, classes and literals. An instance represent concrete entities like person, institute or even abstract concepts. Classes are general concepts, to which the instances can belong, while literals represent data values assigned to instances. The following Listing shows some example triples that illustrates the basics of information representation by means of triples.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Information in triples, label=ex3, ,belowskip=1em, aboveskip=2em,
 frame=single]
@@ -17,15 +17,19 @@ frame=single]
 	Bob								avgGrade						1.73 .
 \end{lstlisting}
 
-In the example the \textit{Bob} and \textit{Math} are instance,the \textit{Course} and \textit{Student} are classes and the value 1.73 is literal. The values of the predicates are called properties. There are three main types of it, the one which connects instances to class (\textit{instanceOf}), one the expresses relationship between instances (\textit{attends}), and one which assigns a literal value to an instance (\textit{avgGrade}). 
+In the example \textit{Bob} and \textit{Math} are instances, and they represent a concrete existing person and Math course of some university. The \textit{Course} and \textit{Student} are classes and the value 1.73 is literal. The values of the predicates are called properties. There are three main types of it, the one which connects instances to class (\textit{instanceOf}), one the expresses relationship between instances (\textit{attends}), and one which assigns a literal value to an instance (\textit{avgGrade}). 
 
 \img{\II}{rdfData.png}{RDF Data}{rdfG}
 
 
-\figref{rdfG} illustrate the three main type of nodes and triples in RDF graphs. In the following this type of notation will be used on the figures, namely ellipse for the classes, rectangle for the instances and rhombus for the literals.
+\figref{rdfG} illustrates the three main type of nodes and properties in RDF graphs. In the following this type of notation will be used on the figures, namely ellipse for the classes, rectangle for the instances and rhombus for the literals.
 
 
-In the following section we will see, that classes are in a certain sense are instance as well, and together the classes and instances are referred in the RDF world as resources. Each resource in an RDF graph has to have Internationalized Resource Identifier(IRI). There IRIs are grouped into specific namespaces. If someone wants to represent an information then it is necessary to choose an own namespace, which is the domain URI. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may instance \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. Since this namespace have to be unique these IRI are unique too. 
+The example gave just an insight into triple based modeling, but of course the nodes \textit{Bob} and \textit{Student} are not valid RDF nodes. The instances and classes are called resource, and each of them in an RDF graph has to have Internationalized Resource Identifier(IRI). The IRIs have to be unique, thus if someone want if someone wants to represent an information in RDF, then it is necessary to choose an own namespace. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may be \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. 
+
+
+RDF data does not contain only IRIs from own namespaces, but there are vocabularies that offer a set a built in IRIs. The three most important vocabulary is the RDF, RDF Schema (RDFS), XML Schema (XMLS). Each of these vocabularies have their own namespace. RDF and RDFS offer classes and properties, while XMLS contains the datatype IRIs for literal values.
+
 
 Due to the triple structure and RDF dataset can be stored by means of text document. There are different serialization formats, and the simples is the N3 format. In that format the namespaces can be abbreviated with predefined prefixes to make the RDF document more readable. Above the own domain the following listing contains three namespaces the RDF, RDF Schema (RDFS) and XML Schema.
 
