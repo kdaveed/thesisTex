@@ -25,14 +25,12 @@ In the example \textit{Bob} and \textit{Math} are instances, and they represent 
 \figref{rdfG} illustrates the three main type of nodes and properties in RDF graphs. In the following this type of notation will be used on the figures, namely ellipse for the classes, rectangle for the instances and rhombus for the literals.
 
 
-The example gave just an insight into triple based modeling, but of course the nodes \textit{Bob} and \textit{Student} are not valid RDF nodes. The instances and classes are called resource, and each of them in an RDF graph has to have Internationalized Resource Identifier(IRI). The IRIs have to be unique, thus if someone want if someone wants to represent an information in RDF, then it is necessary to choose an own namespace. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the first instance may be \textit{<http://myDomain.com\#1>}, and the IRI of the class \textit{<http://myDomain.com\#Student>}. 
+The example gave just an insight into triple based modeling, but of course the nodes \textit{Bob} and \textit{Student} are not valid RDF nodes. The instances and classes are called resource, and each of them in an RDF graph has to have Internationalized Resource Identifier(IRI). The IRIs have to be unique, thus if someone want if someone wants to represent an information in RDF, then it is necessary to choose an own namespace. For example if the choosen namespace is \textit{<http://myDomain.com\#>}, then the IRI of the class \textit{Student} may be \textit{<http://myDomain.com\#Student>}.
 
 
-RDF data does not contain only IRIs from own namespaces, but there are vocabularies that offer a set a built in IRIs. The three most important vocabulary is the RDF, RDF Schema (RDFS), XML Schema (XMLS). Each of these vocabularies have their own namespace. RDF and RDFS offer classes and properties, while XMLS contains the datatype IRIs for literal values.
+RDF data does not contain only IRIs from own namespaces, but there are vocabularies that offer a set a built in IRIs. The three most important vocabulary is the RDF, RDF Schema (RDFS), XML Schema (XMLS).  RDF and RDFS offer classes and properties, while XMLS contains the datatype IRIs for literal values, and each them of these vocabularies have its own namespace.
 
-
-Due to the triple structure and RDF dataset can be stored by means of text document. There are different serialization formats, and the simples is the N3 format. In that format the namespaces can be abbreviated with predefined prefixes to make the RDF document more readable. Above the own domain the following listing contains three namespaces the RDF, RDF Schema (RDFS) and XML Schema.
-
+RDF data can be stored in text documents. These document can have various serialization format. In RDF documents to improve readability, the namespaces are abbreviated with prefixes, and IRIs are represented with a prefix:suffix syntax. The meaning of this syntax is the concatenation of the prefix and the suffix. The following Listing shows a valid RDF document containing the triples of the example.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDF data in N3 serialization format, label=lst:sparql,
 frame=single]
@@ -41,16 +39,18 @@ frame=single]
 @prefix xsd:  	<http://www.w3.org/2001/XMLSchema\#>
 @prefix domain:  <http://myDomain.com\#>
 
-domain:1			rdf:type						domain:Student 	.
-domain:1			rdfs:label					"Bob"^^xsd:string 	.
-domain:2			rdf:type						domain:Course 	.
-domain:2			rdfs:label					"Math"^^xsd:string 	.
-domain:1			domain:attends			domain:2 	.
-domain:1			domain:avgGrade			"1.72"^^xsd:float .
+domain:1			rdf:type						domain:Student 	;
+							rdfs:label					"Bob"^^xsd:string 	.
+domain:2			rdf:type						domain:Course 	;
+							rdfs:label					"Math"^^xsd:string 	.
+domain:1			domain:attends			domain:2 	;
+							domain:avgGrade			"1.72"^^xsd:float .
 \end{lstlisting}
 
+The \textit{";"} in N3 is used to divide predicate-object pairs that belong to the same subject. With this approach the subject do not have to written as many times as many triples it participates in.
 
-The property \textit{rdf:type} assing instance to classes, while the \textit{rdfs:label} assigns label to them. The XML Schema is standard for representing data types like \textit{string} or \textit{float}. The syntax for literals are the value and after comes the type. 
+The property \textit{rdf:type} expresses the \textit{instanceOf} relationship, while \textit{rdfs:label} is the most widely used property to assign label to instances. By the literals it can be seen, that they are surrounded with quotation marks and extended with the type notation from the XMLS vocabulary.
+
 
 \subsection{RDF Schema}
 
