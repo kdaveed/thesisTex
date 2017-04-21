@@ -167,7 +167,8 @@ WHERE {
 It can be seen that the namespace abbreviation with prefixes works the same way like in RDF documents. If the query is executed on the dataset from \figref{sparqlData}, then it return the \textit{domain:1} and \textit{domain:3} instances for the variable \textit{?student}. 
 
 
-\img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
+\img{\II}{sparqlData.png}{Ontology extension}{sparqlData}
+
 
 
 Furthermore the triple pattern can consists of  multiple triples as well, like in the following query:
@@ -181,22 +182,21 @@ WHERE {
 }
 \end{lstlisting}
 
-Executed on the same dataset, this query return only the instance \textit{domain:1} because \textit{domain:2} does not have a label, thus there is not matching RDF node for variable \textit{?label}. 
+Executed on the same dataset, this query return only the instance \textit{domain:1} because \textit{domain:2} does not have a label, thus there is not matching RDF node for variable \textit{?label}. This means that the triples in a triple pattern are in \textit{AND} relationship. But there is keyword optional that allow the definition of sub triple patterns, which are not required in the RDF dataset. So if the triple with the label variable is in the OPTIONAL sub pattern then the query II. return \textit{domain:3} instance as well, so that the variable for the label will be empty.
 
-
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption=Optional sub triple pattern., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 OPTIONAL { 	?student	rdfs:label	 ?label  . } 
 \end{lstlisting}
 
+Moreover its is possible to define filters on the variables. The most commonly used are the regular expression filter on literals. 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption=Regex filter in SPARQL, label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 FILTER regex(?label, "^Bo")
 \end{lstlisting}
 
-
-The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
+Finally it is possible in SPARQL to query blank nodes, the same ways with variables. The following query then queries the ontology and returns at least how many key course must be attended by a computer science student.
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
