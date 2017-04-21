@@ -52,40 +52,48 @@ The \textit{";"} in N3 is used to divide predicate-object pairs that belong to t
 The property \textit{rdf:type} expresses the \textit{instanceOf} relationship, while \textit{rdfs:label} is the most widely used property to assign label to instances. By the literals it can be seen, that they are surrounded with quotation marks and extended with the type notation from the XMLS vocabulary.
 
 
-\subsection{RDF Schema}
+\subsection{RDF and RDFS Vocabularies}
 
-The RDFS together with RDF offer classes and properties that allow to express the rules of the RDF data. In the previous section we just assumed there are the two classes and two properties, but this information has to be defined in the graph as well. For this definition there are two classes,  the \textit{rdfs:Class} and \textit{rdf:Property}. To define own properties and classes, just like by the instance the \textit{rdf:type} property is used.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
+In the previous section the RDF and RDFS vocabularies were already mention, but this section provides much more detailed information about their usage and utility. 
+
+
+RDF and RDFS offers classes and properties that allows to express the rules of the RDF data. First of all it has to be defined, what IRIs represent classes and what properties. For this purpose there are two classes the \textit{rdfs:Class} and \textit{rdf:Property}. To define own properties and classes, just like by the instance the \textit{rdf:type} property is used.
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class and property definition, label=lst:sparql,
 frame=single]
 domain:Student					rdf:type						rdfs:Class .
 domain:Course						rdf:type						rdfs:Class	.
-domain:attends					rdf:type						rdf:Property .
-domain:avgGrade					rdf:type						rdf:Property .
 \end{lstlisting}
+
+In this way it is defined that in our dataset the instances will represent students and courses. The definition in the case of the properties is a bit more complex, because it has to be defined too, what type of subject and object they can connect. For this definition there are two properties in RDFS, the  the \textit{rdfs:domain} and \textit{rdfs:range} respectively.
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,
+frame=single]
+domain:attends					rdf:type						rdf:Property ;
+												rdfs:domain					domain:Student	;
+												rdfs:range					domain:Course .
+domain:avgGrade					rdf:type						rdf:Property .
+												rdfs:domain					domain:Student	.
+												rdfs:range					xsd:float	.
+\end{lstlisting}
+
+The previous two Listings contains the RDF triples defining an own vocabulary. The vocabulary is called as well ontology and purpose is to define the scheme of the data. 
+
+\figref{vocab} illustrates the essence of the vocabulary definition in general way. It can be seen that property (Property1) and the classes (ellipses without notation) are the instances of the RDF and RDFS classes, and they connected with range and domain predicates. Moreover in the triple where the predicate is \textit{Property1}, the subject is the instance of the domain class, and object is the range class of the property. In the case of properties where the range is an XMLS type, the rule is the same, just the object is not an instance but literal.
+
+\img{\II}{vocabulary.png}{RDF/RDFS Vocabulary}{vocab}
+
 
 Furthermore there is an important modeling concept, the sub class. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Sub class definition, label=lst:sparql,
 frame=single]
 domain:Person						rdf:type						rdfs:Class .
 domain:Student					rdfs:subClassOf			domain:Person .
 \end{lstlisting}
 
-This means that if there is instance of the class \textit{domain:Student}, then it is automatically the instance of the class \textit{domain:Person} too. Further task is to define that the property \textit{domain:attends} can be the predicate of triples, where the subject is the instance of \textit{domain:Student} and the object is the instance of \textit{domain:University}. The same way for the \textit{domain:avgGrade} where the object is literal with the type floating point. For this definition there are two properties the \textit{rdfs:domain} and \textit{rdfs:range}.
-
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,
-frame=single]
-domain:attends					rdfs:domain				domain:Student	.
-domain:attends					rdfs:range				domain:Course .
-domain:avgGrade					rdfs:domain				domain:Student	.
-domain:avgGrade					rdfs:range				xsd:float	.
-\end{lstlisting}
-
-\figref{vocab} illustrates the essence of the vocabulary definition in general way. The white ellipses without notations are the classes of the vocabulary and the grey ellipse is the property. On the bottom the triple with predicate \textit{Property1} shows is valid, because it conforms to the domain and range definition.
-
-
-\img{\II}{vocabulary.png}{RDF/RDFS Vocabulary}{vocab}
+In order to provide a wider image from the RDF and RDFS vocabulary \figref{voc} show the further classes and properties.
 
 
 \img{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}{voc}
