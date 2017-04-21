@@ -150,9 +150,12 @@ owl:minQualifiedCardinality "2"^^xsd:nonnegativeInteger .
 
 \subsection{SPARQL}
 
-SPARQL is a query language for querying data in RDF graphs. A SPARQL query is a definition of a graph pattern through variables and constants. The following example query returns all IRIs that represent a student: 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=lst:sparql, belowskip=1em, aboveskip=2em, 
+RDF data is stored most commonly in triplestores. A triplestore is software for storage and retrieval of RDF triples. The retrieval like by other kind of databases happens via queries, that are formulated in a particular query language. The query language for RDF is called SPARQL. 
+
+A basic SPARQL query consists of two main parts. Firstly of a triple pattern, which differs only from a RDF dataset that it contains variables. The variable are denoted with a question mark in triple pattern. Secondly it contains a set of variables that the query has to return. Listing \ref{sparql1} shows an example query, through which the syntax is demonstrated. After the \textit{SELECT} keyword there is the variable to return and after the \textit{WHERE} keyword inside the parenthesis there is the triple pattern.
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query I., label=sparql1, belowskip=1em, aboveskip=2em, 
 basicstyle=\footnotesize,frame=single]
 SELECT ?student  
 WHERE { 
@@ -160,30 +163,50 @@ WHERE {
 }
 \end{lstlisting}
 
-In the example the query consist of only one triple. The subject is a variable and the predicate and the object are constant. Therefore the triple store looks all the triples and checks the predicate is rdf:type and the object is domain:Student. It is well possible to not just ask the IRI of the players but further information by adding additional triples to the query in order to ask the name for example of the player:
+
+It can be seen that the namespace abbreviation with prefixes works the same way like in RDF documents. If the query is executed on the dataset from \figref{sparqlData}, then it return the \textit{domain:1} and \textit{domain:3} instances for the variable \textit{?student}. 
+
+
+\img{\II}{ontExt1.png}{Ontology extension}{ontExt1}
+
+
+Furthermore the triple pattern can consists of  multiple triples as well, like in the following query:
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?student ?name 
+SELECT ?student ?label 
 WHERE { 
 	?student		rdf:type	 domain:Student .	
 	?student		rdfs:label	 ?label  .
-	OPTIONAL { ?student	domain:avgGrade	?grade  } 
 }
 \end{lstlisting}
+
+Executed on the same dataset, this query return only the instance \textit{domain:1} because \textit{domain:2} does not have a label, thus there is not matching RDF node for variable \textit{?label}. 
+
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+OPTIONAL { 	?student	rdfs:label	 ?label  . } 
+\end{lstlisting}
+
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+FILTER regex(?label, "^Bo")
+\end{lstlisting}
+
 
 The result table in this case will contain two columns, one with the IRI of the person and one with their name. Important that it is as well possible to query blank nodes by introducing a variable for it. So if we want to list all the instances that are coming into question as player to a football team we can formulate the following query:
 
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-SELECT ?courseIRI ?courseLabel
+SELECT ?min
 WHERE {
 	domain:CS_Student	rdfs:subClassOf			?restriction .
 	?restriction			rdf:type						owl:Restriction .
 	?restriction			owl:onProperty			domain:attends .
-	?restriction			owl:allValuesFrom		?courseType .
-	?courseIRI				rdf:type						?courseType .
-	?courseIRI				rdfs:label					?courseLabel . 
+	?restriction			owl:onClass				?courseType .
+	?restriction			owl:minQualifiedCardinality		?min .
 }
 \end{lstlisting}
 
