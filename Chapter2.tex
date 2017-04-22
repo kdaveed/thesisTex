@@ -211,7 +211,6 @@ WHERE {
 \end{lstlisting}
 
 
-\newpage
 \section{Ontologies} \label{22}
 
 Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to use existing ontologies rather than developing them by ourselves. The main reason for this lies in the fact that the ontology development is a time consuming and tedious process. Two ontologies are taken in the project, one for the human anatomy and one for biomedical investigations. In order to connect these two, during the project our own ontology (called as well \textit{RDFBones}) is developed too. Firstly the two applied ontologies will be discussed and lastly the \textit{RDFBones} ontology.
@@ -286,21 +285,23 @@ PREFIX : <http://w3id.org/rdfbones/core#>
 
 \figref{rdfbones} shows the four most important classes (blue ones) as subclasses of further OBI classes using the above defined prefix. On the left, there is class \textit{:SkeletalInventory}, whose purpose is to incorporate the set of existing bones in a skeletal collection. The \textit{Completeness2States} and \textit{Completeness2StatesLabel} classes are used to represent if a bone segment is complete or just partly present. The \textit{:SegmentOfSkeletalElement} is the subclass of \textit{bfo:0000020}, which is the subclass of the previously mentioned \textit{Entity} class. With this class for bone segments, \textit{RDFBones} makes possible the definition of custom segments of particular bone organs, in order to allow more fine grained modeling of the research activity. It is again a sort of ontology extension, thus the definition has to be done by means of custom subclasses and restrictions. The property that expresses the relationship between bone organs and bone segments is the \textit{fma:regional\_part\_of}. Also this is the property that connects the RDFBones and thus the OBI to the FMA.
 
-\img{\II}{rdfbones.png}{Extending OBI ontology}{rdfbones}
+\img{\II}{rdfbones.png}{RDFBones as OBI extension}{rdfbones}
 
 
 \section{Web applications}
+
+Nowadays web applications are prevalent since they have the advantage against desktop application that they do not have to be installed on local computer, and can be accessed from web browser and thus can be used anywhere from the world. Like by the ontologies, the development of a web application is a complex process, and therefore an existing framework called VIVO has been applied in the project. VIVO is an appropriate choice, because it has been developed particularly for browsing and editing RDF data.  The designed software of the thesis is an extension of the VIVO framework. In order to provide the necessary information required to understand the problem and the solution of the thesis, this section covers some fundamental web application technologies and the main functionality and capabilities of VIVO framework.
+
 
 \subsection{Fundamentals} \label{fundamentals}
 
 \subsubsection{Client-sever architecture} \label{clientServer}
 
-A web applications have two main units, the client and the server. The client is the application, which the user interacts with, while the server is an other application serves the request coming from the client. The client and server programs are running normally on different machines, and they communicate through Hypertext Transfer Protocol (HTTP). The main mechanism is that client, which is a web browser application, sends an HTTP request through the web. The server is found based on the URI of the HTTP request, and upon the content of the request the server returns a document written in Hypertext Markup Language (HTML). The HTML document contains the definition of the elements of the interface and it is interpreted by the web browser.
+Web applications consist of two main units. The first is client, which the user interacts with, and the second is the server, which is an other application that serves the request coming from the client. The client and server programs are running normally on different machines, and they communicate through Hypertext Transfer Protocol (HTTP). The main mechanism is that client, which is a web browser application, sends an HTTP request through the web, and the server is found based on the URI of the HTTP request. Upon the content of the request the server returns a document written in Hypertext Markup Language (HTML). The HTML document contains the definition of the elements of the interface and it is interpreted by the web browser.
 
 \imgK{\II}{1_client_server.png}{Client server communication}
 
-
-An HTML document consist of different elements like buttons, tables input fields. Each element is represented by specific tags. The HTML has a hierarchical structure, and each element is the child of the tag \textit{html}. On listing \ref{exHTML} it can be seen that each tag has a opening and closing element. 
+An HTML document consists of different elements like buttons, tables input fields. Each element is represented by so-called tags. The HTML has a hierarchical structure, and each element is the child of the tag \textit{html}. On listing \ref{exHTML} it can be seen that each tag has a opening and closing element.
 
 \begin{lstlisting}[captionpos=b, caption=Example HTML document, label=exHTML, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -315,11 +316,11 @@ The tag, like the \textit{html} in the example can contain further tags, and hav
 
 \subsubsection{Data driven web applications} \label{dataDriven}
 
-Most of the web applications nowadays incorporates databases. Databases are used to store large amount data in an organized way. Databases are always come along with a database management system (DBMS), that allows to create, edit, delete and retrieve data in the database. So DBMS is software that acts as an interface between the web application and the data. In the following, the database and DBMS together will be referred just as database.  
+Most of the web applications nowadays incorporate databases. Databases are used to store large amount data in an organized way. Databases are always come along with a database management system (DBMS) that allows to create, edit, delete and retrieve data in the database. So DBMS is software that acts as an interface between the web application and the data. In the following, the database and DBMS together will be referred simply as database.  
 
-By web applications using databases the most important point, that web pages are not statically defined in HTML files, but generated by the application dynamically using a particular dataset. The process of loading of a web pages showing any data, starts with the execution of a query. This means the web application sends a query to the database and gets a desired data. The result of a query in terms of the web application is conventionally a list of data objects.  The term object is used generally, and refers to a data type that organizes its values by keys. The elements of the output list represent the rows of the query result table, and the fields of the object in turn the rows respectively. 
+By web applications using databases the most important point, that web pages are not statically defined in HTML files, but generated by the application dynamically using a particular dataset. The process of loading of a web pages showing any data, starts with the execution of a query. This means the web application sends a query to the database and gets a desired data. The result of a query in terms of the web application is conventionally a list of data objects. The term object is used generally, and refers to a data type that organizes its values by keys. The elements of the output list represent the rows of the query result table, and the fields of the object in turn the rows respectively. 
 
-To define how the web page has to generated from the dataset a so-called template file are used. The template file is basically an HTML document, that is extended with some additional syntax, which can be interpreted by the template engine. There a lot of template engines and technologies, but in the following I provide an illustrative example from \textit{Freemarker} template language, that is used by as well the VIVO framework.
+To define how the web page has to be generated from the dataset a so-called template file are used. The template file is basically an HTML document, that is extended with some additional syntax. The elements defined in this syntax can be interpreted by the template engine. There a lot of template engines and languages, but in the following I provide an illustrative example in \textit{Freemarker} template language, that is used by as well the VIVO framework.
 
 \begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
