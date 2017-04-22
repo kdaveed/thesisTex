@@ -389,65 +389,32 @@ VIVO maintains two basic type of pages. The first is for displaying the existing
 \subsubsection{Profile pages} \label{vivoPp}
 
 
-The task of the profile pages in VIVO, is to display all instances and literals that constitute to a triple with the instance, whose page has been called. These neighbor nodes are shown on the page grouped into the properties. and the properties are organized into so-called property groups. Furthermore there is a concept in VIVO called faux property. The purpose of defining faux properties is to group the instance on the profile pages by range classes to make the data browsing more convenient. 
+The task of the profile pages in VIVO is to display all instances and literals that constitute to a triple with the instance, whose page has been called. These neighbor RDF nodes are shown on the pages grouped by the property, which they build the triple with. The properties moreover grouped into property group tabs. Further grouping possibility is in VIVO is offered by the so-called faux-properties. By means of defining faux properties, it can be achieved that instances on the pages are grouped by their class. 
 
 \img{\II}{faux.png}{Faux properties on VIVO profile pages}{faux}
 
-\figref{faux} shows the layout of a VIVO profile page of a skeletal inventory, where the in the skeletal subdivision propery group the two faux properties (\textit{skull} and \textit{vertebral column}) can be seen. The instances (\textit{Skull} and \textit{Vertebral Column}) are both connected to the skeletal inventory with the \textit{rdfbones:hasSkeletalDivision} property, but as there two faux properties are defined for the classes \textit{fma:5018 "Skull"} and for \textit{fma}
+\figref{faux} shows the layout of a VIVO profile page of a skeletal inventory, where the in the skeletal subdivision propery group the two faux properties (\textit{skull} and \textit{vertebral column}) can be seen. The instances (\textit{Skull} and \textit{Vertebral Column}) are both connected to the skeletal inventory with the \textit{rdfbones:hasSkeletalSubDivision} property, but as there two faux properties are defined for the classes \textit{-fma:5018 "Skull"-} and for \textit{-fma:13478 "Vertebral Column"-}, they appear in distinct property fields.
 
+As it was mentioned VIVO allows some RDF data based interface configuration. \figref{fauxRDF} a simplified dataset for a faux property description. The notation on the rectangle denotes the label of the instance.
 
-
-\img{\II}{vivoOnt.png}{Simplified VIVO ontology}{vivoOnt}
-
-
-
-
- A property groups can be defined through the following set of configuration RDF triples. 
-
-\begin{lstlisting}[captionpos=b, caption=Property group definition, label=jsListing, belowskip=1em, aboveskip=2em,
-basicstyle=\footnotesize,frame=single]
-vivo:overView				rdf:type			vivo:PropertyGroup .
-vivo:overView				rdfs:label			"Overview" .
-\end{lstlisting}
-
-As we can see there is a class vivo:PropertyGroup, which indicates that VIVO incorporates a small ontology for web application configuration. Any property of a domain ontology loaded into VIVO can be assigned to a property group by an additional RDF triple:
-
-\begin{lstlisting}[captionpos=b, caption=Assigning property to propery group, label=jsListing, belowskip=1em, aboveskip=2em,
-basicstyle=\footnotesize,frame=single]
-obo:OBI_00000299		vivo:inPropertyGroup 		vivo:overView .
-\end{lstlisting}
-
-
-This means if an applied ontology is extended with further properties then they just have to be assigned to a property groups and VIVO profile pages can display them, and no modification is required in the template file or in the application code.
-
-Other useful configuration possibility are offered by the so-called faux properties, which allow further grouping of RDF instances on the profile pages. They make possible to group instances based on their types even if they are connected to the main instance with the same property. Their definition lies in RDF triples as well, and for each one the base property, the range class and property group has to be set.
-
-
-
-
-\figref{faux} show a profile page of skeletal inventory. The blue entries represent the instances, and they are links to the profile pages of the individual skeletal subdivision. Both the \textit{Skull} and the \textit{Vertebral column} instances are connected to the skeletal inventory with the property \textit{rdfbones:hasSkeletalSubdivision}, but since two faux properties (\textit{skull} and \textit{vertebral column}) are defined, these instances appear separately on the profile page.
+\img{\II}{fauxRDF.png}{Faux property descriptor RDF dataset}{fauxRDF}
 
 \subsubsection{Custom entry forms} \label{vivoCef}
 
-Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a + sign can be seen, which is link to a data entry form page. The peculiarity of VIVO that from each property field, the request arrives to the same handler routine on the server. These requests have always three parameters:
+Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a + sign can be seen, which is link to a data entry form page. The peculiarity of VIVO that from each property field, the request arrives to the same handler routine on the server. These requests have always three parameters (VIVO uses in its parameter names URI instead of IRI, which is an abbreviation for Unified Resource Identifier, but it does not make a difference):
 
 \begin{itemize}
-	\item{subjectUri}
-	\item{predicateUri}
-	\item{rangeUri}
+	\item{ \textit{subjectUri}} - IRI of the instance to whom the profile page belongs
+	\item{ \textit{predicateUri}} -  is the IRI of the property (can be a faux property)
+	\item{ \textit{rangeUri}} - IRI of the range class of the property
 \end{itemize}
 
-Where the first is the URI of the instance to whom the profile page belongs, the second is the URI of the property (can be a faux property), and the third is the URI of the range class of the property. By default VIVO redirects the user to such an entry form where only one instance or literal can be added. However it is possible to define conveniently custom forms for more complex datasets.
+By default VIVO redirects the user to such an entry form where only one instance or literal can be added with the type defined in the \textit{rangeUri} parameter. However it is possible to define conveniently custom forms for more complex datasets by means of so-called custom entry forms.
 
-By custom data input processes, there are two main parts to define. The first is the elements of data input form in HTML, and the second is the RDF data that has to be created. In VIVO these definition have to placed into a class, and the class have to be assigned to the property with again RDF configuration triples. 
+\img{\II}{entryForm.png}{Custom entry form for skeletal subdivision}{entryForm}
 
-\begin{lstlisting}[captionpos=b, caption= Entry form generator class definition, label=skullJSON, belowskip=1em, aboveskip=2em,
-basicstyle=\footnotesize,frame=single]
-rdfbones:hasSkeletalSubdivision		vivo:customEntryForm	
-		"rdfbones.SkeletalSubdivisionFormGenerator.java".
-\end{lstlisting}
 
-Thus if the request from the profile page arrives to the server, VIVO queries the class name by the parameter \textit{predicateUri} and instantiates it. By writing a class during the development incorporates the static definition of its variables. Each customly defined class implements a predefined VIVO interface, thus there is a specific set of variables that have to be initialized for the definition. The most important is the string variable \textit{templateFile}, that holds the name of template file that have to be displayed.
+ The idea of custom entry form, that they allow the definition only of HTML input form layout and the dataset definition, and developer does not have to care about how the values from the form are substituted into the RDF data and how the new instances are generated. To perform the definition two files has to be created, one Java class and a \textit{Freemarker} template file for the form definition. The class has to extends the class \textit{EditConfigurationGenerator} class, thus the fields of it are defined inherently.
 
 
 \begin{lstlisting}[captionpos=b, caption= Form defintion in Java, label=skullJSON, belowskip=1em, aboveskip=2em,
@@ -455,14 +422,16 @@ basicstyle=\footnotesize,frame=single]
 	this.templateFile = "subdivision.ftl"
 \end{lstlisting}
 
-Of course this template file has to be created too. The following code shows the definition of a template file using \textit{Freemarker} macros.
+
+Of course this template file has to be created too. The template file definition is simple due to the \textit{Freemarker} macros.
 
 \begin{lstlisting}[captionpos=b, caption= subdivision.ftl, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <form>
-	<@selector	"type">
-	<@textField	"nr">
-	<@floatField "weight">
+	<@title "Add skeletal subdivision">
+	<@labelField "label" "Label">
+	<@textField	"desc" "Description">
+	<@booleanField "complete" "Complete">
 	<@submitButton>
 </form>	
 \end{lstlisting}
@@ -475,34 +444,35 @@ The next fundamental variable of the generator class is the \textit{triplesToCre
 basicstyle=\footnotesize,frame=single]
 this.triplesToCreate = "
 	?subjectUri		rdfbones:hasSkeletalSubdivision		?subDivision.
-	?subDivision	rdf:type													?type.
-	?subDivision	eq:catalogNr											?nr.
-	?subDivision	eq:weight													?weight. "
+	?subDivision	rdf:type						?rangeUri .
+	?subDivision	rdfs:label					?label^^xmls:string.
+	?subDivision	domain:description	?desc^^xmls:string .
+	?subDivision	domain:complete			?complete^^xmls:boolean . "
 \end{lstlisting}
-
 
 It can be seen that there are variables like in SPARQL, defined with question mark. Furthermore it has to be defined for each one variable what types are they. For this purpose there are three lists, on for the URIs on the form, one for the literals on the form, and for the new instances, whose URI do not come from the form but will be generated during the data creation.
 
 \begin{lstlisting}[captionpos=b, caption= Variable type definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-	this.urisOnForm = {"type"};
-	this.literalsOnForm	= {"nr", "weight"};
+	this.urisOnForm = {};
+	this.literalsOnForm	= {"label", "desc", "complete"};
 	this.newInstances = {"subDivision"};
 \end{lstlisting}
 
 
 The last type of the definition in such simple case, is to define the SPARQL query that retrieves the options for the selector fields on the form. This variable is \textit{Map<String, String>} type in Java. The keys of the map are the variable names, and the values are the SPARQL queries.
 
-\begin{lstlisting}[captionpos=b, caption= Query for form data, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption= Query for existing form data, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
-this.formVariables.put("type", 
-	"SELECT ?uri ?label
-		WHERE {
-		?uri	rdfs:subClassOf		?rangeUri	.
-		?uri	rdfs:label			?label	.	}
+this.formVariables.put("complete", 
+	"SELECT ?complete
+	WHERE {
+		?subjectUri	rdfbones:hasSkeletalSubdivision		?subDivision .
+		?subDivision	domain:complete				?complete	}
 \end{lstlisting}
 
 This query is executed before the form page loading, and the result is passed to the template engine, which generates the options withing the \textit{selector} macro. Please note that the variable \textit{rangeUri} coming as an input with the HTTP request. This way it is ensured that the type of the \textit{subDivision} variable, will be the subclass of the range class.
+
 
 These section gave an insight into how it is possible to define data input processes in a declarative way within the VIVO framework.
 
