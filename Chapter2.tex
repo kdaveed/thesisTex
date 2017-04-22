@@ -233,11 +233,24 @@ The applied ontology modeling the human body is called \textit{Foundational Mode
 		\subitem \textit{fma:regional\_part\_of}
 \end{itemize}
 
-The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses \textit{owl:someValuesFrom} restrictions. \figref{fma} shows the main structure of FMA by depicting the restrcitions on the property \textit{fma:systemic\_part\_of} with red arrows. These restrictions mean that if a bone organ instance have created, then there must be it skeletal subdivision instance, to that it belongs. 
+The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses \textit{owl:someValuesFrom} restrictions (Listing \ref{fmaOWL}). 
+
+\begin{lstlisting}[captionpos=b, caption=Rules of human body expressed in OWL, label=fmaOWL, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+fma:BoneOrganX	rdfs:subClassOf [
+rdf:type						owl:Restriction .
+owl:onProperty			fma:systemic_part_of . 	
+owl:someValuesFrom	fma:SkeletalSubdivisionY .
+]
+\end{lstlisting}
+
+\figref{fma} shows the main structure of FMA by depicting the restrictions on the property \textit{fma:systemic\_part\_of} with red arrows. These restrictions mean that if a bone organ instance have created, then there must be it skeletal subdivision instance, to that it belongs. 
 
 \img{\II}{fma.png}{Ontology structure for skeleton}{fma}
 
 Finally, the advantage of using the FMA ontology is that, if in the future further elements of the human body have to be addressed by the research processes, i.e. muscles, then these classes can be easily integrated to the currently applied subset.
+
+
 
 
 \subsection{Ontology for Biomedical Investigations - \textit{OBI}} \label{obi}
@@ -259,7 +272,6 @@ The aim of OBI ontology, is to provide the formal representation of the biomedic
 
 
 The idea is to define anthropological investigation in formal way by means of subclasses of these four classes, and OWL restriction on the three properties. This definition contains what entities are involved in certain  and how are they related to each other. The following image illustrates the scheme of data representing investigations (the notation is the same like in \figref{fma}, just the restriction are defined on the OBI properties). 
-
 
 \img{\II}{obi.png}{Ontolgy extensions for custom investigations}{obi}
 
