@@ -36,15 +36,15 @@ RDF data can be stored in text documents. These document can have various serial
 frame=single]
 @prefix rdf:  	 <http://www.w3.org/1999/02/22-rdf-syntax-ns\#>
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
-@prefix xsd:  	<http://www.w3.org/2001/XMLSchema\#>
+@prefix xmls:  	<http://www.w3.org/2001/XMLSchema\#>
 @prefix domain:  <http://myDomain.com\#>
 
 domain:1			rdf:type						domain:Student 	;
-							rdfs:label					"Bob"^^xsd:string 	.
+							rdfs:label					"Bob"^^xmls:string 	.
 domain:2			rdf:type						domain:Course 	;
-							rdfs:label					"Math"^^xsd:string 	.
+							rdfs:label					"Math"^^xmls:string 	.
 domain:1			domain:attends			domain:2 	;
-							domain:avgGrade			"1.72"^^xsd:float .
+							domain:avgGrade			"1.72"^^xmls:float .
 \end{lstlisting}
 
 The \textit{";"} in N3 is used to divide predicate-object pairs that belong to the same subject. With this approach the subject do not have to written as many times as many triples it participates in.
@@ -75,7 +75,7 @@ domain:attends					rdf:type						rdf:Property ;
 												rdfs:range					domain:Course .
 domain:avgGrade					rdf:type						rdf:Property .
 												rdfs:domain					domain:Student	.
-												rdfs:range					xsd:float	.
+												rdfs:range					xmls:float	.
 \end{lstlisting}
 
 The previous two Listings contains the RDF triples defining an own vocabulary. The vocabulary is called as well ontology and purpose is to define the scheme of the data. 
@@ -143,7 +143,7 @@ domain:CS_Student rdfs:subClassOf  [
 rdf:type										owl:Restriction ; 
 owl:onProperty							domain:attends ; 
 owl:onClass								  domain:KeyCourse; 
-owl:minQualifiedCardinality "2"^^xsd:nonnegativeInteger .
+owl:minQualifiedCardinality "2"^^xmls:nonnegativeInteger .
 ] .
 \end{lstlisting}
 
@@ -275,7 +275,6 @@ The conclusion is that with these classes and properties, OBI offers a powerful 
 
 \subsection{RDFBones ontology}
 
-
 \textit{RDFBones} ontology is an extension of the OBI ontology. It has its own namespace (the empty string a valid prefix too): 
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDFBones namespace, label=lst:sparql, belowskip=1em, aboveskip=2em,
@@ -290,7 +289,7 @@ PREFIX : <http://w3id.org/rdfbones/core#>
 
 \section{Web applications}
 
-Nowadays web applications are prevalent since they have the advantage against desktop application that they do not have to be installed on local computer, and can be accessed from web browser and thus can be used anywhere from the world. Like by the ontologies, the development of a web application is a complex process, and therefore an existing framework called VIVO has been applied in the project. VIVO is an appropriate choice, because it has been developed particularly for browsing and editing RDF data.  The designed software of the thesis is an extension of the VIVO framework. In order to provide the necessary information required to understand the problem and the solution of the thesis, this section covers some fundamental web application technologies and the main functionality and capabilities of VIVO framework.
+Nowadays web applications are prevalent since they have the advantage against desktop application that they do not have to be installed on local computer, and can be accessed from web browser and thus can be used anywhere from the world. Like by the ontologies, the development of a web application is a complex process, and therefore an existing open-source framework called VIVO has been applied in the project. VIVO is an appropriate choice, because it has been developed particularly for browsing and editing RDF data.  The designed software of the thesis is an extension of the VIVO framework. In order to provide the necessary information required to understand the problem and the solution of the thesis, this section covers some fundamental web application technologies and the main functionality and capabilities of VIVO framework.
 
 
 \subsection{Fundamentals} \label{fundamentals}
@@ -345,11 +344,11 @@ basicstyle=\footnotesize,frame=single]
 </#macro>
 \end{lstlisting}
 
-In the macro definition it can be seen that the url of the link contains the parameter \textit{id}, which is an additional information in the HTTP request. The idea is that the request is handled by a such server routine that substitutes the value of the parameter into a query, in order to get data about individuals. Then the returned page may contain additional link for further data entries. This is the fundamental method how web pages are used to discover data from databases.
+In the macro definition it can be seen that the url of the link contains the parameter \textit{id}, which is an additional information in the HTTP request. The idea is that the request is handled by such a server routine that substitutes the value of the parameter into a query, in order to get data about individuals. Then the returned page may contain additional link for further data entries. This is the fundamental method how web pages are used to discover data from databases.
 
 \subsubsection{Interactive web pages}
 
-The previous section showed the principles of how data can be browsed by means of web pages and links. In such static cases the HTML document was assembled completely by the server, and the links initiated the loading of whole new pages. Nevertheless it is often more efficient and leads to better user experience if the new content is added dynamically to the current web page. Such functionality can be achieved with JavaScript (JS), which is a scripting language run by the browser. The two most fundamental features of JS, that it is capable of storing data in variables and can modify the content of HTML elements of the pages. 
+The previous section showed the principles of how data can be browsed by means of web pages and links. In such static cases the HTML document was assembled completely by the server, and the links initiated the loading of whole new pages. Nevertheless it is often more efficient and leads to better user experience if the new content is added dynamically to the currently opened web page. Such functionality can be achieved with JavaScript (JS), which is a scripting language run by the web browser. The most fundamental features of JS, that it is capable of storing data in variables and can add, edit or remove HTML elements of the pages. 
 
 \img{\II}{js2.png}{Static and dynamic web pages}{js2}
 
@@ -370,7 +369,6 @@ basicstyle=\footnotesize,frame=single]
 	</html>
 \end{lstlisting}
 
-
 This simple JS code illustrates how it is possible to load new content to the HTML element. In the example the \textit{append} function sets the text of the div with id \textit{button}. The \textit{data} is a JS variable holding
 some text. The value variable can be either initialized by the server by the page assembly, or by AJAX calls. AJAX is an acronym for \textit{Asynchronous JavaScript and XML}. The AJAX is technology that allows JS to load data from the server asynchronously, which means that the request is initiated through JS routine, and response arrives as well to JS routine. The data by AJAX is mostly is JSON format. JSON stands for \textit{JavaScript Object Notation}, which is a standard data format. A JSON object consists of a set of key-value pairs, where the value can be any data, arrays or even further objects.
 
@@ -384,15 +382,27 @@ basicstyle=\footnotesize,frame=single]
 
 \subsection{VIVO framework} \label{vivo}
 
-
-VIVO is an open source web application framework, developed particularly for browsing and editing RDF data. VIVO utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt the pages to the ontology. It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset. This dataset is in RDF format too, and defines the way in which the data is displayed and edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without coding.
+VIVO's main feature that it utilizes that the data scheme in RDF is stored by means of triples as well, and it can adopt the pages to the ontology. It offers an ontology editor and there are particular features of the application that can be customized through a specific configuration dataset. This dataset is in RDF format too, and defines the way in which the data is displayed and edited on the web pages. VIVO allows to manipulate this configuration triples via the web interface, which enables the extension of the application to some extent conveniently without coding.
 
 VIVO maintains two basic type of pages. The first is for displaying the existing data, and one for creating and editing data. The former will be referred as profile page, because it shows the data related to one individual RDF instances, and the latter will be referred as entry form. 
 
-
 \subsubsection{Profile pages} \label{vivoPp}
 
-The task of the profile pages in VIVO, is to display all instances and literals that constitute to a triple with the instance, whose page has been called. These neighbor nodes are shown on the page grouped into the properties. Furthermore the properties are organized into so-called property groups. A property groups can be defined through the following set of configuration RDF triples. 
+
+The task of the profile pages in VIVO, is to display all instances and literals that constitute to a triple with the instance, whose page has been called. These neighbor nodes are shown on the page grouped into the properties. and the properties are organized into so-called property groups. Furthermore there is a concept in VIVO called faux property. The purpose of defining faux properties is to group the instance on the profile pages by range classes to make the data browsing more convenient. 
+
+\img{\II}{faux.png}{Faux properties on VIVO profile pages}{faux}
+
+\figref{faux} shows the layout of a VIVO profile page of a skeletal inventory, where the in the skeletal subdivision propery group the two faux properties (\textit{skull} and \textit{vertebral column}) can be seen. The instances (\textit{Skull} and \textit{Vertebral Column}) are both connected to the skeletal inventory with the \textit{rdfbones:hasSkeletalDivision} property, but as there two faux properties are defined for the classes \textit{fma:5018 "Skull"} and for \textit{fma}
+
+
+
+\img{\II}{vivoOnt.png}{Simplified VIVO ontology}{vivoOnt}
+
+
+
+
+ A property groups can be defined through the following set of configuration RDF triples. 
 
 \begin{lstlisting}[captionpos=b, caption=Property group definition, label=jsListing, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -412,7 +422,7 @@ This means if an applied ontology is extended with further properties then they 
 
 Other useful configuration possibility are offered by the so-called faux properties, which allow further grouping of RDF instances on the profile pages. They make possible to group instances based on their types even if they are connected to the main instance with the same property. Their definition lies in RDF triples as well, and for each one the base property, the range class and property group has to be set.
 
-\img{\II}{faux.png}{Faux properties on VIVO profile pages}{faux}
+
 
 
 \figref{faux} show a profile page of skeletal inventory. The blue entries represent the instances, and they are links to the profile pages of the individual skeletal subdivision. Both the \textit{Skull} and the \textit{Vertebral column} instances are connected to the skeletal inventory with the property \textit{rdfbones:hasSkeletalSubdivision}, but since two faux properties (\textit{skull} and \textit{vertebral column}) are defined, these instances appear separately on the profile page.
