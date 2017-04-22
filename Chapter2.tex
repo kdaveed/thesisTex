@@ -85,7 +85,7 @@ The previous two Listings contains the RDF triples defining an own vocabulary. T
 \img{\II}{vocabulary.png}{RDF/RDFS Vocabulary}{vocab}
 
 
-Furthermore there is an important modeling concept, the sub class. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
+Furthermore there is an important modeling concept, the subclas. To express this type of relationship there is property in RDFS, the \textit{rdfs:subClassOf}. So the following triples adds new information to the model.
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Sub class definition, label=lst:sparql,
 frame=single]
@@ -99,7 +99,7 @@ In order to provide a wider image from the RDF and RDFS vocabulary \figref{voc} 
 \img{\II}{rdf_vocab.png}{Class hierarchy of the RDF/RDFS vocabulary}{voc}
 
 
-On the left of \figref{voc} the class \textit{rdfs:Class} is depicted. It is class since it is the instance of itself. The same way \textit{rdfs:Resource} is class. Furthermore \textit{rdfs:Class} is the sub class of the \textit{rdfs:Resource}, from which it follows that an instance of any class is resource too. 
+On the left of \figref{voc} the class \textit{rdfs:Class} is depicted. It is class since it is the instance of itself. The same way \textit{rdfs:Resource} is class. Furthermore \textit{rdfs:Class} is the subclass of the \textit{rdfs:Resource}, from which it follows that an instance of any class is resource too. 
 
 The four grey ellipses (one contains two properties) represent the five most relevant properties in the RDF/RDFS vocabulary. Each of them are the instances of the class \textit{rdf:Property}, and for each the domain and the range classes are depicted.
 
@@ -118,7 +118,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 \img{\II}{15_owl_vocab.png}{A subset of OWL vocabulary}{owlVocab}
 
 
-OWL extends the \textit{rdf:Property} with two sub classes. The \textit{owl:ObjectProperty} is represent the properties whose range is a class, while the \textit{owl:DataTypeProperty} is for those properties where the range is XMLS type. Instead of depicting the range and domain of the particular properties in OWL, the following figure show the scheme of the two types of restrictions used in our project.
+OWL extends the \textit{rdf:Property} with two subclasses. The \textit{owl:ObjectProperty} is represent the properties whose range is a class, while the \textit{owl:DataTypeProperty} is for those properties where the range is XMLS type. Instead of depicting the range and domain of the particular properties in OWL, the following figure show the scheme of the two types of restrictions used in our project.
 
 \img{\II}{restrictionScheme.png}{Scheme of the restrictions}{restScheme}
 
@@ -212,13 +212,13 @@ WHERE {
 
 
 \newpage
-\section{Applied Ontologies} \label{22}
+\section{Ontologies} \label{22}
 
-Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to use existing ontologies rather than developing them by ourselves. The main reason for this lies in the fact that the ontology development is a time consuming and tedious process. Two ontologies are taken in the project, one for the human anatomy and one for biomedical investigations. 
+Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to use existing ontologies rather than developing them by ourselves. The main reason for this lies in the fact that the ontology development is a time consuming and tedious process. Two ontologies are taken in the project, one for the human anatomy and one for biomedical investigations. Above the these two, during the project a small ontology (called \textit{RDFBones}) is developed acts like a connector. Firstly the two applied ontologies will be discussed and lastly the \textit{RDFBones} ontology.
 
 \subsection{Ontology for the anatomy of the human body}  \label{fma}
 
-The ontology modeling the human body is called \textit{Foundational Model of Anatomy} (FMA). FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge-based applications. It contains more than 70 000 classes, and 168 different relationships \cite{Rosse2003478}. All kind of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only the skeletal system related subset of the FMA. The taken elements are the following two classes (and its subclasses) and three properties: 
+The ontology modeling the human body is called \textit{Foundational Model of Anatomy} (FMA). FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge-based applications. It contains more than 70 000 classes, and 168 different relationships \cite{Rosse2003478}. All kind of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only the skeletal system related subset of the FMA. The taken elements are the following classes (and its subclasses) and properties: 
 
 \begin{itemize}
 	\item{Classes}
@@ -229,8 +229,8 @@ The ontology modeling the human body is called \textit{Foundational Model of Ana
 \begin{itemize}
 	\item{Properties}
 		\subitem \textit{fma:systemic\_part\_of}
-		\subitem \textit{fma:constitutional\_part\_of}
 		\subitem \textit{fma:regional\_part\_of}
+		\subitem \textit{fma:constitutional\_part\_of}
 \end{itemize}
 
 The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belongs to a subclass of  the class \textit{Subdivision of skeletal system}. Moreover there are such skeletal subdivisions which are part of another skeletal subdivision. In both cases the relationship is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision, FMA contains \textit{owl:someValuesFrom} restrictions (Listing \ref{fmaOWL}).
@@ -238,13 +238,13 @@ The class \textit{Bone Organ} is the superclass of all bones in the human skelet
 \begin{lstlisting}[captionpos=b, caption=Rules of the skeletal system defined in OWL, label=fmaOWL, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 fma:BoneOrganX	rdfs:subClassOf [
-	rdf:type						owl:Restriction .
-	owl:onProperty			fma:systemic_part_of . 	
+	rdf:type						owl:Restriction ;
+	owl:onProperty			fma:systemic_part_of ;
 	owl:someValuesFrom	fma:SkeletalSubdivisionY .
 ]
 \end{lstlisting}
 
-These restrictions mean that a bone organ instance cannot stand on its own, but it has to be a systemic part of an appropriate skeletal subdivision instance. \figref{fma} shows the main structure of the applied subset of FMA by depicting the restrictions with red arrows, and property \textit{rdfs:subClassOf} with dotted arrows.
+These restrictions mean that a bone organ instance cannot stand on its own, but it has to be a systemic part of an appropriate skeletal subdivision instance. \figref{fma} shows the main structure of the applied subset of FMA by depicting the restrictions with red arrows, and the subclass relationships with dashed arrows.
 
 \img{\II}{fma.png}{Ontology structure for the human skeleton}{fma}
 
@@ -252,13 +252,13 @@ Finally, the advantage of using the FMA ontology is that, if in the future furth
 
 \subsection{Ontology for Biomedical Investigations (OBI)} \label{obi}
 
-The aim of the OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it is continuously evolving as new research methods are being developed. Its main function is to define the rules how biological and medical investigations have to be performed. OBI reuses terms from the  \textit{Basic Formal Ontology} (bfo), from the \textit{Information Artifact Ontology} (iao) and from the \textit{Open Biological and Biomedical Ontologies} (obo) \cite{10.1371/journal.pone.0154556}. The most important classes and properties adopted by the \textit{RDFBones} project are the following ones:
+The aim of the OBI ontology, is to provide formal representation of the biomedical investigations in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it is continuously evolving as new research methods are being developed. Its main function is to provide a vocabulary that allows the definition of the rules regarding how biological and medical investigations have to be performed. OBI reuses terms from the  \textit{Basic Formal Ontology} (bfo), from the \textit{Information Artifact Ontology} (iao) and from the \textit{Open Biological and Biomedical Ontologies} (obo) \cite{10.1371/journal.pone.0154556}. The most important classes and properties adopted by the \textit{RDFBones} project are the following ones:
 
 \begin{itemize}
 	\item{Classes}
 	\subitem  \textit{Investigation} - obo:0000015
 	\subitem  \textit{Process} - bfo:0000015
-	\subitem  \textit{Material Entity} - bfo:0000040
+	\subitem  \textit{Entity} - bfo:0000001
 	\subitem  \textit{Information Content Entity} - iao:0000030
 	\item{Properties}
 	\subitem  \textit{has part} - bfo:00000051
@@ -266,14 +266,27 @@ The aim of the OBI ontology, is to provide the formal representation of the biom
 	\subitem  \textit{has specified output} - obi:00000299
 \end{itemize}
 
-
-In contrast with FMA, in OBI the subclasses of the applied main classes and restrictions for anthropological investigations are not given. The idea of \textit{RDFBones} project is to define custom investigations by defining subclasses of the above mentioned classes, and restriction on the properties. These further ontological statements are called extensions. The following image illustrates an example ontology extensions for an investigation (the notation is the same like on \figref{fma}, just the restriction are defined on the OBI properties). 
+Above these classes several other classes have been taken, but they are sufficient to discuss the essence of ontological definition of investigations. The idea of \textit{RDFBones} project is to define custom investigations by defining subclasses of the above mentioned classes, and restriction on the properties, the same way like FMA describes the human skeleton. These further ontological statements are called extensions. The following image illustrates an example ontology extension for an investigation (the notation is the same like on \figref{fma}, just the restrictions are defined on the OBI properties). 
 
 \img{\II}{obi.png}{Extending OBI ontology}{obi}
 
-It can be seen that the investigation may contain several processes (\textit{has part} predicate), and each process has various inputs and an output. In our case the material entities are segments of bone organs but they could be any kind of material. During a particular process, an entity is studied and the result of the study is an in information content entity instance, which represents some measurement value. The provided scheme is just an illustrative example, the modeling of the investigation in reality is more complex, and will be discussed in a more detail in Chapter 4.
+It can be seen that the investigation contains two processes (\textit{has part} predicate), and each process has various inputs and an output. In our case input entities are segments of bone organs but they could be any kind of material. During a particular process the input entities are studied, and the result of the study is an in information content entity instance, which represents some measurement value. The provided scheme is just an illustrative example and the modeling of an investigation in reality is more complex and involves more OBI classes. They will be discussed in a bit more detail in Chapter 4.
 
-The conclusion is that with these classes and properties, OBO offers a powerful vocabulary for defining custom investigations. The advantage of such ontological description is that everything is stored by means of RDF triples, and therefore it is possible to develop software application that generate user interfaces by querying these extensions.
+The conclusion is that with these classes and properties, OBI offers a powerful vocabulary for defining custom investigations. The advantage of such ontological description is that everything is stored by means of RDF triples, and therefore it is possible to develop software applications which generates user interfaces based on the results of SPARQL queries performed on the extensions. From this follows that these formal definition do not acts like data model but as software specification as well.
+
+\subsection{RDFBones ontology}
+
+
+\textit{RDFBones} ontology is an extension of the OBI ontology. It has its own namespace (the empty string a valid prefix too): 
+
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=RDFBones namespace, label=lst:sparql, belowskip=1em, aboveskip=2em,
+frame=single]
+PREFIX : <http://w3id.org/rdfbones/core#>
+\end{lstlisting}
+
+\figref{rdfbones} shows the four most important classes (blue ones) as subclasses of further OBI classes using the above defined prefix. On the left, there is class \textit{:SkeletalInventory}, whose purpose is to incorporate the set of existing bones in a skeletal collection. The \textit{Completeness2States} and \textit{Completeness2StatesLabel} classes are used to represent if a bone segment is complete or just partly present. The \textit{:SegmentOfSkeletalElement} is the subclass of \textit{bfo:0000020}, which is the subclass of the previously mentioned \textit{Entity} class. With this class for bone segments, \textit{RDFBones} makes possible the definition of custom segments of particular bone organs, in order to allow more fine grained modeling of the research activity. It is again a sort of ontology extension, thus the definition has to be done by means of custom subclasses and restrictions. The property that expresses the relationship between bone organs and bone segments is the \textit{fma:regional\_part\_of}. Also this is the property that connects the RDFBones and thus the OBI to the FMA.
+
+\img{\II}{rdfbones.png}{Extending OBI ontology}{rdfbones}
 
 
 \section{Web applications}
