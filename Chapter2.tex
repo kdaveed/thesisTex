@@ -214,12 +214,11 @@ WHERE {
 \newpage
 \section{Applied Ontologies} \label{22}
 
-Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to used already defined 
-ontologies rather developing an own. The first reason is, that the development of an ontology is a complex and a tedious process, and requires a lot of resource. Secondly, it is reasonable to use standardized vocabularies, in order to make data from same domain but different sources inter-operable.
+Ontologies are used to describe types, relationships and properties of objects of a certain domain. It is a common practice to use already defined ontologies rather than developing them by ourselves. The main reason for this lies in the fact that the ontology development is a time consuming and tedious process. Two ontologies are taken in the project, one for the human anatomy and one for biomedical investigations. 
 
-\subsection{Foundational Model of Anatomy - \textit{FMA}}  \label{fma}
+\subsection{Ontology for the anatomy of the human body}  \label{fma}
 
-The foundational Model of Anatomy ontology is an open source ontology written in OWL. FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge based applications. It contains more than 70 000 classes, and 168 different relationships, and organize its entities into a deep subclass tree \cite{Rosse2003478}. All types of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only the subset of the FMA. The taken elements are the subclasses of the following two classes and the three properties: 
+The applied ontology modeling the human body is called \textit{Foundational Model of Anatomy} (FMA). FMA is a fundamental knowledge source for all biomedical domains, and it provides a declarative definition of concepts and relationships of the human body for knowledge-based applications. It contains more than 70 000 classes, and 168 different relationships \cite{Rosse2003478}. All kind of anatomical entities are represented in FMA, like molecules, cells, tissues, muscles and of course bones. In our project we use only a subset of the FMA. The taken elements are the subclasses of the following two classes and the three properties: 
 
 \begin{itemize}
 	\item{Classes}
@@ -234,40 +233,40 @@ The foundational Model of Anatomy ontology is an open source ontology written in
 		\subitem \textit{fma:regional\_part\_of}
 \end{itemize}
 
-The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belong to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses OWL restrictions (see \figref{fma1}). The properties \textit{fma:constitutional\_part\_of} and \textit{fma:regional\_part\_of} \textit{fma:constitutional\_part\_of} are discussed later.
+The class \textit{Bone Organ} is the superclass of all bones in the human skeleton. Each bone belongs to a skeletal subdivision and a skeletal subdivision can be a part of another skeletal subdivision. This relationship in both cases is expressed by the property \textit{fma:systemic\_part\_of}. To define which bone organ belongs to which skeletal subdivision FMA uses \textit{owl:someValuesFrom} restrictions. \figref{fma} shows the main structure of FMA by depicting the restrcitions on the property \textit{fma:systemic\_part\_of} with red arrows. These restrictions mean that if a bone organ instance have created, then there must be it skeletal subdivision instance, to that it belongs. 
 
-\img{\III}{1ontologyStructure.png}{Ontology structure for skeleton}{fma1}
+\img{\II}{fma.png}{Ontology structure for skeleton}{fma}
 
-Finally the advantage of using the FMA ontology is that, if in the future further elements of the human body have to be addressed by the research processes, i.e. muscles, then these classes can be easily integrated to the currently applied subset.
+Finally, the advantage of using the FMA ontology is that, if in the future further elements of the human body have to be addressed by the research processes, i.e. muscles, then these classes can be easily integrated to the currently applied subset.
+
 
 \subsection{Ontology for Biomedical Investigations - \textit{OBI}} \label{obi}
 
 
-The aim of OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it continuously evolving as new research methods are being developed. Its main function to describe the rules how biological and medical investigations have to be performed. OBI reuses terms from BFO \textit{Basic Formal Ontology} IAO \textit{Information Artifact Ontology} and  OBO \textit{Open Biological and Biomedical Ontologies} \cite{10.1371/journal.pone.0154556}. To define processes OBI uses the following three general classes:
+The aim of OBI ontology, is to provide the formal representation of the biomedical investigation in order to standardize the processes among different research communities. It is a result of a collaborative effort of several working groups, and it continuously evolving as new research methods are being developed. Its main function to describe the rules how biological and medical investigations have to be performed. OBI reuses terms from \textit{Basic Formal Ontology} (bfo), \textit{Information Artifact Ontology} (iao)  and  \textit{Open Biological and Biomedical Ontologies} (obo) \cite{10.1371/journal.pone.0154556}. The most important four classes and three properties adopted by the \textit{RDFBones} project:
 
 \begin{itemize}
-	\item  \textit{Information Content Entity} - obo:IAO\_0000030
-	\item  \textit{Material Entity} - obo:BFO\_0000040
-	\item  \textit{Process} - obo:BFO\_0000015
-\end{itemize}
-
-Information Content Entity represent results of a specific measurement, while Material Entity stands for the objects, on which the meausurements have been performed. 
-The Process could mean any kind of step within an investigation, from the planning, through execution till the conclusion.
-
-\begin{itemize}
-	\item  \textit{Planning} - obo:OBI\_0000339
-	\item  \textit{Study Design Execution} - obo:OBI\_0000471
-	\item  \textit{Drawing a conclusion} - obo:OBI\_0000338
+	\item{Classes}
+	\subitem  \textit{Investigation} - obo:0000015
+	\subitem  \textit{Process} - bfo:0000015
+	\subitem  \textit{Material Entity} - bfo:0000040
+	\subitem  \textit{Information Content Entity} - iao:0000030
+	\item{Properties}
+	\subitem  \textit{has part} - bfo:00000051
+	\subitem  \textit{has specified input} - obi:00000293
+	\subitem  \textit{has specified output} - obi:00000299
 \end{itemize}
 
 
-In our project the following three properties are used:
+The idea is to define anthropological investigation in formal way by means of subclasses of these four classes, and OWL restriction on the three properties. This definition contains what entities are involved in certain  and how are they related to each other. The following image illustrates the scheme of data representing investigations (the notation is the same like in \figref{fma}, just the restriction are defined on the OBI properties). 
 
-\begin{itemize}
-	\item  \textit{has part} - obo:BFO\_00000051
-	\item  \textit{has specified input} - obo:OBI\_00000293
-	\item  \textit{has specified output} - obo:OBI\_00000299
-\end{itemize}
+
+\img{\II}{obi.png}{Ontolgy extensions for custom investigations}{obi}
+
+
+It can be seen that an investigation may contain several processes (\textit{has part} predicate) and each process has various inputs and an output. In our case the material entities are segments of bone organs but they could be any kind of material. During a particular process, an entity is studied and the result of the study is represented in information content entity instance.
+
+With these classes and properties OBO offers a general but powerful vocabulary for defining custom investigations. The advantage of this ontological definition that everything is stored by measn of RDF triples, and therefore it is possible to develop software application that generate user interfaces by querying the extensions.
 
 
 \section{Web applications}
