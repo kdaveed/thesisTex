@@ -12,14 +12,14 @@
 \contentsline {subsection}{\numberline {2.1.2}RDF and RDFS Vocabularies}{5}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}OWL}{7}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}SPARQL}{9}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Ontologies}{11}{section.2.2}
+\contentsline {section}{\numberline {2.2}Ontologies}{12}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Ontology for the anatomy of the human body}{12}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations (OBI)}{13}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}RDFBones ontology}{15}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Web applications}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Fundamentals}{16}{subsection.2.3.1}
 \contentsline {subsubsection}{Client-sever architecture}{16}{section*.6}
-\contentsline {subsubsection}{Data driven web applications}{17}{section*.7}
+\contentsline {subsubsection}{Data driven web applications}{18}{section*.7}
 \contentsline {subsubsection}{Interactive web pages}{19}{section*.8}
 \contentsline {subsection}{\numberline {2.3.2}VIVO framework}{21}{subsection.2.3.2}
 \contentsline {subsubsection}{Profile pages}{21}{section*.9}

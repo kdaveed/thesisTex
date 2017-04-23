@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 APR 2017 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 APR 2017 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -754,19 +754,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfData.png>]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 34.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 32.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 34.
-
-Overfull \hbox (8.04897pt too wide) in paragraph at lines 49--50
-[]\T1/cmr/m/n/10.95 The prop-erty \T1/cmr/m/it/10.95 rdf:type \T1/cmr/m/n/10.95
- ex-presses the \T1/cmr/m/it/10.95 in-stanceOf \T1/cmr/m/n/10.95 re-la-tion-shi
-p, while \T1/cmr/m/it/10.95 rdfs:label
- []
+(Font)              scaled to size 7.65005pt on input line 32.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -776,13 +770,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [5]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdf_vocab.png, id=41
-7, 1393.205pt x 658.46pt>
+4, 1393.205pt x 658.46pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdf_vocab.png G
 raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdf_vocab.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/rdf_vocab.png used on input line 89.
+ies/rdf_vocab.png used on input line 83.
 (pdftex.def)             Requested size: 360.0pt x 170.1406pt.
 
 
@@ -803,20 +797,20 @@ g Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/15_owl_vocab.png
 >
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/15_owl_vocab.png used on input line 111.
+ies/15_owl_vocab.png used on input line 101.
 (pdftex.def)             Requested size: 360.0pt x 125.3486pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (10.49493pt too wide) in paragraph at lines 114--115
+Overfull \hbox (10.49493pt too wide) in paragraph at lines 104--105
 []\T1/cmr/m/n/10.95 OWL ex-tends the \T1/cmr/m/it/10.95 rdf:Property \T1/cmr/m/
 n/10.95 with two sub-classes. The \T1/cmr/m/it/10.95 owl:ObjectProperty
  []
 
 
-Overfull \hbox (17.27061pt too wide) in paragraph at lines 114--115
+Overfull \hbox (17.27061pt too wide) in paragraph at lines 104--105
 \T1/cmr/m/n/10.95 is rep-re-sent the prop-er-ties whose range is a class, while
  the \T1/cmr/m/it/10.95 owl:DataTypeProperty
  []
@@ -830,7 +824,7 @@ me.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/restrictionSchem
 e.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/restrictionScheme.png used on input line 116.
+ies/restrictionScheme.png used on input line 106.
 (pdftex.def)             Requested size: 360.0pt x 93.48183pt.
 
 
@@ -850,7 +844,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/ontExt1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/ontExt1.png used on input line 122.
+ies/ontExt1.png used on input line 112.
 (pdftex.def)             Requested size: 360.0pt x 119.79681pt.
 
 
@@ -879,7 +873,7 @@ Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/sparqlData.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/sparqlData.png used on input line 163.
+ies/sparqlData.png used on input line 153.
 (pdftex.def)             Requested size: 360.0pt x 96.14992pt.
 
 
@@ -896,13 +890,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 216.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 206.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 216.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 206.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
@@ -914,14 +908,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fma.png, id=518, 141
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fma.png, id=517, 141
 6.29124pt x 425.59pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fma.png Graphic
  file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fma.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/fma.png used on input line 241.
+ies/fma.png used on input line 231.
 (pdftex.def)             Requested size: 360.0pt x 108.17657pt.
 
 
@@ -938,8 +932,11 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/obi.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/obi.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/obi.png used on input line 263.
+ies/obi.png used on input line 253.
 (pdftex.def)             Requested size: 360.0pt x 113.69443pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -947,24 +944,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/obi.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfbones.png, id=540
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/obi.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfbones.png, id=546
 , 1286.8075pt x 381.425pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfbones.png Gr
 aphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/rdfbones.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/rdfbones.png used on input line 280.
+ies/rdfbones.png used on input line 270.
 (pdftex.def)             Requested size: 360.0pt x 106.70514pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[15]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -980,7 +977,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/1_client_server.
 png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/1_client_server.png used on input line 294.
+ies/1_client_server.png used on input line 284.
 (pdftex.def)             Requested size: 360.0pt x 65.6591pt.
 
 
@@ -1005,11 +1002,8 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/js2.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/js2.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/js2.png used on input line 346.
+ies/js2.png used on input line 336.
 (pdftex.def)             Requested size: 360.0pt x 91.88411pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1025,15 +1019,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [20 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/js2.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png, id=610, 14
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png, id=609, 14
 88.56125pt x 502.87875pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png Graphi
 c file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/faux.png used on input line 384.
+ies/faux.png used on input line 374.
 (pdftex.def)             Requested size: 360.0pt x 121.61415pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1041,15 +1038,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png, id=622,
+[21]
+</Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png, id=621,
  1447.4075pt x 435.6275pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png Gra
 phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/fauxRDF.png used on input line 388.
+ies/fauxRDF.png used on input line 378.
 (pdftex.def)             Requested size: 360.0pt x 108.34824pt.
 
 
@@ -1058,7 +1055,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png>]
+[22 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/faux.png> </User
+s/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/fauxRDF.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/entryForm.png, id=62
 9, 1309.89375pt x 437.635pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/entryForm.png G
@@ -1066,7 +1064,7 @@ raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminaries/entryForm.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/2_Preliminar
-ies/entryForm.png used on input line 402.
+ies/entryForm.png used on input line 392.
 (pdftex.def)             Requested size: 360.0pt x 120.2732pt.
 
 
@@ -1821,7 +1819,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (79 pages, 2490054 bytes).
+Output written on Thesis.pdf (79 pages, 2490031 bytes).
 PDF statistics:
  1217 PDF objects out of 1440 (max. 8388607)
  1014 compressed objects within 11 object streams
