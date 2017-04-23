@@ -271,7 +271,7 @@ Above these classes several other classes have been taken, but they are sufficie
 
 It can be seen that the investigation contains two processes (\textit{has part} predicate), and each process has various inputs and an output. In our case input entities are segments of bone organs but they could be any kind of material. During a particular process the input entities are studied, and the result of the study is an in information content entity instance, which represents some measurement value. The provided scheme is just an illustrative example and the modeling of an investigation in reality is more complex and involves more OBI classes. They will be discussed in a bit more detail in Chapter 4.
 
-The conclusion is that with these classes and properties, OBI offers a powerful vocabulary for defining custom investigations. The advantage of such ontological description is that everything is stored by means of RDF triples, and therefore it is possible to develop software applications which generates user interfaces based on the results of SPARQL queries performed on the extensions. From this follows that these formal definition do not acts like data model but as software specification as well.
+The conclusion is that with these classes and properties, OBI offers a powerful vocabulary for defining custom investigations. The advantage of such ontological description is that everything is stored by means of RDF triples, and therefore it is possible to develop software applications which generates user interfaces based on the results of SPARQL queries performed on the extensions. From this follows that these formal do not acts just for data model but can be considered as software specification as well.
 
 \subsection{RDFBones ontology}
 
@@ -399,8 +399,6 @@ As it was mentioned VIVO allows some RDF data based interface configuration. \fi
 
 \img{\II}{fauxRDF.png}{Faux property descriptor RDF dataset}{fauxRDF}
 
-\subsubsection{Custom entry forms} \label{vivoCef}
-
 Important part of the application is the creation of new RDF data. On \figref{faux} next to the property field, a button with a + sign can be seen, which is link to a data entry form page. The peculiarity of VIVO that from each property field, the request arrives to the same handler routine on the server. These requests have always three parameters (VIVO uses in its parameter names URI instead of IRI, which is an abbreviation for Unified Resource Identifier, but it does not make a difference):
 
 \begin{itemize}
@@ -408,6 +406,10 @@ Important part of the application is the creation of new RDF data. On \figref{fa
 	\item{ \textit{predicateUri}} -  is the IRI of the property (can be a faux property)
 	\item{ \textit{rangeUri}} - IRI of the range class of the property
 \end{itemize}
+
+\subsubsection{Custom entry forms} \label{vivoCef}
+
+
 
 By default VIVO redirects the user to such an entry form where only one instance or literal can be added with the type defined in the \textit{rangeUri} parameter. However it is possible to define conveniently custom forms for more complex datasets by means of so-called custom entry forms.
 
