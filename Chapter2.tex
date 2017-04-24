@@ -151,7 +151,7 @@ WHERE {
 }
 \end{lstlisting}
 
-Executed on the same dataset, this query returns only the instance \textit{domain:1}, because \textit{domain:3} does not have a label, thus there is no matching RDF node for variable \textit{?label}. This means that the triples in a triple pattern are in \textit{AND} relationship. But there is the keyword \textit{OPTIONAL}, that allows the definition of sub triple patterns, which are not required in the RDF dataset. So if the triple with the label variable is in the OPTIONAL sub pattern then the query II. returns \textit{domain:3} instance as well, so that the variable for the label will be empty.
+Executed on the same dataset, this query returns only the instance \textit{domain:1}, because \textit{domain:3} does not have a label, thus there is no matching RDF node for variable \textit{?label}. This means that the triples in a triple pattern are in \textit{AND} relationship. But there is the keyword \textit{OPTIONAL}, that allows the definition of sub triple patterns, which are not required in the RDF dataset. So if the triple with the label variable is in the OPTIONAL sub pattern, then the query II. returns \textit{domain:3} instance as well, so that the variable for the label will be empty.
 
 \begin{lstlisting}[captionpos=b, caption=Optional sub triple pattern., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
