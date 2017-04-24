@@ -8,7 +8,54 @@ The master thesis is written in the frame of the project called \textit{RDFBones
 
 \section{Goal of the thesis}
 
-Creating data by web applications happens so through web pages. In our cases the user interface does not consist only of static data input fields (i.e textarea, checkbox), but dynamic elements for more complex cases. Through the user interaction with page a particular dataset is created, and it is sent to server where it is processed and stored in a database. This means within a web application there are two individual software agents communicating with each other. The idea of the thesis is to design a data model that is capable of expressing layout of the web user interface, and as well as the scheme of the dataset that has to be created, and develop general purpose application library both for the client and the server side, that operates based this high-level definition. By means of this approach, it is achieved that the various use-cases can be solved by creating a descriptor dataset of designed data model. The implemented software is integrated into the applied open-source RDF data based web application framework called VIVO.
+The basics of data input through web applications, is the web pages which offers a set of input fields (i.e textarea, checkbox), which allows the user to set attributes of an entity that has to be created. However in more complex cases, the entities consists further subcomponent, for those some attributes have to be added. To achieve this dynamic forms have to be developed that let the user add sub forms dynamically. The idea of the thesis is to model input forms in high level way, so that the subcomponents. The utility of the implemented framework that it can ask the web interface generator about the 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+which may have some hierarchical structure. To achieve this web interface has to allow the creation of dynamic element. In our case the definition of the problems lies in ontological defintion and not hard code. The idea of the thesis is to design a data model the allows to describe the scheme of forms, 
+
+
+Creating data about any kind of  web applications happens by input forms, which contains input fields i.e textarea or checkbox for setting various attributes of the entities.
+
+
+ But in our cases through one input form multiple entities have to be added, which means in term of the interface dynamic fields. The number and type of these subfields are however dependent on the underlying descriptor ontology extension. This means the web application forms has to run an application that exchanges data with the server. The submitted data has to be processed and stored after the submission. 
+
+The idea of the thesis is model the web input form on high level, which describes allows to describe the scheme of the particular dataset created through the form, how the data is mapped to the interface. The goal is to abstract how the data is created.
+
+
+
+
+
+ 
+ 
+ However in more complex cases the web pages have to contains some dynamic elements if the page has to allow the creation of more complex entities, which encompasses subcomponents and steps, the application has to offer dynamic fields. The goal of the thesis is to allow the definition of the web input fields for various problems by the defining the scheme of the interface which corresponds to the scheme of the data input fields.
+
+
+
+
+
+Web pages for creating more complex dataset do not consist only of static data input fields (i.e textarea, checkbox), but dynamic elements, whose values are dependent on the ontology extensions. Through the user interaction with page a particular dataset is created, and it is sent to server where it is processed and stored in a database. This means the in web application on the client and the server two individual programs that are continuously exchanging data. The idea is of the thesis is to solve the problems on a high, level by allowing the concentration only on the scheme of the data that has 
+
+
+ 
+
+
+The first part of the thesis is to design a data model, which allows the expression of different 
+
+ of expressing layout of the web user interface, and as well as the scheme of the dataset that has to be created. The second is to develop an application engine both for the client and the server-side that is is  
+ 
+  and develop general purpose application library both for the client and the server side, that operates based this high-level definition. By means of this approach, it is achieved that the various use-cases can be solved by creating a descriptor dataset of designed data model.
 
 \section{Thesis outline}
 
