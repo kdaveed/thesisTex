@@ -5,17 +5,22 @@
 \section{RDFBones Project}
 
 The master thesis is written in the frame of the project called \textit{RDFBones}. The project is conducted by the Biological Anthropology department of the \textit{Universitätsklinikum Freiburg}, and funded by the \textit{Deutsche Forschung Gemeinschaft} (DFG). 
-The goal of the project is to develop a data standard and web application to document research activity related to biological anthropology. Withing the project RDF data model is used, it has the advantage against relational data model that it is easier to extend. The idea is to develop a core ontology, which describes scheme of the investigations generally, and define so-called ontology extensions that describes the particular case. The task of the web application is adopt the web user interface to the extensions. In this way the developed system is applicable for various investigations. \cite{infrastructure}
+The goal of the project is to develop a data standard and web application to document research activity related to biological anthropology. Withing the project RDF data model is used, it has the advantage against relational data model that it is easier to extend. The idea is to develop a core ontology, which describes scheme of the investigations generally, and define so-called ontology extensions that describes the particular cases. The task of the web application is adopt the web user interface to the extensions. In this way the developed system is applicable for various investigations. \cite{infrastructure}
 
 \section{Goal of the thesis}
 
+Creating data through web applications happens that the user  with the client application, which sent and the data is sent to the server application. The goal of the thesis is to design a data model that is capable of expressing the scheme of the data that has to be created in particular case, and as well the elements of web page. Then the application framework both on the client and server would be capable of operationg on the data instaces of this descriptor data model. This way it can be achieved that the application is programmed for various data input problems without writing application code. 
 
+During the project an open-source web application framework called VIVO is used. The implemented software is integrated into VIVO.
 
 \section{Thesis outline}
 
-The second chapter contains the background information, that is necessary to understand the problem the thesis aims to solve. The first two subsection handles the RDF data model and the ontologies applied in the project, while the third section is about the basics of the web applications.
+The second chapter contains the background information, that is necessary to understand the problem the thesis aims to solve. The first two subsection handles the RDF data model and the ontologies applied in the project, while the third section is about the basics of the web applications. 
 
 The third chapter presents the problem statement. The first section discusses the scheme of the data that has to be created to document anthropological research, while the second section show what does it mean in terms of the web application programming. 
+
+The fourth chapter presents the elements of designed data model, and shows how they can be used to solve data input problems, through the use-cases of use-cases of the \textit{RDFBones} project. 
+
 
 The fourth and the fifth chapter are describing the proposed solution for the problem. The fourth chapter outlines the higher-level modeling of the application, and fifth in turn describes the how the implemented framework can operate upon the declarative definition.
 
