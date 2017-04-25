@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 APR 2017 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 APR 2017 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,15 +710,10 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-Overfull \hbox (7.5831pt too wide) in paragraph at lines 7--8
-\T1/cmr/m/it/10.95 Uni-ver-sität-sklinikum Freiburg\T1/cmr/m/n/10.95 , and fund
-ed by the \T1/cmr/m/it/10.95 Deutsche Forschung Gemein-
- []
+) [1
 
-[1
-
-]) (./Chapter2.tex
+])
+(./Chapter2.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1804,7 +1799,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (79 pages, 2426862 bytes).
+Output written on Thesis.pdf (79 pages, 2426305 bytes).
 PDF statistics:
  1213 PDF objects out of 1440 (max. 8388607)
  1012 compressed objects within 11 object streams
