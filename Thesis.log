@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 MAY 2017 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 MAY 2017 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1070,7 +1070,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [25]
 Chapter 3.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps1.png, id=671,
+</Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps1.png, id=672,
  1522.68875pt x 637.38126pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps1.png Gra
 phic file (type png)
@@ -1093,7 +1093,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/ps2.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/ps2.png used on input line 15.
+atement/ps2.png used on input line 13.
 (pdftex.def)             Requested size: 360.0pt x 198.9856pt.
 
 
@@ -1119,7 +1119,7 @@ ng Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBones1.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/rdfBones1.png used on input line 44.
+atement/rdfBones1.png used on input line 42.
 (pdftex.def)             Requested size: 360.0pt x 85.42845pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBones2.png, i
@@ -1130,7 +1130,7 @@ ng Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/rdfBones2.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/rdfBones2.png used on input line 46.
+atement/rdfBones2.png used on input line 44.
 (pdftex.def)             Requested size: 360.0pt x 149.51183pt.
 
 
@@ -1160,7 +1160,7 @@ ng Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/solScheme.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/solScheme.png used on input line 57.
+atement/solScheme.png used on input line 55.
 (pdftex.def)             Requested size: 360.0pt x 77.02362pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/332_1.png, id=72
@@ -1170,7 +1170,7 @@ raphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_Statement/332_1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/3_Problem_St
-atement/332_1.png used on input line 64.
+atement/332_1.png used on input line 62.
 (pdftex.def)             Requested size: 360.0pt x 121.97241pt.
 )
 (./Chapter4.tex
@@ -1839,7 +1839,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (80 pages, 2519638 bytes).
+Output written on Thesis.pdf (80 pages, 2519518 bytes).
 PDF statistics:
  1236 PDF objects out of 1440 (max. 8388607)
  1030 compressed objects within 11 object streams

@@ -1,14 +1,12 @@
 \chapter{Problem Statement}
 
-The first section discusses the problem general way by addressing the requirements on the software both for the client and the server side for more elaborate data input processes. The second section in turn refers to the use-cases of the \textit{RDFBones} project and to the limitations of VIVO by their implementation. Finally, the third part introduces the main elements the descriptor logic which allows the declarative definition of the mentioned cases.
+The first section discusses the problem general way by addressing the requirements on the software both for the client and the server side for more elaborate data input processes. The second section in turn refers to the use-cases of the \textit{RDFBones} project and to the limitations of VIVO by their implementation. Finally, the third part introduces the main elements the descriptor logic and gives and insight into the functionality of the developed framework. 
 
 \section{Multi level data input}
 
-In the previous chapter it has been discussed how can we implement simple data input forms within the VIVO framework. The simplicity of the illustrated problem lied in that the number of instances which were created through the process was constant, in particular one, and only their types and literal attributes were set by the user through HTML input elements. 
+In the previous chapter it has been discussed how can we implement simple data input forms within the VIVO framework. The simplicity of the illustrated problem lied in that the number of instances which were created through the process was constant, in particular one, and only a set of literal attributes were set by the user through HTML input elements. Nevertheless there are more complex entities consisting of several sub parts, where these sub parts are represented in the ontology with further classes. Consequently the RDF dataset for such entities incorporates multiple instances organized into a tree structure. \figref{ps1} shows and example ontology and an RDF dataset. The classes (ellipses) without notation are subclasses of the three main classes and their names are not relevant.
 
 \img{\III}{ps1.png}{Ontology and RDF triples for complex entities}{ps1}
-
-Nevertheless there are more complex entities consisting of several sub parts, where these sub parts are represented in the ontology with further classes. Such as a skeletal subdivision consists of bone organs, or a study design execution consists of assays, which consist of input bones and output data. Consequently the RDF dataset for such entities incorporates multiple instances organized into a tree structure. \figref{ps1} shows and example ontology and an RDF dataset. The classes (ellipses) without notation are subclasses of the three main classes and their names are not relevant.
 
 Such dataset poses the requirement for the input form, that the user has to be offered such interface elements which enable to add the components and subcomponents step by step. Adding a component means in terms of the form that a new sub form appears which contains further input fields for the component instance.
 
