@@ -1,5 +1,6 @@
 \chapter{Problem Statement}
 
+The first section discusses the problem general way by addressing the requirements on the software both for the client and the server side for more elaborate data input processes. The second section in turn refers to the use-cases of the \textit{RDFBones} project and to the limitations of VIVO by their implementation. Finally, the third part introduces the main elements the descriptor logic which allows the declarative definition of the mentioned cases.
 
 \section{Multi level data input}
 
@@ -36,21 +37,29 @@ Finally important part of problem is the editing of the data. The first step by 
 
 This section gave an insight into challenges of the multi level data input. The emphasis lied on that these problem require more complex form functionality and server algorithm. For such cases unfortunately VIVO does not provide any libraries or possibility for some declarative definition, thus these advanced forms has to be implemented almost from scratch, and poorly documented parts of the source code have to be understood.
 
+\section{RDFBones use-cases in VIVO}
+
+During the project two use-cases and their solutions are discussed. We have seen in the previous chapter is the data input process definition for various cases happens through the data definition of RDF triples with variable (graph pattern) and the the form layout. \figref{rdfBones1} and \figref{rdfBones2} illustrates the graph pattern and multi level form layout of the two most important cases. The yellow rectangles denotes the main nodes of the dataset. 
+
+\img{\III}{rdfBones1.png}{Skeletal remain graph pattern and	form layout}{rdfBones1}
+
+\img{\III}{rdfBones2.png}{Investigation graph pattern and form layout}{rdfBones2}
+
+It can be seen that the graph consists of classes (ellipses) and instances (rectangles). The problem is that it would be necessary to define custom JavaScript routines for each cases, which adds the sub forms and handles the dependency between the particular selector fields. Moreover VIVO cannot process the multi level JSON object coming from the client after the submission base on this single triple pattern in string. Furthermore the individual variables in the triple pattern do not appear only once in the result dataset, thus their value cannot be defined with SPARQL a single queries.
+
+
 \section{Solution scheme}
 
-The aim of the thesis is to develop a web application framework that allows the definition of the data input processes on high-level declarative way. This means that the application development, which normally incorporates coding in HTML, JavaScript and Java, is reduced to the creation of simple descriptor dataset defining the form layout and the RDF dataset that has to be created.
+In VIVO the data input problems were solved with the instantiation of a set of fields of a certain Java class, based on which the generic algorithm creates and retrieves the data. The idea of the thesis is to design a vocabulary, which is a set of Java classes and field, that allows the expression of multi level problems in a compact way, an write the libraries both for the client and the server side that is capable of operating on the configuration data. The implementation of the different cases, would be not just the setting of field of a certain Java class but the instantiation of this objects. 
 
-The first task is to design a vocabulary that models the whole data input process. This vocabulary is the scheme of the descriptor dataset. The vocabulary, like an ontology contains the classes representing the entities of the problem domain, and their relationships and attributes.
+In the triple pattern definition the most fundamental improvement is that it is not stored as a string but as a set of different types of triple. First of all it is inevitable to let the framework know that some sub graph of the graph pattern may appear in multiple times in the resulting dataset, because the submission handler routine has to be prepared that a set of variables do not come as single values but an in array. For this purpose there is the element of the vocabulary called \textit{MultiTriple}. Moreover we have seen that there are various dependencies form elements, which are referring to restrictions classes in the ontology. As the restrictions can be considered as triple connects two classes with a property, this it can be expressed, with a triple the same way, and it is called \textit{RestrictionTriple}. \figref{solutionScheme} depicts the extended graph pattern definition, where the restriction triple are depicted with red arrow, and the multi triple with double line arrow.
 
-\img{\III}{dl.png}{Classes and relationships of the vocabulary}{ss1}
+\img{\III}{solScheme.png}{Extended RDF graph pattern definition}{solutionScheme}
 
-\figref{ss1} depicts the main classes of the vocabulary with ellipses, and the relationships with arrows. The attributes and some further subclasses are not displayed here for the sake of readability, but they will be covered in the following chapter. The three classes on the left model the interface, and the other three on the right in turn are for the RDF data definition. The purpose of the class \textit{Form} form is to encompass the input fields. To achieve the multi level layout explained in the previous section, the vocabulary contains an input field class \textit{SubformAdder}, to which a sub form can be defined with the \textit{subForm} relationship. The connection between the form and data model is expressed with the \textit{represents} relationship, which establish the basis of the substitution of the values of the input fields into the RDF nodes after the submission. To model the dataset the two main classes are the \textit{Triple} and \textit{RDFNode}, and the triples the appear in the resulting dataset multiple times trough to the hierarchical data structure are represented with the class \textit{MultiTriple}. 
+For the form layout definition the different input element types are represented as well with Java classes, and the subclass of the \textit{FormElements} class. The formelements are the assigned to the \textit{Form} class. Important element is the \textit{SubformAdder} wich allow the multi dimensional definition of the forms. This hierarchical set of forms are then converted into the JSON object, and based on which the library on the client operates. Important that each formelement refers to variable in the graph pattern, so that the form can be informed by dependencies in case. 
 
-The implemented framework takes the descriptor dataset, which is currently set of Java objects, and the processes it in order to generate further descriptor objects of both for the client and the server. These generated descriptor objects are such datasets that contains additional information regarding the functionality, that are not directly defined in the original descriptor. 
+\figref{frameworkFunctionality} functionality depicts the scheme of the functionality. The most important improvement wrt. to VIVO that there is processor that is capable of inferring some addition descriptor data object from the original descriptor objects. Such as SPARQL queries for the data dependencies and data retrieval.  
 
-\img{\III}{332_1.png}{Framework functionality outline}{ss2}
 
-The form descriptor data is a JSON object containing the definition of the form elements including the sub forms, and data dependencies between the selector fields, so that it can get the options of the sub selectors dynamically. The essence of the routines running on the client is to convert the descriptor JSON object into the form fields, and initiate the necessary AJAX calls.
-
-The server has three main tasks, loading the form data upon the AJAX calls, convert the submitted JSON object to the RDF data, and retrieve the stored data by the edition. The utility of the implemented framework that it exploits that the SPARQL query and the RDF datasets are both RDF graph patterns, and thus they both can be generated automatically from the triple definition part of the descriptor dataset. This feature enable a more compact data definition then what is required in the current VIVO framework.
+\img{\III}{332_1.png}{Framework functionality outline}{frameworkFunctionality}
 
