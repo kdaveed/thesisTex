@@ -14,14 +14,7 @@ The class diagram does not contain all the fields and methods for the sake of si
 
 \img{\IV}{voc2.png}{Java classes for RDF triples}{voc2}
 
-In the class \textit{Triple} the three most relevant fields are the \textit{subject}, \textit{object} and \textit{predicate}. The first two have the type \textit{RDFNode}, while the predicate is always a constant string. The class \textit{MultiTriple}, were already discussed in the previous chapter. The \textit{LiteralTriple} plays only a role in the advance instance selector interface, because currently the system is not capable of creating literal triple above the labels of the instances. There are two types of restriction triple, one for the classes, the class \textit{RestrictionTriple}, and the other for the instances, the class (\texit{InstanceRestriction}.
-
-
-
-
-
-
-
+In the class \textit{Triple} the three most relevant fields are the \textit{subject}, \textit{object} and \textit{predicate}. The first two have the type \textit{RDFNode}, while the predicate is always a constant string. The class \textit{MultiTriple}, were already discussed in the previous chapter. The \textit{LiteralTriple} plays only a role in the advance instance selector interface, because currently the system is not capable of creating literal triple above the labels of the instances. There are two types of restriction triple, one for the classes, the class \textit{RestrictionTriple}, and the other for the instances, the class (\textit{InstanceRestrictionTriple}. The useage of the latter will be discussed in section \textit{43}. The former is for the restrictions defined with \textit{owl:someValuesFrom} and \textit{owl:allValuesFrom} properties, and its subclass the \textit{QualifiedRestrictionTriple} is for the qualified restriction triples. The last restriction triple, the \textit{GreedyRestrictionTriple} stands for the cases where the server routine has to return not only the class assigned to the input class, but to all super classes of it too.
 
 \subsection{Form definition}
 
@@ -65,7 +58,7 @@ Furthermore there are two classes in the data model that do not appear on the in
 Finally \figref{SI_FORM} display the configuration data describing the form structure. 
 
 
-\subsection{Study Design Execution}
+\subsection{Study Design Execution} \label{43}
 
 
 The entry form for study design execution has as well the hierarchical layout like the one for skeletal inventories, but there are additionally two elements on the main form. The first is the selector from skeletal inventories. It plays a role by the selection of the bone organs as input for the assays. To each assay a set bone segment types is defined in the extensions, that can be can be assigned to them as input. These bone on this form are not created newly but existing ones are selected, that were already added in the frame of the skeletal inventory data input.  However there can be a large amount bone segments stored in the system, and thus the search is facilitated by showing only the ones that belong to the preselected skeletal inventory. The second is a global label field, whose value will be the label of all newly created instances.
