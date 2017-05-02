@@ -1,6 +1,6 @@
 \chapter{Problem Statement}
 
-The first section discusses the problem general way by addressing the challenges of the implementation both for the client and the server side in case of more elaborate data input processes. The second section in turn refers to the use-cases of the \textit{RDFBones} project and to the limitations of VIVO framework. Finally, the third part introduces the main elements the descriptor logic and gives and insight into the functionality of the developed system. 
+The first section discusses the problem general in a way by addressing the challenges of the implementation both for the client and the server side in case of more elaborate data input processes. The second section in turn refers to the use-cases of the \textit{RDFBones} project and to the limitations of the VIVO framework. Finally, the third part introduces the main elements of descriptor logic and gives and insight into the functionality of the developed system. 
 
 \section{Multi level data input}
 
@@ -8,13 +8,11 @@ In the previous chapter it has been discussed how can we implement simple data i
 
 \img{\III}{ps1.png}{Ontology and RDF triples for complex entities}{ps1}
 
-Such dataset poses the requirement for the input form, that the user has to be offered such interface elements which enable to add the components and subcomponents step by step. Adding a component means in terms of the form that a new sub form appears which contains further input fields for the component instance.
+Such dataset poses the requirement for the input form, that the user has to be offered such interface elements which enable to add the components and subcomponents step by step. Adding a component means in terms of the form, that new sub forms have to appear which contains further input fields for the component instances.
 
 \img{\III}{ps2.png}{Multi level form}{ps2}
 
-\figref{ps2} shows the layout of the form for multi level data. The additional element compared to the static HTML form is the field with an button for adding the sub forms. The dotted rectangle stands for the container element that encompasses the added sub forms. The form data contains the same way the key value pairs for the main form element, but it has an additional array field that contains the data objects of the sub forms. The sub form data object works the same way, if the have sub forms then they contains further arrays. To realize such functionality, JavaScript routine is required on the form, that ads the sub form elements to the container, and generates the appropriate form data upon the user actions.
-
-Listing \ref{multiData} shows the JSON object generated during by form from \figref{ps2}, where the objects are surrounded with ("\{\}"), while the arrays with ("[]"). After the submission the server has to process this object by iterating through the arrays of them, and generate the appropriate RDF triples.
+\figref{ps2} shows the layout of the form for multi level data. The additional element compared to the static HTML form is the field with an button for adding the sub forms. The dotted rectangle stands for the element which encompasses the added sub forms. The form data contains the same way the key value pairs for the main form element, but it has an additional key, where the value is an array for the data objects of the sub forms. The sub form data object works the same way, if it has sub forms then it contains further arrays. To realize such functionality, JavaScript routine is required on the form, that adds the sub form elements to the container, and generates the appropriate form data upon the user actions. Listing \ref{multiData} shows the JSON object generated during by form from \figref{ps2}, where the objects are surrounded with ("\{\}"), while the arrays with ("[]"). After the submission the server has to process this object by iterating through the arrays of them, and generate the appropriate RDF triples.
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Multi level form data in JSON}, label=multiData, captionpos=b, belowskip=1em, aboveskip=2em]
 {	type : "eq:elementA",
