@@ -48,10 +48,12 @@ Before showing how the problem is defined by the descriptor instances, the imple
 
 \img{\IV}{SI_UI.png}{Generated interface for primary skeletal inventory}{SI_UI}
 
+\figref{SI_DATA_C} depicts the complete data definition with the triples and the nodes. For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. The predicate is always \textit{rdf:type} where the subject is an instance and the object is a class. The three rectangles denotes the three subgraphs of the graph pattern. The pattern contains the two main input nodes (red - subjectUri, rangeUri) and three form input nodes (light red - subSubDivisionType, boneOrganType, categoryLabel).  The instances depicted with yellow have to get new IRI after the submission. The blue classes in turn are the classes that do not appear on the interface, and their value will be evaluated based on value of the incoming bone organ type.
+
 \img{\IV}{SI_DATA_C.png}{Complete data definition}{SI_DATA_C}
 
-For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. The predicate is always \textit{rdf:type} where the subject is an instance and the object is a class.  
 
+The form layout definition of the Java object is depicted on the \figref{SI_FORM}.
 
 \img{\IV}{SI_FORM.png}{UML object diagram for form layout definition}{SI_FORM}
 
