@@ -52,16 +52,14 @@ Before showing how the problem is defined by the descriptor instances, the imple
 
 \img{\IV}{SI_DATA_C.png}{Complete data definition}{SI_DATA_C}
 
-The form layout definition of the Java object is depicted on the \figref{SI_FORM}. 
+The form layout definition of the Java object is depicted on the \figref{SI_FORM}. It can be seen that it reflects the hierarchy of the form, and the form elements refer to the variable names of the nodes in the graph pattern.
 
 \img{\IV}{SI_FORM.png}{UML object diagram for form layout definition}{SI_FORM}
 
+
 \subsection{Study Design Execution} \label{43}
 
-
 The entry form for study design execution has as well the hierarchical layout like the one for skeletal inventories, but there are additionally two elements on the main form. The first is the selector from skeletal inventories. It plays a role by the selection of the bone organs as input for the assays. To each assay a set bone segment types is defined in the extensions, that can be can be assigned to them as input. These bone on this form are not created newly but existing ones are selected, that were already added in the frame of the skeletal inventory data input.  However there can be a large amount bone segments stored in the system, and thus the search is facilitated by showing only the ones that belong to the preselected skeletal inventory. The second is a global label field, whose value will be the label of all newly created instances.
-
-
 
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
