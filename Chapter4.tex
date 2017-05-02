@@ -5,32 +5,15 @@
 
 \subsection{Data definitions}
 
-To understand the necessity of certain elements of the vocabulary, further details of web the applications have to be explained. In VIVO, the display of the existing and the creation of the new data happens in individual pages. The display is done by so-called profile pages, that show the information about one particular instance. As it was in section \ref{233}, the information is grouped by predicates, and each predicate field contains a link that can call the data input pages. The link contains three parameters, \textit{subjectUri}, \textit{predicateUri} and the \textit{rangeUri}.The \textit{subjectUri} hold the value of the instance on whose profile the link is, the \textit{predicateUri} is for the predicate, with which the new dataset is connected to the subject, and the \textit{rangeUri} is an optional paramater.
+\img{\IV}{voc1.png}{Java classes for RDF nodes}{voc1}
 
-\img{\IV}{1_1.png}{Complete workflow of data input process}{411_1}
-
-
-Figure \ref{411_1} shows the workflow of a data entry process. On the right profile page of a skeletal inventory can be seen, which lists the added skeletal elements. The profile page is configured that the \textit{rangeUri} parameter holds in the links the URI of the classes of  skull and vertebral column respectively. These parameters have to be considered by the form loading because they influences the options of the first selector which let the user add the skeletal sub sub division. So therefore it necessary to introduce a flag into the vocabulary that sign if a variable is coming with the HTTP request for the form loading, or with the JSON object after the submission.
-
-Figure \ref{41_3} shows all the nodes types and their attributes. Above the \textit{mainInput} boolean flag, there is the variable name, which is required, and the constant value in case. There are three types of variable, the class, resource and literal. The literal variable itself denotes a string value and it has several subclasses for the other primitive types.
-
-\img{\IV}{1_2.png}{Variable types and their attributes}{41_2}
-
-The other, more important is the modeling of the triples in the dataset. The vocabulary for triples has the purpose to express different constraint on the data scheme as well. Above the class \textit{Triple} and \textit{MultiTriple}, which were addressed in the end of the last chapter, there are two types of restriction triples. One for the classes and one for the instances. As we have seen in the description of the OWL ontologies, there are different types of restrictions can be defined. For this reason it should be possible to allow the definition of which restriction is used by the ontology, upon the entry form should operate. This can be expressed by the three boolean, types of the \textit{classRestrictionTriple}. Moreover the greedy boolean flag means that the SPARQL query that queries the ontology has to return not only the result class but their superclasses too. Finally the instance restriction triples as the name indicates, expresses constraints between instances on the form. The examples in the next section will make the usage of the vocabulary more clear.
-
-\img{\IV}{1_3.png}{Triple types}{41_3}
+\img{\IV}{voc2.png}{Java classes for RDF triples}{voc2}
 
 \subsection{Form definition}
 
-The class \textit{Form} acts like a container for the form elements. There are two main types of form elements, the literal field and the selector. The literal field do not have further subclasseses because its type, is defined through the type of the variable it represents. It would be a sort of over definition. This is the simples case where the form adopts to the data model.
+\img{\IV}{voc3.png}{Java classes for the form}{voc3}
 
-The selector can refer both instances and classes. If it represent and instance, so it let the selection of an existing instance, then it is possible to define an \textit{InstanceViewer}. This feature allows to define a table with several columns. The utility is that the application can show more information about an instance than only the label in the selector field. Each column has a title and a number, and they refer to as well \textit{RDFNodes}, whose values they show in the entries.
-
-The class \textit{SubformAdder} is the subclass of the selector, and has a relationship to the form with the predicate sub form. With this connection it is possible to define the sub form as new form instance. Moreover it has boolean flag, that allow to define a button add all should appear on, which adds all the possible subforms. This feature is useful be the skeletal subdivisions that contains much bones.
-
-
-\img{\IV}{1_4.png}{Form definition}{411_1}
-
+\img{\IV}{voc4.png}{Java classes for instance viewer}{voc4}
 
 \section{Use-cases of the \textit{RDFBones} project}
 
