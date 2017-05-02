@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {4.1.2}Form definition}{34}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{34}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Skeletal Inventories}{35}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{37}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{38}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}Framework functionality}{40}{chapter.5}
 \contentsline {section}{\numberline {5.1}Main software modules and tasks}{40}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Validation}{41}{subsection.5.1.1}
