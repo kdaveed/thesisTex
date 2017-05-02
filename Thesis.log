@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,7 +1292,14 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /SI_UI.png used on input line 49.
 (pdftex.def)             Requested size: 360.0pt x 174.6493pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_DATA_C.png, id=777, 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_UI.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_DATA_C.png, id=782, 
 1355.0625pt x 389.455pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_DATA_C.png Grap
 hic file (type png)
@@ -1302,42 +1309,15 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /SI_DATA_C.png used on input line 53.
 (pdftex.def)             Requested size: 360.0pt x 103.46655pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png, id=779, 13
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png, id=784, 13
 11.90125pt x 402.50375pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png Graphi
 c file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SI_FORM.png used on input line 58.
+/SI_FORM.png used on input line 57.
 (pdftex.def)             Requested size: 360.0pt x 110.45241pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[37 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_UI.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png, id=785, 103
-1.855pt x 457.71pt>
-File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png Graphic
- file (type png)
-
-<use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png>
-Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_UI.png used on input line 70.
-(pdftex.def)             Requested size: 360.0pt x 159.68408pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1347,6 +1327,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [38 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_DATA_C.png> </Us
 ers/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png, id=792, 103
+1.855pt x 457.71pt>
+File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png Graphic
+ file (type png)
+
+<use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png>
+Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
+/SDE_UI.png used on input line 67.
+(pdftex.def)             Requested size: 360.0pt x 159.68408pt.
+
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png, id=794, 898
 .35625pt x 320.19624pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png Graphic
@@ -1354,8 +1344,12 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_IS.png used on input line 74.
+/SDE_IS.png used on input line 71.
 (pdftex.def)             Requested size: 360.0pt x 128.31073pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png, id=796,
  1431.3475pt x 601.24625pt>
@@ -1364,7 +1358,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_DATA_C.png used on input line 82.
+/SDE_DATA_C.png used on input line 79.
 (pdftex.def)             Requested size: 360.0pt x 151.21944pt.
 
 
@@ -1377,15 +1371,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png> </Users
-/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png>]
+[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png>]
+[40 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png> </Users
+/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png>]
 Chapter 5.
 
 LaTeX Warning: Reference `332_1' on page 41 undefined on input line 16.
@@ -1849,7 +1843,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (80 pages, 2600625 bytes).
+Output written on Thesis.pdf (80 pages, 2601308 bytes).
 PDF statistics:
  1246 PDF objects out of 1440 (max. 8388607)
  1038 compressed objects within 11 object streams
