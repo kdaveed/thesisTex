@@ -371,6 +371,8 @@ On \figref{faux} next to the property field, a button with a + sign can be seen,
 	\item{ \textit{rangeUri}} - IRI of the range class of the property
 \end{itemize}
 
+The different entry forms can be called for editing the added data as well. This is done by the link (pen image) next to the blue data entries. VIVO knows that this is the case, because the HTTP request contains an additional parameter called \textit{objectUri}, which contains the IRI of the particular entry. In the edit case the same entry form appears and the its fields are filled with the previously created data.
+
 \subsubsection{Custom entry forms} \label{vivoCef}
 
 By default VIVO redirects the user to such an entry form where only one instance or literal can be added with the type defined in the \textit{rangeUri} parameter. However it is possible to so-called entry custom forms for more complex datasets.
@@ -379,8 +381,7 @@ By default VIVO redirects the user to such an entry form where only one instance
 
 \figref{entryForm} shows the layout of an HTML form with three fields, where the user can enter specific values for a new skeletal subdivision. After the data entry, if the submit button is clicked an HTTP request is sent to the server. This is a same type of request like by the link explained in the previous section, just the values of the parameters are set by the user.
 
-The idea of custom entry forms in VIVO, that they allow the definition only of HTML input form layout and the dataset definition, and developer does not have to care about how the values from the form are substituted into the RDF data and how the new instances are generated. For the definition two files have to be created, a \textit{Freemarker}  template file (with .ftl extension) for the form definition, and a Java class that contains in its fields the reference to the template file and the RDF data definitions. The name of the Java class is stored in the faux property definition (\figref{fauxRDF}), and thus VIVO can find it based on the \textit{predicateUri} parameter of the custom entry form HTTP request.
-The template file definition is simple due to the \textit{Freemarker} macros provided in VIVO. Each type of input field has a distinct macro and have two input parameters, the parameter name and the title.
+The idea of custom entry forms in VIVO, that they allow the definition only of HTML input form layout and the dataset definition, and developer does not have to care about how the values from the form are substituted into the RDF data and how the new instances are generated. For the definition two files have to be created, a \textit{Freemarker}  template file (with .ftl extension) for the form definition, and a Java class that contains in its fields the reference to the template file and the RDF data definitions. The name of the Java class is stored in the faux property definition (\figref{fauxRDF}), and thus VIVO can find it based on the \textit{predicateUri} parameter of the custom entry form HTTP request. The template file definition for the form is simple due to the \textit{Freemarker} macros provided in VIVO. Each type of input field has a distinct macro and have two input parameters, the parameter name and the title. The macros do not only show the appropriate input fields but in the edit mode they care about that the fields show the existing values.
 
 \begin{lstlisting}[captionpos=b, caption= subdivision.ftl, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -393,7 +394,7 @@ basicstyle=\footnotesize,frame=single]
 </form>	
 \end{lstlisting}
 
-The class has to extends the class \textit{EditConfigurationGenerator} class, thus its fields are given. The variable \textit{templateFile} must hold the name of the template file.
+The Java class that contains the necessary data has to extends the class \textit{EditConfigurationGenerator} class, therefore its fields are given. The variable \textit{templateFile} must hold the name of the template file.
 
 \begin{lstlisting}[captionpos=b, caption= Form defintion in Java, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
@@ -421,7 +422,7 @@ basicstyle=\footnotesize,frame=single]
 	this.newInstances = {"subDivision"};
 \end{lstlisting}
 
-There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is SPARQL query that retrieves the variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names, and the values are the SPARQL queries.
+There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is the SPARQL query that retrieves the values for the form variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names, and the values are the SPARQL queries.
 
 \begin{lstlisting}[captionpos=b, caption= SPARQL forExisting variable definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
