@@ -422,7 +422,7 @@ basicstyle=\footnotesize,frame=single]
 	this.newInstances = {"subDivision"};
 \end{lstlisting}
 
-There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is the SPARQL query that retrieves the values for the form variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names, and the values are the SPARQL queries. By the form data loading for editing, VIVO executes the defined queries and puts passes the value to the template file.
+There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is the SPARQL query that retrieves the values for the form variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names and the values are the SPARQL queries. By the form data loading for editing, VIVO executes the defined queries and passes the values in the variables to the template engine for the FTL macros.
 
 \begin{lstlisting}[captionpos=b, caption= SPARQL forExisting variable definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
