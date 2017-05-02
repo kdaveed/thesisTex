@@ -43,7 +43,7 @@ The problem is that it would be necessary to define custom JavaScript routines f
 
 \section{Solution scheme}
 
-The idea of the thesis is to allow the definition of the multi level data input cases, in such a way that VIVO allows it for the static ones, so that various problem could be solved without writing individual Java and JavaScript routines. This is achieved by an additional set of Java classes, whose instances are capable describing the multi level problems too, and additional routines both on the client and the server side which are capable of interpreting the extended descriptor data.
+The idea of the thesis is to allow the definition of the multi level data input cases, in such a way that VIVO allows it for the static ones, so that various problems could be solved without writing individual Java and JavaScript routines. This is achieved by an additional set of Java classes, whose instances are capable describing the multi level problems too, and additional routines both on the client and the server side which are capable of interpreting the extended descriptor data.
 
 Important difference wrt. VIVO that the scheme of the forms are defined as well through Java objects not in FTL files. The two main classes are the \textit{Form} and the \textit{FormElement}. There are subclasses of the \textit{FormElement} class, which represents the different input fields. The form element that allows the definition of the multi level form is the \textit{SubformAdder} class. From the Java objects describing the multi level layout, a JSON object is generated, which is interpreted by a JavaScript library, that generates the form and manages the functionality.
 
