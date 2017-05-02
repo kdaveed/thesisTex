@@ -44,15 +44,10 @@ The most important skeletal region in the Biological Anthropology Department is 
 
 The classes of the pattern are not represented, because the main scope of the image is to illustrate the necessity of the single and multi triple in the definition. As it was address the subdivision (in our case skull) consists of multiple sub subdivision, where all consists of multiple bone organs. However each bone organ has only one bone segment, and one categorical measurement datum and category label.
 
-Before showing how the problem is defined by the descriptor instances, the implemented interface is discussed (\figref{SI_UI}) 
-
-
-\img{\IV}{SI_UI.png}{Input form for skeletal inventories}{SI_UI}
-
+Before showing how the problem is defined by the descriptor instances, the implemented interface is discussed (\figref{SI_UI}). Under the title of the a form a sub form adder element can be seen. In our implementation the subform adder is selector as well, which eliminates the type selector on the sub form, and makes the layout more compact. It can be seen the added sub form has a title, which the label of the added class for the element.
 
 Next to the selector the buttons \textit{Add} and \textit{Add all} can be seen, that let the user add the sub forms. \figref{SI_UI} shows the layout, when two sub sudivision were added, to each of them, a bone organ. The bone organ selector works exactly the same as the sub sudvision selector, but the selector for the completeness state is simple selector, without a sub form. 
-
-\figref{SI_UI} shows the triple scheme representing the skeletal inventories, where the nodes are representing variables. All the rectangle are representing instances. All of them will be newly created instead of the subjectUri, which comes as a main input, and the arrows with double line depicts the multi triples. Important to note that between the variable \textit{boneOrgan} and \textit{boneSegment} there is only a single triple (\textit{fma:regional\_part\_of}) because in this use-case is simplified version and only entire bone segments will be added. 
+Next to the selector the buttons \textit{Add} and \textit{Add all} can be seen, that let the user add the sub forms. \figref{SI_UI} shows the layout, when two sub sudivision were added, to each of them, a bone organ. The bone organ selector works exactly the same as the sub sudvision selector, but the selector for the completeness state is simple selector, without a sub form. 
 
 
 
@@ -61,12 +56,20 @@ Above the instances to be created the classes have to be represented in the mode
 
 \img{\IV}{SI_DATA_C.png}{Complete data definition}{SI_DATA_C}
 
-For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. Each instance (rectangles) is connected to the class variable (ellipses). The red dotted arrows indicates restriction statements. The large three rectangles, that encompass set of triples are the graph, which are connecting to each other by means of multi triples. This is the structure which is followed by the form as well.
+For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. Each instance (rectangles) is connected to the class variable (ellipses). The red dotted arrows indicates restriction statements. The large th
 
-\img{\IV}{SI_FORM.png}{Form layout definition}{SI_FORM}
+\img{\IV}{SI_FORM.png}{UML object diagram for form layout definition}{SI_FORM}
+s
 
 
+ee rectangles, that encompass set of triples are the graph, which are connecting to each other by means of multi triples. This is the structure which is followed by the form as well.
+
+
+Above the auxililiary rectangles for the graph,the nodes are colored to indicate their role in the process. The information that the colors hold is not defined in the vocabulary but it can be inferred from the whole data and form model. The first rule is that the main input nodes (\textit{subjectUri} and \textit{rangeUri}) are deno
 Above the auxililiary rectangles for the graph,the nodes are colored to indicate their role in the process. The information that the colors hold is not defined in the vocabulary but it can be inferred from the whole data and form model. The first rule is that the main input nodes (\textit{subjectUri} and \textit{rangeUri}) are denoted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
+ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
+ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
+ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
 Furthermore there are two classes in the data model that do not appear on the interface, but their values can be evaluated through SPARQL queries. These are denoted with blue. And the classes with without color, do not appear on the final dataset, but they indicates constraint on the existing instances.
 Finally \figref{SI_FORM} display the configuration data describing the form structure. 
 
