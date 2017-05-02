@@ -22,12 +22,12 @@
 \BOOKMARK [1][-]{section.3.1}{Multi level data input}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.2}{RDFBones use-cases in VIVO}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.3}{Solution scheme}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Vocabulary for web application domain}{}% 25
+\BOOKMARK [0][-]{chapter.4}{Vocabulary for RDF data input}{}% 25
 \BOOKMARK [1][-]{section.4.1}{Elements of the vocabulary}{chapter.4}% 26
 \BOOKMARK [2][-]{subsection.4.1.1}{Data definitions}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.2}{Form definition}{section.4.1}% 28
 \BOOKMARK [1][-]{section.4.2}{Use-cases of the RDFBones project}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.2.1}{Skeletal Inventories}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Primary Skeletal Inventory}{section.4.2}% 30
 \BOOKMARK [2][-]{subsection.4.2.2}{Study Design Execution}{section.4.2}% 31
 \BOOKMARK [0][-]{chapter.5}{Framework functionality}{}% 32
 \BOOKMARK [1][-]{section.5.1}{Main software modules and tasks}{chapter.5}% 33

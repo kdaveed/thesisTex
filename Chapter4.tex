@@ -1,26 +1,28 @@
-\chapter{Vocabulary for web application domain}
+\chapter{Vocabulary for RDF data input}
 
-The aim of this chapter is show how can different data input problems expressed through the instantiation of the designed set of Java classes. At first the elements of the vocabulary is discussed briefly, then the solved two use-cases of the RDFBones project. 
+The aim of this chapter is show how can different data input problems be expressed through the instantiation of specific set of Java classes. At first the elements of the vocabulary is discussed briefly, then the solved two use-cases of the RDFBones project are presented.
 
 \section{Elements of the vocabulary}
 
 \subsection{Data definitions}
 
-The first part of the vocabulary relates to the RDF data definition. The two main classes for this purpose are \textit{Triple} and the \textit{RDFNode}. Both of them have different subclasses for the custom cases. \figref{voc1} shows UML class diagram for the different types of node, and \figref{voc2} in turn depicts the classes for the triples.
+The first part of the vocabulary relates to the RDF data definition. The two main classes for this purpose are the \textit{Triple} and the \textit{RDFNode}. Both of them have different subclasses for the custom cases. \figref{voc1} shows the UML class diagram for the different types of node, and \figref{voc2} in turn depicts the classes for the triples.
 
 \img{\IV}{voc1.png}{Java classes for RDF nodes}{voc1}
 
-The class diagram does not contain all the fields and methods for the sake of simplicity. The most important field is the \textit{variableName}, based on which the form elements can reference the nodes. In the data definition constant classes can appear, for this stands the class \textit{Constant}. In the vocabulary there are two specific classes for the input nodes. The first is the \textit{MainInputNode}, which is used for the variables, that are coming with initial form call. In VIVO these are always the \textit{subjectUri}, the \textit{predicateUri} and the \textit{rangeUri}. The class \textit{FormInputNodes} in turn stands for the variables that appear on the form.
+The class diagram does not contain all the fields and methods for the sake of simplicity. The most important field is the \textit{variableName}, based on which the form elements can reference the nodes. In the data definition constant classes can appear, for this stands the class \textit{Constant}. In the vocabulary there are two specific classes for the input nodes. The first is the \textit{MainInputNode}, which represent the variables, that are coming with initial form call. In VIVO these are always the \textit{subjectUri}, the \textit{predicateUri} and the \textit{rangeUri}. The class \textit{FormInputNodes} stands for the variables that appear on the form.
 
 \img{\IV}{voc2.png}{Java classes for RDF triples}{voc2}
 
-In the class \textit{Triple} the three most relevant fields are the \textit{subject}, \textit{object} and \textit{predicate}. The first two have the type \textit{RDFNode}, while the predicate is always a constant string. The class \textit{MultiTriple}, were already discussed in the previous chapter. The \textit{LiteralTriple} plays only a role in the advance instance selector interface, because currently the system is not capable of creating literal triple above the labels of the instances. There are two types of restriction triple, one for the classes, the class \textit{RestrictionTriple}, and the other for the instances, the class (\textit{InstanceRestrictionTriple}. The useage of the latter will be discussed in section \textit{43}. The former is for the restrictions defined with \textit{owl:someValuesFrom} and \textit{owl:allValuesFrom} properties, and its subclass the \textit{QualifiedRestrictionTriple} is for the qualified restriction triples. The last restriction triple, the \textit{GreedyRestrictionTriple} stands for the cases where the server routine has to return not only the class assigned to the input class, but to all super classes of it too.
+In the class \textit{Triple}, the three most relevant fields are the \textit{subject}, the \textit{object} and the \textit{predicate}. The first two have the type \textit{RDFNode}, while the predicate is always a constant string. The role of the class \textit{MultiTriple} were already discussed the previous chapter. The \textit{LiteralTriple} plays only a role in the advanced instance selector interface (discussed in more detail later), because currently the system is not capable of creating literal triples above the labels of the instances. There are two types of restriction triple, one for the classes, the class \textit{RestrictionTriple}, and the other for the instances, the class (\textit{InstanceRestrictionTriple}. The usage of the latter will be discussed in section \textit{43}. The former is for the restrictions defined with \textit{owl:someValuesFrom} and \textit{owl:allValuesFrom} properties, while its subclass the \textit{QualifiedRestrictionTriple} represents the qualified restriction triples. The last restriction triple, the \textit{GreedyRestrictionTriple} stands for the cases where the query on the restrictions has to check there are restrictions applied not only directly on the input class, but on its super classes as well.
 
 \subsection{Form definition}
 
-As it was already mentioned in the previous chapter the two main classes for the form layout definition are the \textit{Form} and the \textit{FormElement}. The form has a title as a string and contains the different form elements. In the class \textit{FormElement} the most important field is the dataKey, which is the variable name for the RDF node in the dataset definition. The form element \textit{SubFormAdder} has a field \textit{Form}, which allows the sub form definition. The class \textit{LiteralField} stands for an element, which allows to define the prefix for the labels of all instances created newly through the data input process. Here it is important to note that on the forms implemented for the project, it has to be possible to let the user selecting existing instances, which will contribute to the resulting dataset. The class \textit{Selector} stands for the HTML selector element, which allows the definition selection both of instances and classes on the form. The class \textit{InstanceSelector} denotes a such field where the existing instance can be selected through a floating window implemented in JavaScript. This window allows the display more information, by displaying the instance in a table where the different columns contains different data about them. This tabla, its cells and triples that the additional SPARQL query has to contain is defined by the classes depicted on \figref{voc4}. Finally, the class \textit{AuxNodeSelector}, allows the selection of such instances on the form, who does not contribute to the resulting dataset, just they help to filter the instance for the other instance selector.
+As it was already mentioned in the previous chapter the two main classes for the form layout definition are the \textit{Form} and the \textit{FormElement}. The form has a title as a string and contains the different form elements in its field \textit{formElement}. 
 
 \img{\IV}{voc3.png}{Java classes for the form}{voc3}
+
+In the class \textit{FormElement} the most important field is the dataKey, which is holds the variable name for the RDF node it represents. The form element \textit{SubFormAdder} has a field \textit{Form}, which allows the sub form definition. The class \textit{LiteralField} stands for an element, which allows to define the prefix for the labels of all instances created newly through the data input process. Here it is important to note that on the forms implemented for the project, it has to be possible to let the user selecting existing instances, which will contribute to the resulting dataset. The class \textit{Selector} stands for the HTML selector element, which allows the definition selection both of instances and classes on the form. The class \textit{InstanceSelector} denotes a such field where the existing instance can be selected through a floating window implemented in JavaScript. This window allows tp display more information, by displaying the instances within a table where the different columns contains data about them. This table, its cells and triples for the additional SPARQL query by the classes depicted on \figref{voc4}. Finally, the class \textit{AuxNodeSelector}, allows the selection of such instances on the form, who does not contribute to the resulting dataset, just they help to filter the instance for the other instance selectors.
 
 \img{\IV}{voc4.png}{Java classes for instance viewer}{voc4}
 
@@ -28,18 +30,29 @@ As it was already mentioned in the previous chapter the two main classes for the
 
 The aim of this section is to show how it is possible to solve different problems with designed vocabulary. It covers the two main tasks of the project, the skeletal inventories and the study design execution. These two examples are sufficient to show the utility of the particular elements in the vocabulary and exemplify how their assembly can lead to a compact definition of complex web application problems.
 
-\subsection{Skeletal Inventories}
+\subsection{Primary Skeletal Inventory}
 
-Skeletal inventories were already addressed in section \ref{[331]}. Their goal is to define what kind of skeletal elements are present. In this part the creation of the primary skeletal inventories are discussed in more detail. This use-case addresses some additional challenges of the software, that were not mentioned yet.
-The explanation starts with the illustration of the implemented interface, to show what problem the high level logic has to define. As it was mentioned in figure \ref{411_1}, the entry forms can have inputs, which in this case the input is the class URI of the skeletal subdivision that has to be added with it sub subdivisions and bone organs. Therefore the first element of the entry form is the selector of the sub subdivision.
+Skeletal inventories were already addressed in section \ref{331}. To be able understand the software specification it is inevitable to go into details of extension definition  The primary skeletal inventory is the main extensions of the RDFBones project, and has the peculiarity that it does not contain any custom bone segments, but refers all of them as entire bones. For this purpose there is a class called \textit{EntireBoneOrgan}, which has as many subclass for the particular bones as many bone organ classes have been taken from the FMA ontology. The entire bone organs and normal bone organs the connected through restriction on the property \textit{fma:regional\_part\_of}. Moreover for each entire bone organ a custom completeness datum class is assigned, which acts as connector between the primary skeletal inventory class and the entire bone classes. 
+
+\img{\IV}{useCase1.png}{Primary skeletal inventory extension}{primSkelInv}
+
+\figref{primSkelInv} depicts the scheme of the primary skeletal inventory extension. The \textit{X} and \textit{Y} represent the different bone organs classes as examples. Important to note the class \textit{CompletenessTwoStatesLabel}  has two instances, which appear in all skeletal inventory dataset.
+
+The most important skeletal region in the Biological Anthropology Department is the skull, so in the following the data input for the skull will be discussed. The skull does not consist directly of bone organs, but of two sub two subdivisions. A primary skeletal inventory for a skull is represented with the following triple pattern: 
+
+\img{\IV}{SI_DATA.png}{Skeletal inventory data triples}{SI_DATA}
+
+The classes of the pattern are not represented, because the main scope of the image is to illustrate the necessity of the single and multi triple in the definition. As it was address the subdivision (in our case skull) consists of multiple sub subdivision, where all consists of multiple bone organs. However each bone organ has only one bone segment, and one categorical measurement datum and category label.
+
+Before showing how the problem is defined by the descriptor instances, the implemented interface is discussed (\figref{SI_UI}) 
+
 
 \img{\IV}{SI_UI.png}{Input form for skeletal inventories}{SI_UI}
+
 
 Next to the selector the buttons \textit{Add} and \textit{Add all} can be seen, that let the user add the sub forms. \figref{SI_UI} shows the layout, when two sub sudivision were added, to each of them, a bone organ. The bone organ selector works exactly the same as the sub sudvision selector, but the selector for the completeness state is simple selector, without a sub form. 
 
 \figref{SI_UI} shows the triple scheme representing the skeletal inventories, where the nodes are representing variables. All the rectangle are representing instances. All of them will be newly created instead of the subjectUri, which comes as a main input, and the arrows with double line depicts the multi triples. Important to note that between the variable \textit{boneOrgan} and \textit{boneSegment} there is only a single triple (\textit{fma:regional\_part\_of}) because in this use-case is simplified version and only entire bone segments will be added. 
-
-\img{\IV}{SI_DATA.png}{Skeletal inventory data triples}{SI_DATA}
 
 
 
@@ -51,7 +64,6 @@ Above the instances to be created the classes have to be represented in the mode
 For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. Each instance (rectangles) is connected to the class variable (ellipses). The red dotted arrows indicates restriction statements. The large three rectangles, that encompass set of triples are the graph, which are connecting to each other by means of multi triples. This is the structure which is followed by the form as well.
 
 \img{\IV}{SI_FORM.png}{Form layout definition}{SI_FORM}
-
 
 
 Above the auxililiary rectangles for the graph,the nodes are colored to indicate their role in the process. The information that the colors hold is not defined in the vocabulary but it can be inferred from the whole data and form model. The first rule is that the main input nodes (\textit{subjectUri} and \textit{rangeUri}) are denoted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
