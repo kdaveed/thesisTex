@@ -1,13 +1,27 @@
 \chapter{Vocabulary for web application domain}
 
+The aim of this chapter is show how can different data input problems expressed through the instantiation of the designed set of Java classes. At first the elements of the vocabulary is discussed briefly, then the solved two use-cases of the RDFBones project. 
 
 \section{Elements of the vocabulary}
 
 \subsection{Data definitions}
 
+The first part of the vocabulary relates to the RDF data definition. The two main classes for this purpose are \textit{Triple} and the \textit{RDFNode}. Both of them have different subclasses for the custom cases. \figref{voc1} shows UML class diagram for the different types of node, and \figref{voc2} in turn depicts the classes for the triples.
+
 \img{\IV}{voc1.png}{Java classes for RDF nodes}{voc1}
 
+The class diagram does not contain all the fields and methods for the sake of simplicity. The most important field is the \textit{variableName}, based on which the form elements can reference the nodes. In the data definition constant classes can appear, for this stands the class \textit{Constant}. In the vocabulary there are two specific classes for the input nodes. The first is the \textit{MainInputNode}, which is used for the variables, that are coming with initial form call. In VIVO these are always the \textit{subjectUri}, the \textit{predicateUri} and the \textit{rangeUri}. The class \textit{FormInputNodes} in turn stands for the variables that appear on the form.
+
 \img{\IV}{voc2.png}{Java classes for RDF triples}{voc2}
+
+In the class \textit{Triple} the three most relevant fields are the \textit{subject}, \textit{object} and \textit{predicate}. The first two have the type \textit{RDFNode}, while the predicate is always a constant string. The class \textit{MultiTriple}, were already discussed in the previous chapter. The \textit{LiteralTriple} plays only a role in the advance instance selector interface, because currently the system is not capable of creating literal triple above the labels of the instances. There are two types of restriction triple, one for the classes, the class \textit{RestrictionTriple}, and the other for the instances, the class (\texit{InstanceRestriction}.
+
+
+
+
+
+
+
 
 \subsection{Form definition}
 
