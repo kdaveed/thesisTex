@@ -421,7 +421,19 @@ basicstyle=\footnotesize,frame=single]
 	this.newInstances = {"subDivision"};
 \end{lstlisting}
 
-There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request.
+There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is SPARQL query that retrieves the variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names, and the values are the SPARQL queries.
+
+\begin{lstlisting}[captionpos=b, caption= SPARQL forExisting variable definition, label=skullJSON, belowskip=1em, aboveskip=2em,
+basicstyle=\footnotesize,frame=single]
+	this.sparqlForLiterals.put("desc", "
+		SELECT ?desc
+		WHERE { 
+			?subjectUri		rdfbones:hasSkeletalSubdivision		?subDivision.
+			?subDivision	domain:description	?desc .
+		}")
+\end{lstlisting}
+
 These section gave an insight into how it is possible to define data input processes in a declarative way within the VIVO framework. 
+
 
 
