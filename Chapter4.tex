@@ -28,7 +28,7 @@ In the class \textit{FormElement} the most important field is the dataKey, which
 
 \section{Use-cases of the \textit{RDFBones} project}
 
-The aim of this section is to show how it is possible to solve different problems with designed vocabulary. It covers the two main tasks of the project, the skeletal inventories and the study design execution. These two examples are sufficient to show the utility of the particular elements in the vocabulary and exemplify how their assembly can lead to a compact definition of complex web application problems.
+The aim of this section is to show how it is possible to solve different problems with designed vocabulary. It covers the two main tasks of the project, the skeletal inventories and the study design execution. These two examples are sufficient to show the utility of the particular elements in the vocabulary and exemplify how their assembly can lead to a compact definition of complex web application problems. 
 
 \subsection{Primary Skeletal Inventory}
 
@@ -44,34 +44,17 @@ The most important skeletal region in the Biological Anthropology Department is 
 
 The classes of the pattern are not represented, because the main scope of the image is to illustrate the necessity of the single and multi triple in the definition. As it was address the subdivision (in our case skull) consists of multiple sub subdivision, where all consists of multiple bone organs. However each bone organ has only one bone segment, and one categorical measurement datum and category label.
 
-Before showing how the problem is defined by the descriptor instances, the implemented interface is discussed (\figref{SI_UI}). Under the title of the a form a sub form adder element can be seen. In our implementation the subform adder is selector as well, which eliminates the type selector on the sub form, and makes the layout more compact. It can be seen the added sub form has a title, which the label of the added class for the element.
+Before showing how the problem is defined by the descriptor instances, the implemented interface is discussed (\figref{SI_UI}). Under the title of the a form a sub form adder element appears. This elements is implemented that it incorporates a class selector as well, which eliminates it on the sub form, and makes the layout more compact. It can be seen the added sub form has a title, which the label of the added class for the element. The sub form adder for the bone organs is the same. The subform for the particular bone organs contains the selector for the existing categorical label instance. 
 
-Next to the selector the buttons \textit{Add} and \textit{Add all} can be seen, that let the user add the sub forms. \figref{SI_UI} shows the layout, when two sub sudivision were added, to each of them, a bone organ. The bone organ selector works exactly the same as the sub sudvision selector, but the selector for the completeness state is simple selector, without a sub form. 
-Next to the selector the buttons \textit{Add} and \textit{Add all} can be seen, that let the user add the sub forms. \figref{SI_UI} shows the layout, when two sub sudivision were added, to each of them, a bone organ. The bone organ selector works exactly the same as the sub sudvision selector, but the selector for the completeness state is simple selector, without a sub form. 
-
-
-
-Above the instances to be created the classes have to be represented in the model too, because they can be the subjects of the class restriction triples.
- Figure \figref{SI_DATA_C} is depicts the complete data model of the problem.
+\img{\IV}{SI_UI.png}{Generated interface for primary skeletal inventory}{SI_UI}
 
 \img{\IV}{SI_DATA_C.png}{Complete data definition}{SI_DATA_C}
 
-For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. Each instance (rectangles) is connected to the class variable (ellipses). The red dotted arrows indicates restriction statements. The large th
+For the better readability the predicates are not denoted, but their value can be found in figure \figref{SI_DATA}. The predicate is always \textit{rdf:type} where the subject is an instance and the object is a class.  
+
 
 \img{\IV}{SI_FORM.png}{UML object diagram for form layout definition}{SI_FORM}
-s
 
-
-ee rectangles, that encompass set of triples are the graph, which are connecting to each other by means of multi triples. This is the structure which is followed by the form as well.
-
-
-Above the auxililiary rectangles for the graph,the nodes are colored to indicate their role in the process. The information that the colors hold is not defined in the vocabulary but it can be inferred from the whole data and form model. The first rule is that the main input nodes (\textit{subjectUri} and \textit{rangeUri}) are deno
-Above the auxililiary rectangles for the graph,the nodes are colored to indicate their role in the process. The information that the colors hold is not defined in the vocabulary but it can be inferred from the whole data and form model. The first rule is that the main input nodes (\textit{subjectUri} and \textit{rangeUri}) are denoted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
-ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
-ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
-ted with red, while the variables appear on the interface are light red. Base on that information is it already possible to determine to which instances it is required to assign an unused URI. Those instance are denoted with yellow.
-Furthermore there are two classes in the data model that do not appear on the interface, but their values can be evaluated through SPARQL queries. These are denoted with blue. And the classes with without color, do not appear on the final dataset, but they indicates constraint on the existing instances.
-Finally \figref{SI_FORM} display the configuration data describing the form structure. 
 
 
 \subsection{Study Design Execution} \label{43}
