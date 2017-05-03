@@ -4,13 +4,13 @@
 
 \section{Evaluation}
 
-The applied VIVO framework offered possibility to define data input processes in a declarative way to some limited extent. However the problems of the RDF bones project exceeded these capabilities. During the thesis a vocabulary was developed that allowed the definition of more complex data input problem, where through one entry form multiple instances organized into a tree structure had to be created. This required a hierarchical form layout with dynamic elements. Further challenge was that the elements of the interface had to adopt to ontology extensions, which are defined through OWL classes and restrictions. So the designed vocabulary is capable of expressing forms and RDF data schemes for hierarchical data, and as well restrictions of the ontology. This extended vocabulary allowed the declarative definition of the problems of the project in a compact way. 
+The applied VIVO framework offered possibility to define data input processes in a declarative way to some limited extent by defining the elements of the form and RDF data pattern. However the problems of the RDF bones project exceeded these capabilities, therefore during the thesis a vocabulary was developed that allowed the definition of more complex data input problems. The complexity lied in that the interface had to be able to add multiple instances and the different elements of the form had to be loaded from the ontology extensions. To model these cases the vocabulary contained above the triples and different form elements, the \textit{SubFormAdder}, \textit{MultiTriple} and \textit{RestrictionTriple}. Those three elements allowed the declarative definition of more complex problems. 
 
+
+Above the vocabulary both for the client and server library were implemented that were capable of operating based on the configuration data. The forms were generated automatically and asked the server for the configuration data.
 The implemented framework both on the server and the client side is capable of operating based on the descriptor dataset describing the individual problems. The forms are generated automatically based on the descriptor dataset. The form has to communicate with the forms by the different events by adding. 
-
-
-
 The main form layout is described concretely in the form desriptor dataset, while the elements are loaded from the ontology by means of AJAX calls. The server is prepared to this calls and queries the necassary statements of the ontology. Furthermore the form is capable of adding, editing and deleting the data. 
+
 
 With the achieved system it is made possible to allow the user to define such data input processes, where the elements of the interface adopts to the ontology extensions, without having to care about how the client and server routines solve that data flow between the user and database. This approach can significantly accelerate the development and allow the Semantic Web based application development for individuals without experience with web application and programming technologies.
 
