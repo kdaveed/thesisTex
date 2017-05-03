@@ -4,11 +4,27 @@
 
 \section{Evaluation}
 
+The applied VIVO framework offered possibility to define data input processes in a declarative way to some limited extent. However the problems of the RDF bones project exceeded these capabilities. During the thesis a vocabulary was developed that allowed the definition of more complex data input problem, where through one entry form multiple instances organized into a tree structure had to be created. This required a hierarchical form layout with dynamic elements. Further challenge was that the elements of the interface had to adopt to ontology extensions, which are defined through OWL classes and restrictions. So the designed vocabulary is capable of expressing forms and RDF data schemes for hierarchical data, and as well restrictions of the ontology. This extended vocabulary allowed the declarative definition of the problems of the project in a compact way. 
+
+The implemented framework both on the server and the client side is capable of operating based on the descriptor dataset describing the individual problems. The forms are generated automatically based on the descriptor dataset. The form has to communicate with the forms by the different events by adding. 
+
+
+
+The main form layout is described concretely in the form desriptor dataset, while the elements are loaded from the ontology by means of AJAX calls. The server is prepared to this calls and queries the necassary statements of the ontology. Furthermore the form is capable of adding, editing and deleting the data. 
+
+With the achieved system it is made possible to allow the user to define such data input processes, where the elements of the interface adopts to the ontology extensions, without having to care about how the client and server routines solve that data flow between the user and database. This approach can significantly accelerate the development and allow the Semantic Web based application development for individuals without experience with web application and programming technologies.
+
+
+
+
+
+
+
 The three main tasks of a web application for data management is to allow the user to create, edit and delete particular set of the data. To achieve this several interface elements are required on the web page with the user interacts with. The data manipulation is initiated always by user actions, which trigger different request from the client and user. The task of the server is to interpret the incoming request and perform the necessary data operation in the database. The most important utility of the implemented framework that it extends the VIVO framework so that more complex data input problems can be defined only by the declaration of the data scheme and the layout of the user interface, and the developer does not have to care about how the client and server routines realizing the data flow between the user and the database. It is achieved such a generic interface routine, which offers the defined input elements and automatically handles the add, edit and delete operations, while the server can interpret the request and based on the data definition is capable of creating, editing and retrieving the data in scope. 
 
-Furthermore by such RDF data based systems, that every entity of the domain is represented by a class of the ontology and how the individual entities are related to each other is in turn defined in OWL restrictions. This means in terms of the web application interface, that its elements are dependent on the ontological statements. Thus according to type of the entity about the data has to be created, the corresponding classes from the ontology have to be retrieved. In our data scheme descriptor vocabulary it is important the these restrictions can be addressed, and the framework can interpret it. So the implemented framework based on the scheme definition is capable of query the ontological statement and generate the interface. This allows the usage of the framework for other kind of processes where the rules of the domain is described by ontological statements.
+Furthermore by such RDF data based systems, that every entity of the domain is represented by a class of the ontology and how the individual entities are related to each other is in turn defined in OWL restrictions. This means in terms of interface of a web application for creating RDF data, that its elements are dependent on the ontological statements. Thus according to type of the entity about the data has to be created, the corresponding classes from the ontology have to be retrieved, and loaded to data input elements. In our data scheme descriptor vocabulary it is important the these restrictions can be addressed, and the framework can interpret it. So the implemented framework based on the scheme definition is capable of query the ontological statement and generate the interface. This allows the usage of the framework for other kind of processes where the rules of the domain is described by ontology extensions.
 
-This approach can significantly accelerate the development and allow the Semantic Web based application development for individuals without experience with web application and programming technologies.
+
 
 
 \section{Future work}
