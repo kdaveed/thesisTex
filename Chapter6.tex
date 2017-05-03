@@ -5,53 +5,14 @@
 \section{Evaluation}
 
 
-
-
-The discussed use case requires a relative complex functionality because the individual software agent, the client and the server, participates in order to realize the functionality, and they have to communicate. The implementation requires both HTML, CSS and JS on the client, and on the server Java and the definition of data in N3 and SPARQL. Their such low level problem like clicking event, ajax call, substitution is eliminated.
+The discussed use case requires a relative complex functionality because the individual software agent, the client and the server, participates in order to realize the functionality. and they have to communicate.  The implementation requires both HTML, CSS and JS on the client, and on the server Java and the definition of data in N3 and SPARQL. Their such low level problem like clicking event, ajax call, substitution is eliminated.
 This leads to complex codes, which hard to maintain. With the designed vocabulary and framework it is achieved that the development in these programming languages are eliminated and the developer can concentrate on the data related aspects of software. Moreover the software is implemented in a way that it can be easily pluged into an other framework, because the JS can embedded library to any web page, and the server library then in turn just is.
 
-
-----------
-
-More the most important element of the vocabulary is the \textit{MultiTriple}, which allows a more expressive definition of the scheme of the data. With it we can convert multi dimensional JSON object into RDF and an other way around. This is basically extends SPARQL definition extension. On the client its correspondent is the \textit{SubformAdder}, which allows the definition of same scheme on the interface. With these two element complex datasets can be defined through. Moreover if we consider the capabilies of JavaScript, the user interface model can be extended so that not only the instances can be selected on the floating windown. 
+More the most important element of the vocabulary is the \textit{MultiTriple}, which allows a more expressive definition of the scheme of the data. With it we can convert multi dimensional JSON object into RDF and an other way around. This is basically extends SPARQL definition extension. On the client its correspondent is the \textit{SubformAdder}, which allows the definition of same scheme on the interface. With these two element complex datasets can be defined through. Moreover if we consider the capabilies of JavaScript, the user interface model can be extended so that not only the instances can be selected on the floating windows, but maybe other subforms can appear.
+This has a potential.
  
-
-
---------
-
- 
-
- 
-
-
-----------
-
-The multi level input requires complex algorithms in JavaScript and Java. The forms have to be created, and AJAX requests are sent, and on the forms loops are necessary for the processing of the elements. This all eliminated with the \textit{SubFormAdder} elements, and \textit{MultiTriple} for the data definition. The recreation of the for elements is as well an important issue, and thus benefit of the system. Thus the JavaScript library works on the data we do not have to care about the AJAX calls and low level request routines. 
-
-The system can be considered as logic that is an extension of the of the SPARQL language, which does not returns the value in tables but a hierarchical data structure. 
-
-
-This extends actually the scheme of the 
-
-----------
-
-The restriction triples offer a powerful model to just generate the SPARQL queries.
-
-
-
-
-Allows the conversion of the elements of the ontology extensions into the interface. 
-
-
-----------
-
-
-
-
+Further important part of the vocabulary that supposed to be emphasized is the different restriction triples. With these restriction it is possible to define the dependencies of selectors. But these selectors, dues to the subform adders they contain the options of the elements. Since the implemented JavaScript UI framework is capable of sending request to the server. In such ontological process and system description, nothing is hard coded into HTML, JavaScript or Java code, everything comes loaded from the triple store, regardless if it is class or instance. So they provide a description of the functionality of the form. 
 
 
 \section{Future work}
-
-
-
 
