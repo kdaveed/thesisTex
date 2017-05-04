@@ -58,22 +58,30 @@ The form layout definition of the Java object is depicted on the \figref{SI_FORM
 
 \subsection{Study Design Execution} \label{43}
 
-The title of the section indicates a class from the OBI ontology. A study design execution is a part of an investigation and consist of several different assays. An assay is a process for assessing a certain quality of an input object. In our case the input objects are bone segments, and their output is an information content entity instance. For example an investigation aiming to assess the gender of an individual takes different tokens on particular bones, and define the set of expressions.
+The title of the section indicates a class from the OBI ontology. A study design execution is a part of an investigation and consist of several different assays. Assay is a process for assessing a certain quality of a given object. In our case the input objects are bone segments, and the outputs are information content entities. For example an investigation aiming to estimate the gender of an individual, takes different tokens on particular skeleton, and define how masculine or feminine they are. \figref{glab} illustrates the token glabella on the frontal bone, and their expression in five categories.
 
 \img{\IV}{glabExpressions.png}{Glabella and its expressions}{glab}
 
- \figurename{glab} illustrates the bone segment glabella and its expressions. For the gender estimation multiple assays are defined each with some output values. After the carrying out the assays from the output values the  
+These are the five options from the researcher can choose from during the investigation. \figref{sdeExt} shows the subset of the OBI ontology extension for gender estimation. During the execution only the instance of the assay will be newly created, gender scores are given in the extension and the bone segment instances were already created by the skeletal inventories.
 
-The task of the interface is allow the users to perform all the assays by selecting the already created bones and setting the output value. The interface can be seen on \figref{SDE_UI}.
+\img{\IV}{sdeExt.png}{RDFBones extension for study design execution}{sdeExt}
+
+\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix 
+
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
 
+On \figref{SDE_SI} can be seen that the there are two section, one for the selected instances, and one for the instances to select. 
 
 \img{\IV}{SDE_IS.png}{Instance selector for existing bone segment}{SDE_SI}
-
-On \figref{SDE_SI} can be seen that the there are two section, one for the selected instances, and one for the instances to select. 
 
 The complete data structure of the form can be seen on the following image.
 
 \img{\IV}{SDE_DATA_C.png}{Complete data model}{SDE_DATA_C}
+
+The complete data structure of the form can be seen on the following image.
+
+\img{\IV}{javaObj1.png}{Form descriptor UML object diagram}{javaObj1}
+
+\img{\IV}{javaObj2.png}{Table descriptor UML object diagram}{javaObj2}
 
