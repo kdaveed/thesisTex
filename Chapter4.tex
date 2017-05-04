@@ -58,18 +58,20 @@ The form layout definition of the Java object is depicted on the \figref{SI_FORM
 
 \subsection{Study Design Execution} \label{43}
 
-The entry form for study design execution has as well the hierarchical layout like the one for skeletal inventories, but there are additionally two elements on the main form. The first is the selector from skeletal inventories. It plays a role by the selection of the bone organs as input for the assays. To each assay a set bone segment types is defined in the extensions, that can be can be assigned to them as input. These bone on this form are not created newly but existing ones are selected, that were already added in the frame of the skeletal inventory data input.  However there can be a large amount bone segments stored in the system, and thus the search is facilitated by showing only the ones that belong to the preselected skeletal inventory. The second is a global label field, whose value will be the label of all newly created instances.
+The title of the section indicates a class from the OBI ontology. A study design execution is a part of an investigation and consist of several different assays. An assay is a process for assessing a certain quality of an input object. In our case the input objects are bone segments, and their output is an information content entity instance. For example an investigation aiming to assess the gender of an individual takes different tokens on particular bones, and define the set of expressions.
 
+\img{\IV}{glabExpressions.png}{Glabella and its expressions}{glab}
+
+ \figurename{glab} illustrates the bone segment glabella and its expressions. For the gender estimation multiple assays are defined each with some output values. After the carrying out the assays from the output values the  
+
+The task of the interface is allow the users to perform all the assays by selecting the already created bones and setting the output value. The interface can be seen on \figref{SDE_UI}.
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
 
-Moreover the bone segment selector is not just a HTML selector input field, but a floating window implemented by JavaScript that allows the convenient browsing (\figref{SDE_SI}). It has two advantage with respect to the conventional selector. Firstly it allows to display additional information about the instances above their labels, like their types or longer descriptions. Secondly it does not loads the form layout with additional subform for the selected instances, which by large amount assays and measurement datums is an important aspect.
 
 \img{\IV}{SDE_IS.png}{Instance selector for existing bone segment}{SDE_SI}
 
-
 On \figref{SDE_SI} can be seen that the there are two section, one for the selected instances, and one for the instances to select. 
-
 
 The complete data structure of the form can be seen on the following image.
 
