@@ -62,16 +62,15 @@ The title of the section indicates a class from the OBI ontology. A study design
 
 \img{\IV}{glabExpressions.png}{Glabella and its expressions}{glab}
 
-These are the five options from the researcher can choose from during the investigation. \figref{sdeExt} shows the subset of the OBI ontology extension for gender estimation. During the execution only the instance of the assay will be newly created, gender scores are given in the extension and the bone segment instances were already created by the skeletal inventories.
+These are the five options from the researcher can choose from during the investigation. \figref{sdeExt} shows the subset of the OBI ontology extension for gender estimation. During the execution only the instance of the assay and gender score will be newly created, the gender label instances are given in the extension and the bone segment instances were already created by the skeletal inventories.
 
 \img{\IV}{sdeExt.png}{RDFBones extension for study design execution}{sdeExt}
 
-\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix 
-
+\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix for the label of the newly created instances newly created instances. 
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
 
-On \figref{SDE_SI} can be seen that the there are two section, one for the selected instances, and one for the instances to select. 
+The interface allows to add multiple measurement, but in our case only the sex score (gender score) is defined in the extension. The bone segment is an instance selector, where the grey button with the \textit{Select} label opens the floating window for more elaborate instance selection (\figref{SDE_SI}). 
 
 \img{\IV}{SDE_IS.png}{Instance selector for existing bone segment}{SDE_SI}
 

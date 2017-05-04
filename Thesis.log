@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 MAY 2017 18:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 MAY 2017 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1327,7 +1327,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [38 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_DATA_C.png> </Us
 ers/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SI_FORM.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.png, id
-=817, 1291.82625pt x 295.1025pt>
+=817, 1349.04pt x 295.1025pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.pn
 g Graphic file (type png)
 
@@ -1335,17 +1335,17 @@ g Graphic file (type png)
 >
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /glabExpressions.png used on input line 63.
-(pdftex.def)             Requested size: 360.0pt x 82.23637pt.
+(pdftex.def)             Requested size: 360.0pt x 78.74663pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png, id=819, 143
-5.3625pt x 415.5525pt>
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png, id=819, 144
+8.41125pt x 336.25626pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png Graphic
  file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /sdeExt.png used on input line 67.
-(pdftex.def)             Requested size: 360.0pt x 104.22392pt.
+(pdftex.def)             Requested size: 360.0pt x 83.57129pt.
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png, id=821, 103
 1.855pt x 457.71pt>
@@ -1354,7 +1354,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_UI.png used on input line 72.
+/SDE_UI.png used on input line 71.
 (pdftex.def)             Requested size: 360.0pt x 159.68408pt.
 
 
@@ -1368,7 +1368,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png Graphic
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_IS.png used on input line 76.
+/SDE_IS.png used on input line 75.
 (pdftex.def)             Requested size: 360.0pt x 108.72148pt.
 
 
@@ -1376,41 +1376,49 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png, id=824,
- 1431.3475pt x 601.24625pt>
+ 1221.56375pt x 512.91624pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png Gra
 phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/SDE_DATA_C.png used on input line 80.
-(pdftex.def)             Requested size: 360.0pt x 151.21944pt.
+/SDE_DATA_C.png used on input line 79.
+(pdftex.def)             Requested size: 360.0pt x 151.16028pt.
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.png
+> </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png, id=825, 1
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png, id=831, 1
 425.325pt x 584.1825pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png Graph
 ic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/javaObj1.png used on input line 84.
+/javaObj1.png used on input line 83.
 (pdftex.def)             Requested size: 360.0pt x 147.54279pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png, id=826, 1
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png, id=832, 1
 166.3575pt x 275.0275pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png Graph
 ic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
-/javaObj2.png used on input line 86.
+/javaObj2.png used on input line 85.
 (pdftex.def)             Requested size: 360.0pt x 84.88834pt.
 
 
@@ -1423,25 +1431,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.png
-> </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png>]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [40 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png> </Users
-/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png> </Users/konkolydav
-id/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png>]
+/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png> </Use
-rs/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png>]
+[41 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png> </U
+sers/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png> </Users/konk
+olydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png>]
 Chapter 5.
 
 LaTeX Warning: Reference `332_1' on page 42 undefined on input line 11.
@@ -1896,7 +1896,7 @@ Here is how much of TeX's memory you used:
  14485 multiletter control sequences out of 15000+600000
  24888 words of font info for 56 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 33i,12n,43p,2079b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,12n,43p,2079b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -1915,7 +1915,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (83 pages, 2865643 bytes).
+Output written on Thesis.pdf (83 pages, 2857166 bytes).
 PDF statistics:
  1293 PDF objects out of 1440 (max. 8388607)
  1074 compressed objects within 11 object streams
