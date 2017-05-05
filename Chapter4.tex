@@ -63,28 +63,27 @@ The title of the section indicates a class from the OBI ontology. A study design
 \img{\IV}{glabExpressions.png}{Glabella and its expressions}{glab}
 
 
-The ontology extensions decribing such investigations, contains all assays as different OWL classes, that are connected to some bone segment classes with restrictions, and to some output measurement datums. \figref{sdeExt} shows the subset of the OBI ontology extension for the assay \textit{Glabella}. 
+The ontology extensions describing such investigations, contains all assays as different OWL classes, that are connected to some bone segment classes with restrictions, and to some output measurement datums. \figref{sdeExt} shows the subset of the OBI ontology extension for the assay \textit{Glabella}. 
 
 \img{\IV}{sdeExt.png}{RDFBones extension for study design execution}{sdeExt}
 
-
-The graph pattern of a study design execution can be seen on \figref{sdeDataScheme}. During the execution of one assay only the assay and the gender score instances will be newly created, the for the bone segment and categorical label instances existing instances be selected. 
+The graph pattern of a study design execution can be seen on \figref{sdeDataScheme}. During the execution of one assay only the assay and the gender score instances will be newly created, the for the bone segment and categorical label existing ones be selected. 
 
 \img{\IV}{sdeDataScheme.png}{Input form for study design execution}{sdeDataScheme}
 
-\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix for the label of the newly created instances. 
+\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface discussed in the previous section. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is a literal field for setting the prefix for the label of the newly created instances, which facilitates later the identification of the performed assays.
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
 
-The interface allows to add multiple measurement, but in our case only the sex score (gender score) is defined in the extension. The bone segment is an instance selector, where the grey button with the \textit{Select} label opens the floating window for more elaborate instance selection (\figref{SDE_SI}). 
+The interface allows to add multiple measurements, but in our case only the sex score (gender score) is defined in the extension. The bone segment is an instance selector, where the grey button with the \textit{Select} label opens the floating window for more elaborate instance selection (\figref{SDE_SI}). Such window allows to select multiple instances as well.
 
 \img{\IV}{SDE_IS.png}{Instance selector for existing bone segment}{SDE_SI}
 
-The complete data structure of the form can be seen on the following image.
+The complete RDF graph pattern can be seen on the following image. 
 
 \img{\IV}{SDE_DATA_C.png}{Complete data model}{SDE_DATA_C}
 
-The complete data structure of the form can be seen on the following image.
+The Java objects describing the form and table for the instance selector window can be seen on the following two images.
 
 \img{\IV}{javaObj1.png}{Form descriptor UML object diagram}{javaObj1}
 
