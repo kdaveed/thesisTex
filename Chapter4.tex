@@ -58,15 +58,21 @@ The form layout definition of the Java object is depicted on the \figref{SI_FORM
 
 \subsection{Study Design Execution} \label{43}
 
-The title of the section indicates a class from the OBI ontology. A study design execution is a part of an investigation and consist of several different assays. Assay is a process for assessing a certain quality of a given object. In our case the input objects are bone segments, and the outputs are information content entities. For example an investigation aiming to estimate the gender of an individual, takes different tokens on particular skeleton, and define how masculine or feminine they are. \figref{glab} illustrates the token glabella on the frontal bone, and their expression in five categories.
+The title of the section indicates a class from the OBI ontology. A study design execution is a part of an investigation and consist of several different assays. Assay is a process for assessing a certain quality of a given object. In our case the input objects are bone segments, and the outputs are information content entities. For example an investigation aiming to estimate the gender of an individual, takes different tokens on particular skeleton, and define how masculine or feminine they are. \figref{glab} illustrates an example, the token glabella on the frontal bone, and their expressions grouped into five categories.
 
 \img{\IV}{glabExpressions.png}{Glabella and its expressions}{glab}
 
-These are the five options from the researcher can choose from during the investigation. \figref{sdeExt} shows the subset of the OBI ontology extension for gender estimation. During the execution only the instance of the assay and gender score will be newly created, the gender label instances are given in the extension and the bone segment instances were already created by the skeletal inventories.
+
+The ontology extensions decribing such investigations, contains all assays as different OWL classes, that are connected to some bone segment classes with restrictions, and to some output measurement datums. \figref{sdeExt} shows the subset of the OBI ontology extension for the assay \textit{Glabella}. 
 
 \img{\IV}{sdeExt.png}{RDFBones extension for study design execution}{sdeExt}
 
-\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix for the label of the newly created instances newly created instances. 
+
+The graph pattern of a study design execution can be seen on \figref{sdeDataScheme}. During the execution of one assay only the assay and the gender score instances will be newly created, the for the bone segment and categorical label instances existing instances be selected. 
+
+\img{\IV}{sdeDataScheme.png}{Input form for study design execution}{sdeDataScheme}
+
+\figref{SDE_UI} shows the implemented interface. The two first elements are additional with respect to the interface for skeletal inventories. The first is an auxiliary node selector, whose purpose is to help the user find the input bone segments by selecting the skeletal inventory they belong to. The second is literal field for setting the prefix for the label of the newly created instances. 
 
 \img{\IV}{SDE_UI.png}{Input form for study design execution}{SDE_UI}
 
