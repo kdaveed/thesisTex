@@ -50,7 +50,9 @@
 \contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{58}{section*.15}
 \contentsline {chapter}{\numberline {6}Conclusion}{60}{chapter.6}
 \contentsline {section}{\numberline {6.1}Evaluation}{60}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future work}{61}{section.6.2}
-\contentsline {chapter}{\numberline {A}Glossary}{63}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{68}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{68}{section.a.B.1}
+\contentsline {section}{\numberline {6.2}Future work}{62}{section.6.2}
+\contentsline {subsubsection}{Improved handling of OWL restrictions}{62}{section*.16}
+\contentsline {subsubsection}{RDF data based form configuration}{62}{section*.17}
+\contentsline {chapter}{\numberline {A}Glossary}{64}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{69}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{69}{section.a.B.1}
