@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 MAY 2017 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 MAY 2017 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1361,7 +1361,14 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png, id=825, 103
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.png
+> </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png>]
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png, id=832, 103
 1.855pt x 457.71pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png Graphic
  file (type png)
@@ -1371,14 +1378,6 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /SDE_UI.png used on input line 75.
 (pdftex.def)             Requested size: 360.0pt x 159.68408pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[39 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/glabExpressions.png
-> </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeExt.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png, id=834, 897
 .3525pt x 271.0125pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png Graphic
@@ -1390,15 +1389,10 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 (pdftex.def)             Requested size: 360.0pt x 108.72148pt.
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[40 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeDataScheme.png> 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png> </Users/kon
-kolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png>]
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png, id=842,
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png, id=835,
  1440.38126pt x 590.205pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png Gra
 phic file (type png)
@@ -1408,7 +1402,11 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /SDE_DATA_C.png used on input line 83.
 (pdftex.def)             Requested size: 360.0pt x 147.50584pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png, id=843, 1
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png, id=836, 1
 434.35875pt x 558.085pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png Graph
 ic file (type png)
@@ -1418,7 +1416,11 @@ Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary
 /javaObj1.png used on input line 87.
 (pdftex.def)             Requested size: 360.0pt x 140.0659pt.
 
-</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png, id=844, 1
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png, id=837, 1
 166.3575pt x 275.0275pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj2.png Graph
 ic file (type png)
@@ -1438,8 +1440,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png> </U
-sers/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png>]
+[40 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/sdeDataScheme.png> 
+</Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_UI.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41 </Users/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_IS.png> </Users
+/konkolydavid/Dropbox/Thesis/Images/4_Vocabulary/SDE_DATA_C.png> </Users/konkol
+ydavid/Dropbox/Thesis/Images/4_Vocabulary/javaObj1.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1901,7 +1912,7 @@ Here is how much of TeX's memory you used:
  14490 multiletter control sequences out of 15000+600000
  24888 words of font info for 56 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 32i,12n,43p,2079b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,12n,43p,2079b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -1920,7 +1931,7 @@ pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb>
-Output written on Thesis.pdf (84 pages, 2908853 bytes).
+Output written on Thesis.pdf (84 pages, 2908967 bytes).
 PDF statistics:
  1303 PDF objects out of 1440 (max. 8388607)
  1081 compressed objects within 11 object streams
