@@ -16,47 +16,47 @@
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Faux property descriptor RDF dataset}}{22}{figure.2.13}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Custom entry form for skeletal subdivision}}{23}{figure.2.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and RDF triples for complex entities}}{27}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Multi level form}}{27}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Skeletal subdivision graph pattern and form layout}}{29}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Investigation graph pattern and form layout}}{30}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Extended RDF graph pattern definition}}{31}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Framework functionality outline}}{31}{figure.3.6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ontology and RDF triples for complex entities}}{28}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Multi level form}}{28}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Skeletal subdivision graph pattern and form layout}}{30}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Investigation graph pattern and form layout}}{31}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Extended RDF graph pattern definition}}{32}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Framework functionality outline}}{32}{figure.3.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Java classes for RDF nodes}}{32}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Java classes for RDF triples}}{33}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Java classes for the form}}{34}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Java classes for instance viewer}}{35}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Primary skeletal inventory extension}}{36}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Skeletal inventory data triples}}{36}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Generated interface for primary skeletal inventory}}{37}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Complete data definition}}{38}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces UML object diagram for form layout definition}}{38}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Glabella and its expressions}}{39}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces RDFBones extension for study design execution}}{39}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Input form for study design execution}}{40}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Input form for study design execution}}{40}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Instance selector for existing bone segment}}{41}{figure.4.14}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Complete data model}}{41}{figure.4.15}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Extension schemes of the discussed use cases}}{41}{figure.4.16}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Java classes for RDF nodes}}{33}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Java classes for RDF triples}}{34}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Java classes for the form}}{35}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Java classes for instance viewer}}{36}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Primary skeletal inventory extension}}{37}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Skeletal inventory data triples}}{37}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Generated interface for primary skeletal inventory}}{38}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Complete data definition}}{39}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces UML object diagram for form layout definition}}{39}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Glabella and its expressions}}{40}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces RDFBones extension for study design execution}}{40}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Input form for study design execution}}{41}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Input form for study design execution}}{41}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Instance selector for existing bone segment}}{42}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Complete data model}}{42}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Extension schemes of the discussed use cases}}{42}{figure.4.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces More detailed scheme}}{42}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Processor tasks}}{43}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Valid and invalid nodes}}{44}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Valid and invalid graph}}{44}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Form element order}}{45}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Skeletal inventory data constraints}}{46}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Form dependency subgraphs}}{46}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Form descriptor JSON}}{48}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Conversion from triples into graph model}}{48}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Graph decomposition}}{49}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Form and form element classes}}{51}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces SubForm and sub form adder}}{52}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Form loading process}}{56}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces UML class diagram for FormConfiguration}}{56}{figure.5.14}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces UML class diagram for WebappConnector}}{57}{figure.5.15}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces UML class diagram for VariableDependency}}{57}{figure.5.16}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces UML class diagram for Graph}}{59}{figure.5.17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces More detailed scheme}}{43}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Processor tasks}}{44}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Valid and invalid nodes}}{45}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Valid and invalid graph}}{45}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Form element order}}{46}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Skeletal inventory data constraints}}{47}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Form dependency subgraphs}}{47}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Form descriptor JSON}}{49}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Conversion from triples into graph model}}{49}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Graph decomposition}}{50}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Form and form element classes}}{52}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces SubForm and sub form adder}}{53}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Form loading process}}{57}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces UML class diagram for FormConfiguration}}{57}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces UML class diagram for WebappConnector}}{58}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces UML class diagram for VariableDependency}}{58}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces UML class diagram for Graph}}{60}{figure.5.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
