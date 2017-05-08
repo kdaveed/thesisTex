@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{CIDOC501}
+{\em Definition of the CIDOC Conceptual Reference Model}, 5.0.1 edition, 2009.
+\newblock March 2009.
+
 \bibitem{10.1371/journal.pone.0154556}
 Anita Bandrowski, Ryan Brinkman, Mathias Brochhausen, Matthew~H. Brush, Bill
   Bug, Marcus~C. Chibucos, Kevin Clancy, Mélanie Courtot, Dirk Derom, Michel
@@ -15,11 +19,10 @@ Anita Bandrowski, Ryan Brinkman, Mathias Brochhausen, Matthew~H. Brush, Bill
 \newblock The ontology for biomedical investigations.
 \newblock {\em PLOS ONE}, 11, 11 2015.
 
-\bibitem{Brickley:04:RVD}
-Dan Brickley and Ramanathan Guha.
-\newblock {RDF} vocabulary description language 1.0: {RDF} schema.
-\newblock {W3C} recommendation, W3C, February 2004.
-\newblock http://www.w3.org/TR/2004/REC-rdf-schema-20040210/.
+\bibitem{Brassel2008}
+Bernd Bra{\ss}el, Michael Hanus, and Marion M{\"u}ller.
+\newblock {\em High-Level Database Programming in Curry}, pages 316--332.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2008.
 
 \bibitem{Dean:04:OWO}
 Mike Dean and Guus Schreiber.
@@ -27,17 +30,31 @@ Mike Dean and Guus Schreiber.
 \newblock {W3C} recommendation, W3C, February 2004.
 \newblock http://www.w3.org/TR/2004/REC-owl-ref-20040210/.
 
-\bibitem{infrastructure}
-Felix Engel, Stefan Schlager, and Ursula Witwer-Backofen.
-\newblock An infrastructure for digital standardisation in physical
-  anthropology.
-\newblock 11, 04 2016.
+\bibitem{DBLP:conf/icbo/GoncalvesTNTM15}
+Rafael~S. Gon{\c{c}}alves, Samson~W. Tu, Csongor~I. Nyulas, Michael~J. Tierney,
+  and Mark~A. Musen.
+\newblock Structured data acquisition with ontology-based web forms.
+\newblock In {\em Proceedings of the International Conference on Biomedical
+  Ontology, {ICBO} 2015, Lisbon, Portugal, July 27-30, 2015.}, 2015.
 
-\bibitem{Lanthaler:14:RCA}
-Markus Lanthaler, David Wood, and Richard Cyganiak.
-\newblock {RDF} 1.1 concepts and abstract syntax.
-\newblock {W3C} recommendation, W3C, February 2014.
-\newblock http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/.
+\bibitem{Hanus06PPDP}
+M.~Hanus.
+\newblock Type-oriented construction of web user interfaces.
+\newblock In {\em Proc.\ of the 8th International ACM SIGPLAN Conference on
+  Principle and Practice of Declarative Programming (PPDP'06)}, pages 27--38.
+  ACM Press, 2006.
+
+\bibitem{Hanus2000}
+Michael Hanus.
+\newblock {\em A Functional Logic Programming Approach to Graphical User
+  Interfaces}, pages 47--62.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2000.
+
+\bibitem{embeddingOntology}
+Georg Hohmann and Mark Fichtner.
+\newblock Embedding an ontology in form fields on the web.
+\newblock In {\em Semantic Web Journal - Interoperability, Usability,
+  Applicability, vol. 3, no. 4, pp. 1-9, 2012}, 2012.
 
 \bibitem{Rosse2003478}
 Cornelius Rosse and José L.V.~Mejino Jr.
