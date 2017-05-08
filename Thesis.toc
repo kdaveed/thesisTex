@@ -1,0 +1,59 @@
+\select@language {english}
+\contentsline {chapter}{Abstract}{II}{chapter*.1}
+\contentsline {chapter}{Kurzfassung}{III}{chapter*.2}
+\contentsline {chapter}{List of Tables}{VIII}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}RDFBones Project}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Goal of the thesis}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Thesis outline}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Preliminaries}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Semantic Web}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Resource Description Framework}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}RDF and RDFS Vocabularies}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}OWL}{7}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}SPARQL}{9}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Ontologies}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Ontology for the anatomy of the human body}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations (OBI)}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}RDFBones ontology}{15}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Web applications}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Fundamentals}{16}{subsection.2.3.1}
+\contentsline {subsubsection}{Client-sever architecture}{16}{section*.6}
+\contentsline {subsubsection}{Data driven web applications}{18}{section*.7}
+\contentsline {subsubsection}{Interactive web pages}{19}{section*.8}
+\contentsline {subsection}{\numberline {2.3.2}VIVO framework}{21}{subsection.2.3.2}
+\contentsline {subsubsection}{Profile pages}{21}{section*.9}
+\contentsline {subsubsection}{Custom entry forms}{23}{section*.10}
+\contentsline {section}{\numberline {2.4}Related Work}{26}{section.2.4}
+\contentsline {chapter}{\numberline {3}Problem Statement}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Multi level data input}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}RDFBones use-cases in VIVO}{30}{section.3.2}
+\contentsline {section}{\numberline {3.3}Solution scheme}{31}{section.3.3}
+\contentsline {chapter}{\numberline {4}Vocabulary for RDF data input}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Elements of the vocabulary}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Data definitions}{33}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Form definition}{35}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Primary Skeletal Inventory}{36}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{39}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Framework functionality}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Main software modules and tasks}{43}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Validation}{44}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{46}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph model generation}{48}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Implementation}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Client side}{51}{subsection.5.2.1}
+\contentsline {subsubsection}{Form loading}{51}{section*.11}
+\contentsline {subsubsection}{Sub forms}{53}{section*.12}
+\contentsline {subsection}{\numberline {5.2.2}Server side}{56}{subsection.5.2.2}
+\contentsline {subsubsection}{VIVO integration}{56}{section*.13}
+\contentsline {subsubsection}{Form data loading}{58}{section*.14}
+\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{59}{section*.15}
+\contentsline {chapter}{\numberline {6}Conclusion}{61}{chapter.6}
+\contentsline {section}{\numberline {6.1}Evaluation}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future work}{63}{section.6.2}
+\contentsline {subsubsection}{Improved handling of OWL restrictions}{63}{section*.16}
+\contentsline {subsubsection}{RDF data based form configuration}{63}{section*.17}
+\contentsline {chapter}{\numberline {A}Glossary}{65}{Appendix.a.A}
+\contentsline {chapter}{\numberline {B}Appendix}{70}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Something you need in the appendix}{70}{section.a.B.1}
