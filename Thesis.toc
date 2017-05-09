@@ -54,6 +54,3 @@
 \contentsline {section}{\numberline {6.2}Future work}{63}{section.6.2}
 \contentsline {subsubsection}{Improved handling of OWL restrictions}{63}{section*.16}
 \contentsline {subsubsection}{RDF data based form configuration}{63}{section*.17}
-\contentsline {chapter}{\numberline {A}Glossary}{65}{Appendix.a.A}
-\contentsline {chapter}{\numberline {B}Appendix}{70}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Something you need in the appendix}{70}{section.a.B.1}
