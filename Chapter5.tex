@@ -52,7 +52,7 @@ var dependencies = {
 }
 \end{lstlisting}
  
-Above the dependency the descriptor the JavaScript framework obtains the layout descriptor JSON for the form elements upon which it can generate the form. The mechanism of the form descriptor generation a quite simple because it is practically the conversion of a Java object into a JSON object. The fields of the Java object appear in the JSON objects as key. All individual Java class representing a form element has its type field value keyword (i.e "literalField" or "selector"). Based on this value can the form generator algorithm call the appropriate JavaScript class.
+Above the dependency the descriptor the JavaScript framework obtains the layout descriptor JSON for the form elements upon which it can generate the form. The mechanism of the form descriptor generation a quite simple because it is practically the conversion of a Java object into a JSON object. The fields of the Java object appear in the JSON objects as key. All individual Java class representing a form element has its type field value keyword (i.e "literalField" or "subFormAdder"). Based on this value can the form generator algorithm call the appropriate JavaScript class.
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Java to JSON}, captionpos=b, belowskip=1em, aboveskip=2em]
 public JSONObject getDescriptor(){
