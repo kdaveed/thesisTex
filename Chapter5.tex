@@ -163,13 +163,11 @@ Listing \ref{JS_subFormRoutine} shows the relevant part of the code in the class
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Sub form adder routine}, label=JS_subFormRoutine, captionpos=b, belowskip=1em, aboveskip=2em]
 class SubformAdder {
-	
 	constructor(descriptor, formData){
 		this.addButton = $("<div/>").text("Add").click(this.add)    
 		this.subFormDescriptor = this.descriptor.subForm
 		this.formData[this.descriptor.predicate] = []
 	}
-
 	add(){
 		var subformDataObject = new Object()
 		subFormDataObject[this.descriptor.dataKey] = this.selector.val()
@@ -185,11 +183,11 @@ The class \textit{SubForm} works almost the same way as its parent, but with the
 \newpage
 \subsection{Server side} 
 
-This section contains the discussion of the main elements of the implementation on the server. On the client side the JavaScript files containing the classes and libraries were just included into the generic template file, but the server side integration into VIVO is a more complicated issue, therefore the first subsection is dedicated completely to it. Furthermore the handling of the AJAX calls for form data with the variable dependencies are discussed here, as well as the routines how the graph model can save, edit and retrieve the data.
+This section contains the discussion of the main elements of the implementation on the server. On the client side, the JavaScript files containing the classes and libraries were just included into the generic template file, but the server side integration into VIVO is a more complicated issue, therefore the first subsection is dedicated entirely to it. Furthermore, the handling of the AJAX calls for form data with the variable dependencies are presented here, as well as the routines how the graph model can save, edit and retrieve the data.
 
 \subsubsection{VIVO integration}
 
-In VIVO the form loading starts from the profile pages, from the property fields. Based on the property IRI the generator class is retrieved from the configuration triples (\figref{fauxRDF}), and the generator class returns an instance of \textit{EditConfigurationVTwo} class. The approach implemented in the frame of the thesis does not replace this scheme, but makes it simpler. The idea is that the complete definition is stored in one object called \textit{FormConfiguration} (listing \ref{dataDefinition}).
+In VIVO, the form loading starts from the property fields of the profile pages,  Based on the property IRI the generator class is retrieved from the configuration triples (\figref{fauxRDF}), and the generator class returns an instance of \textit{EditConfigurationVTwo} class. The approach implemented in the frame of the thesis does not replace this scheme but makes it simpler. The idea is that the complete definition is stored in one object called \textit{FormConfiguration} (listing \ref{dataDefinition}).
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Added field to the VIVO configuration class}, label=dataDefinition, captionpos=b, belowskip=1em, aboveskip=2em]
 class EditConfigurationVTwo {
@@ -203,7 +201,7 @@ class EditConfigurationVTwo {
 
 \img{\V}{UML_fc.png}{UML class diagram for FormConfiguration}{UML_fc}
 
-\img{\V}{UML_wc.png}{UML class diagram for interface WebappConnector}{UML_wc}
+\img{\V}{UML_wc.png}{UML class diagram for the WebappConnector interface}{UML_wc}
 
 \figref{initial} shows the process of loading of a custom entry form in VIVO. The first step is to find the generator class based on the value of the \textit{predicateUri} parameter of the initial request. If the class has been found, the processor algorithm is executed, and the necessary JSON and Java object are generated. Afterwards the server saves the form configuration object in its cache with a key, that is sent to the client in the \textit{editKey} JavaScript variable. The box in the middle of the image shows, that the response web page includes the JS libraries (simplified notation \textit{framework.js}), and the value of the \textit{editKey}. This is the value will be sent with each AJAX request to the server, and based on this parameter the can the server find the form configuration instance that returns the required JSON objects.
 
