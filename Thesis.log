@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1754,7 +1754,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [58 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_vd.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png, id=1
-080, 1455.4375pt x 608.2725pt>
+079, 1455.4375pt x 608.2725pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png 
 Graphic file (type png)
 
@@ -1832,10 +1832,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 11723 strings out of 493014
- 174055 string characters out of 6133351
+ 11721 strings out of 493014
+ 174021 string characters out of 6133351
  338525 words of memory out of 5000000
- 14487 multiletter control sequences out of 15000+600000
+ 14486 multiletter control sequences out of 15000+600000
  23490 words of font info for 53 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  31i,12n,43p,2079b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1856,10 +1856,10 @@ type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb>
-Output written on Thesis.pdf (78 pages, 2820535 bytes).
+Output written on Thesis.pdf (78 pages, 2820034 bytes).
 PDF statistics:
- 1286 PDF objects out of 1440 (max. 8388607)
- 1073 compressed objects within 11 object streams
- 456 named destinations out of 1000 (max. 500000)
+ 1284 PDF objects out of 1440 (max. 8388607)
+ 1071 compressed objects within 11 object streams
+ 455 named destinations out of 1000 (max. 500000)
  615 words of extra memory for PDF output out of 10000 (max. 10000000)
 

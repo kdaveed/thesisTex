@@ -259,14 +259,13 @@ WHERE {
 \newpage
 \subsubsection{Saving, editing and retrieval of RDF Data}
 
-For each data operation the class graph is responsible. Each data input process has a main graph (\textit{mainGraph} field of configuration), which consist of normally some sub graphs. Each graph instance contains the necessary fields to be able perform the requeired data operations (\figref{UML_graph}). 
+The graph pattern of the certain input forms is stored in the graph object. The graph class has the necessary fields, which were initialized during the processing. Based on its fields the graph objects can cope with the incoming data and can retrieve the existing ones.
 
 \img{\V}{UML_graph.png}{UML class diagram for Graph}{UML_graph}
 
-For the saving and retrieving the whole dataset is addressed, therefore the main graph is called, but if a particular subform is edited on the form the graph, whose data is changes retrieved from teh \textit{graphMap} map of the form configuration. 
+For the saving and retrieving the whole dataset is addressed, therefore the main graph is called, but if a particular subform is edited on the form the graph, whose data is changes retrieved from the \textit{graphMap} map of the form configuration. 
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Loading form data from FormConfiguration}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=2em]
-JSONObject serveRequest(JSONObject requestData){
 switch (request.get("task")) {
 ...
 case "saveData": 
