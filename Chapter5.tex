@@ -17,7 +17,7 @@ The processor algorithm has four main tasks to solve. The validation of the conf
 
 \img{\V}{processor_tasks.png}{Processor tasks}{processor_tasks}
 
-The input of the algorithm is a set of triples describing the data model with its constraints, and the form model, which refers to the nodes in the triple set. The first task to do is the validation, because the descriptors are not supposed to be generated based on incorrect configuration data. The validator process has three scopes of the checking, the nodes, the graph and the form.
+The input of the algorithm is a set of triples describing the data model with its constraints, and the form model, which refers to the nodes in the triple set. The first task to do is the validation, because the descriptors are not supposed to be generated based on incorrect configuration data. The validator process has two scopes of the checking, the nodes themselves, the graph structure built from the triples.
  
 \figref{valid_1} depicts an example data model and illustrates some cases of valid and invalid nodes. The red nodes are coming as input, and the green stands for a constant. The explanation starts with the discussion of the form input nodes. Node 2 is valid because it is possible to generate a SPARQL query that retrieves the possible values of it. The query contains one triple which asks the subclasses of the constant class. Furthermore node 4 is valid as well, because there is path to it from a valid class node, therefore for there is again a SPARQL query for its values. However node 3 is not valid, because it does not contribute any path with valid input node or constant. This means its option values cannot be evaluated for the form. Here it is important to note that the path cannot come from the instance to the class, just the other way around. So the path 2 --> 1 --> 4 counts in the processor routine, but 2 --> 5 --> 6 --> 3 does not.
   
@@ -27,7 +27,7 @@ The next task regarding the nodes is to check if each instance has a value by th
 
 \img{\V}{valid_2.png}{Valid and invalid graph}{valid_2}
 
-Above the nodes important itself the whole graph built by the triples have to be investigated. In the previous chapter the triple type \textit{MultiTriple} were introduced. The rule regarding this type of triple that it divides the graph into subgraphs, and the subgraphs can connect to each other only be these triples. \figref{valid_2} illustrates the valid and invalid graph arrangements. The reason is that only to this type of scheme can the JSON object of the created by the data input process be mapped.
+Above the nodes, the whole graph itself have to be investigated. In the previous chapter the triple type \textit{MultiTriple} were introduced. The rule regarding this type of triple that it divides the graph into subgraphs, and the subgraphs can connect to each other only be these triples. \figref{valid_2} illustrates the valid and invalid graph arrangements. The reason is that only to this type of scheme can the JSON object of the created by the data input process be mapped.
 
 \subsection{Dependencies and form functionality}  \label{512}
 
