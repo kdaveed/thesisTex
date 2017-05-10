@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1531,17 +1531,15 @@ tion/skeletalInventory.png used on input line 40.
 (pdftex.def)             Requested size: 360.0pt x 88.29553pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/form.png>]
+[46 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/form.png> </Use
+rs/konkolydavid/Dropbox/Thesis/Images/5_Implementation/skeletalInventory.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/dependencyResult.pn
-g, id=898, 1494.58376pt x 230.8625pt>
+g, id=899, 1494.58376pt x 230.8625pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/dependencyResu
 lt.png Graphic file (type png)
 
@@ -1560,9 +1558,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/skeletalInvento
-ry.png> </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/dependencyR
-esult.png>]
+[47 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/dependencyResul
+t.png>]
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/formDescriptor.png,
  id=906, 1130.2225pt x 606.265pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/formDescriptor
@@ -1571,7 +1568,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/formDescriptor
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/formDescriptor.
 png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/formDescriptor.png used on input line 71.
+tion/formDescriptor.png used on input line 69.
 (pdftex.def)             Requested size: 360.0pt x 193.10217pt.
 
 
@@ -1591,7 +1588,7 @@ File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphModel.png
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphModel.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/graphModel.png used on input line 79.
+tion/graphModel.png used on input line 75.
 (pdftex.def)             Requested size: 360.0pt x 96.26976pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1603,14 +1600,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 png> </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphModel.png
 >]
 </Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphProcess.png, i
-d=927, 1277.77374pt x 264.99pt>
+d=929, 1277.77374pt x 264.99pt>
 File: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphProcess.p
 ng Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/graphProcess.pn
 g>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/graphProcess.png used on input line 98.
+tion/graphProcess.png used on input line 94.
 (pdftex.def)             Requested size: 360.0pt x 74.65764pt.
 
 
@@ -1629,7 +1626,7 @@ ement.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_form_formEle
 ment.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_form_formElement.png used on input line 115.
+tion/JS_form_formElement.png used on input line 111.
 (pdftex.def)             Requested size: 360.0pt x 152.85431pt.
 
 
@@ -1658,12 +1655,12 @@ r.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_subFormAdder
 .png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_subFormAdder.png used on input line 161.
+tion/JS_subFormAdder.png used on input line 157.
 (pdftex.def)             Requested size: 360.0pt x 86.61133pt.
 
 
 LaTeX Warning: Reference `JS_subformAdder' on page 53 undefined on input line 1
-64.
+60.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1694,7 +1691,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_fc.png used on input line 209.
+tion/UML_fc.png used on input line 205.
 (pdftex.def)             Requested size: 360.0pt x 94.75032pt.
 
 
@@ -1708,7 +1705,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_wc.png used on input line 211.
+tion/UML_wc.png used on input line 207.
 (pdftex.def)             Requested size: 360.0pt x 103.029pt.
 
 
@@ -1728,7 +1725,7 @@ aphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/initial.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/initial.png used on input line 215.
+tion/initial.png used on input line 211.
 (pdftex.def)             Requested size: 360.0pt x 167.99316pt.
 
 
@@ -1756,7 +1753,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_vd.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_vd.png used on input line 252.
+tion/UML_vd.png used on input line 248.
 (pdftex.def)             Requested size: 360.0pt x 90.00008pt.
 
 
@@ -1773,7 +1770,7 @@ Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_graph.png used on input line 273.
+tion/UML_graph.png used on input line 269.
 (pdftex.def)             Requested size: 360.0pt x 150.45277pt.
 ) (./Chapter6.tex
 
@@ -1869,7 +1866,7 @@ type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb>
-Output written on Thesis.pdf (79 pages, 2820694 bytes).
+Output written on Thesis.pdf (79 pages, 2820469 bytes).
 PDF statistics:
  1288 PDF objects out of 1440 (max. 8388607)
  1074 compressed objects within 11 object streams

@@ -31,11 +31,11 @@ Above the nodes, the whole graph itself have to be investigated too. In the prev
 
 \subsection{Dependencies and form functionality}  \label{512}
 
-The set of triples describing the data model builds a graph where the various input nodes are connected to each other. Further task of the processor algorithm to determine the subgraphs that define the SPARQL queries for the nodes appear on the form. The elements on the form has a specified order, and a variable can be dependent only of the main input nodes or such nodes that are before them on the form. The reason is that the dependency is practically SPARQL query with one output and with one or more inputs, and input node values have to available by the execution of the query.
+The set of triples describing the data model builds a graph where the different input nodes are connected to each other. Further task of the processor algorithm is to determine the subgraphs that define the SPARQL queries for the nodes appearing on the form. The elements on the form has a specified order and a variable can be dependent only of the main input nodes, or of such nodes that are before them on the form.
 
 \img{\V}{form.png}{Form element order}{form}
 
-\figref{form} shows a simplified form layout for skeletal inventories and emphasizes the order of the elements with a number. The values of the selector for the node \textit{subSubdivision} can only be dependent of the main input nodes because it is the first form node. However the node \textit{boneOrgan} in turn can be dependent on the \textit{subSubDivision} as well, because its value has to be set before the selector options in the sub form are loaded. and thus its value can be substituted into a SPARQL query.
+\figref{form} shows a simplified form layout for skeletal inventories and emphasizes the order of the elements with a number. The node \textit{subSubdivision} can only be dependent of the main input nodes because it is the first form one. However the node \textit{boneOrgan} in turn can be dependent on the \textit{subSubDivision} as well, because its value has to be set before the selector options in the sub form are loaded.
 
 \img{\V}{skeletalInventory.png}{Skeletal inventory data constraints}{skeletalInventory}
 
