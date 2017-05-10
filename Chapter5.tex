@@ -70,7 +70,6 @@ Where the \textit{this.title} has contains the value for the title of the form o
 
 \subsection{Graph model generation}  \label{513}
 
-
 The previous section outlined how the set of Java objects are converted into the form decriptor JSON object, and into Java objects describing the variable dependencies for the AJAX requests. Further task of the framework is to receive the submitted multi level JSON object coming from the client and generate the appropriate set of RDF triples. So in order to prepare the server for the reception of the form data, the same object structure have to be generated, which is coming from the form. We have seen in the previous chapters, that the form data object has the same scheme as the form has, and form follows the scheme defined by the multi triples in the triple set. Therefore the task of the last part of the processor algorithm is to decompose the set of triples by multi triples into graphs. The graph structure is represented in the server by a Java class called \textit{Graph}. 
 
 \img{\V}{graphModel.png}{Conversion from triples into graph model}{graphModel}
