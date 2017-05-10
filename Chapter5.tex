@@ -1,49 +1,35 @@
 
 \chapter{Framework functionality} \label{5}
 
-
-The aim of this chapter is to present the main mechanisms of the implemented software framework, which is capable of operating on high-level configuration data. Section \ref{51} contains a more abstract description of the functionality, while section \ref{52} goes into the implementation details both of the server and client side programming, including how the framework can be integrated into the applied web application. In both sections the explanation refers to the examples discussed in the previous chapter.
-
+The aim of this chapter is to present the main mechanisms of the implemented software framework, which is capable of operating on a high-level configuration data. Section \ref{51} contains a more abstract description of the functionality, while section \ref{52} goes into the implementation details both on the server and client side programming, including how the framework can be integrated into the applied VIVO framework. In both sections the explanations mostly refer to the use-cases discussed in the previous chapter.
 
 \section{Main software modules and tasks} \label{51}
 
-
-In \figref{332_1} we have seen the main work flow and components of the framework. \figref{scheme_1} is in turn a more detailed depiction of the software modules and processes of the application.
-
+On \figref{scheme_1} the work flow and the main components of the framework can be seen. After the initial form request an algorithm processes the configuration data and generates form, dependency and graph objects for the client and the server.
 
 \img{\V}{scheme_1.png}{More detailed scheme}{scheme_1}
 
-
-This section is divided into three subsections. First is the part (section \ref{511}) discusses the  processing of the configuration data and generation of the functionality descriptor objects for the client and the server. The second part (section \ref{512}) is about the client functionality including the asynchronous communication with the server. Finally the third (section \ref{513}) part covers the process after the submission, namely how the RDF data is generated based on the data coming from the client, as well as how the existing data is retrieved from the triples store.
-
+This section is divided into three subsections. The first (section \ref{511}) discusses the  processing of the configuration data and the generation of the functionality descriptor objects. The second part (section \ref{512}) is about the client functionality including the asynchronous communication with the server. Finally, the third (section \ref{513}) part covers the process after the submission, namely how the RDF data is generated based on the data coming from the client, as well as how the existing form data is retrieved from the triple store for editing.
 
 \subsection{Validation} \label{511}
 
-
-The processor algorithm has four main tasks to solve. The validation of the configuration data, generation of the form descriptor JSON object, and the Java object for data dependencies and for  the graph model. 
-
+The processor algorithm has four main tasks to solve. The validation of the configuration data, the generation of the form descriptor JSON object, and the Java objects for the data dependencies and for the graph model. 
 
 \img{\V}{processor_tasks.png}{Processor tasks}{processor_tasks}
 
-
-The input of the algorithm is the set of triples describing the data model with its constraints, and form model, which refers to the nodes in the triple set. The first task to do is the validation because the descriptors are not supposed to be generated based on incorrect configuration data. The validator process has three scope of the checking, the nodes, the graph and the form.
+The input of the algorithm is a set of triples describing the data model with its constraints, and the form model, which refers to the nodes in the triple set. The first task to do is the validation, because the descriptors are not supposed to be generated based on incorrect configuration data. The validator process has three scopes of the checking, the nodes, the graph and the form.
  
-\figref{valid_1} depicts an example data model and illustrates the cases of valid and invalid nodes (\figref{graph_notation} contains the meaning of the shapes and colors). The explanation starts with the discussion of the form input nodes. Node \textit{2} is valid because it is possible to generate a SPARQL query that retrieves the possible values of it. The query contains one triple which ask the subclasses of the constant class. Furthermore node \textit{4} is valid as well, because there is path to it from a valid class node, therefore for there is again a SPARQL query for its values. However the variable \textit{3} is not valid, because it does not contribute to any triple in path with valid input node or constant. Here it is important to note that the path cannot come from the instance to the class, just the other way around. So the path 2 --> 1 --> 4 counts in the processor routine, but 2 --> 5 --> 6 --> 3 does not.
+\figref{valid_1} depicts an example data model and illustrates some cases of valid and invalid nodes. The red nodes are coming as input, and the green stands for a constant. The explanation starts with the discussion of the form input nodes. Node 2 is valid because it is possible to generate a SPARQL query that retrieves the possible values of it. The query contains one triple which asks the subclasses of the constant class. Furthermore node 4 is valid as well, because there is path to it from a valid class node, therefore for there is again a SPARQL query for its values. However node 3 is not valid, because it does not contribute any path with valid input node or constant. This means its option values cannot be evaluated for the form. Here it is important to note that the path cannot come from the instance to the class, just the other way around. So the path 2 --> 1 --> 4 counts in the processor routine, but 2 --> 5 --> 6 --> 3 does not.
   
 \img{\V}{valid_1.png}{Valid and invalid nodes}{valid_1}
 
-
-The next task regarding the nodes is to check if each has a value by the RDF triple creation. The instances coming from the interface are automatically valid, because their URI is an input value. But the ones that have to generated newly and get as value a new unused URI from the triple store, must constribute to triple as subject, where the predicate is \textit{rdf:type} and the object is a valid class. For this reason the node \textit{5} is valid, since its type class is valid, but node \textit{6} is not. Moreover node \textit{7} is not valid as well, since it does not have any type class defined in the data model. Finally regarding the literals the validation is the simplest, either they appear on the form or have constant value, otherwise they are invalid. 
-
+The next task regarding the nodes is to check if each instance has a value by the RDF triple creation. The instances coming from the interface are automatically valid, because their URI is an input value. But the ones that have to generated newly and get as value a new unused URI from the triple store, must contribute to a triple as subject, where the predicate is \textit{rdf:type} and the object is a valid class. For this reason the node 5 is valid, since its type class is valid, but node 6 is not. Moreover node 7 is not valid as well, since it does not have any type class defined in the data model. 
 
 \img{\V}{valid_2.png}{Valid and invalid graph}{valid_2}
 
-
 Above the nodes important itself the whole graph built by the triples have to be investigated. In the previous chapter the triple type \textit{MultiTriple} were introduced. The rule regarding this type of triple that it divides the graph into subgraphs, and the subgraphs can connect to each other only be these triples. \figref{valid_2} illustrates the valid and invalid graph arrangements. The reason is that only to this type of scheme can the JSON object of the created by the data input process be mapped.
 
-
 \subsection{Dependencies and form functionality}  \label{512}
-
 
 The set of triples describing the data model builds a graph where the various input nodes are connected to each other. Further task of the processor algorithm to determine the subgraphs that define the SPARQL queries for the node appear on the form. The elements on the form has a specified order, and the rule that have to be considered during the processing, is that a variable can be dependent only of the main input variables or such variables that are before it on the form. The reason is that the dependency is practically SPARQL query with one output and with one or more inputs, and input node have to available by the execution of the query.
 
