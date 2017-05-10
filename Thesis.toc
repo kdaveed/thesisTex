@@ -48,7 +48,7 @@
 \contentsline {subsection}{\numberline {5.2.2}Server side}{56}{subsection.5.2.2}
 \contentsline {subsubsection}{VIVO integration}{56}{section*.13}
 \contentsline {subsubsection}{Form data loading}{58}{section*.14}
-\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{59}{section*.15}
+\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{60}{section*.15}
 \contentsline {chapter}{\numberline {6}Conclusion}{61}{chapter.6}
 \contentsline {section}{\numberline {6.1}Evaluation}{61}{section.6.1}
 \contentsline {section}{\numberline {6.2}Future work}{63}{section.6.2}
