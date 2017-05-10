@@ -212,7 +212,7 @@ This section contains the discussion of the main elements of the implementation 
 
 \subsubsection{VIVO integration}
 
-As it was mentioned in the previous chapter the process of the form loading starts from the profile pages of VIVO. In VIVO the entry form loading is initiated by the property fields. Normally the programming in VIVO happens through generator classes, which initiates an \textit{EditConfigurationVTwo} class instance.
+As it was mentioned in the previous chapter the process of the form loading starts from the profile pages of VIVO. In VIVO the entry form loading is initiated by the property fields, where based on the property IRI the generator class is retrieved from the configuration triples (\figref{fauxRDF}). The generator class returns an instance of \textit{EditConfigurationVTwo} class. The approach implemented in the frame of the thesis does not replace this scheme, but makes it simpler. The idea is that the complete definition is stored in one object called \textit{FormConfiguration} (listing \ref{dataDefinition}).
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Added field to VIVO class}, label=dataDefinition, captionpos=b, belowskip=1em, aboveskip=2em]
 class EditConfigurationVTwo {
@@ -222,15 +222,15 @@ class EditConfigurationVTwo {
 }
 \end{lstlisting}
 
-The approach implemented in the frame of the thesis does not replace this scheme, but makes it simpler. The idea is that the complete definition is stored in one object called \textit{FormConfiguration} (listing \ref{dataDefinition}). This will be the new field of the class \textit{EditConfigurationVTwo}, which contained originally the data and form definition in VIVO. 
-
-\figref{initial} shows the process of loading a custom entry form in VIVO. The first step is to find the generator class based on the value of the \textit{predicateUri} parameter of the initial request. If the class has been found, the processor algorithm is executed, and the necessary JSON and Java object are generated. Afterwards the server saves the form configuration object in its cache with a key, which is called in VIVO \textit{editKey}. The box in the middle of the image shows, that the response web page includes the JS libraries (simplified notation \textit{framework.js}), and the value of the \textit{editKey}. This is the value will be sent in each AJAX request to the server, and based on this the can the server find the form configuration instance that returns the JSON object for the client.
-
-\img{\V}{initial.png}{Form loading process}{initial}
-
 \figref{UML_fc} show the UML class diagram \textit{FormConfiguration} class. The fields of the classes were already discussed in the previous chapter, but here it is important to note that each AJAX request is server by the method \textit{serveRequest()}, where both the input and the output is JSON object.
 
 \img{\V}{UML_fc.png}{UML class diagram for FormConfiguration}{UML_fc}
+
+
+\figref{initial} shows the process of loading of a custom entry form in VIVO. The first step is to find the generator class based on the value of the \textit{predicateUri} parameter of the initial request. If the class has been found, the processor algorithm is executed, and the necessary JSON and Java object are generated. Afterwards the server saves the form configuration object in its cache with a key, which is called in VIVO \textit{editKey}. The box in the middle of the image shows, that the response web page includes the JS libraries (simplified notation \textit{framework.js}), and the value of the \textit{editKey}. This is the value will be sent with each AJAX request to the server, and based on this parameter the can the server find the form configuration instance that returns the required JSON objects.
+
+\img{\V}{initial.png}{Form loading process}{initial}
+
 
 Listing \ref{serveRequest} shows the main scheme of \textit{serveRequest()} routine. Each request coming from the client has the key \textit{task}, which defines what data JSON object has to be served for the client. 
 
