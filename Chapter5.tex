@@ -197,17 +197,17 @@ class EditConfigurationVTwo {
 }
 \end{lstlisting}
 
-\figref{UML_fc} shows the UML class diagram \textit{FormConfiguration} class. The first field, (\textit{connector} connects the server implementation classes to the triple store (\figref{UML_wc}). This has to be implemented individually for VIVO. The \textit{mainGraph} field is the data definition, the \textit{form} is for the form, and the \textit{dependencies} and \textit{graphMap} are used by the AJAX calls. 
+\figref{UML_fc} shows the UML class diagram \textit{FormConfiguration} class. The first field (\textit{connector}) connects the server implementation classes to the triple store (\figref{UML_wc}). This has to be implemented individually for VIVO. The \textit{mainGraph} field is the data definition, the \textit{form} is for the form, and the \textit{dependencies} and \textit{graphMap} are used by the AJAX calls. 
 
 \img{\V}{UML_fc.png}{UML class diagram for FormConfiguration}{UML_fc}
 
 \img{\V}{UML_wc.png}{UML class diagram for the WebappConnector interface}{UML_wc}
 
-\figref{initial} shows the process of loading of a custom entry form in VIVO. The first step is to find the generator class based on the value of the \textit{predicateUri} parameter of the initial request. If the class has been found, the processor algorithm is executed, and the necessary JSON and Java object are generated. Afterwards the server saves the form configuration object in its cache with a key, that is sent to the client in the \textit{editKey} JavaScript variable. The box in the middle of the image shows, that the response web page includes the JS libraries (simplified notation \textit{framework.js}), and the value of the \textit{editKey}. This is the value will be sent with each AJAX request to the server, and based on this parameter the can the server find the form configuration instance that returns the required JSON objects.
+\figref{initial} shows the process of loading of a custom entry form in VIVO. The first step is to find the generator class based on the value of the \textit{predicateUri} parameter of the initial request. If the class has been found, the processor algorithm is performed, and the necessary JSON and Java object are generated. Afterwards, the server saves the form configuration object in its cache with a key, that is forwarded to the client in the \textit{editKey} JavaScript variable. The box in the middle of the image shows that the response web page includes the JS libraries (simplified notation \textit{framework.js}), and the value of the \textit{editKey}. This is the value will be sent with each AJAX request to the server, and based on this parameter the can the server find the form configuration instance that returns the required JSON objects.
 
 \img{\V}{initial.png}{Form loading process}{initial}
 
-Upon the AJAX calls from the form, the class \textit{AJAXController} is called, which gets the found form configuration instance an the incoming JSON object (\textit{requestData}). Each AJAX call has a parameter \textit{task}, based on which the framework decides which operation has to be executed.
+Upon the AJAX calls from the form, the class \textit{AJAXController} is called, which gets the found form configuration instance the incoming JSON object (\textit{requestData}). Each AJAX call has a parameter \textit{task}, based on which the framework decides which operation has to be completed.
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={AJAX request server routine}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=2em]
 setResponse(FormConfiguration formConfig, JSONObject request) {
@@ -221,26 +221,25 @@ setResponse(FormConfiguration formConfig, JSONObject request) {
 
 Important part of the framework functionality is the loading of options of particular selectors on the forms. As it was mentioned, the variables on the form can be dependent on other values of the forms. The request has three main parameters :
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Example request data for form data}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=2em]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Example request JSON for form data}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=2em]
 var formDataRequest = {
+	editKey : "93181",
 	task : "formData",
-	variableToGet : "a",
-	inputParameters : { b : "1", c : "2"} 
+	variableToGet : "boneOrgan",
+	inputParameters : { subSubDivision : "fma:5058" }
 }
 \end{lstlisting}
 
-where the inputParameters is further JSON object, that contains the key-value pairs collected from the form. The AJAXController then finds the variable dependency instance from the \textit{dependencies} map based on the \textit{variableToGet} field:
+The AJAXController then finds the variable dependency instance from the \textit{dependencies} map based on the \textit{variableToGet} field:
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Loading form data from FormConfiguration}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=2em]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Loading form data from FormConfiguration}, label=serveRequest, captionpos=b, belowskip=1em, aboveskip=1em]
 switch (request.get("task")) {
-	...
 	case "formData": 
-		return dependencies.get(request.get("varToGet")).getData(request)
-	...		
+		return dependencies.get(request.get("varToGet")).getData(request)		
 }
 \end{lstlisting}
 
-\figref{UML_vd} shows the UML diagram of the variable dependency. The most important field is the \textit{dependencies}, which is a set of triples describing the path from the input variables to the output variable. The methon \textit{getData} returns the JSONObject containing the list about the options.
+\figref{UML_vd} shows the UML diagram of the variable dependency. The most important field is the \textit{dependencies}, which is a set of triples describing the path from the input variables to the output variable. The method \textit{getData} returns the JSONObject containing the list about the options.
 
 \img{\V}{UML_vd.png}{UML class diagram for VariableDependency}{UML_vd}
 
