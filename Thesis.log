@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 21:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 21:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1623,7 +1623,7 @@ ement.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_form_formEle
 ment.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_form_formElement.png used on input line 117.
+tion/JS_form_formElement.png used on input line 115.
 (pdftex.def)             Requested size: 360.0pt x 152.85431pt.
 
 
@@ -1652,12 +1652,12 @@ r.png Graphic file (type png)
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/JS_subFormAdder
 .png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/JS_subFormAdder.png used on input line 163.
+tion/JS_subFormAdder.png used on input line 161.
 (pdftex.def)             Requested size: 360.0pt x 86.61133pt.
 
 
 LaTeX Warning: Reference `JS_subformAdder' on page 53 undefined on input line 1
-66.
+64.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1688,7 +1688,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_fc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_fc.png used on input line 211.
+tion/UML_fc.png used on input line 209.
 (pdftex.def)             Requested size: 360.0pt x 94.75032pt.
 
 
@@ -1702,7 +1702,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_wc.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_wc.png used on input line 213.
+tion/UML_wc.png used on input line 211.
 (pdftex.def)             Requested size: 360.0pt x 103.029pt.
 
 
@@ -1722,7 +1722,7 @@ aphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/initial.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/initial.png used on input line 217.
+tion/initial.png used on input line 215.
 (pdftex.def)             Requested size: 360.0pt x 167.99316pt.
 
 
@@ -1750,7 +1750,7 @@ phic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_vd.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_vd.png used on input line 254.
+tion/UML_vd.png used on input line 252.
 (pdftex.def)             Requested size: 360.0pt x 90.00008pt.
 
 
@@ -1767,7 +1767,7 @@ Graphic file (type png)
 
 <use /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementation/UML_graph.png>
 Package pdftex.def Info: /Users/konkolydavid/Dropbox/Thesis/Images/5_Implementa
-tion/UML_graph.png used on input line 275.
+tion/UML_graph.png used on input line 272.
 (pdftex.def)             Requested size: 360.0pt x 150.45277pt.
 ) (./Chapter6.tex
 
@@ -1840,7 +1840,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
  11728 strings out of 493014
- 174109 string characters out of 6133351
+ 174110 string characters out of 6133351
  338525 words of memory out of 5000000
  14488 multiletter control sequences out of 15000+600000
  23490 words of font info for 53 fonts, out of 8000000 for 9000
@@ -1863,7 +1863,7 @@ type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb>
-Output written on Thesis.pdf (79 pages, 2820844 bytes).
+Output written on Thesis.pdf (79 pages, 2820698 bytes).
 PDF statistics:
  1295 PDF objects out of 1440 (max. 8388607)
  1081 compressed objects within 11 object streams

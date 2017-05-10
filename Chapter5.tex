@@ -76,13 +76,13 @@ Moreover, if the form element is sub form adder then it has a field \textit{subF
 
 \subsection{Graph model generation}  \label{513}
 
-The previous section outlined how the set of Java objects are converted into the form decriptor JSON object, and into Java objects describing the variable dependencies for the AJAX requests. Further task of the framework is to receive the submitted multi level JSON object coming from the client and generate the appropriate set of RDF triples. So in order to prepare the server for the reception of the form data, the same object structure have to be generated, which is coming from the form. We have seen in the previous chapters, that the form data object has the same scheme as the form has, and form follows the scheme defined by the multi triples in the triple set. Therefore the task of the last part of the processor algorithm is to decompose the set of triples by multi triples into graphs. The graph structure is represented in the server by a Java class called \textit{Graph}. 
+The previous section outlined how the set of Java objects are converted into the form descriptor JSON object, and into Java objects describing the variable dependencies for the AJAX requests. A further task of the framework is to receive the submitted multi-level JSON object coming from the client and generate the appropriate set of RDF triples. So in order to prepare the server for the reception of the form data, the same object structure have to be generated, which is coming from the form. We have seen in the previous chapters, that the form data object has the same scheme as the form has, and the form follows the scheme defined by the multi triples in the triple set. Therefore the task of the last part of the processor algorithm is to decompose the set of triples by multi triples into graphs. The graph structure is represented in the server by a Java class called \textit{Graph}.
 
 \img{\V}{graphModel.png}{Conversion from triples into graph model}{graphModel}
 
-The decomposition starts by the initial RDF node, which defines the main graph. The class \textit{Graph} has a Map<String, Graph> field where the subgraphs are stored. The keys of the map are equivalent to the keys of the keys of the arrays in the incoming JSON object. The other keys of the JSON are the variables of the corresponding graph. The following code snippet shows the basics of the RDF data generation from multi level JSON object. 
+The decomposition starts by the initial RDF node, which defines the main graph. The class \textit{Graph} has a Map<String, Graph> field where the subgraphs are stored. The keys of the map are equivalent to the keys of the keys of the arrays in the incoming JSON object. The other keys of the JSON are the variables of the corresponding graph. The following code snippet shows the basics of the RDF data generation from multi-level JSON object. 
 
-\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Subform descriptor}, label=dataGeneration captionpos=b, belowskip=1em, aboveskip=2em]
+\begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Saving routine in Java}, label=dataGeneration captionpos=b, belowskip=1em, aboveskip=2em]
 saveData(JSONObject formData){
 	this.save(formData);
 	for(String keys : this.subGraphs.keys()){
@@ -93,39 +93,37 @@ saveData(JSONObject formData){
 }
 \end{lstlisting}
 
-The save routine creates the RDF triples of the graph based on the data fields of the JSON object. The a loop iterates through the subgraphs of the graph and gets the arrays with the same key from the JSON and passes it to the corresponding subgraphs, that perform the same algorithm as many times, as many elements of the input array have. This is the way how the multi dimensional JSON is processed by the same structure of graph model on the server. 
+The save routine creates the RDF triples of the graph based on the data fields of the JSON object. The loop iterates through the subgraphs of the graph and gets the arrays with the same key from the JSON and passes it to the corresponding subgraphs, that perform the same algorithm as many times, as many elements of the input array have. This is the way how the multi-dimensional JSON is processed by the same structure of graph model on the server.
 
-\figurename{graphProcess} illustrates the process of the JSON-RDF conversion by means of graph model. The advantage of this graph model that it can be applied the same way for the data retriaval, where the graph performs the SPARQL queries based on its triples, and generates the arrays of objects from the result table. 
+\figurename{graphProcess} illustrates the process of the JSON-RDF conversion by means of graph model. The advantage of this graph model that it can be applied the same way for the data retrieval, where the graph performs the SPARQL queries based on its triples, and generates the arrays of objects from the result table. 
 
-\img{\V}{graphProcess.png}{Graph decomposition}{graphProcess}
+\img{\V}{graphProcess.png}{JSON/RDF through the graph model}{graphProcess}
 
 \newpage
 \section{Implementation} \label{52}
 
-The description of the implementation starts with the client side because it is more independent from the other parts, and it sufficient to understand properly the functionality of the server. While in the last subsection it is discussed how can the developed framework integrated into the VIVO web application. 
-
+The description of the implementation starts with the client side because it is more independent from the other parts, and it sufficient to understand the functionality of the server accurately.
 
 \subsection{Client side}
 
-This subsection presents the basics of the JavaScript implementation that realizes the dynamic form generation and event handling based on JSON form configuration data. The first part covers the creation of a form itself, and how the data is set to form data object, while the second part is about how the form enables multi dimensional data input by means of sub form adders.
+This subsection presents the basics of the JavaScript implementation that realizes the dynamic form generation and event handling based on JSON form configuration data. The first part covers the creation of a form itself, and how the data is set to form data object, while the second part is about how the form enables multi-dimensional data input by means of subform adders.
  
-
 \subsubsection{Form loading}
 
-In contrast to Java, JavaScript codes are not necessarily built up in an object-oriented manner. On pages where the elements are statically defined in HTML, it is sufficient to assign event handler routines to them. However in our case none of the elements of the page is coded into HTML, but everything is dynamic and thus added by JavaScript. In the implementation JavaScript classes are applied, whose input is the descriptor object, based on which they generate the corresponding data input fields, and handles the data entered through them by the user. In this section the functionality of the two main classes, the \textit{Form} and \textit{Formelement} is discussed.  
+In contrast to Java, JavaScript codes are not necessarily built up in an object-oriented manner. On pages where the elements are statically defined in HTML, it is sufficient to assign event handler routines to them. However in our case, none of the elements of the page is coded into HTML, but everything is dynamic and thus added by JavaScript. In the implementation, the JavaScript classes are applied, whose input is the descriptor object, based on which they generate the corresponding data input fields, and handles the data entered through them by the user. In this section the functionality of the two main classes, the \textit{Form} and \textit{Formelement} is discussed. 
 
-\img{\V}{JS_form_formElement.png}{Form and form element classes}{JS_form_element}
+\img{\V}{JS_form_formElement.png}{Form and form element JavaScript classes}{JS_form_element}
 
-\figref{JS_form_element} illustrate the structure of the two main classes. The most fundamental difference betwen these JavaScript classes to Java classes, that they do not contain only fields and routines (or methods) but UI elements as well. The UI elements can represent and HTML tag, and can be added or removed any time by the routines. Each class of the implemented JavaScript library has a defined set of UI elements. 
+\figref{JS_form_element} illustrate the structure of the two main classes. The most fundamental difference between these JavaScript classes to Java classes, that they do not contain only fields and routines (or methods) but eventually UI elements as well. The UI elements can represent and HTML tag and can be added or removed any time by the routines. Each class of the implemented JavaScript library has a defined set of UI elements. 
 
-The form generation processes starts with the initialization of a \textit{Form} object, where the constructor (like in Java) gets the descriptor JSON object coming from the server. As it was described in the previous chapter the descriptor contains a list of the form element descriptor objects. The \textit{loadFormElements()} routine iterates through on this array, and initiates the form element objects.
+The form generation process begins with the initialization of a \textit{Form} object, where the constructor (like in Java) gets the descriptor JSON object coming from the server. As it was described in the previous chapter, the descriptor contains a list of the form element descriptor objects. The \textit{loadFormElements()} routine iterates through on this array, and initiates the form element objects.
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form generation based on configuration data}, label=formGen captionpos=b, belowskip=1em, aboveskip=2em]
 var formData = new Object()
 for(var i = 0, i < formElements.length; i++){
 	switch(formElements[i].type){
-		case "stringField":
-			var element = new StringField(formElements[i], formData)
+		case "literalField":
+			var element = new LiteralField(formElements[i], formData)
 			break;
 		case "selector" :  ...
 	}
@@ -134,13 +132,12 @@ for(var i = 0, i < formElements.length; i++){
 \end{lstlisting}
 
 
-Each form element type is represented as subclass of the \textit{formElement} class. They all have a container UI field, that contains their title and input field HTML element. This container field is added to the \textit{elements} field of the \textit{Form} object.
+Each form element type is represented as subclass of the \textit{formElement} class. They all have a container UI field, which contains their title and input field HTML element. This container field is added to the \textit{elements} field of the \textit{Form} object.
 
-Listing \ref{formElement} show a small cut from the code of the StringField, which is the subclass of the \textit{FormElement} class. The field \textit{inputField} is the HTML <input/> tag, and if its value changes then the \textit{editHandler} routine is called. The editHandler is the function that realizes the dynamic form data creation, by setting the value of the input field into the form data object with the key defined in its the descriptor. The key is stored in the \textit{dataKey} field of the descriptor, which is the variable name of the RDFNode the input element represents.
-
+Listing \ref{formElement} show a small cut from the code of the LiteralField, which is the subclass of the \textit{FormElement} class. The field \textit{inputField} is the HTML <input/> tag, and if its value changes then the \textit{editHandler} routine is called. The editHandler is the function that realizes the dynamic form data creation, by setting the value of the input field into the form data object with the key defined in its the descriptor. The key is stored in the \textit{dataKey} field of the descriptor, which is the variable name of the RDFNode the input element represents.
 
 \begin{lstlisting}[basicstyle=\footnotesize, frame=single, caption={Form element}, label=formElement, captionpos=b, belowskip=1em, aboveskip=2em]
-class StringField extends FormElement{
+class LiteralField extends FormElement{
 	constructor(descriptor, formData){
 		super(descriptor, formData)
 		this.inputField = $("<input/>").type("text").change(this.editHandler)
@@ -152,11 +149,9 @@ class StringField extends FormElement{
 }
 \end{lstlisting}
 
-This is the basic mechanism of how object-oriented JavaScript can be employed to generate forms, and put the entered values in to JSON object based on configuration data.
-
+This is the fundamental mechanism of how object-oriented JavaScript can be employed to generate forms and put the entered values into JSON object based on configuration data.
 
 \subsubsection{Sub forms}
-
 
 The previous section explained how the form algorithm creates the JSON object of the form data. This section extends the explanation of how it is possible to add the multi level data by sub form adders. To this two new JavaScript class functionality is outline, the \textit{SubFormAdder} and the \textit{SubForm}. The former is the subclass of the \textit{FormElement} and the latter of the \textit{Form} class. 
 
@@ -265,7 +260,6 @@ WHERE {
 	FILTER (?inputVar = fma:5058)
 }
 \end{lstlisting}
-
 
 \newpage
 \subsubsection{Saving, editing and retrieval of RDF Data}
