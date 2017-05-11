@@ -155,9 +155,9 @@ This is the fundamental mechanism of how object-oriented JavaScript can be emplo
 
 The previous section explained how the form algorithm creates the JSON object of the form data. This section extends the explanation of how it is possible to add the multi-level data by sub form adders. To this two new JavaScript class functionality is outline, the \textit{SubFormAdder} and the \textit{SubForm}. The former is the subclass of the \textit{FormElement} and the latter of the \textit{Form} class.
 
-\img{\V}{JS_subFormAdder.png}{SubForm and sub form adder}{JS_subFormAdder}
+\img{\V}{JS_subFormAdder.png}{SubForm and SubFormAdder JS classes}{JS_subFormAdder}
 
-\figref{JS_subformAdder} depicts the UI elements of the two classes. The routines and fields are inherited from the parent classes. The class \textit{SubFormAdder} has a button, which lets the user add new subforms, which are appended into the subform container. The class \textit{SubForm} has additionally to the parent class a delete button for the cases if the user wants to delete the added dataset.  
+\figref{JS_subFormAdder} depicts the UI elements of the two classes. The routines and fields are inherited from the parent classes. The class \textit{SubFormAdder} has a button, which lets the user add new subforms, which are appended into the subform container. The class \textit{SubForm} has additionally to the parent class a delete button for the cases if the user wants to delete the added dataset.  
 
 Listing \ref{JS_subFormRoutine} shows the relevant part of the code in the class \textit{SubFormAdder}. The essence of the class is that the constructor initiates an array (with "[]") in the form data object, to which the subform data object will be added dynamically upon the click events. So if the user clicks the add button, then a further object is initialized (\textit{subFormDataObject}), which will be the data object of the subform. Important to note that this object will contain the value of the selected option of the subform adder with the key defined in the \textit{dataKey} field of the descriptor. After the initialization of the object, it is pushed to the array, and the new \textit{SubFormAdder} instance is created, whose container is appended to the subform container of the subform adder. 
 
