@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Thesis.aux
 The style file: unsrt.bst
 Database file #1: references.bib
-I was expecting a `,' or a `}'---line 311 of file references.bib
+I was expecting a `,' or a `}'---line 309 of file references.bib
  :  
  :  abstract = {
 (Error may have been on previous line)
@@ -14,36 +14,36 @@ Warning--I didn't find a database entry for "DBLP:conf/icbo/2015"
 Warning--empty journal in infrastructure
 Warning--can't use both author and editor fields in Hanus2000
 Warning--can't use both author and editor fields in Brassel2008
-You've used 11 entries,
+You've used 13 entries,
             1791 wiz_defined-function locations,
-            527 strings with 6975 characters,
-and the built_in function-call counts, 2976 in all, are:
-= -- 218
-> -- 220
+            538 strings with 7322 characters,
+and the built_in function-call counts, 3289 in all, are:
+= -- 248
+> -- 239
 < -- 3
-+ -- 78
-- -- 67
-* -- 219
-:= -- 498
-add.period$ -- 36
-call.type$ -- 11
-change.case$ -- 9
++ -- 85
+- -- 72
+* -- 234
+:= -- 561
+add.period$ -- 44
+call.type$ -- 13
+change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 128
-empty$ -- 252
-format.name$ -- 67
-if$ -- 655
+cite$ -- 16
+duplicate$ -- 140
+empty$ -- 276
+format.name$ -- 72
+if$ -- 721
 int.to.chr$ -- 0
-int.to.str$ -- 11
+int.to.str$ -- 13
 missing$ -- 12
-newline$ -- 59
-num.names$ -- 10
-pop$ -- 40
+newline$ -- 71
+num.names$ -- 12
+pop$ -- 42
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 65
+skip$ -- 68
 stack$ -- 0
 substring$ -- 103
 swap$ -- 37
@@ -52,7 +52,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 19
-width$ -- 13
-write$ -- 125
+while$ -- 21
+width$ -- 15
+write$ -- 151
 (There were 2 error messages)
