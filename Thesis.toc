@@ -10,47 +10,47 @@
 \contentsline {subsection}{\numberline {2.1.1}Resource Description Framework}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}RDF and RDFS Vocabularies}{5}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}OWL}{7}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}SPARQL}{9}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.4}SPARQL}{10}{subsection.2.1.4}
 \contentsline {section}{\numberline {2.2}Ontologies}{12}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Ontology for the anatomy of the human body}{12}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations (OBI)}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Ontology for Biomedical Investigations (OBI)}{14}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}RDFBones ontology}{15}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Web applications}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Fundamentals}{16}{subsection.2.3.1}
-\contentsline {subsubsection}{Client-sever architecture}{16}{section*.5}
+\contentsline {subsection}{\numberline {2.3.1}Fundamentals}{17}{subsection.2.3.1}
+\contentsline {subsubsection}{Client-sever architecture}{17}{section*.5}
 \contentsline {subsubsection}{Data driven web applications}{18}{section*.6}
-\contentsline {subsubsection}{Interactive web pages}{19}{section*.7}
+\contentsline {subsubsection}{Interactive web pages}{20}{section*.7}
 \contentsline {subsection}{\numberline {2.3.2}VIVO framework}{21}{subsection.2.3.2}
-\contentsline {subsubsection}{Profile pages}{21}{section*.8}
+\contentsline {subsubsection}{Profile pages}{22}{section*.8}
 \contentsline {subsubsection}{Custom entry forms}{23}{section*.9}
 \contentsline {section}{\numberline {2.4}Related Work}{26}{section.2.4}
-\contentsline {chapter}{\numberline {3}Problem Statement}{27}{chapter.3}
-\contentsline {section}{\numberline {3.1}Multi level data input}{27}{section.3.1}
-\contentsline {section}{\numberline {3.2}RDFBones use-cases in VIVO}{30}{section.3.2}
-\contentsline {section}{\numberline {3.3}Solution scheme}{31}{section.3.3}
-\contentsline {chapter}{\numberline {4}Vocabulary for RDF data input}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Elements of the vocabulary}{33}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Data definitions}{33}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Form definition}{35}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Primary Skeletal Inventory}{36}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{39}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Framework functionality}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Main software modules and tasks}{43}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Validation}{44}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{46}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Graph model generation}{48}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Implementation}{51}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Client side}{51}{subsection.5.2.1}
-\contentsline {subsubsection}{Form loading}{51}{section*.10}
-\contentsline {subsubsection}{Sub forms}{53}{section*.11}
-\contentsline {subsection}{\numberline {5.2.2}Server side}{55}{subsection.5.2.2}
-\contentsline {subsubsection}{VIVO integration}{55}{section*.12}
-\contentsline {subsubsection}{Form data loading}{57}{section*.13}
-\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{59}{section*.14}
-\contentsline {chapter}{\numberline {6}Conclusion}{60}{chapter.6}
-\contentsline {section}{\numberline {6.1}Evaluation}{60}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future work}{62}{section.6.2}
-\contentsline {subsubsection}{Improved handling of OWL restrictions}{62}{section*.15}
-\contentsline {subsubsection}{RDF data based form configuration}{62}{section*.16}
-\contentsline {chapter}{Acknowledgements}{63}{chapter*.17}
+\contentsline {chapter}{\numberline {3}Problem Statement}{28}{chapter.3}
+\contentsline {section}{\numberline {3.1}Multi level data input}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}RDFBones use-cases in VIVO}{31}{section.3.2}
+\contentsline {section}{\numberline {3.3}Solution scheme}{32}{section.3.3}
+\contentsline {chapter}{\numberline {4}Vocabulary for RDF data input}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Elements of the vocabulary}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Data definitions}{34}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Form definition}{36}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Primary Skeletal Inventory}{37}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{40}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Framework functionality}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}Main software modules and tasks}{44}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Validation}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Dependencies and form functionality}{47}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Graph model generation}{49}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Implementation}{52}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Client side}{52}{subsection.5.2.1}
+\contentsline {subsubsection}{Form loading}{52}{section*.10}
+\contentsline {subsubsection}{Sub forms}{54}{section*.11}
+\contentsline {subsection}{\numberline {5.2.2}Server side}{56}{subsection.5.2.2}
+\contentsline {subsubsection}{VIVO integration}{56}{section*.12}
+\contentsline {subsubsection}{Form data loading}{58}{section*.13}
+\contentsline {subsubsection}{Saving, editing and retrieval of RDF Data}{60}{section*.14}
+\contentsline {chapter}{\numberline {6}Conclusion}{61}{chapter.6}
+\contentsline {section}{\numberline {6.1}Evaluation}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future work}{63}{section.6.2}
+\contentsline {subsubsection}{Improved handling of OWL restrictions}{63}{section*.15}
+\contentsline {subsubsection}{RDF data based form configuration}{63}{section*.16}
+\contentsline {chapter}{Acknowledgements}{64}{chapter*.17}

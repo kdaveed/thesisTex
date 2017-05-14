@@ -48,6 +48,7 @@ The \textit{";"} in N3 is used to divide predicate-object pairs that constitute 
 
 In the previous section, the RDF and RDFS vocabularies were already mentioned, but this section provides much more detailed information about their usage and utility. RDF and RDFS offer classes and properties that allow expressing the rules of the RDF data \cite{Brickley:04:RVD}. First of all, it has to be defined, what IRIs represent classes and what properties. For this purpose there are two classes the \textit{rdfs:Class} and \textit{rdf:Property}. To define own properties and classes, just like by the instances, the \textit{rdf:type} property have to used.
 
+\newpage
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql, belowskip=1em, aboveskip=4em,
 frame=single]
 domain:Student					rdf:type						rdfs:Class .
@@ -56,6 +57,7 @@ domain:Course						rdf:type						rdfs:Class	.
 
 
 In this way, it is defined that in our dataset the instances will represent students and courses. The definition in the case of the properties is a bit more complex because it has to be defined too, what type of subjects and objects they can connect. For this definition there are two properties in RDFS, the \textit{rdfs:domain} and the \textit{rdfs:range} respectively.
+
 
 \begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,  belowskip=1em, aboveskip=2em,
 frame=single]
@@ -141,6 +143,7 @@ It can be seen that the namespace abbreviation with prefixes works the same way 
 
 Furthermore, the triple pattern can consist of  multiple triples as well, like in the following query:
 
+\newpage
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query II., label=2nd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?student ?label 
@@ -166,6 +169,7 @@ FILTER regex(?label, "^Bo")
 
 Finally, it is possible in SPARQL to query blank nodes, the same way with variables. The following query then queries the ontology and returns at least how many key courses must be attended by a computer science student.
 
+\newpage
 \begin{lstlisting}[captionpos=b, caption=SPARQL Query III., label=3rd:sparql, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 SELECT ?minKeyCourses
@@ -287,6 +291,7 @@ By web applications using databases the most important point, that web pages are
 
 To define how the web page has to be generated from the dataset a so-called template file are used. The template file is an HTML document, that is extended with some additional syntax. The elements defined in this syntax can be interpreted by the template engine. There a lot of template engines and languages, but in the following, I provide an illustrative example in \textit{Freemarker} template language, that is used within the VIVO framework.
 
+\newpage
 \begin{lstlisting}[captionpos=b, caption=Template file example, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <#list students as student>
@@ -320,6 +325,7 @@ The previous section showed the principles of how data can be browsed using web 
 
 \figref{js2} illustrates the difference between static and dynamic web pages, where the blue rectangle stands for the client side. The idea of dynamic web pages in data drove web applications, which if new content has to be shown on the page, then not an HTTP request is sent to the server, but a JS routine is called. JS code is defined in the HTML document within the \textit{<script/>} tag. The routines are assigned to HTML elements by their ids in the following way:
 
+\newpage
 \begin{lstlisting}[captionpos=b, caption=JavaScript routine assigned to an HTML element, label=jsListing, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 	<html>
@@ -380,6 +386,7 @@ By default, VIVO redirects the user to such an entry form where only one instanc
 
 The idea of VIVO, that it allows the definition only of the HTML input form layout and the dataset, and the developer does not have to care about how the values from the form are substituted into the RDF data and how the new instances are generated. For the definition two files have to be created, a \textit{Freemarker}  template file (with .ftl extension) for the form definition and a Java class that contains in its fields the reference to the template file and the RDF data definitions. The name of the Java class is stored in the faux property definition (\figref{fauxRDF}), and thus VIVO can find it based on the \textit{predicateUri} parameter of the custom entry form HTTP request. The template file definition for the form is simple due to the \textit{Freemarker} macros provided in VIVO. Each type of input field has a distinct macro and have two input parameters, the parameter name, and the title. The macros do not only show the appropriate input fields but by the edit mode, they care about that the fields show the existing values.
 
+\newpage
 \begin{lstlisting}[captionpos=b, caption= subdivision.ftl, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 <form>
