@@ -53,3 +53,4 @@
 \contentsline {section}{\numberline {6.2}Future work}{62}{section.6.2}
 \contentsline {subsubsection}{Improved handling of OWL restrictions}{62}{section*.15}
 \contentsline {subsubsection}{RDF data based form configuration}{62}{section*.16}
+\contentsline {chapter}{Acknowledgements}{63}{chapter*.17}
