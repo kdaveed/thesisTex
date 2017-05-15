@@ -49,7 +49,7 @@ The \textit{";"} in N3 is used to divide predicate-object pairs that constitute 
 In the previous section, the RDF and RDFS vocabularies were already mentioned, but this section provides much more detailed information about their usage and utility. RDF and RDFS offer classes and properties that allow expressing the rules of the RDF data \cite{Brickley:04:RVD}. First of all, it has to be defined, what IRIs represent classes and what properties. For this purpose there are two classes the \textit{rdfs:Class} and \textit{rdf:Property}. To define own properties and classes, just like by the instances, the \textit{rdf:type} property have to used.
 
 \newpage
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition, label=lst:sparql, belowskip=1em, aboveskip=4em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Class definition in RDFS, label=lst:sparql, belowskip=1em, aboveskip=4em,
 frame=single]
 domain:Student					rdf:type						rdfs:Class .
 domain:Course						rdf:type						rdfs:Class	.
@@ -59,7 +59,7 @@ domain:Course						rdf:type						rdfs:Class	.
 In this way, it is defined that in our dataset the instances will represent students and courses. The definition in the case of the properties is a bit more complex because it has to be defined too, what type of subjects and objects they can connect. For this definition there are two properties in RDFS, the \textit{rdfs:domain} and the \textit{rdfs:range} respectively.
 
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition I., label=lst:sparql,  belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Property definition in RDFS, label=lst:sparql,  belowskip=1em, aboveskip=2em,
 frame=single]
 domain:attends					rdf:type						rdf:Property ;
 												rdfs:domain					domain:Student	;
@@ -71,7 +71,7 @@ domain:avgGrade					rdf:type						rdf:Property .
 
 The further really important concept in data modeling is the subclass relationship. This is expressed in RDFS with the the \textit{rdfs:subClassOf} property. The informal definition of the subclass concept is that if class B is a subclass of class A, then every instance of class B is an instance of class A as well. The definition is that every student is a person can be done in the following way:
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Sub class definition, label=lst:sparql,  belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Subclass definition, label=lst:sparql,  belowskip=1em, aboveskip=2em,
 frame=single]
 domain:Person						rdf:type						rdfs:Class .
 domain:Student					rdfs:subClassOf			domain:Person .
@@ -106,7 +106,7 @@ The idea is that the restriction node encompasses the triples that describing a 
 
 To illustrate the utility of restrictions, the ontology from the previous section was extended with three subclasses (\figref{ontExt1}). The abbreviations \textit{CS} stands for computer science. The following two restriction asserts that a computer science student is allowed to attend only computer science courses, and has to take at least two key courses.
 
-\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Blank nodes in N3, label=lst:sparql, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[basicstyle=\footnotesize, captionpos=b, caption=Restrictions as blank nodes , label=lst:sparql, belowskip=1em, aboveskip=2em,
 frame=single]
 domain:CS_Student rdfs:subClassOf  [ 
 	rdf:type					owl:Restriction ; 
@@ -268,7 +268,7 @@ Nowadays web applications are prevalent since they have the advantage against a 
 
 Web applications consist of two main units. The first is the client, which the user interacts with, and the second is the server, which is the other application that serves the request coming from the client. The client and server programs are running normally on different machines, and they communicate through Hypertext Transfer Protocol (HTTP). The main mechanism is that client, which is a web browser application, sends an HTTP request through the web, and the server is found based on the URI of the HTTP request. Upon the content of the request, the server returns a document written in Hypertext Markup Language (HTML). The HTML document contains the definition of the elements of the interface and it is interpreted by the web browser.
 
-\imgK{\II}{1_client_server.png}{Client server communication}
+\imgK{\II}{1_client_server.png}{Client-server communication}
 
 An HTML document consists of different elements like buttons, tables input fields. Each element is represented by so-called tags. The HTML has a hierarchical structure, and each element is the child of the tag \textit{html}. On listing \ref{exHTML} it can be seen that each tag has an opening and closing element.
 
@@ -407,7 +407,7 @@ basicstyle=\footnotesize,frame=single]
 
 The next fundamental variable of the generator class is the \textit{triplesToCreate}, which contains the RDF triples to be created after the submission.
 
-\begin{lstlisting}[captionpos=b, caption= RDF Triples to create, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption= Graph pattern definition in Java, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 this.triplesToCreate = "
 	?subjectUri		rdfbones:hasSkeletalSubdivision		?subDivision.
@@ -428,7 +428,7 @@ basicstyle=\footnotesize,frame=single]
 
 There are no URIs (IRIs) on the form, but there are three literals. The variable \textit{subDivision} has to get new unused IRI, and the \textit{subjectUri} and \textit{rangeUri} values are coming from the initial request. Moreover important part of the definition is the SPARQL query that retrieves the values for the form variables if the form is called for editing the existing data. For this purpose VIVO maintains a variable with the \textit{Map<String, String>} with the name \textit{sparqlForLiterals}. In this field the keys are variable names and the values are the SPARQL queries. By the form data loading for editing, VIVO executes the defined queries and passes the values in the variables to the template engine for the FTL macros.
 
-\begin{lstlisting}[captionpos=b, caption= SPARQL forExisting variable definition, label=skullJSON, belowskip=1em, aboveskip=2em,
+\begin{lstlisting}[captionpos=b, caption= SPARQL for an existing variable definition, label=skullJSON, belowskip=1em, aboveskip=2em,
 basicstyle=\footnotesize,frame=single]
 	this.sparqlForLiterals.put("desc", "
 	SELECT ?desc

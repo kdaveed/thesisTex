@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {4.1}Elements of the vocabulary}{34}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Data definitions}{34}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Form definition}{36}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Use-cases of the \textit {RDFBones} project}{37}{section.4.2}
+\contentsline {section}{\numberline {4.2}Use-cases of the RDFBones project}{37}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Primary Skeletal Inventory}{37}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Study Design Execution}{40}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}Framework functionality}{44}{chapter.5}
